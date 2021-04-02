@@ -9,7 +9,7 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-
+    <h3>Change your password</h3>
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
@@ -17,19 +17,130 @@
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
+
+        <div class="row">
+        <div class="col-2">
+    <%= f.input :gender, collection: ['Mr', 'Mrs']
+                    # as: :string,
+                    # label: 'Mr/Mrs',
+                    # placeholder: 'Mr / Mrs'
+                    %>
+        </div>
+        <div class="col-5">
+    <%= f.input :first_name,
+                    as: :string,
+                    label: 'First Name',
+                    placeholder: 'John' %>
+        </div>
+        <div class="col-5">
+      <%= f.input :last_name,
+                    as: :string,
+                    label: 'Last Name',
+                    placeholder: 'Smith' %>
+        </div>
+              <%= f.input :job,
+                    as: :string,
+                    label: 'Job Function',
+                    placeholder: 'CEO' %>
+      </div>
+      <h5>PESSOAL INFORMATION</h5>
+
+<div class="row">
+  <div class="col-6">
+          <%= f.input :whatsapp,
+                    as: :string,
+                    label: 'whatsapp',
+                    placeholder: '+5521996995765' %>
+
+  </div>
+  <div class="col-6">
+       <%= f.input :linkedin,
+                    as: :string,
+                    label: 'linkedin',
+                    placeholder: 'https://www.linkedin.com/in/joa-azria/' %>
+  </div>
+</div>
+      <%= f.input :avatar,
+                label: 'upload your photo',
+                as: :file %>
+
+
+
+
+<h5>COMPANY INFORMATION</h5>
+<div class="row">
+  <div class="col-6">
+        <%= f.input :company,
+                    as: :string,
+                    label: 'Company',
+                    placeholder: 'Basic Lead' %>
+
+  </div>
+  <div class="col-6">
+    <%= f.input :country,
+
+                    as: :string,
+                    label: 'Country',
+                    placeholder: 'Rwanda' %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+          <%= f.input :phone,
+                    as: :string,
+                    label: 'phone',
+                    placeholder: '+5521996995765' %>
+
+  </div>
+  <div class="col-6">
+        <%= f.input :website,
+                    as: :string,
+                    label: 'Website',
+                    placeholder: 'www.discosport.tv' %>
+  </div>
+</div>
+
+    <%= f.input :activity,
+                collection: ['ADVERTISING AGENCY', 'BROADCASTER | Private', 'BROADCASTER | Public', 'CONSUMER BRAND', 'DELIVERY SOLUTION', 'DIGITAL MARKETING', 'AGENCY', 'DUBBING SOLUTION', 'ECOMMERCE PLATFORM', 'EQUIPMENT / NEW TECH DISTRIBUTION', 'FUNDING / BANK', 'INDEPENDENT ANIMATOR', 'INDEPENDENT DIRECTOR', 'INDEPENDENT JOURNALIST', 'INDEPENDENT WRITER',
+                            'LAW FIRM','MANUFACTURER','MARKETER','MERCHANDISER','MOBILE OPERATOR','MONETIZATION SOLUTION','MUSIC PRODUCTION','PAY-TV OPERATOR','PAYMENT PROCESSING SOLUTION','POST PRODUCTION SERVICE','PREMIUM CABLE CHANNEL','PRESS','PRODUCTION COMPANY','PUBLIC ORGANISATION','RADIO STATION','RESEARCH CONSULTANCY','SOCIAL MEDIA','SPORTING CLUB','SPORTS ARENA','SPORTS FEDERATION','SPORTS MARKETING','STREAMING PLATFORM','SUBSCRIBERS MANAGEMENT SOLUTION','TALENT AGENCY','TV RIGHTS DISTRIBUTOR','VIDEO GAME DEVELOPER',
+                            'VIDEO GAMING PLATFORM', 'OTHER']
+                    # input_html: { multiple: true }                    # as: :string,
+                    # label: 'activity',
+                    # placeholder: 'Select your main activity'
+                    %>
+<h5>PRESENT YOURSELF TO THE OTHER DELEGATES</h5>
+
+      <%= f.input :release,
+                    as: :text,
+                    label: 'Present Yourself, why are you participating to Discop',
+                    placeholder: 'I m JoA your virtual assistant, I m participating to the DISCOSPORT to make your journey with us a bether one' %>
+      <%= f.input :status,
+                    as: :text,
+                    label: 'status',
+                    placeholder: 'Sr / Sra' %>
+      <%= f.input :member,
+                    as: :text,
+                    label: 'member',
+                    placeholder: 'Sr / Sra' %>
+
+  </div>
+  <div class="text-danger">
+    <h5 class="text-center">Please enter your current password to confirm your changes</h5>
+        <%= f.input :current_password,
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+  <div class="form-actions row">
+    <%= f.button :submit, "Update", class: "btn btn-success m-3" %>
+    <%= link_to "Back", :back, class: "btn btn-outline-success m-3" %>
+
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<h6 class="mt-5">Cancel my account</h6>
 
-<%= link_to "Back", :back %>
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-sm btn-outline-danger m-3" %></p>
+
