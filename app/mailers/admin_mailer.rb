@@ -6,7 +6,7 @@ class AdminMailer < ApplicationMailer
     @user = params[:user]
     # @email = email
     mail(
-      to: 'admin@email.com',
+      to: 'dwftung@gmail.com',
       subject: "#{@user.first_name} #{@user.last_name} signed up!"
       # subject: "signed up!"
     )
@@ -16,7 +16,7 @@ class AdminMailer < ApplicationMailer
     @user = params[:user] # Instance variable => available in view
     mail(
       to: @user.email,
-      subject: "Welcome!"
+      subject: "Welcome to Disco Sport!"
     )
     # This will render a view in `app/views/user_mailer`!
   end
