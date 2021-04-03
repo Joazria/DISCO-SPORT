@@ -1,3 +1,13 @@
+.card-register  {
+    opacity: .7;
+    filter: grayscale(50%);
+}
+
+.card-register:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
 .card-category {
   background-size: cover;
   background-position: center;
