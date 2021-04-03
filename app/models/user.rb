@@ -15,6 +15,7 @@ class User < ApplicationRecord
 
   def send_admin_mail
     AdminMailer.with(user: self).new_user_waiting_for_approval.deliver_now
+    AdminMailer.with(user: self).new_user_welcome.deliver_now
     # AdminMailer.new_user_waiting_for_approval(email).deliver_now
   end
 end
