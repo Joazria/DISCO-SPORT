@@ -1,5 +1,4 @@
 
-
 <div class="navbar navbar-expand-sm navbar-light navbar-discosport sticky-top">
   <%= link_to "/", class: "navbar-brand" do %>
     <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616778797/DISCOSPORT/LOGO1_DISCOSPORT_MASTER_wtwyli.png" %>
@@ -13,10 +12,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <% if user_signed_in? %>
-        <p class="m-2"> Hello, <%= current_user.first_name %></p>
+
+                <p class="m-2"> Hello, <%= current_user.first_name %></p>
+
           <li class="nav-item active">
+
           <li class="nav-item dropdown">
-            <% if current_user.avatar.attached? %>
+           <% if current_user.avatar.attached? %>
               <%= image_tag current_user.avatar , :width => 40, :height => 40, :gravity => "faces",  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <% else %>
               <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1617458735/DISCOSPORT/ICON_DISCOSPORT_bwjmfq.png" , :width => 40, :height => 40, :gravity => "faces",  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -27,6 +29,10 @@
               <a class="dropdown-item" href="mailto:joa.azria@gmail.com?subject=Hello">Contact Us</a>
 
               <%= link_to "Dashboard", "/profile", class: "dropdown-item" %>
+              <%= link_to "About DiscoSport", "/about_us", class: "dropdown-item" %>
+              <%= mail_to "joa@birds.art.br", "Contact Us", class: "dropdown-item" %>
+
+
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
@@ -41,3 +47,5 @@
       </ul>
     </div>
 </div>
+
+
