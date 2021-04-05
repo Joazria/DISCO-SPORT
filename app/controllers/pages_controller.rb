@@ -17,7 +17,8 @@ class PagesController < ApplicationController
   #   @user = User.find(params[:id])
   # end
   def user_params
-  params.require(:user).permit(:avatar, :id, :email, :password, :company, :activity, :category, :website, :gender, :first_name, :last_name, :phone, :whatsapp, :release, :status, :member, :job, :category)
+  params.require(:user).permit(:avatar, :activity, :category, :id, :email, :password, :company, :country, :website, :gender, :first_name, :last_name, :phone, :whatsapp, :release, :status, :member, :job)
+
   end
 end
 
