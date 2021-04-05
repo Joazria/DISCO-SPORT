@@ -26,11 +26,11 @@
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "About Discop", about_us_path, class: "dropdown-item" %>
-              <a class="dropdown-item" href="mailto:joa.azria@gmail.com?subject=Hello">Contact Us</a>
+              <a class="dropdown-item" href="mailto:contact@discosport.tv?subject=Hello">Contact Us</a>
 
-              <%= link_to "Dashboard", "/profile", class: "dropdown-item" %>
+              <%= link_to "Profile", "/profile", class: "dropdown-item" %>
               <%= link_to "About DiscoSport", "/about_us", class: "dropdown-item" %>
-              <%= mail_to "joa@birds.art.br", "Contact Us", class: "dropdown-item" %>
+              <%= mail_to "contact@discosport.tv", "Contact Us", class: "dropdown-item" %>
 
 
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

@@ -1,5 +1,5 @@
 class AdminMailer < ApplicationMailer
-  # default from: 'from@example.com'
+  default from: 'contact@discosport.tv'
   # layout 'mailer'
 
   def new_user_waiting_for_approval

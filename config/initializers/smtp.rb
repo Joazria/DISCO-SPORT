@@ -1,9 +1,9 @@
 ActionMailer::Base.smtp_settings = {
-  address: "smtp.gmail.com",
-  port: 587,
-  domain: 'gmail.com',
-  user_name: ENV['GMAIL_ADDRESS'],
-  password: ENV['GMAIL_APP_PASSWORD'],
-  authentication: :login,
+  address: "smtp.discosport.tv",
+  port: 465,
+  domain: 'www.discosport.tv',
+  user_name: "contact@discosport.tv",
+  password: ENV['DISCOSPORT_APP_PASSWORD'],
+  authentication: :plain,
   enable_starttls_auto: true
 }
