@@ -3,5 +3,3 @@ class AddCategoryToUsers < ActiveRecord::Migration[6.0]
     add_column :users, :category, :string
   end
 end
-
-

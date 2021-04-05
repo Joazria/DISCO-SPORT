@@ -18,6 +18,7 @@ class PagesController < ApplicationController
   # end
   def user_params
   params.require(:user).permit(:avatar, :activity, :category, :id, :email, :password, :company, :country, :website, :gender, :first_name, :last_name, :phone, :whatsapp, :release, :status, :member, :job)
+
   end
 end
 
