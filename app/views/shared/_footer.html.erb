@@ -18,8 +18,8 @@
  <div class="container footer">
   <div class="row bg-primary"></div>
    <div class="row bg-primary" style="height: 120px">
-     <div class="col-3 d-flex flex-column text-center mt-3">
-      <a href="#">
+     <div class="col-3 d-flex flex-column align-items-center mt-3">
+      <!-- <a href="#">
         <h4>
           <i class="fab fa-youtube text-muted"></i>
         </h4>
@@ -28,32 +28,46 @@
         <h4>
           <i class="fab fa-twitter text-muted"></i>
         </a>
-        </h4>
-      <a href="#">
+        </h4> -->
+      <a href="https://www.linkedin.com/events/discosport100-virtual6780296446915829760/">
         <h4>
           <i class="fab fa-linkedin text-muted"></i>
-        </a>
         </h4>
+      </a>
+      <div class="img-fluid">
+            <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616778797/DISCOSPORT/LOGO1_DISCOSPORT_MASTER_wtwyli.png", style: 'height:auto;width:100%;', class: "img-fluid", alt: "Responsive image" %>
+
+      </div>
+
      </div>
    <div class="col-4 mt-3 d-flex flex-column">
-    <a href="#" class="text-muted" >
+
         <h6>
-          about us
-        </h6></a>
-    <a href="#" class="text-muted" >
-        <h6>
-          register
-        </h6></a>
-    <a href="#" class="text-muted" >
+        <%= link_to "About Discop", "/about_us", class: "text-muted" %>
+        </h6>
+
+      <a class="text-muted" href="mailto:contact@discosport.tv?subject=Hello">
         <h6>
           contact us
         </h6></a>
+        <h6>
+        <%= link_to "Register", new_user_registration_path, class: "text-muted" %>
+        </h6>
+
+
+
+
 
    </div>
-   <div class="col-5 mt-3 d-flex flex-column text-muted" style="height: 100%">
+   <div class="col-5 d-flex flex-column  text-muted" style="height: 100%">
+      <div class="align-self-start mt-1">
+        <h6 class="mb-0">  <i class="far fa-copyright"></i>All Rights Reserved to Basic Lead 2021</h6>
+        <div class="my-1">
+            <p class="fw-lighter">developed by <a href="mailto:joa@birds.art.br?subject=DiscoSport" class="text-muted"> JoA <i class="fab fa-github text-muted"></i></a></p>
 
-        <h6 class="align-self-end">  <i class="far fa-copyright"></i>All Rights Reserved to Basic Lead 2021</h6>
-        <p class="fw-lighter align-self-end">Web/App proudly developed by JoA <a href="#" <i class="fab fa-github text-muted"></i></a></p>
+        </div>
+      </div>
+
    </div>
  </div>
 

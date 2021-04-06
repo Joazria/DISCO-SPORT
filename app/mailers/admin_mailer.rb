@@ -1,12 +1,12 @@
 class AdminMailer < ApplicationMailer
-  # default from: 'from@example.com'
+  # default from: 'contact@discosport.tv'
   # layout 'mailer'
 
   def new_user_waiting_for_approval
     @user = params[:user]
     # @email = email
     mail(
-      to: 'dwftung@gmail.com',
+      to: 'contact@discosport.tv',
       subject: "#{@user.first_name} #{@user.last_name} signed up!"
       # subject: "signed up!"
     )
