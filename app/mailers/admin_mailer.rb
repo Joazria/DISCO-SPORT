@@ -6,7 +6,7 @@ class AdminMailer < ApplicationMailer
     @user = params[:user]
     # @email = email
     mail(
-      to: 'contact@discosport.tv',
+      to: 'dwftung@gmail.com',
       subject: "#{@user.first_name} #{@user.last_name} signed up!"
       # subject: "signed up!"
     )
