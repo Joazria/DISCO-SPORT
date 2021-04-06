@@ -1,5 +1,5 @@
 ActionMailer::Base.smtp_settings = {
-  address: "smtp.discosport.tv",
+  address: "smtp.dreamhost.com",
   port: 465,
   domain: 'discosport.tv',
   user_name: ENV["DISCOSPORT_APP_USER"],
