@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
+  attribute :status, :string, default: 'not authorized'
+
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
 
