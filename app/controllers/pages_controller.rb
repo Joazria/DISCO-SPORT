@@ -13,7 +13,10 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @users = User.all
+    @users = User.all.sort_by { |event| [event.created_at] }
+    unless current_user.email == 'dwftung@gmail.com'
+      redirect_to root_path, notice: 'Unauthorized Area'
+    end
   end
 
   private

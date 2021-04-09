@@ -23,10 +23,15 @@
           </div>
         </div>
         <div class="col-md-2 align-self-center ">
-          <% if user.email == "contato@streetriver.org" %>
-            <%= link_to "Pending", new_user_registration_path, class: " btn btn-lg btn-outline-danger text-uppercase justify-content-right" %>
+          <!-- < if user.email == "contato@streetriver.org" >
+            <= link_to "Pending", new_user_registration_path, class: " btn btn-lg btn-outline-danger text-uppercase justify-content-right" >
+          < else >
+            <= link_to "Approved", new_user_registration_path, class: " btn btn-lg btn-outline-success text-uppercase justify-content-right" >
+          < end > -->
+          <% if user.status == 'pending' %>
+            <%= link_to user.status, root_path, class: 'btn btn-lg btn-outline-danger text-uppercase justify-content-right' %>
           <% else %>
-            <%= link_to "Approved", new_user_registration_path, class: " btn btn-lg btn-outline-success text-uppercase justify-content-right" %>
+            <%= link_to user.status, root_path, class: 'btn btn-lg btn-outline-success text-uppercase justify-content-righ' %>
           <% end %>
         </div>
       </div>
