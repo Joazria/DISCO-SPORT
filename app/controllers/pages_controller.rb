@@ -8,19 +8,17 @@ class PagesController < ApplicationController
   def profile
     # @user = User.find(params[:id])
     # @user = User.find(params[:id])
-        # user = Users.find(params[:id])
-        user = current_user
+    # user = Users.find(params[:id])
+    user = current_user
   end
 
-  def daschboard
-     # @users = User.all
+  def dashboard
+    @users = User.all
   end
 
   private
 
   def user_params
-  params.require(:user).permit(:avatar, :activity, :id, :email, :password, :company, :country, :website, :gender, :first_name, :last_name, :phone, :whatsapp, :release, :status, :member, :job)
-
+    params.require(:user).permit(:avatar, :activity, :id, :email, :password, :company, :country, :website, :gender, :first_name, :last_name, :phone, :whatsapp, :release, :status, :member, :job)
   end
 end
-
