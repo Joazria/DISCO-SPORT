@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  attribute :status, :string, default: 'awaiting authorization'
+  attribute :status, :string, default: 'pending'
 
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
