@@ -25,17 +25,17 @@
     <div class="col-md-4">
       <div class="card mb-3">
         <!-- <img class="card-img-top rounded-circle p-3" src="https://res.cloudinary.com/numama/image/upload/v1617038321/DISCOSPORT/avatar_mushiki_discop_qiuv2c.png" alt="Card image cap"> -->
-        <!-- <= image_tag current_user.avatar ,  :gravity => "faces",  class: "card-img-top rounded-circle p-3", alt: "Card image cap" > -->
+        <!-- <= image_tag @user.avatar ,  :gravity => "faces",  class: "card-img-top rounded-circle p-3", alt: "Card image cap" > -->
         <div class="card-body">
-          <h5 class="card-title text-primary"><%= current_user.gender %> <%= current_user.first_name %>  <span class="text-uppercase"><%= current_user.last_name %></span></h5>
-          <h5 class="card-text"><%= current_user.job %></h5>
+          <h5 class="card-title text-primary"><%= @user.gender %> <%= @user.first_name %>  <span class="text-uppercase"><%= @user.last_name %></span></h5>
+          <h5 class="card-text"><%= @user.job %></h5>
           <div class="d-flex flex-column mt-3 pl-2">
-            <h6 class="text-left"><i class="fas fa-at"></i> : <%= current_user.email %></h6>
-            <h6 class="text-left"><i class="fab fa-whatsapp"> : </i><%= current_user.whatsapp %></h6>
+            <h6 class="text-left"><i class="fas fa-at"></i> : <%= @user.email %></h6>
+            <h6 class="text-left"><i class="fab fa-whatsapp"> : </i><%= @user.whatsapp %></h6>
           </div>
           <!-- <button > </button> -->
           <!-- <i class="fab fa-linkedin"></i> -->
-          <%= link_to "Linkedin ", current_user.linkedin , :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
+          <%= link_to "Linkedin ", @user.linkedin , :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
           <!-- <img class="card-img-bottom p-3" src="https://res.cloudinary.com/numama/image/upload/v1617099999/DISCOSPORT/image-asset_fwqjkm.png" alt="Card image cap"> -->
         </div>
         <class class="card-footer">
@@ -45,24 +45,24 @@
       </div>
     </div>
     <div class="col-md-8 mt-5">
-      <h3 class="text-secondary text-uppercase"><%= current_user.company %></h3>
-      <h5 class="text-secondary">Main activity : <%= current_user.activity %></h5>
+      <h3 class="text-secondary text-uppercase"><%= @user.company %></h3>
+      <h5 class="text-secondary">Main activity : <%= @user.activity %></h5>
       <div class="row">
         <div class="col-4">
-          Country : <%= current_user.country %>
+          Country : <%= @user.country %>
         </div>
         <div class="col-4">
-          <%= current_user.website %>
+          <%= @user.website %>
         </div>
         <div class="col-4">
-          <%= current_user.phone %>
+          <%= @user.phone %>
         </div>
       </div>
       <div class="row m-2 text-right">
-        <%= link_to "VISITE #{ current_user.company} WEBSITE", current_user.company, class: "btn btn-block btn-sm btn-outline-primary text-uppercase" %>
+        <%= link_to "VISITE #{ @user.company} WEBSITE", @user.company, class: "btn btn-block btn-sm btn-outline-primary text-uppercase" %>
       </div>
       <hr>
-      <p class="text-justify"><span class="text-danger">PRESENTATION: </span> <%= current_user.release %></p>
+      <p class="text-justify"><span class="text-danger">PRESENTATION: </span> <%= @user.release %></p>
     </div>
   </div>
   <hr class="mt-5 container">
@@ -72,9 +72,6 @@
     <div class="col-9">
       <h5 class="text-primary text-center">SOON MORE INFORMATIONS AVAILABLE </h5>
     </div>
+    <%#= render 'shared/partnership' %>
   </div>
-  <!-- <#% if user.email == "contato@streetriver.org" %> -->
 </div>
-<%= render 'shared/pitching_participate' %>
-<%= render 'shared/partnership' %>
-<!-- <#% end %> -->
