@@ -1,6 +1,17 @@
-<%= @user.first_name %>
 <%= simple_form_for @user, url: profile_path, method: :patch do |f| %>
+  <%= f.input :status, label: 'Status' %>
+  <%= f.input :company, label: 'Company' %>
+  <%= f.input :member, label: 'Attending as' %>
+  <%= f.input :gender, label: 'Gender' %>
   <%= f.input :first_name, label: 'First Name' %>
   <%= f.input :last_name, label: 'Last Name' %>
-  <%= f.submit "Update⚙️", class: 'btn btn-success btn-sm' %>
+  <%= f.input :job, label: 'Job Function' %>
+  <%= f.input :whatsapp, label: 'whatsapp' %>
+  <%= f.input :linkedin, label: 'linkedin' %>
+  <%= f.input :activity, label: 'Activity' %>
+  <!-- <= f.input :country, label: 'Country' > -->
+  <%= f.input :phone, label: 'phone' %>
+  <%= f.input :website, label: 'Website' %>
+  <%= f.input :release, label: 'Presentation' %>
+  <%= f.submit 'Update', class: 'btn btn-success btn-sm' %>
 <% end %>

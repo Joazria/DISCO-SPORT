@@ -16,7 +16,7 @@ class ProfilesController < ApplicationController
       redirect_to root_path, notice: 'Unauthorized Area'
     end
     if @user.update(user_params)
-      redirect_to profile_path, notice: 'User Updated!'
+      redirect_to profile_path(@user), notice: 'User Updated!'
     else
       render :edit
     end
@@ -25,6 +25,22 @@ class ProfilesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:avatar, :activity, :id, :email, :password, :company, :country, :website, :gender, :first_name, :last_name, :phone, :whatsapp, :release, :status, :member, :job)
+    params.require(:user).permit(:avatar,
+                                 :activity,
+                                 :id,
+                                 :email,
+                                 :password,
+                                 :company,
+                                 :country,
+                                 :website,
+                                 :gender,
+                                 :first_name,
+                                 :last_name,
+                                 :phone,
+                                 :whatsapp,
+                                 :release,
+                                 :status,
+                                 :member,
+                                 :job)
   end
 end
