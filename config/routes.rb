@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   get '/speaker', to: 'pages#speaker'
   # get '/profile', to: 'pages#profile'
   get '/dashboard', to: 'pages#dashboard'
-  resources :profiles, only: [:show]
+  resources :profiles, only: [:show, :edit, :update]
   # get '/payments_due/:id', to: 'payments#show_due', as: 'payment_due'
+
+  # patch '/profiles/:id', to: 'profiles#update', as: 'profile'
+  # put '/profiles/:id', to: 'profiles#update'
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

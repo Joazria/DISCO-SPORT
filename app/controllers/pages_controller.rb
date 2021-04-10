@@ -14,7 +14,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @users = User.all.sort_by { |event| [event.created_at] }
-    unless current_user.email == 'dwftung@gmail.com'
+    unless current_user.email == 'dwftung@gmail.com' || current_user.email == 'falecom@trikalias.com.br'
       redirect_to root_path, notice: 'Unauthorized Area'
     end
   end
