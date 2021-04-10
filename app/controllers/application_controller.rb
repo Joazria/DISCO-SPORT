@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
-    before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
- protected
+  protected
 
 
   def configure_permitted_parameters
@@ -12,14 +12,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:avatar, :email, :password, :company, :country, :activity, :website, :gender, :first_name, :last_name, :phone, :whatsapp, :release, :linkedin, :status, :member, :job])
 
     devise_parameter_sanitizer.permit(:account_update, keys: [:avatar, :email, :password, :company, :country, :activity, :website, :gender, :first_name, :last_name, :phone, :whatsapp, :release, :linkedin, :status, :member, :job])
-
-
-
   end
 
   def after_sign_in_path_for(resource)
-  stored_location_for(resource) || profile_path
-end
+    stored_location_for(resource) || profile_path(current_user)
+  end
 
 
 end
