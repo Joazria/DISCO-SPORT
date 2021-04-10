@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/speaker', to: 'pages#speaker'
   get '/profile', to: 'pages#profile'
   get '/dashboard', to: 'pages#dashboard'
-  resources :users, only: [:show]
+  resources :profiles, only: [:show]
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
