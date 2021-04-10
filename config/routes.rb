@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
+
+  # get 'pitchings/index'
+  # get 'pitchings/show'
+  # get 'pitchings/new'
+  # get 'pitchings/create'
+  # get 'pitchings/edit'
+  # get 'pitchings/update'
+  # get 'pitchings/destroy'
         devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
+
+  resources :pitchings
+
 
   root to: 'pages#home'
   get '/about_us', to: 'pages#about_us'
