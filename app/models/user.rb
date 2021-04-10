@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   validates :email, presence: true
   validates :company, presence: true
-
+  has_one :pitchings
   has_one_attached :avatar
 
   attribute :status, :string, default: 'pending'

@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
+
+
+  resources :pitchings
+
 
   root to: 'pages#home'
   get '/about_us', to: 'pages#about_us'
@@ -11,5 +16,4 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
