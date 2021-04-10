@@ -27,7 +27,7 @@ class PitchingsController < ApplicationController
   end
 
   def update
-    if @band.update(pitching_params)
+    if @pitching.update(pitching_params)
       redirect_to @pitching, notice: "Your pitching was successfully updated."
     else
       render :edit
