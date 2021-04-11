@@ -5,18 +5,22 @@ class ProfilesController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    unless current_user.email == 'dwftung@gmail.com' || current_user.email == 'falecom@trikalias.com.br'
+    unless current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br'
       redirect_to root_path, notice: 'Unauthorized Area'
     end
   end
 
   def update
     @user = User.find(params[:id])
-    unless current_user.email == 'dwftung@gmail.com' || current_user.email == 'falecom@trikalias.com.br'
+    unless current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br'
       redirect_to root_path, notice: 'Unauthorized Area'
     end
     if @user.update(user_params)
-      redirect_to profile_path(@user), notice: 'User Updated!'
+      if current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br'
+        redirect_to dashboard_path, notice: 'User Updated'
+      else
+      redirect_to profile_path(current_user), notice: 'User Updated!'
+    end
     else
       render :edit
     end
