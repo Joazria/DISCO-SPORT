@@ -24,8 +24,12 @@
   <div class="row">
     <div class="col-md-4">
       <div class="card mb-3">
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar ,  :gravity => "faces",  class: "card-img-top rounded-circle p-3", alt: "Card image cap" %>
+        <% else %>
+          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;" %>
+        <% end %>
         <!-- <img class="card-img-top rounded-circle p-3" src="https://res.cloudinary.com/numama/image/upload/v1617038321/DISCOSPORT/avatar_mushiki_discop_qiuv2c.png" alt="Card image cap"> -->
-        <!-- <= image_tag @user.avatar ,  :gravity => "faces",  class: "card-img-top rounded-circle p-3", alt: "Card image cap" > -->
         <div class="card-body">
           <h5 class="card-title text-primary"><%= @user.gender %> <%= @user.first_name %>  <span class="text-uppercase"><%= @user.last_name %></span></h5>
           <h5 class="card-text"><%= @user.job %></h5>
