@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_one :pitchings
   has_one_attached :avatar
 
-  attribute :status, :string, default: 'pending'
+  attribute :status, :string, default: 'Pending'
 
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable

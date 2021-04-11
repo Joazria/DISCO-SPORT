@@ -13,8 +13,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @users = User.all.sort_by { |event| [event.created_at] }
-    unless current_user.email == 'dwftung@gmail.com' || current_user.email == 'falecom@trikalias.com.br'
+    @users_pending = User.where(status: 'Pending').sort_by { |event| [event.created_at] }
+    @users_approved = User.where(status: 'Approved').sort_by { |event| [event.created_at] }
+    unless current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br'
       redirect_to root_path, notice: 'Unauthorized Area'
     end
   end
