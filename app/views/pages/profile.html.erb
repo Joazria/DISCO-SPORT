@@ -73,8 +73,13 @@
       <h5 class="text-primary text-center">SOON MORE INFORMATIONS AVAILABLE </h5>
     </div>
   </div>
-  <!-- <#% if user.email == "contato@streetriver.org" %> -->
 </div>
+<% if current_user.status = 'approved'%>
+
 <%= render 'shared/pitching_participate' %>
 <%= render 'shared/partnership' %>
-<!-- <#% end %> -->
+<% else %>
+    <div class="col-9">
+      <h5 class="text-primary text-center">SOON MORE INFORMATIONS AVAILABLE </h5>
+    </div>
+<% end %>

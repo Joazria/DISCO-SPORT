@@ -14,9 +14,14 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:avatar, :email, :password, :company, :country, :activity, :website, :gender, :first_name, :last_name, :phone, :whatsapp, :release, :linkedin, :status, :member, :job])
   end
 
-  def after_sign_in_path_for(resource)
-    stored_location_for(resource) || profile_path(current_user)
-  end
+  private
 
+  def after_sign_in_path_for(resource)
+    if current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br'
+      stored_location_for(resource) || dashboard_path
+    else
+      stored_location_for(resource) || profile_path(current_user)
+    end
+  end
 
 end

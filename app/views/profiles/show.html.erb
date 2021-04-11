@@ -12,7 +12,12 @@
         <div class="mt-auto ">
           <h6 class="text-danger text-right "> <span class="text-white">DISCOSPORT</span> IS THE NEW FAST-GROWING MARKETPLACE OF SUBSAHARAN AFRICA</h6>
           <h6 class="text-white text-right"> LIVE FROM LOS ANGELES & KIGALI </h6>
+          <% if current_user.status == 'approved' %>
           <p  class="text-right ">  25 OCT. - 19 NOV. 2021  <span class="text-success font-weight-bold"> YOU ARE INVITED</span></p>
+          <% else %>
+          <p  class="text-right ">  25 OCT. - 19 NOV. 2021  <span class="text-danger font-weight-bold"> YOUR PROFILE WILL BE SOON APPROVED</span></p>
+          <% end %>
+
         </div>
       </div>
       <a class="btn btn-lg btn-outline-success" href="mailto:contact@discosport.tv?subject=Hello">CONTACT US</a>
@@ -24,8 +29,12 @@
   <div class="row">
     <div class="col-md-4">
       <div class="card mb-3">
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar ,  :gravity => "faces",  class: "card-img-top rounded-circle p-3", alt: "Card image cap" %>
+        <% else %>
+          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;" %>
+        <% end %>
         <!-- <img class="card-img-top rounded-circle p-3" src="https://res.cloudinary.com/numama/image/upload/v1617038321/DISCOSPORT/avatar_mushiki_discop_qiuv2c.png" alt="Card image cap"> -->
-        <!-- <= image_tag @user.avatar ,  :gravity => "faces",  class: "card-img-top rounded-circle p-3", alt: "Card image cap" > -->
         <div class="card-body">
           <h5 class="card-title text-primary"><%= @user.gender %> <%= @user.first_name %>  <span class="text-uppercase"><%= @user.last_name %></span></h5>
           <h5 class="card-text"><%= @user.job %></h5>
@@ -65,13 +74,16 @@
       <p class="text-justify"><span class="text-danger">PRESENTATION: </span> <%= @user.release %></p>
     </div>
   </div>
-  <hr class="mt-5 container">
-  <div class="row">
-    <div class="col-3">
-    </div>
-    <div class="col-9">
-      <h5 class="text-primary text-center">SOON MORE INFORMATIONS AVAILABLE </h5>
-    </div>
-    <%#= render 'shared/partnership' %>
-  </div>
+  <hr>
+  <div class="mt-5 container">
+<% if current_user.status == 'approved' %>
+
+<%= render 'shared/pitching_participate' %>
+<%= render 'shared/partnership' %>
+<% else %>
+
+  <h5 class="text-primary text-center">SOON MORE INFORMATIONS AVAILABLE </h5>
+
+<% end %>
+
 </div>
