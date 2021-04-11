@@ -20,4 +20,12 @@ class AdminMailer < ApplicationMailer
     )
     # This will render a view in `app/views/user_mailer`!
   end
+
+  def status_email(user)
+    @user = user # Instance variable => available in view
+    mail(
+      to: @user.email,
+      subject: "#{@user.status == 'Approved' ? 'You just got Approved!' : 'Status: Pending'}"
+    )
+  end
 end
