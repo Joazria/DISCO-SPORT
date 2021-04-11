@@ -16,8 +16,8 @@ class ProfilesController < ApplicationController
       redirect_to root_path, notice: 'Unauthorized Area'
     end
     if @user.update(user_params)
-      send_status_mail
       redirect_to dashboard_path, notice: 'User Updated!'
+      send_status_mail
     else
       render :edit
     end
