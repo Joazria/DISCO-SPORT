@@ -5,12 +5,12 @@
         <h2 class="text-white">Welcome to your <span class="text-danger">Profile</span> </h2>
       </div>
       <div class="col-6">
-        <h4 class="text-white">We are here to <span class="text-danger">connect </span> and to helps you to  <span class="text-danger"> growth your business</span></h4>
+        <!-- <h4 class="text-white">We are here to <span class="text-danger">connect </span> and to helps you to  <span class="text-danger"> growth your business</span></h4> -->
       </div>
       <hr>
       <div class="d-flex align-items-end flex-column" style="height: 200px;">
         <div class="mt-auto ">
-          <h6 class="text-danger text-right "> <span class="text-white">DISCOSPORT</span> IS THE NEW FAST-GROWING MARKETPLACE OF SUBSAHARAN AFRICA</h6>
+          <!-- <h6 class="text-danger text-right "> <span class="text-white">DISCOSPORT</span> IS THE NEW FAST-GROWING MARKETPLACE OF SUBSAHARAN AFRICA</h6> -->
           <h6 class="text-white text-right"> LIVE FROM LOS ANGELES & KIGALI </h6>
           <% if current_user.status == 'approved' %>
           <p  class="text-right ">  25 OCT. - 19 NOV. 2021  <span class="text-success font-weight-bold"> YOU ARE INVITED</span></p>
@@ -38,6 +38,7 @@
         <div class="card-body">
           <h5 class="card-title text-primary"><%= @user.gender %> <%= @user.first_name %>  <span class="text-uppercase"><%= @user.last_name %></span></h5>
           <h5 class="card-text"><%= @user.job %></h5>
+          <h6 class="card-text">Attending as : <%= @user.member %></h6>
           <div class="d-flex flex-column mt-3 pl-2">
             <h6 class="text-left"><i class="fas fa-at"></i> : <%= @user.email %></h6>
             <h6 class="text-left"><i class="fab fa-whatsapp"> : </i><%= @user.whatsapp %></h6>
@@ -55,7 +56,7 @@
     </div>
     <div class="col-md-8 mt-5">
       <h3 class="text-secondary text-uppercase"><%= @user.company %></h3>
-      <h5 class="text-secondary">Main activity : <%= @user.activity %></h5>
+      <h5 class="text-secondary">Main activity : <%= @user.activity %>. </h5>
       <div class="row">
         <div class="col-4">
           Country : <%= @user.country %>
@@ -82,7 +83,7 @@
 <%= render 'shared/partnership' %>
 <% else %>
 
-  <h5 class="text-primary text-center">SOON MORE INFORMATIONS AVAILABLE </h5>
+  <h5 class="text-primary text-center">SOON MORE INFORMATION AVAILABLE </h5>
 
 <% end %>
 
