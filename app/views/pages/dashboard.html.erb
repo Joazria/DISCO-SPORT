@@ -27,11 +27,12 @@
           < else >
             <= link_to user.status, edit_profile_path(user), class: 'btn btn-lg btn-outline-success text-uppercase justify-content-righ' >
           < end > -->
-        <%= link_to user.status, edit_profile_path(user), class: "btn btn-lg #{user.status == 'Pending' ? 'btn-outline-danger' : 'btn-outline-success'} text-uppercase justify-content-right" %>
+        <%= link_to user.status, edit_profile_path(user), class: "btn btn-lg btn-outline-danger text-uppercase justify-content-right" %>
       </div>
     </div>
   </div>
 <% end %>
+
 <% @users_approved.each do |user| %>
   <div class="card mb-3" >
     <div class="row g-0">
@@ -61,8 +62,9 @@
           < else >
             <= link_to user.status, edit_profile_path(user), class: 'btn btn-lg btn-outline-success text-uppercase justify-content-righ' >
           < end > -->
-        <%= link_to user.status, edit_profile_path(user), class: "btn btn-lg #{user.status == 'Pending' ? 'btn-outline-danger' : 'btn-outline-success'} text-uppercase justify-content-right" %>
+        <%= link_to user.status, edit_profile_path(user), class: "btn btn-lg btn-outline-success text-uppercase justify-content-right" %>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
+
