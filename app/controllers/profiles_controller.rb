@@ -18,12 +18,15 @@ class ProfilesController < ApplicationController
       redirect_to root_path, notice: 'Unauthorized Area'
     end
     if @user.update(user_params)
-      if current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br' || current_user.email == 'patrickzuchowicki@basiclead.com'
+       # current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br' || current_user.email == 'patrickzuchowicki@basiclead.com'
         redirect_to dashboard_path, notice: 'User Updated'
-        send_status_mail
-      else
-      redirect_to profile_path(current_user), notice: 'User Updated!'
-    end
+        if @user.status == "approved"
+          send_status_mail
+        else
+          status_not_approved_email
+        end
+      # else
+      # redirect_to profile_path(current_user), notice: 'User Updated!'
       # redirect_to dashboard_path, notice: 'User Updated!'
     else
       render :edit
@@ -43,6 +46,10 @@ class ProfilesController < ApplicationController
 
   def send_status_mail
     AdminMailer.with(user: self).status_email(@user).deliver_now
+  end
+
+  def status_not_approved_email
+    AdminMailer.with(user: self).status_not_approved_email(@user).deliver_now
   end
 
   def user_params

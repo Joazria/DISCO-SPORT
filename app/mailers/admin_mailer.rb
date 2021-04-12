@@ -25,7 +25,15 @@ class AdminMailer < ApplicationMailer
     @user = user # Instance variable => available in view
     mail(
       to: @user.email,
-      subject: "#{@user.status == 'Approved' ? 'You just got Approved!' : 'Status: Pending'}"
+      subject: "DISCOSPORT : You are all set!"
+    )
+  end
+
+  def status_not_approved_email(user)
+    @user = user # Instance variable => available in view
+    mail(
+      to: @user.email,
+      subject: "DISCOSPORT : Status Not Approved - please contact us"
     )
   end
 end
