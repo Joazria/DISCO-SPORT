@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_in_path_for(resource)
-    if current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br'
+    if current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br' || current_user.email == 'patrickzuchowicki@basiclead.com'
       stored_location_for(resource) || dashboard_path
     else
       stored_location_for(resource) || profile_path(current_user)
