@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   # patch '/profiles/:id', to: 'profiles#update', as: 'profile'
   # put '/profiles/:id', to: 'profiles#update'
 
+  as :user do
+    # get 'users/profile', :to => 'devise/registrations#edit', :as => :user_root
+    get "profiles/#{current_user}", :to => 'profiles#show', :as => :user_root
+  end
+
+
 end

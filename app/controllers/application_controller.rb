@@ -14,6 +14,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:avatar, :email, :password, :company, :country, :activity, :website, :gender, :first_name, :last_name, :phone, :whatsapp, :release, :linkedin, :status, :member, :job])
   end
 
+  # def after_update_path_for(resource)
+  #   # user_path(resource)
+  #   stored_location_for(resource) || profile_path(current_user)
+  # end
+
   private
 
   def after_sign_in_path_for(resource)
@@ -23,5 +28,6 @@ class ApplicationController < ActionController::Base
       stored_location_for(resource) || profile_path(current_user)
     end
   end
+
 
 end
