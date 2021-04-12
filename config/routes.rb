@@ -4,19 +4,15 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-
-  resources :pitchings
-
-
   root to: 'pages#home'
   get '/about_us', to: 'pages#about_us'
   get '/speaker', to: 'pages#speaker'
   # get '/profile', to: 'pages#profile'
-  get '/dashboard', to: 'pages#dashboard'
+  get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
   resources :profiles, only: [:show, :edit, :update]
+  resources :pitchings
   # get '/payments_due/:id', to: 'payments#show_due', as: 'payment_due'
   # patch '/profiles/:id', to: 'profiles#update', as: 'profile'
   # put '/profiles/:id', to: 'profiles#update'
-
 
 end
