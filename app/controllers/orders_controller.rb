@@ -21,5 +21,8 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @order = current_user.orders.find(params[:id])
+    # more secure cuz it filters only the order from the CURRENT USER.
+    # @order = Order.find(params[:id])
   end
 end
