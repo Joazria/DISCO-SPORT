@@ -1,0 +1,49 @@
+
+.card-addon {
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $primary;
+  // font-size: 24px;
+  // font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+// .card-addon {
+//   overflow: hidden;
+//   height: 60px;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   display: flex;
+//   align-items: center;
+// }
+
+.card-addon img {
+  height: 100%;
+  // width: 80px;
+  object-fit: cover;
+}
+
+.card-addon h2 {
+  font-size: 16px;
+  font-weight: bold;
+  // margin: 1;
+}
+
+.card-addon p {
+  // font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-addon .card-addon-infos {
+  padding: 16px;
+}
+

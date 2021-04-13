@@ -8,13 +8,13 @@
       <div class="d-flex justify-content-between">
         <h5 class="font-weight-bold">DELEGATES:</h5>
         <h5 class="font-weight-bold"><%= @users_approved.count %>  APPROVED</h5>
-        <h5 class="font-weight-bold"> <span class="text-danger"><%= @users_pending.count %></span>   PENDING</h5>
+        <h5 class="font-weight-bold"> <span class="text-danger"><%#= @users_pending.count %></span>   PENDING</h5>
         <h6><%= @users_not_approved.count %>  NOT APPROVED</h6>
 
       </div>
     </div>
   </div>
-    <%= render 'shared/search_bar' %>
+    <%#= render 'shared/search_bar' %>
 
 </div>
 
