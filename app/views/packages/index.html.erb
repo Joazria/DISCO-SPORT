@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Packages</h1>
+  <div class="row">
+    <% @packages.each do |package| %>
+      <div class="col-6 col-md-4">
+        <div class="card">
+          <!-- <= image_tag package.photo_url , class: "card-img-top" > -->
+          <div class="card-body">
+            <h5 class="card-title"><%= package.name %></h5>
+            <p>Amount: <%= humanized_money_with_symbol(package.price) %></p>
+            <%= link_to "More details", package_path(package), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
