@@ -1,214 +1,29 @@
-<% @users_pending.each do |user| %>
-  <div class="card mb-3" >
-    <div class="row g-0">
-      <div class="col-md-2">
-        <% if user.avatar.attached? %>
-          <%= image_tag user.avatar, :style => "height: 100%; width: 200px;", :gravity => "face" %>
-        <% else %>
-          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;" %>
-        <% end %>
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title text-uppercase"><%= user.first_name %> <%= user.last_name %></h5>
-          <h6 class="card-text"> <span class="font-weight-bold"><%= user.company %></span>  from <span class="font-weight-bold"><%= user.country %></span>  and attending as <span class="font-weight-bold"><%= user.member %></span></h6>
-          <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.whatsapp %></span> </p>
-          <div class="d-flex">
-            <%= link_to "linkedin", user.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
-            <%= link_to "#{ current_user.company} WEBSITE", current_user.company, class: "btn btn-sm btn-outline-primary text-uppercase m-2" %>
-            <%= link_to "Delegate Profile", root_path, class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
-          </div>
-          <p class="card-text"><small class="text-muted"><%= user.created_at %></small></p>
-        </div>
-      </div>
-      <div class="col-md-2 align-self-center ">
-        <!-- < if user.status == 'pending' >
-            <= link_to user.status, edit_profile_path(user), class: 'btn btn-lg btn-outline-danger text-uppercase justify-content-right' >
-          < else >
-            <= link_to user.status, edit_profile_path(user), class: 'btn btn-lg btn-outline-success text-uppercase justify-content-righ' >
-          < end > -->
-        <%= link_to user.status, edit_profile_path(user), class: "btn btn-lg btn-outline-danger text-uppercase justify-content-right" %>
-      </div>
+<div class="container bg-white pb-3 mb-3">
+
+  <div class="row align-items-center my-3 pt-md-4 ">
+    <div class="col-1">
+      <img class="avatar" src="https://res.cloudinary.com/numama/image/upload/v1617118315/DISCOSPORT/icon_people_discop_hjcv0s.png">
+    </div>
+    <div class="col-md-3">
+      <h5 class="font-weight-bold text-left">DELEGATES :</h5>
+    </div>
+    <div class="col-md-3">
+      <h5 class="font-weight-bold"><%= @users_approved.count %>  APPROVED </h5>
+
+    </div>
+    <div class="col-md-3">
+      <h5 ><span class="text-danger font-weight-bold"><%= @users_pending.count %> </span> PENDING</h5>
+    </div>
+    <div class="col-md-2">
+      <h6><%= @users_not_approved.count %>  REFUSED</h6>
+
     </div>
   </div>
-<% end %>
 
-<% @users_approved.each do |user| %>
-  <div class="card mb-3" >
-    <div class="row g-0">
-      <div class="col-md-2">
-        <% if user.avatar.attached? %>
-          <%= image_tag user.avatar, :style => "height: 100%; width: 200px;", :gravity => "face" %>
-        <% else %>
-          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;" %>
-        <% end %>
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title text-uppercase"><%= user.first_name %> <%= user.last_name %></h5>
-          <h6 class="card-text"> <span class="font-weight-bold"><%= user.company %></span>  from <span class="font-weight-bold"><%= user.country %></span>  and attending as <span class="font-weight-bold"><%= user.member %></span></h6>
-          <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.whatsapp %></span> </p>
-          <div class="d-flex">
-            <%= link_to "linkedin", user.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
-            <%= link_to "#{ current_user.company} WEBSITE", current_user.company, class: "btn btn-sm btn-outline-primary text-uppercase m-2" %>
-            <%= link_to "Delegate Profile", root_path, class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
-          </div>
-          <p class="card-text"><small class="text-muted"><%= user.created_at %></small></p>
-        </div>
-      </div>
-      <div class="col-md-2 align-self-center ">
-        <!-- < if user.status == 'pending' >
-            <= link_to user.status, edit_profile_path(user), class: 'btn btn-lg btn-outline-danger text-uppercase justify-content-right' >
-          < else >
-            <= link_to user.status, edit_profile_path(user), class: 'btn btn-lg btn-outline-success text-uppercase justify-content-righ' >
-          < end > -->
-        <%= link_to user.status, edit_profile_path(user), class: "btn btn-lg btn-outline-success text-uppercase justify-content-right" %>
-      </div>
-    </div>
-  <% end %>
+  <%= render 'shared/search_bar' %>
+
 </div>
 
-<% @users_not_approved.each do |user| %>
-  <div class="card mb-3" >
-    <div class="row g-0">
-      <div class="col-md-2">
-        <% if user.avatar.attached? %>
-          <%= image_tag user.avatar, :style => "height: 100%; width: 200px;", :gravity => "face" %>
-        <% else %>
-          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;" %>
-        <% end %>
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title text-uppercase"><%= user.first_name %> <%= user.last_name %></h5>
-          <h6 class="card-text"> <span class="font-weight-bold"><%= user.company %></span>  from <span class="font-weight-bold"><%= user.country %></span>  and attending as <span class="font-weight-bold"><%= user.member %></span></h6>
-          <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.whatsapp %></span> </p>
-          <div class="d-flex">
-            <%= link_to "linkedin", user.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
-            <%= link_to "#{ current_user.company} WEBSITE", current_user.company, class: "btn btn-sm btn-outline-primary text-uppercase m-2" %>
-            <%= link_to "Delegate Profile", root_path, class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
-          </div>
-          <p class="card-text"><small class="text-muted"><%= user.created_at %></small></p>
-        </div>
-      </div>
-      <div class="col-md-2 align-self-center ">
-        <!-- < if user.status == 'pending' >
-            <= link_to user.status, edit_profile_path(user), class: 'btn btn-lg btn-outline-danger text-uppercase justify-content-right' >
-          < else >
-            <= link_to user.status, edit_profile_path(user), class: 'btn btn-lg btn-outline-success text-uppercase justify-content-righ' >
-          < end > -->
-        <%= link_to user.status, edit_profile_path(user), class: "btn btn-sm btn-outline-danger text-uppercase justify-content-right" %>
-      </div>
-    </div>
-  </div>
-<% end %>
-<!--
-<button class="btn btn-outline-primary btn-lg btn-block text-uppercase" data-toggle="modal" data-target="#validateuser">+ INFOS: have an overview on all Bootcamp Program Week </button>
-
-<div class="modal" id="bootcampprogram">
-  <div class="modal-dialog modal-dialog-center modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title"><span class="text-danger">BOOTCAMP</span> <span class="text-primary">PROGRAM OVERVIEW</span></h3>
-        <button class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-3 text-center">
-           <img src="https://res.cloudinary.com/numama/image/upload/v1617196770/DISCOSPORT/icon_keynote_discop_c4gpts.png"  width="80" height="80" />
-
-          </div>
-          <div class="col-9">
-            <h4 class="text-primary">KEYNOTE SESSIONS</h4>
-              <p>1. Africa is the next frontier of sports television.</p>
-              <p>2. New foundations for the Confederation of African Football.</p>
-              <p>3. What is the current policy of acquiring international, regional and local sports rights.</p>
-              <p>4. How to determine the value of African sports competitions on the global marketplace.</p>
-              <p>5. The RDC welcomes the 2022 edition of the Jeux de la Francophonie.</p>
-          </div>
-        </div>
-
-        <div class="row mt-3">
-          <div class="col-3 text-center">
-           <img src="https://res.cloudinary.com/numama/image/upload/v1618195732/DISCOSPORT/esport_blue_zrbwz5.png"  width="80" height="80" />
-
-          </div>
-          <div class="col-9">
-            <h4 class="text-primary">ESPORTS WORKSHOPS</h4>
-              <p>1. Challenges faced by broadcasters as they attempt to capture live gaming competitions.</p>
-              <p>2. Producing the African Esports Championship Tekken Grand Finals for Kenya’s KTN.</p>
-              <p>3. Meet What’s Good Studios, a company that tells African stories through video games.</p>
-              <p>4. Inclusivity toward women will be the key to the continued success of esports.</p>
-              <p>5. How 5G can help reach gaming fans at every touch point.</p>
-          </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col-3 text-center">
-           <img src="https://res.cloudinary.com/numama/image/upload/v1618195732/DISCOSPORT/mma-blue_bkqcwc.png" width="80" height="80"/>
-
-          </div>
-          <div class="col-9">
-            <h4 class="text-primary">MULTIPLE MARTIAL ARTS (MMA) WORKSHOPS</h4>
-              <p>1. Why is the ever-evolving world of martial arts moving up the charts?</p>
-              <p>2. Unique African martial arts that are often overlooked.</p>
-              <p>3. Bridging the gap between the screen and the mat.</p>
-              <p>4. UFC’s strategy for Africa.</p>
-              <p>5. Close on the Cote D’Ivoire’s Federation Ivoirienne de Taekwendo.</p>
-          </div>
-        </div>
-
-        <div class="row mt-3">
-          <div class="col-3 text-center">
-           <img src="https://res.cloudinary.com/numama/image/upload/v1617196770/DISCOSPORT/icon_5G_discop_littfn.png" width="80" height="80" />
-
-          </div>
-          <div class="col-9">
-            <h4 class="text-primary">‘5G’ PRESENTATIONS</h4>
-              <p>1. Sports television and 5G: the odd couple.</p>
-              <p>2. How 5G can help increase e-sports’ massive momentum.</p>
-              <p>3. Finding the money in 5G sports broadcasting.</p>
-              <p>4. Running a successful sports federation in a 5G world.</p>
-              <p>5. Innovating the 5G stadium experience.</p>
-          </div>
-        </div>
-
-        <div class="row mt-3">
-          <div class="col-3 text-center">
-           <img src="https://res.cloudinary.com/numama/image/upload/v1617196770/DISCOSPORT/icon_usa_discop_kixien.png" width="80" height="80" />
-
-          </div>
-          <div class="col-9">
-            <h4 class="text-primary">‘MADE IN USA’ TALKS</h4>
-              <p>1. The fast-growing world of athlete-founded media and commerce companies.</p>
-              <p>2. Selling sports competition highlights as digital tokens on the blockchain.</p>
-              <p>3. Is betting the future of sports entertainment?</p>
-              <p>4. Licensing a sports brand to access the lucrative fan market.</p>
-              <p>5. How to sell air-time and sponsorships to sports minded brands and marketers.</p>
-          </div>
-        </div>
-
-        <div class="row mt-3">
-          <div class="col-3 text-center">
-           <img src="https://res.cloudinary.com/numama/image/upload/v1617196770/DISCOSPORT/icon_case_discop_jnc1z1.png" width="80" height="80" />
-
-          </div>
-          <div class="col-9">
-            <h4 class="text-primary">CASE STUDIES</h4>
-              <p>1. Challenges faced by broadcasters as they attempt to capture live gaming competitions.</p>
-              <p>2. With 200+ million people and 185 million mobile subscribers, Nigeria boasts a sports betting sector with enormous and untapped opportunities.</p>
-              <p>3. Why are short formats so growingly popular ?</p>
-              <p>4. Running a professional football club in Cameroon, the Rainbow Football Club, where one third of the 26 million Cameroonians speak English and the others speak French.</p>
-              <p>5. What is the most robust legal framework to protect sports television rights?</p>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
-      </div>
-
-    </div>
-  </div>
-</div>
+  <%= render 'shared/dashboard_validation' %>
 
 
- -->
