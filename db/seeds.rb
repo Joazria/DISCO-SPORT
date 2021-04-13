@@ -8,11 +8,11 @@
 
 # test_user = User.create({company: 'Test',email: 'test1@test.com',password: '123456',country: 'Liberdade',activity: 'Marketing',website: 'www.birds.art.br',gender: 'Mr',first_name: "pat",last_name: "super",phone: "2199999899",whatsapp:"2199999899",linkedin: "https://www.linkedin.com/in/joa-azria/",release: "hello ",status: nil,member: nil,job: nil,category: "pb"})
 puts 'Cleaning database...'
-Package.destroy_all
+Package.destroy_all if Rails.env.development?
 
 puts 'Creating teddies...'
-Package.create!(sku: 'Add-on #1', name: 'Frontline Visibility')
-Package.create!(sku: 'Add-on #2', name: 'Newsletter')
-Package.create!(sku: 'Add-on #3', name: 'Podcast')
+Package.create!(price: 1500, sku: 'Add-on #1', name: 'Frontline Visibility')
+Package.create!(price_cents: 749999, sku: 'Add-on #2', name: 'Newsletter')
+Package.create!(price: 7500, sku: 'Add-on #3', name: 'Podcast')
 
 puts 'Finished!'

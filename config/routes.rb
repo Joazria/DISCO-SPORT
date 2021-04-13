@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {
     sessions: 'users/sessions'
-  }
+  } # pra que serve esse controllers: { sessions: 'users/sessions' } ?
 
   root to: 'pages#home'
   get '/about_us', to: 'pages#about_us'
