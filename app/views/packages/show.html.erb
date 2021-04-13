@@ -7,6 +7,10 @@
       <h1><%= @package.name %></h1>
       <p>Some awesome description of our amazing package.</p>
       <p>Amount: <%= humanized_money_with_symbol(@package.price) %></p>
+      <%= form_tag orders_path do %>
+        <%= hidden_field_tag 'package_id', @package.id %>
+        <%= submit_tag 'Book', class: 'btn btn-primary' %>
+      <% end %>
     </div>
   </div>
 </div>

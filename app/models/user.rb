@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :company, presence: true
   has_one :pitchings
   has_one_attached :avatar
+  has_many :orders
 
   attribute :status, :string, default: 'pending'
 

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
   resources :profiles, only: [:show, :edit, :update]
   resources :packages, only: [:index, :show]
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
   resources :pitchings
   # get '/payments_due/:id', to: 'payments#show_due', as: 'payment_due'
   # patch '/profiles/:id', to: 'profiles#update', as: 'profile'
