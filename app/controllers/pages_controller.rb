@@ -2,17 +2,6 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :about_us, :speaker]
   # before_action :set_user, only: [:profile, :show, :edit, :update, :destroy]
 
-  def home
-  end
-
-  def profile
-    # @user = User.find(params[:id])
-    # @user = User.find(params[:id])
-    # user = Users.find(params[:id])
-    user = current_user
-    @packages = Package.all
-  end
-
   def dashboard
     # @users = User.where("last_name ILIKE ?", "%#{params[:query]}%")
     @users = User.all
