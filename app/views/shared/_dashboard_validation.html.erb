@@ -24,6 +24,7 @@
         </div>
       </div>
       <div class="col-md-2 align-self-center ">
+        <%= user.status %>
         <%#= link_to user.status, edit_profile_path(user), class: "btn btn-lg btn-outline-danger text-uppercase justify-content-right" %>
         <%= simple_form_for user, url: profile_path(user), method: :patch do |f| %>
           <%= f.hidden_field :status, value: 'approved' %>
