@@ -10,6 +10,7 @@ class PagesController < ApplicationController
     # @user = User.find(params[:id])
     # user = Users.find(params[:id])
     user = current_user
+    @packages = Package.all
   end
 
   def dashboard

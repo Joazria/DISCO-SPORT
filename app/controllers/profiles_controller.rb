@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find(params[:id])
     # @users_approved = User.where(status: 'approved').sort_by { |event| [event.created_at] }
+        @packages = Package.all
 
   end
 

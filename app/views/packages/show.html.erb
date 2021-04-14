@@ -22,12 +22,15 @@
     <div class="col-sm-12 col-md-6 mt-5">
         <div class="sticky-top">
             <div class="card-order">
-            <img src="https://res.cloudinary.com/numama/image/upload/e_improve,w_300,h_600,c_thumb,g_auto/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" />
+            <!-- <img src="https://res.cloudinary.com/numama/image/upload/e_improve,w_300,h_600,c_thumb,g_auto/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" /> -->
+            <%= cl_image_tag(@package.image,
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
             <div class="card-order-infos">
               <div class="d-flex justify-content-between">
                 <h2 class="text-uppercase text-primary"> <%= @package.sku %> | <%= @package.name %></h2>
               </div>
-              <p class="text-uppercase text-primary"> ADD-ON #1 | FRONTLINE VISIBILITY + <%= @package.description %></p>
+              <p class="text-uppercase text-primary"> ADD-ON #1 | FRONTLINE VISIBILITY</p>
+              <p class="text-uppercase font-weight-bold text-danger">+ <%= @package.description %></p>
 
               <h6 class="text-uppercase d-flex justify-content-end"> <%= humanized_money_with_symbol(@package.price) %></h6>
                 <%= form_tag orders_path do %>

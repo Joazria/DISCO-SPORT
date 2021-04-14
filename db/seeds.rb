@@ -8,7 +8,7 @@
 
 # test_user = User.create({company: 'Test',email: 'test1@test.com',password: '123456',country: 'Liberdade',activity: 'Marketing',website: 'www.birds.art.br',gender: 'Mr',first_name: "pat",last_name: "super",phone: "2199999899",whatsapp:"2199999899",linkedin: "https://www.linkedin.com/in/joa-azria/",release: "hello ",status: nil,member: nil,job: nil,category: "pb"})
 puts 'Cleaning database...'
-# Package.destroy_all if Rails.env.development?
+Package.destroy_all if Rails.env.development?
 
 puts 'Creating Package DiscoSport2021|Africa...'
 Package.create!(price_cents: 150000, sku: 'Add-on #1', name: 'Frontline Visibility', description: 'Frontline Visibility', image:'https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_foot_p5cpfx.png')
