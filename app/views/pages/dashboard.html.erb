@@ -1,24 +1,19 @@
-
 <div class=" bg-white p-3 m-3">
   <div class="row ">
     <div class="col-1">
-<img src="https://res.cloudinary.com/numama/image/upload/v1617118315/DISCOSPORT/icon_people_discop_hjcv0s.png" alt="Responsive image" class="img-fluid avatar">
+      <img src="https://res.cloudinary.com/numama/image/upload/v1617118315/DISCOSPORT/icon_people_discop_hjcv0s.png" alt="Responsive image" class="img-fluid avatar">
     </div>
     <div class="col-11 text-primary">
       <div class="d-flex justify-content-between">
         <h5 class="font-weight-bold">DELEGATES:</h5>
-        <h5 class="font-weight-bold"><%= @users_approved.count %>  APPROVED</h5>
+        <h5 class="font-weight-bold"><%#= @users_approved.count %>  APPROVED</h5>
+        <h5 class="font-weight-bold"><%= @users.count %>  APPROVED</h5>
         <h5 class="font-weight-bold"> <span class="text-danger"><%#= @users_pending.count %></span>   PENDING</h5>
-        <h6><%= @users_not_approved.count %>  NOT APPROVED</h6>
-
+        <h6><%#= @users_not_approved.count %>  NOT APPROVED</h6>
+        <h6><%= @users.count %>  NOT APPROVED</h6>
       </div>
     </div>
   </div>
-    <%#= render 'shared/search_bar' %>
-
+  <%#= render 'shared/search_bar' %>
 </div>
-
-
-
-
 <%= render 'shared/dashboard_validation' %>
