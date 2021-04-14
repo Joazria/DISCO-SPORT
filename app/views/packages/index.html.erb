@@ -3,14 +3,19 @@
   <div class="row">
     <% @packages.each do |package| %>
       <div class="col-6 col-md-4">
-        <div class="card">
-          <!-- <= image_tag package.photo_url , class: "card-img-top" > -->
-          <div class="card-body">
-            <h5 class="card-title"><%= package.name %></h5>
-            <p>Amount: <%= humanized_money_with_symbol(package.price) %></p>
-            <%= link_to "More details", package_path(package), class: "btn btn-primary" %>
+
+        <div class="card-addon my-1">
+          <img src="<%= package.image %>" />
+          <div class="card-addon-infos">
+            <div class="d-flex justify-content-between">
+              <h2 class="text-uppercase text-primary"> <%= package.sku %> | <%= package.name %></h2>
+              <h6 class="mt-1 d-flex justify-content-end text-muted"><small class="text-muted"> <%= package.price %> </small></h6>
+            </div>
+            <p> <%= package.description %></p>
+            <%= link_to "MORE DETAILS ", package_path(package), class: "btn mt-2 btn-outline-primary btn-sm btn-block" %>
           </div>
         </div>
+
       </div>
     <% end %>
   </div>

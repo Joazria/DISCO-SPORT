@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_13_161356) do
+ActiveRecord::Schema.define(version: 2021_04_13_214741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 2021_04_13_161356) do
     t.string "sku"
     t.string "name"
     t.integer "price_cents", default: 0, null: false
+    t.text "description"
+    t.string "image"
   end
 
   create_table "pitchings", force: :cascade do |t|
