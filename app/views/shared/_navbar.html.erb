@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-discosport sticky-top">
+<div class="navbar navbar-expand-sm navbar-light navbar-discosport fixed-top">
   <%= link_to "/", class: "navbar-brand" do %>
     <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616778797/DISCOSPORT/LOGO1_DISCOSPORT_MASTER_wtwyli.png" %>
   <% end %>
@@ -20,10 +20,7 @@
               <%= link_to "About Discop", about_us_path, class: "dropdown-item" %>
               <a class="dropdown-item" href="mailto:contact@discosport.tv?subject=Hello">Contact Us</a>
               <%= link_to 'Profile', profile_path(current_user) , class: "dropdown-item" %>
-              <!--               <%#= link_to "About DiscoSport", "/about_us", class: "dropdown-item" %>
-              <%#= mail_to "contact@discosport.tv", "Contact Us", class: "dropdown-item" %>
 
- -->
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
