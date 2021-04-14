@@ -1,0 +1,38 @@
+
+.card-order {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $primary;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: sticky;
+}
+
+
+.card-order img {
+  height: 60%;
+  object-fit: cover;
+
+}
+
+.card-order h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card-order p {
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-order .card-order-infos {
+  padding: 16px;
+}
+
