@@ -1,19 +1,36 @@
-<div class="container">
-  <h1>Packages</h1>
-  <div class="row">
+ 
+<div class="row">
+  <div class="col-sm-12 col-md-6 ">
+    <div class="card m-3 sticky-top ">
+      <img class="card-img-top" src="https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_basket_yf0h9k.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"> <span class="font-weight-bold text-primary">ADD-ON#1</span> | FRONTLINE VISIBILITY</h5>
+        <hr>
+        <div class="d-flex flex-column">
+          <p class="card-text">  <span class="font-weight-bold">Personalized marketplace</span>  research and database generation assistance. </p>
+          <p class="card-text"> <span class="font-weight-bold">+</span>  <span class="font-weight-bold">company presentation</span>  [pre-recorded] before or after one of the webcasts. </p>
+          <p class="card-text"> <span class="font-weight-bold">+ Double-page advertorial</span>  in the 2021 DISCOSPORT Almanac. </p>
+          <p class="card-text"> <span class="font-weight-bold">+ Three presentation newsletters</span>   sent to delegates. </p>
+          <p class="card-text"> <span class="font-weight-bold">+ Speaking opportunities</span>  during the Boot Camp Week. </p>
+          <p class="card-text"> <span class="font-weight-bold">+ Company logo </span> inside the ‘Thank You to Our Partners’ web/Almanac page. </p>
+          <p class="card-text"> <span class="font-weight-bold">+ Access to reports</span>  on Sub-Saharan Africa’s sports television industry. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 mt-3">
     <% @packages.each do |package| %>
-      <div class="col-6 col-md-4">
-        <div class="card">
-          <%#= image_tag package.photo_url , class: "card-img-top" %>
-          <div class="card-body">
-            <h5 class="card-title"><%= package.name %></h5>
-            <p>Amount: <%= humanized_money_with_symbol(package.price) %></p>
-            <%#= link_to "More details", package_path(package), class: "btn btn-primary" %>
-            <%= form_tag orders_path do %>
-              <%= hidden_field_tag 'package_id', package.id %>
-              <%= submit_tag 'Book', class: 'btn btn-primary' %>
-            <% end %>
+      <div class="card-order mb-2">
+        <%= cl_image_tag(package.image,
+                width: 150, height: 150, crop: :thumb, gravity: :face) %>
+        <div class="card-order-infos">
+          <div class="d-flex justify-content-between">
+            <h2 class="text-uppercase text-primary"> <%= package.sku %> | <%= package.name %></h2>
           </div>
+          <p class="text-uppercase text-primary"> ADD-ON #1 | FRONTLINE VISIBILITY </p>
+          <p class="text-uppercase font-weight-bold"> + <%= package.description %></p>
+          <h6 class="text-uppercase d-flex justify-content-end"> <%= humanized_money_with_symbol(package.price) %></h6>
+          <%= link_to "MORE DETAILS ", package_path(package), class: "btn mt-2 btn-outline-primary btn-sm btn-block" %>
         </div>
       </div>
     <% end %>
