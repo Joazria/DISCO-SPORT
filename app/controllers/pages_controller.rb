@@ -14,8 +14,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-
-      # @users = User.where("last_name ILIKE ?", "%#{params[:query]}%")
+    # if params[:query].present?
+    #    @users = User.where("last_name ILIKE ?", "%#{params[:query]}%")
+    # end
       @users = User.all.sort_by { |event| [event.created_at] }
       @users_pending = User.where(status: 'pending').sort_by { |event| [event.created_at] }
       @users_approved = User.where(status: 'approved').sort_by { |event| [event.created_at] }

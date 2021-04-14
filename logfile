@@ -1,0 +1,7 @@
+2021-04-14 16:02:17.999 -03 [1262] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin17.7.0, compiled by Apple LLVM version 10.0.0 (clang-1000.10.44.4), 64-bit
+2021-04-14 16:02:18.000 -03 [1262] LOG:  listening on IPv6 address "::1", port 5432
+2021-04-14 16:02:18.000 -03 [1262] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-04-14 16:02:18.001 -03 [1262] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-04-14 16:02:18.004 -03 [1263] LOG:  database system was shut down at 2021-04-14 16:01:48 -03
+2021-04-14 16:02:18.008 -03 [1262] LOG:  database system is ready to accept connections
+2021-04-14 16:02:28.284 -03 [1285] FATAL:  database "DISCO_SPORT_development" does not exist
