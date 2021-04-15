@@ -43,15 +43,26 @@
           </div>
         </div>
         <div class="col-md-2 align-self-center ">
-          <%= result.status %>
-          <%#= link_to result.status, edit_profile_path(result), class: "btn btn-lg btn-outline-danger text-uppercase justify-content-right" %>
-          <%= simple_form_for result, url: profile_path(result), method: :patch do |f| %>
-            <%= f.hidden_field :status, value: 'approved' %>
-            <%= f.submit 'Approve', class: 'btn btn-success' %>
-          <% end %>
-          <%= simple_form_for result, url: profile_path(result), method: :patch do |f| %>
-            <%= f.hidden_field :status, value: 'not approved' %>
-            <%= f.submit 'Not Approve', class: 'btn btn-danger' %>
+          <% if result.status == 'pending' %>
+            <%= result.status %>
+            <%= simple_form_for result, url: profile_path(result), method: :patch do |f| %>
+              <%= f.hidden_field :status, value: 'approved' %>
+              <%= f.submit 'Approve', class: 'btn btn-success' %>
+            <% end %>
+            <%= simple_form_for result, url: profile_path(result), method: :patch do |f| %>
+              <%= f.hidden_field :status, value: 'not approved' %>
+              <%= f.submit 'Not Approve', class: 'btn btn-danger' %>
+            <% end %>
+          <% elsif result.status == 'approved' %>
+            <%= simple_form_for result, url: profile_path(result), method: :patch do |f| %>
+              <%= f.hidden_field :status, value: 'not approved' %>
+              <%= f.submit result.status, class: 'btn btn-primary' %>
+            <% end %>
+          <% else %>
+            <%= simple_form_for result, url: profile_path(result), method: :patch do |f| %>
+              <%= f.hidden_field :status, value: 'approved' %>
+              <%= f.submit result.status, class: 'btn btn-primary' %>
+            <% end %>
           <% end %>
         </div>
       </div>
