@@ -35,7 +35,7 @@ class ProfilesController < ApplicationController
       @results = User.all.where("lower(full_name) LIKE :search", search: "%#{@parameter}%")
     end
   end
-
+  
   private
 
   def send_status_mail
