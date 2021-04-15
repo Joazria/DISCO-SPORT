@@ -40,7 +40,14 @@
         </div>
         <class class="card-footer">
           <!-- <button class="btn btn-block btn-danger">hello</button> -->
+          <% if current_user.email == "patrickzuchowicki@basiclead.com" || "joa@birds.art.br"%>
+          <%= link_to "EDIT PROFILE", edit_user_registration_path, class: "btn btn-outline-danger" %>
+          <%= link_to "DASHBOARD", dashboard_path, class: "btn btn-danger" %>
+
+          <% else %>
           <%= link_to "EDIT YOUR PROFILE", edit_user_registration_path, class: "btn btn-block btn-danger" %>
+          <% end %>
+
         </class>
       </div>
     </div>
