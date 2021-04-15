@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get '/about_us', to: 'pages#about_us'
   get '/speaker', to: 'pages#speaker'
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
-  get '/search' => 'profiles#search', :as => 'search_profile'
   resources :profiles, only: [:show, :edit, :update]
   resources :packages, only: [:index, :show]
   resources :orders, only: [:show, :create] do
