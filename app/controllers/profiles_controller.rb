@@ -25,6 +25,10 @@ class ProfilesController < ApplicationController
     @user.status == "approved" ? send_status_mail : status_not_approved_email
   end
 
+  def search
+
+  end
+
   private
 
   def send_status_mail
