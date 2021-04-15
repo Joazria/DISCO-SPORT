@@ -24,6 +24,7 @@ class User < ApplicationRecord
   private
 
   def send_admin_mail
+    User.find(self.id).update(full_name: "#{first_name} #{last_name}")
     AdminMailer.with(user: self).new_user_waiting_for_approval.deliver_now
     AdminMailer.with(user: self).new_user_welcome.deliver_now
     # AdminMailer.new_user_waiting_for_approval(email).deliver_now
