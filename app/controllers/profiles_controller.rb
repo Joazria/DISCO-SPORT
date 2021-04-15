@@ -25,6 +25,16 @@ class ProfilesController < ApplicationController
     @user.status == "approved" ? send_status_mail : status_not_approved_email
   end
 
+  def search
+    if params[:search].blank?
+      # redirect_to dashboard_path, alert: 'Empty field!'
+      redirect_to dashboard_path
+    else
+      @parameter = params[:search].downcase
+      @results = User.all.where("lower(first_name) LIKE :search OR lower(last_name) LIKE :search", search: "%#{@parameter}%")
+    end
+  end
+
   private
 
   def send_status_mail
