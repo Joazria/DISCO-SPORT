@@ -3,10 +3,8 @@ class PagesController < ApplicationController
   # before_action :set_user, only: [:profile, :show, :edit, :update, :destroy]
 
   def dashboard
-    # @users = User.where("last_name ILIKE ?", "%#{params[:query]}%")
     if params[:search].blank?
       # redirect_to dashboard_path, alert: 'Empty field!'
-      # redirect_to dashboard_path
     else
       @parameter = params[:search].downcase
       # @results = User.all.where("lower(first_name) LIKE :search OR lower(last_name) LIKE :search", search: "%#{@parameter}%")
