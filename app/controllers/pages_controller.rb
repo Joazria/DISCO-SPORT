@@ -8,7 +8,9 @@ class PagesController < ApplicationController
     else
       @parameter = params[:search].downcase
       # @results = User.all.where("lower(first_name) LIKE :search OR lower(last_name) LIKE :search", search: "%#{@parameter}%")
-      @results = User.all.where("lower(full_name) LIKE :search", search: "%#{@parameter}%")
+      @results = User.all.where("lower(full_name) LIKE :search OR lower(company) LIKE :search OR lower(activity) LIKE :search OR lower(status) LIKE :search OR lower(member) LIKE :search",
+                                search: "%#{@parameter}%"
+                                )
     end
     @users = User.all
     @users_pending = User.where(status: 'pending').sort_by { |event| [event.created_at] }
