@@ -17,7 +17,7 @@
           <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.whatsapp %></span> </p>
           <div class="d-flex">
             <%= link_to "linkedin", user.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
-            <%= link_to "#{ user.company} WEBSITE", user.company, class: "btn btn-sm btn-outline-primary text-uppercase m-2" %>
+            <%= link_to "#{ current_user.company} WEBSITE", current_user.company, class: "btn btn-sm btn-outline-primary text-uppercase m-2" %>
             <%= link_to "Delegate Profile", root_path, class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
           </div>
           <p class="card-text"><small class="text-muted"><%= user.created_at %></small></p>
@@ -55,7 +55,7 @@
           <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.whatsapp %></span> </p>
           <div class="d-flex">
             <%= link_to "linkedin", user.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
-            <%= link_to "#{ user.company} WEBSITE", user.company, class: "btn btn-sm btn-outline-primary text-uppercase m-2" %>
+            <%= link_to "#{ current_user.company} WEBSITE", current_user.company, class: "btn btn-sm btn-outline-primary text-uppercase m-2" %>
             <%= link_to "Delegate Profile", root_path, class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
           </div>
           <p class="card-text"><small class="text-muted"><%#= user.created_at %></small></p>
@@ -88,7 +88,7 @@
           <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.whatsapp %></span> </p>
           <div class="d-flex">
             <%= link_to "linkedin", user.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
-            <%= link_to "#{ user.company} WEBSITE", user.company, class: "btn btn-sm btn-outline-primary text-uppercase m-2" %>
+            <%= link_to "#{ current_user.company} WEBSITE", current_user.company, class: "btn btn-sm btn-outline-primary text-uppercase m-2" %>
             <%= link_to "Delegate Profile", root_path, class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
           </div>
           <p class="card-text"><small class="text-muted"><%= user.created_at %></small></p>
