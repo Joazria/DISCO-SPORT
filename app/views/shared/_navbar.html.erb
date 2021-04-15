@@ -21,6 +21,9 @@
               <a class="dropdown-item" href="mailto:contact@discosport.tv?subject=Hello">Contact Us</a>
               <%= link_to 'Profile', profile_path(current_user) , class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                        <% if current_user.email == "patrickzuchowicki@basiclead.com" || "joa@birds.art.br"%>
+              <%= link_to "DASHBOARD", dashboard_path, class: "dropdown-item text-danger" %>
+          <% end %>
             </div>
           </li>
         <% else %>
