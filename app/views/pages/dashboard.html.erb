@@ -14,8 +14,10 @@
   </div>
   <%= render 'shared/search_bar' %>
 </div>
-<%= render 'shared/dashboard_validation' %>
-teste
-<%# @results.each do |result| %>
-  <%#= result.full_name %>
-  <%# end %>
+<% if @results.nil?  %>
+  <%= render 'shared/dashboard_validation' %>
+<% else %>
+  <% @results.each do |result| %>
+    <%= result.full_name %>
+  <% end %>
+<% end %>
