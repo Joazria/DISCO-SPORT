@@ -21,7 +21,4 @@ Rails.application.routes.draw do
   # patch '/profiles/:id', to: 'profiles#update', as: 'profile'
   # put '/profiles/:id', to: 'profiles#update'
 
-
-
-
 end
