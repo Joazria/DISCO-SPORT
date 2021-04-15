@@ -26,7 +26,12 @@ class ProfilesController < ApplicationController
   end
 
   def search
-
+    if params[:search].blank?
+      redirect_to dashboard_path, alert: 'Empty field!'
+    else
+      @parameter = params[:search].downcase
+      @results = User.all.where("lower(first_name) LIKE :search", search: "%#{@parameter}%")
+    end
   end
 
   private
