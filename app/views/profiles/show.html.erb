@@ -75,7 +75,7 @@
       </div>
       <div class="row m-2 text-right">
         <%#= link_to "VISITE #{ @user.company} WEBSITE", @user.website, class: "btn btn-block btn-sm btn-outline-primary text-uppercase" %>
-        <%= link_to "VISITE #{ @user.company} WEBSITE", "http://#{ @user.website}", :class => "btn btn-block btn-outline-primary text-uppercase", :target => '_blank' %>
+        <%= link_to "VISITE #{@user.company} WEBSITE", "http://#{@user.website}" , :class => "btn btn-block btn-outline-primary text-uppercase", :target => '_blank' %>
 
       </div>
       <hr>
