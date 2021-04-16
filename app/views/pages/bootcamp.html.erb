@@ -1,4 +1,32 @@
-<div class="card-deck">
+ <div id="image" class="banner" style="background-image: url(https://res.cloudinary.com/numama/image/upload/v1616778400/DISCOSPORT/BANNER_DISCOSPORT_wbyk1v.png);">
+          <div class="container p-3">
+            <div class="container">
+              <h2 class="text-white text-uppercase">BOOTCAMP <span class="text-danger">WEEK</span> </h2>
+              <h4 class="text-danger">25 OCT. - 29 OCT. 2021 </h4>
+              <h5 class="text-white"> LIVE FROM LOS ANGELES & KIGALI </h5>
+
+              <% if user_signed_in? %>
+                        <% if current_user.status == 'approved' %>
+                            <p  class="text-right ">   <span class="text-success font-weight-bold"> YOU ARE INVITED</span></p>
+                            <% else %>
+                            <p  class="text-right ">  25 OCT. - 19 NOV. 2021  <span class="text-danger font-weight-bold"> YOUR PROFILE WILL BE SOON APPROVED</span></p>
+                            <% end %>
+
+                    <a class="btn btn-lg btn-outline-success" href="mailto:contact@discosport.tv?subject=Hello">CONTACT US</a>
+                      <% else %>
+                        <p> <span class="text-danger font-weight-bold"> BY INVITATION ONLY  </span></p>
+                        <%= link_to "SIGN UP NOW", new_user_registration_path, class: " btn btn-lg btn-outline-success" %>
+
+              <% end %>
+
+            </div>
+          </div>
+    </div>
+
+
+
+<div class="container bg-white pt-3">
+  <div class="card-deck ">
 
         <div class="card mb-3">
           <img class="card-img-top"
@@ -36,18 +64,14 @@
                 <!-- <h6 class="card-text">Secretary General of Organisation Internationale de la Francophonie</h6> -->
               </div>
         </div>
+  </div>
 </div>
-<button class="btn btn-primary btn-lg btn-block text-uppercase" data-toggle="modal" data-target="#bootcampprogram">VIEW BOOTCAMP SESSIONS ! </button>
 
-<div class="modal" id="bootcampprogram">
-  <div class="modal-dialog modal-dialog-center modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title"><span class="text-danger">BOOTCAMP</span> <span class="text-primary">PROGRAM OVERVIEW</span></h3>
-        <button class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
+  <div class="bg-white p-3">
+    <hr>
+
+    <h1 class="text-danger text-uppercase text-center mt-4">syllabus</h1>
+        <div class="row mt-5">
           <div class="col-3 text-center">
            <img src="https://res.cloudinary.com/numama/image/upload/v1617196770/DISCOSPORT/icon_keynote_discop_c4gpts.png"  width="80" height="80" />
 
@@ -135,11 +159,13 @@
               <p>5. What is the most robust legal framework to protect sports television rights?</p>
           </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
-      </div>
+                <% unless user_signed_in? %>
 
-    </div>
+                  <%= link_to "SIGN UP NOW", new_user_registration_path, class: " my-5 btn btn-lg btn-outline-primary btn-block" %>
+                    <% end %>
+
+
+
   </div>
-</div>
+
+

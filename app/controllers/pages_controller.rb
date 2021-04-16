@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :about_us, :speaker]
+  skip_before_action :authenticate_user!, only: [:home, :about_us, :speaker, :bootcamp]
   # before_action :set_user, only: [:profile, :show, :edit, :update, :destroy]
 
   def dashboard
