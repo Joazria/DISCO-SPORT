@@ -2,7 +2,7 @@
 .card-addon {
   background-size: cover;
   background-position: center;
-  height: 150px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +25,7 @@
 
 .card-addon img {
   height: 100%;
-  // width: 80px;
+  max-width: 130px;
   object-fit: cover;
 }
 

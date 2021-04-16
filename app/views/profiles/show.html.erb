@@ -25,7 +25,6 @@
   </div>
 </div>
 <hr>
-<div class="container">
   <div class="row">
     <div class="col-md-4">
       <div class="card mb-3">
@@ -75,14 +74,16 @@
         </div>
       </div>
       <div class="row m-2 text-right">
-        <%= link_to "VISITE #{ @user.company} WEBSITE", @user.company, class: "btn btn-block btn-sm btn-outline-primary text-uppercase" %>
+        <%#= link_to "VISITE #{ @user.company} WEBSITE", @user.website, class: "btn btn-block btn-sm btn-outline-primary text-uppercase" %>
+        <%= link_to "VISITE #{ @user.company} WEBSITE", "http://#{ @user.website}", :class => "btn btn-block btn-outline-primary text-uppercase", :target => '_blank' %>
+
       </div>
       <hr>
       <p class="text-justify"><span class="text-danger">PRESENTATION: </span> <%= @user.release %></p>
     </div>
   </div>
   <hr>
-  <div class="mt-5 container">
+  <div class="mt-5">
 <% if current_user.status == 'approved' %>
 
 <%= render 'shared/pitching_participate' %>
