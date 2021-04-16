@@ -84,7 +84,11 @@
 </div>
 <% if current_user.status = 'approved'%>
 
-<%= render 'shared/pitching_participate' %>
+<%#= render 'shared/pitching_participate' %>
+<h1 class="text-primary m-3"> <span class="text-success text-uppercase"> you are subscribed to our newsletter </span>  : 30 HIGHTLEVEL WEBCASTS</h1>
+
+<%= render 'shared/newsletters_prez' %>
+
 <%= render 'shared/partnership' %>
 <% else %>
     <div class="col-9">

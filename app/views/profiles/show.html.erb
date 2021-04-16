@@ -85,8 +85,14 @@
   <hr>
   <div class="mt-5">
 <% if current_user.status == 'approved' %>
+<h1 class="text-primary text-right m-3"> <span class="text-danger">PREMIUM</span>  NEWSLETTER</h1>
 
-<%= render 'shared/pitching_participate' %>
+<h5 class="text-primary m-3 text-right font-weight-bold"> <span class="text-success text-uppercase"> you are subscribed to our newsletter </span></h5>
+
+<%= render 'shared/newsletter_prez' %>
+
+<hr class="mb-5">
+<%#= render 'shared/pitching_participate' %>
 <%= render 'shared/partnership' %>
 <% else %>
 
