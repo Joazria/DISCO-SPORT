@@ -1,14 +1,14 @@
         <%= render 'shared/banner' %>
       <hr>
-    <h1 class="text-primary">MARK YOUR AGENDA  </h1>
+    <h1 class="text-primary">MARK YOUR <span class="text-danger">AGENDA</span>   </h1>
         <%= render 'shared/intro' %>
         <hr class="mt-5">
 
-    <h1 class="text-primary text-right">SUBSAHARAN AFRICAN OVERVIEW</h1>
+    <h1 class="text-primary text-right">SUBSAHARAN AFRICAN  <span class="text-danger">OVERVIEW</span> </h1>
         <%= render 'shared/africa' %>
         <hr class="mt-5">
 
-    <h1 class="text-primary">AN "ALL IN" EVENT DESIGNED TO DELIVER RESULTS </h1>
+    <h1 class="text-primary">AN <span class="text-danger">"ALL IN"</span>  EVENT DESIGNED TO DELIVER RESULTS </h1>
         <%= render 'shared/reasons' %>
         <hr class="mt-5">
 
@@ -27,23 +27,22 @@
 
 
   <section class="pt-2">
-<h1 class="text-primary m-3">BOOTCAMP : 30 HIGHTLEVEL WEBCASTS</h1>
+<h1 class="text-primary m-3"> <span class="text-danger">BOOTCAMP</span>  : 30 HIGHTLEVEL WEBCASTS</h1>
       <%= render 'shared/webcast' %>
  </section>
 
     <hr class="mt-5">
 
-<section class="pt-2 mb-3">
-<h1 class="text-primary text-right m-3">PITCHING COMPETITION</h1>
-      <%= render 'shared/pitching' %>
- </section>
+<!-- <section class="pt-2 mb-3">
+<h1 class="text-primary m-3"> <span class="text-danger">PITCHING</span>  COMPETITION</h1>
+      <%#= render 'shared/pitching' %>
+ </section> -->
 
 <hr>
-<h1 class="text-primary text-left m-3">PRO NEWSLETTER</h1>
-    <h5 class="text-justify text-danger" >We bring Tv Sports news that matters to your inbox, to help you stay informed and get a winning edge.</h5>
 
-         <%= link_to "SIGN UP FOR NEWSLETTER", new_user_registration_path, class: " btn btn-lg btn-primary text-uppercase btn-block my-3" %>
+<section class="pt-2 mb-3">
+<h1 class="text-primary text-right m-3"> <span class="text-danger">PREMIUM</span>  NEWSLETTER</h1>
+      <%= render 'shared/newsletter_prez' %>
+ </section>
 
-
-  <hr class="mt-5">
 
