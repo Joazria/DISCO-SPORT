@@ -1,26 +1,25 @@
 
-<div class="container">
-  <h1>NEW PITCHING REGISTRATION</h1>
+<div class="container mt-2">
 
   <%= simple_form_for @pitching do |f| %>
     <div class="row">
       <div class="col-6">
         <%= f.input :name,
                     label: 'Title',
-                    placeholder: 'An amazing Pitching title' %>
+                    placeholder: 'An amazing title' %>
       </div>
       <div class="col-6">
         <%= f.input :video,
-                    label: 'Your pitching video link',
+                    label: 'Your video pitch link',
                     placeholder: 'Please copy and past your video link' %>
       </div>
     </div>
 
     <%= f.input :description,
-                label: 'Please write a resume of your pitching',
-                placeholder: 'Pitching description' %>
+                label: 'Please write a resume of your pitch',
+                placeholder: 'Please write a resume of your pitch' %>
 
 
-    <p><%= f.submit "Submit your Pitching", class: "btn btn-success btn-block" %></p>
+    <p><%= f.submit "Submit your Pitch", class: "btn btn-success btn-block" %></p>
   <% end %>
 </div>
