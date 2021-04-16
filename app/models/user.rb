@@ -14,13 +14,6 @@ class User < ApplicationRecord
 
   after_create :send_admin_mail
 
-  #  include PgSearch::Model
-  # pg_search_scope :search_by_name,
-  #   against: [[ :last_name , 'A']],
-  #   using: {
-  #     tsearch: { prefix: true }
-  #   }
-
   private
 
   def send_admin_mail
