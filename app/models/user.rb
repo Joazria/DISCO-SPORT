@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_one :pitchings
   has_one_attached :avatar
   has_many :orders
+  has_one :chatrooms
 
   attribute :status, :string, default: 'pending'
 

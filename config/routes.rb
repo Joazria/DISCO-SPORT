@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
   end
-  resources :chatrooms, only: [:show. :create] do
+  resources :chatrooms, only: [:show, :create] do
     resources :messages, only: :create
   end
   mount StripeEvent::Engine, at: '/stripe-webhooks'
