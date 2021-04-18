@@ -44,9 +44,7 @@
         <!-- <button > </button> -->
         <!-- <i class="fab fa-linkedin"></i> -->
         <%= link_to "Linkedin ", @user.linkedin , :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
-        <% if @user.email == 'dwftung@gmail.com' %>
-          <%= link_to "Let's Chat!", chatrooms_path, method: :post, :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
-        <% end %>
+        <%= link_to "Talk to Us!", chatroom_path(@user), :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
         <!-- <img class="card-img-bottom p-3" src="https://res.cloudinary.com/numama/image/upload/v1617099999/DISCOSPORT/image-asset_fwqjkm.png" alt="Card image cap"> -->
       </div>
       <class class="card-footer">

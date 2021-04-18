@@ -19,6 +19,7 @@ class User < ApplicationRecord
 
   def send_admin_mail
     User.find(self.id).update(full_name: "#{first_name} #{last_name}")
+    Chatroom.create(name: "#{self.first_name} #{self.last_name}", user_id: self.id, invited: 'dwftung@gmail.com')
     AdminMailer.with(user: self).new_user_waiting_for_approval.deliver_now
     AdminMailer.with(user: self).new_user_welcome.deliver_now
     # AdminMailer.new_user_waiting_for_approval(email).deliver_now

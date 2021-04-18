@@ -12,7 +12,8 @@
       </div>
       <div class="col-md-6">
         <div class="card-body">
-          <h5 class="card-title text-uppercase"><%= user.first_name %> <%= user.last_name %></h5>
+          <!-- <h5 class="card-title text-uppercase"><%= user.first_name %> <%= user.last_name %></h5> -->
+          <h5 class="card-title text-uppercase"><%= link_to "#{user.full_name}", chatroom_path(user) %></h5>
           <h6 class="card-text"> <span class="font-weight-bold"><%= user.company %></span>  from <span class="font-weight-bold"><%= user.country %></span>  and attending as <span class="font-weight-bold"><%= user.member %></span></h6>
           <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.whatsapp %></span> </p>
           <div class="d-flex">
@@ -54,7 +55,8 @@
       </div>
       <div class="col-md-7">
         <div class="card-body">
-          <h5 class="card-title text-uppercase"><%= user.first_name %> <%= user.last_name %></h5>
+          <!-- <h5 class="card-title text-uppercase"><%= user.first_name %> <%= user.last_name %></h5> -->
+          <h5 class="card-title text-uppercase"><%= link_to "#{user.full_name}", chatroom_path(user) %></h5>
           <h6 class="card-text"> <span class="font-weight-bold"><%= user.company %></span>  from <span class="font-weight-bold"><%= user.country %></span>  and attending as <span class="font-weight-bold"><%= user.member %></span></h6>
           <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.whatsapp %></span> </p>
           <div class="d-flex">
@@ -93,7 +95,8 @@
       </div>
       <div class="col-md-7">
         <div class="card-body">
-          <h5 class="card-title text-uppercase"><%= user.first_name %> <%= user.last_name %></h5>
+          <!-- <h5 class="card-title text-uppercase"><%= user.first_name %> <%= user.last_name %></h5> -->
+          <h5 class="card-title text-uppercase"><%= link_to "#{user.full_name}", chatroom_path(user) %></h5>
           <h6 class="card-text"> <span class="font-weight-bold"><%= user.company %></span>  from <span class="font-weight-bold"><%= user.country %></span>  and attending as <span class="font-weight-bold"><%= user.member %></span></h6>
           <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.whatsapp %></span> </p>
           <div class="d-flex">

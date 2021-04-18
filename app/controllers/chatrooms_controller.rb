@@ -10,10 +10,22 @@ class ChatroomsController < ApplicationController
   end
 
   def show
-    @chatroom = Chatroom.find(params[:id])
-    @message = Message.new
-    unless @chatroom.user_id == current_user.id || current_user.email == 'dwftung@gmail.com'
-      redirect_to root_path, notice: 'Unauthorized Area'
+    # @chatroom = Chatroom.find(params[:id])
+    # user = User.find(params[:id])
+    if current_user.email == 'dwftung@gmail.com'
+      @chatroom = Chatroom.where(user_id: params[:id]).find_by invited: current_user.email
+      if @chatroom.nil?
+        @chatroom = Chatroom.find(params[:id])
+      end
+    else
+      @chatroom = Chatroom.where(user_id: params[:id]).find_by invited: 'dwftung@gmail.com'
+      if @chatroom.nil?
+        @chatroom = Chatroom.find(params[:id])
+      end
     end
+    @message = Message.new
+    # unless @chatroom.user_id == current_user.id || current_user.email == 'dwftung@gmail.com'
+    #   redirect_to root_path, notice: 'Unauthorized Area'
+    # end
   end
 end

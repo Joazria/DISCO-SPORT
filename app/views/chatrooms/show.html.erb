@@ -1,5 +1,5 @@
 <br>
-<h5><%= "Welcome #{@chatroom.name}" %></h5>
+<h5><%= "#{@chatroom.name}'s Chatroom ***TEST Title***" %></h5>
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% @chatroom.messages.each do |message| %>
     <div class="message-container" id="message-<%= message.id %>">
