@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/bootcamp', to: 'pages#bootcamp'
   get '/speaker', to: 'pages#speaker'
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
+  get '/delegates', to: 'pages#delegates', as: 'delegates'
   resources :profiles, only: [:show, :edit, :update]
   resources :packages, only: [:index, :show]
   resources :orders, only: [:show, :create] do

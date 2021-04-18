@@ -1,0 +1,7 @@
+<br>
+<% @users.each do |user| %>
+  <%= simple_form_for Chatroom.new , url: chatrooms_path, method: :post do |f| %>
+    <%= f.hidden_field :invited, value: "#{user.email}" %>
+    <p><%= f.submit "#{user.full_name}", class: 'btn btn-outline-success' %></p>
+  <% end %>
+<% end %>

@@ -1,17 +1,19 @@
 class ChatroomsController < ApplicationController
 
   def create
-    @chatroom = Chatroom.create(name: "#{current_user.first_name} #{current_user.last_name}", user_id: current_user.id)
-    if @chatroom.save
-      redirect_to chatroom_path(@chatroom)
+    if Chatroom.where(user_id: current_user.id).find_by invited: params[:chatroom][:invited].nil? || (Chatroom.where(user_id: User.where(email: params[:chatroom][:invited])).find_by invited: current_user.email).nil?
+      @chatroom = Chatroom.create(name: "#{current_user.full_name}", user_id: current_user.id, invited: params[:chatroom][:invited])
+      if @chatroom.save
+        redirect_to chatroom_path(@chatroom)
+      else
+        render delegates_path
+      end
     else
-      render profile_path(current_user.id)
+      chatroom_location
     end
   end
 
   def show
-    # @chatroom = Chatroom.find(params[:id])
-    # user = User.find(params[:id])
     if current_user.email == 'dwftung@gmail.com'
       @chatroom = Chatroom.where(user_id: params[:id]).find_by invited: current_user.email
       if @chatroom.nil?
@@ -27,5 +29,17 @@ class ChatroomsController < ApplicationController
       redirect_to root_path, notice: 'Unauthorized Area'
     end
     @message = Message.new
+  end
+
+  private
+
+  def chatroom_location
+    if (Chatroom.where(user_id: current_user.id).find_by invited: params[:chatroom][:invited]).nil?
+      @chatroom = Chatroom.where(user_id: User.where(email: params[:chatroom][:invited])).find_by invited: current_user.email
+      redirect_to chatroom_path(@chatroom)
+    else
+      @chatroom = Chatroom.where(user_id: current_user.id).find_by invited: params[:chatroom][:invited]
+      redirect_to chatroom_path(@chatroom)
+    end
   end
 end
