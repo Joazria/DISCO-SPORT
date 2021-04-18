@@ -23,9 +23,9 @@ class ChatroomsController < ApplicationController
         @chatroom = Chatroom.find(params[:id])
       end
     end
+    unless @chatroom.user_id == current_user.id || @chatroom.invited == current_user.email
+      redirect_to root_path, notice: 'Unauthorized Area'
+    end
     @message = Message.new
-    # unless @chatroom.user_id == current_user.id || current_user.email == 'dwftung@gmail.com'
-    #   redirect_to root_path, notice: 'Unauthorized Area'
-    # end
   end
 end
