@@ -1,7 +1,7 @@
 class ChatroomsController < ApplicationController
 
   def create
-    if Chatroom.where(user_id: current_user.id).find_by invited: params[:chatroom][:invited].nil? || (Chatroom.where(user_id: User.where(email: params[:chatroom][:invited])).find_by invited: current_user.email).nil?
+    if (Chatroom.where(user_id: current_user.id).find_by invited: params[:chatroom][:invited]).nil? && (Chatroom.where(user_id: User.where(email: params[:chatroom][:invited])).find_by invited: current_user.email).nil?
       @chatroom = Chatroom.create(name: "#{current_user.full_name}", user_id: current_user.id, invited: params[:chatroom][:invited])
       if @chatroom.save
         redirect_to chatroom_path(@chatroom)
