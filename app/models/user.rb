@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_one :pitchings
   has_one_attached :avatar
   has_many :orders
+  has_one :chatrooms
 
   attribute :status, :string, default: 'pending'
 
@@ -14,17 +15,11 @@ class User < ApplicationRecord
 
   after_create :send_admin_mail
 
-  #  include PgSearch::Model
-  # pg_search_scope :search_by_name,
-  #   against: [[ :last_name , 'A']],
-  #   using: {
-  #     tsearch: { prefix: true }
-  #   }
-
   private
 
   def send_admin_mail
     User.find(self.id).update(full_name: "#{first_name} #{last_name}")
+    Chatroom.create(name: "#{self.first_name} #{self.last_name}", user_id: self.id, invited: 'dwftung@gmail.com')
     AdminMailer.with(user: self).new_user_waiting_for_approval.deliver_now
     AdminMailer.with(user: self).new_user_welcome.deliver_now
     # AdminMailer.new_user_waiting_for_approval(email).deliver_now
