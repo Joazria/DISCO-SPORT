@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   mount StripeEvent::Engine, at: '/stripe-webhooks'
   resources :pitchings
 
+  mount ActionCable.server => "/cable"
+
 
   # get '/payments_due/:id', to: 'payments#show_due', as: 'payment_due'
   # patch '/profiles/:id', to: 'profiles#update', as: 'profile'
