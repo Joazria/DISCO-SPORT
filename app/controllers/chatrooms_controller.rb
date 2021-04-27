@@ -29,6 +29,7 @@ class ChatroomsController < ApplicationController
       redirect_to root_path, notice: 'Unauthorized Area'
     end
     @message = Message.new
+    #  teste
   end
 
   private
