@@ -15,6 +15,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'ad7d0c58211b2460e1b970cd3541204803ab7d1128690b324b4b3588ecb5684d731bcc98742346079d2ebb4d69ae2413bc51549baa7f98cf8e6458ddfe227c01'
+  config.omniauth :linkedin, Rails.application.credentials[:linkedin][:api_id], Rails.application.credentials[:linkedin][:api_key]
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
