@@ -14,7 +14,7 @@
             <% if current_user.avatar.attached? %>
               <%= image_tag current_user.avatar , :width => 40, :height => 40, :gravity => "faces",  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% elsif %>
-              <%= image_tag current_user.picture_url || 'https://res.cloudinary.com/nico1711/image/upload/v1598849656/github_s6akfx.png', class: "rounded-circle dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: '50px'  %>
+              <%= image_tag current_user.linkedin_picture_url, class: "rounded-circle dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: '50px'  %>
             <% else %>
               <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1617458735/DISCOSPORT/ICON_DISCOSPORT_bwjmfq.png" , :width => 40, :height => 40, :gravity => "faces",  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
@@ -24,7 +24,7 @@
               <a class="dropdown-item" href="mailto:contact@discosport.tv?subject=Hello">Contact Us</a>
               <%= link_to 'Profile', profile_path(current_user) , class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              <% if current_user.email == "patrickzuchowicki@basiclead.com" || current_user.email == "joa@birds.art.br" %>
+              <% if current_user.email == "patrickzuchowicki@basiclead.com" || current_user.email == "joa@birds.art.br" || current_user.email == 'joa.azria@gmail.com'%>
                 <%= link_to "DASHBOARD", dashboard_path, class: "dropdown-item text-danger" %>
               <% end %>
             </div>

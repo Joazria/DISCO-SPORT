@@ -1,0 +1,45 @@
+<div id="image" class="banner" style="background-image: linear-gradient(rgba(0,53,135,0.4),rgba(0,53,135,0.4)), url(https://res.cloudinary.com/numama/image/upload/v1617361272/DISCOSPORT/banner3_my4aue.jpg);">
+  <div class="container p-3">
+    <div class="container">
+      <div class="col-6">
+        <h2 class="text-white">Welcome to your <span class="text-danger">Profile</span> </h2>
+      </div>
+      <div class="col-6">
+      </div>
+      <hr>
+      <div class="d-flex align-items-end flex-column" style="height: 200px;">
+        <div class="mt-auto ">
+          <h6 class="text-white text-right"> DISCOSPORT | 100% VIRTUAL   LIVE FROM LOS ANGELES & KIGALI </h6>
+          <% if @identity.nil? %>
+              <p  class="text-right ">  25 OCT. - 19 NOV. 2021
+                <span class="text-danger text-uppercase font-weight-bold">
+                complete your profile</span>
+              </p>
+          <% else %>
+            <% if current_user.status == 'approved' %>
+              <p  class="text-right ">  25 OCT. - 19 NOV. 2021
+                <span class="text-success font-weight-bold">
+                YOU ARE INVITED</span>
+              </p>
+            <% else %>
+              <p  class="text-right ">  25 OCT. - 19 NOV. 2021
+                <span class="text-danger font-weight-bold">
+                YOUR PROFILE WILL BE SOON APPROVED</span>
+              </p>
+            <% end %>
+          <% end %>
+
+        </div>
+      </div>
+<!--       <a class="btn btn-lg btn-outline-success"
+          href="mailto:contact@discosport.tv?subject=Hello">
+          CONTACT US
+        </a> -->
+      <%= link_to "Talk to Us", chatroom_path(@user),
+      :class => "btn btn-lg btn-outline-success",
+      :target => '_blank' %>
+
+    </div>
+  </div>
+</div>
+<hr>

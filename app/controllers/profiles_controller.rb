@@ -1,20 +1,21 @@
 class ProfilesController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @identity = Identity.find_by(user_id: @user.id)
     # @users_approved = User.where(status: 'approved').sort_by { |event| [event.created_at] }
     @packages = Package.all
   end
 
   def edit
     @user = User.find(params[:id])
-    unless current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br' || current_user.email == 'patrickzuchowicki@basiclead.com'
+    unless current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br' || current_user.email == 'patrickzuchowicki@basiclead.com' || current_user.email == 'joa.azria@gmail.com'
       redirect_to root_path, notice: 'Unauthorized Area'
     end
   end
 
   def update
     @user = User.find(params[:id])
-    unless current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br' || current_user.email == 'patrickzuchowicki@basiclead.com'
+    unless current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br' || current_user.email == 'patrickzuchowicki@basiclead.com' || current_user.email == 'joa.azria@gmail.com'
       redirect_to root_path, notice: 'Unauthorized Area'
     end
     if @user.update(user_params)

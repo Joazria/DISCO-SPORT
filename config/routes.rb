@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
+  # get 'identities/show'
+  # get 'identities/edit'
+  # get 'identities/update'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     omniauth_callbacks: 'users/omniauth_callbacks'
-  } # pra que serve esse controllers: { sessions: 'users/sessions' } ?
+  }
+
 
   root to: 'pages#home'
   get '/about_us', to: 'pages#about_us'
@@ -12,6 +16,9 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
   get '/delegates', to: 'pages#delegates', as: 'delegates'
   resources :profiles, only: [:show, :edit, :update]
+
+  resources :identities, only: [:show, :edit, :update, :create, :new]
+
   resources :packages, only: [:index, :show]
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
