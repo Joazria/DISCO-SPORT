@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_29_212044) do
+ActiveRecord::Schema.define(version: 2021_04_30_122921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,24 @@ ActiveRecord::Schema.define(version: 2021_04_29_212044) do
     t.bigint "user_id"
     t.string "invited"
     t.index ["user_id"], name: "index_chatrooms_on_user_id"
+  end
+
+  create_table "identities", force: :cascade do |t|
+    t.string "company"
+    t.string "country"
+    t.string "activity"
+    t.string "website"
+    t.string "gender"
+    t.string "phone"
+    t.string "whatsapp"
+    t.string "linkedin"
+    t.string "release"
+    t.string "member"
+    t.string "job"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_identities_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -122,13 +140,16 @@ ActiveRecord::Schema.define(version: 2021_04_29_212044) do
     t.string "full_name"
     t.string "provider"
     t.string "uid"
-    t.string "picture_url"
+    t.string "linkedin_picture_url"
+    t.string "token"
+    t.datetime "token_expiry"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "chatrooms", "users"
+  add_foreign_key "identities", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "orders", "packages"

@@ -1,0 +1,48 @@
+  <div class="col-md-4">
+    <div class="card mb-3">
+      <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar ,  :gravity => "faces",  class: "card-img-top rounded-circle p-3", alt: "Card image cap" %>
+        <% elsif %>
+          <%= image_tag current_user.linkedin_picture_url || 'https://res.cloudinary.com/nico1711/image/upload/v1598849656/github_s6akfx.png', class: "card-img-top rounded-circle p-3", alt: "Card image cap" %>
+        <% else %>
+          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;", class: "card-img-top rounded-circle p-3", alt: "Card image cap"  %>
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title text-primary"><%= @user.gender %> <%= @user.first_name %>  <span class="text-uppercase"><%= @user.last_name %></span></h5>
+<!--         <h5 class="card-text"><%= @user.job %></h5>
+ -->          <div class="d-flex flex-column mt-3 pl-2">
+          <!-- <h6 class="text-left"><i class="fas fa-at"></i> : <%= @user.email %></h6> -->
+      </div>
+
+       <%= link_to "Talk to Us!", chatroom_path(@user), :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
+      </div>
+      <class class="card-footer">
+
+        <% if current_user.email == "patrickzuchowicki@basiclead.com" || "joa@birds.art.br"%>
+<!--           <%= link_to "CREATE YOUR DISCOSPORT IDENTITY",  new_identity_path, class: "btn btn-block m-1 btn-outline-danger" %>
+ -->          <%= link_to "DASHBOARD", dashboard_path, class: "btn btn-block m-1 btn-danger" %>
+        <% else %>
+<!--           <%= link_to "EDIT YOUR PROFILE",  edit_identity_path, class: "btn btn-block btn-danger" %>
+ -->        <% end %>
+      </class>
+    </div>
+  </div>
+
+
+  <div class="col-md-8 mt-5 text-justify">
+          <hr>
+          <h5 class="text-primary">
+          Hello There,</h5>
+          <h5 class="text-primary">
+            Thanks for signing up. We're excited to welcome you to the
+              <span class= font-weight-bold  >DISCOSPORT AFRICA community</span>.
+          </h5>
+          <h5 class="text-danger">  To make sure you can access the tools and information you need to network with other participants, start by completing your personal and company profiles.</h5>
+           <h5 class="text-primary text-justify">Thanks</h5>
+            <h6 class="text-primary text-justify">Patrick.</h6>
+
+           <hr>
+          <%= link_to "CREATE YOUR DISCOSPORT IDENTITY", new_identity_path, class: "btn btn-block btn-lg btn-danger" %>
+           <br>
+
+  </div>

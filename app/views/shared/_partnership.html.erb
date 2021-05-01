@@ -1,71 +1,13 @@
 <!-- <div class="section m-5"> -->
-  <h1 class="mt-5 text-danger text-uppercase">UpGrade Your Visibility</h1>
-  <h5 class="text-primary text-uppercase">Maximise your visibility by UpGrading your status to expend for better result <span class="text-danger">before/during/after</span> Discosport 100%VIRTUAL | AFRICA </h5>
-  <div class="d-flex justify-content-start align-items-center">
-    <h6 class="text-primary text-uppercase">for more information, contact our sales team  </h6>
+  <div class="d-flex">
+      <h1 class="mt-5 text-danger text-uppercase">UpGrade Your Visibility</h1>
+
   </div>
-      <a class="btn btn-sm btn-outline-primary ml-5" href="mailto:sales@discosport.tv?subject=DISCOSPORT|ADD-ON">CONTACT OUR SALES TEAM</a>
+  <h5 class="text-primary text-uppercase">Maximise your visibility by UpGrading your status to expend for better result <span class="text-danger">before/during/after</span> Discosport 100%VIRTUAL | AFRICA </h5>
+    <h6 class="text-primary text-uppercase">for more information, contact our sales team :     <a href="mailto:sales@discosport.tv?subject=DISCOSPORT|ADD-ON">sales@discosport.tv</a>
+ </h6>
+    <a class="btn btn-outline-primary my-2" href="mailto:sales@discosport.tv?subject=DISCOSPORT|ADD-ON">CONTACT OUR SALES TEAM</a>
 
-  <!-- <div class="row"> -->
-<!--     <div class="d-flex">
-
-    </div>
-    <div class="d-flex flex-row">
-      <div class="card m-3 sticky-top ">
-        <img class="card-img-top" src="https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_basket_yf0h9k.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title"> <span class="font-weight-bold text-primary">ADD-ON#1</span> | FRONTLINE VISIBILITY</h5>
-          <hr>
-          <div class="d-flex flex-column">
-            <p class="card-text">  <span class="font-weight-bold">Personalized marketplace</span>  research and database generation assistance. </p>
-            <p class="card-text"> <span class="font-weight-bold">+</span>  <span class="font-weight-bold">company presentation</span>  [pre-recorded] before or after one of the webcasts. </p>
-            <p class="card-text"> <span class="font-weight-bold">+ Double-page advertorial</span>  in the 2021 DISCOSPORT Almanac. </p>
-            <p class="card-text"> <span class="font-weight-bold">+ Three presentation newsletters</span>   sent to delegates. </p>
-            <p class="card-text"> <span class="font-weight-bold">+ Speaking opportunities</span>  during the Boot Camp Week. </p>
-            <p class="card-text"> <span class="font-weight-bold">+ Company logo </span> inside the ‘Thank You to Our Partners’ web/Almanac page. </p>
-            <p class="card-text"> <span class="font-weight-bold">+ Access to reports</span>  on Sub-Saharan Africa’s sports television industry. </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-md-6 ">
-      <div class="card m-3 sticky-top ">
-        <img class="card-img-top" src="https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_basket_yf0h9k.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title"> <span class="font-weight-bold text-primary">ADD-ON#1</span> | FRONTLINE VISIBILITY</h5>
-          <hr>
-          <div class="d-flex flex-column">
-            <p class="card-text">  <span class="font-weight-bold">Personalized marketplace</span>  research and database generation assistance. </p>
-            <p class="card-text"> <span class="font-weight-bold">+</span>  <span class="font-weight-bold">company presentation</span>  [pre-recorded] before or after one of the webcasts. </p>
-            <p class="card-text"> <span class="font-weight-bold">+ Double-page advertorial</span>  in the 2021 DISCOSPORT Almanac. </p>
-            <p class="card-text"> <span class="font-weight-bold">+ Three presentation newsletters</span>   sent to delegates. </p>
-            <p class="card-text"> <span class="font-weight-bold">+ Speaking opportunities</span>  during the Boot Camp Week. </p>
-            <p class="card-text"> <span class="font-weight-bold">+ Company logo </span> inside the ‘Thank You to Our Partners’ web/Almanac page. </p>
-            <p class="card-text"> <span class="font-weight-bold">+ Access to reports</span>  on Sub-Saharan Africa’s sports television industry. </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-6 mt-3">
-      <% @packages.each do |package| %>
-        <div class="card-order mb-2">
-          <%= cl_image_tag(package.image,
-                  width: 150, height: 150, crop: :thumb, gravity: :face) %>
-          <div class="card-order-infos">
-            <div class="d-flex justify-content-between">
-              <h2 class="text-uppercase text-primary"> <%= package.sku %> | <%= package.name %></h2>
-            </div>
-            <p class="text-uppercase text-primary"> ADD-ON #1 | FRONTLINE VISIBILITY </p>
-            <p class="text-uppercase font-weight-bold"> + <%= package.description %></p>
-            <h6 class="text-uppercase d-flex justify-content-end"> <%= humanized_money_with_symbol(package.price) %></h6>
-            <%= link_to "MORE DETAILS ", package_path(package), class: "btn mt-2 btn-outline-primary btn-sm btn-block" %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-</div> -->
-<!-- </div> -->
 <div class="card-deck">
 
           <div class="card m-3">
@@ -116,78 +58,5 @@
           </div>
 
       <% end %>
-
-<!--           <div class="card-addon my-1">
-            <img src="https://res.cloudinary.com/numama/image/upload/v1616861877/DISCOSPORT/3_mzztnv.png" />
-            <div class="card-addon-infos">
-              <div class="d-flex justify-content-between">
-                <h2 class="text-uppercase text-primary">Add-on #3 | PODCASTS</h2>
-                <h6 class="mt-1 d-flex justify-content-end text-muted"><small class="text-muted">$7,500</small></h6>
-              </div>
-              <p>Audio branding of the DISCOSPORT podcast series for six months.</p>
-              <a href="#" class="btn mt-2 btn-outline-primary btn-sm btn-block">Up Grade To Add-Add-On#3 | $7,500</a>
-            </div>
-        </div>
-
-          <div class="card-addon my-1">
-            <img src="https://res.cloudinary.com/numama/image/upload/v1616861877/DISCOSPORT/4_zxcr8o.png" />
-            <div class="card-addon-infos">
-              <div class="d-flex justify-content-between">
-                <h2 class="text-uppercase text-primary">Add-on #4 | DISCOSPORT.TV</h2>
-                <h6 class="mt-1 d-flex justify-content-end text-muted"><small class="text-muted">$7,500</small></h6>
-              </div>
-              <p>Branding of DISCOSPORT.TV and its main pages for six months.</p>
-              <a href="#" class="btn mt-2 btn-outline-primary btn-sm btn-block">Up Grade To Add-Add-On#4 | $7,500</a>
-            </div>
-        </div>
-
-          <div class="card-addon my-1">
-            <img src="https://res.cloudinary.com/numama/image/upload/v1616861877/DISCOSPORT/5_fmhbu0.png" />
-              <div class="card-addon-infos">
-                <div class="d-flex justify-content-between">
-                  <h2 class="text-uppercase text-primary">Add-on #5 | BOOTCAMP</h2>
-                  <h6 class="mt-1 d-flex justify-content-end text-muted"><small class="text-muted">$3,500</small></h6>
-                </div>
-                <p>Branding of one of on Boot Camp track and greeting opportunities.</p>
-                <a href="#" class="btn mt-2 btn-outline-primary btn-sm btn-block">Up Grade To Add-On#5 | $3,500</a>
-              </div>
-          </div>
-
-        <div class="card-addon my-1">
-            <img src="https://res.cloudinary.com/numama/image/upload/v1616861877/DISCOSPORT/6_zlopxn.png" />
-            <div class="card-addon-infos">
-              <div class="d-flex justify-content-between">
-                <h2 class="text-uppercase text-primary">Add-on #6 | WEB/APP</h2>
-                <h6 class="mt-1 d-flex justify-content-end text-muted"><small class="text-muted">$3,500</small></h6>
-              </div>
-              <p>Branding of the web and mobile based networking app.</p>
-              <a href="#" class="btn mt-2 btn-outline-primary btn-sm btn-block">Up Grade To Add-On#6 | $3,500</a>
-            </div>
-        </div>
-
-        <div class="card-addon my-1">
-            <img src="https://res.cloudinary.com/numama/image/upload/v1616861877/DISCOSPORT/7_gs67bq.png" />
-            <div class="card-addon-infos">
-              <div class="d-flex justify-content-between">
-                <h2 class="text-uppercase text-primary">Add-on #7 | CEREMONY</h2>
-                <h6 class="mt-1 d-flex justify-content-end text-muted"><small class="text-muted">$3,500</small></h6>
-              </div>
-              <p>Virtual Opening Ceremony’s branding and greeting opportunities.</p>
-              <a href="#" class="btn mt-2 btn-outline-primary btn-sm btn-block">Up Grade To Add-On#7 | $3,500</a>
-            </div>
-        </div>
-
-        <div class="card-addon my-1">
-            <img src="https://res.cloudinary.com/numama/image/upload/v1618342793/DISCOSPORT/8_rx507s.png" />
-            <div class="card-addon-infos">
-              <div class="d-flex justify-content-between">
-                <h2 class="text-uppercase text-primary">Add-on #8 | PITCHING</h2>
-                <h6 class="mt-1 d-flex justify-content-end text-muted"><small class="text-muted">$3,500</small></h6>
-              </div>
-              <p>Pitching Competition’s branding and greeting opportunities.</p>
-              <a href="#" class="btn mt-2 btn-outline-primary btn-sm btn-block">Up Grade To Add-On#8 | $3,500</a>
-            </div>
-        </div> -->
-
       </div>
   </div>

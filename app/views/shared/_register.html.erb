@@ -43,8 +43,12 @@
       </div>
     </a>
       <div class="container mt-5">
-         <a href="<%= new_user_registration_path %>" class="btn btn-danger text-uppercase btn-lg btn-block ">Free - Sign Up</a>
+      <% if user_signed_in? %>
 
+        <% else %>
+          <a href="<%= new_user_registration_path %>" class="btn btn-danger text-uppercase btn-lg btn-block ">Free - Sign Up</a>
+
+        <% end %>
       </div>
 
     </div>
