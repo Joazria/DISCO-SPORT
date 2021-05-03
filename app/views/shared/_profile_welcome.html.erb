@@ -8,22 +8,25 @@
           <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;", class: "card-img-top rounded-circle p-3", alt: "Card image cap"  %>
       <% end %>
       <div class="card-body">
-        <h5 class="card-title text-primary"><%= @user.gender %> <%= @user.first_name %>  <span class="text-uppercase"><%= @user.last_name %></span></h5>
+        <h5 class="card-title text-primary text-capitalize"><%= @user.first_name %>  <span class="text-capitalize"><%= @user.last_name %></span></h5>
 <!--         <h5 class="card-text"><%= @user.job %></h5>
  -->          <div class="d-flex flex-column mt-3 pl-2">
           <!-- <h6 class="text-left"><i class="fas fa-at"></i> : <%= @user.email %></h6> -->
       </div>
-
-       <%= link_to "Talk to Us!", chatroom_path(@user), :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
-      </div>
+                                <a class="btn btn-lg btn-outline-success"
+                                  href="mailto:contact@discosport.tv?subject=Hello">
+                                  CONTACT US
+                                </a>
+<!--        <%= link_to "Talk to Us!", chatroom_path(@user), :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
+ -->      </div>
       <class class="card-footer">
 
-        <% if current_user.email == "patrickzuchowicki@basiclead.com" || "joa@birds.art.br"%>
+        <% if current_user.email == "patrickzuchowicki@basiclead.com" || "joa@birds.art.br" || "joa.azria@gmail.com"%>
 <!--           <%= link_to "CREATE YOUR DISCOSPORT IDENTITY",  new_identity_path, class: "btn btn-block m-1 btn-outline-danger" %>
  -->          <%= link_to "DASHBOARD", dashboard_path, class: "btn btn-block m-1 btn-danger" %>
         <% else %>
-<!--           <%= link_to "EDIT YOUR PROFILE",  edit_identity_path, class: "btn btn-block btn-danger" %>
- -->        <% end %>
+          <%= link_to "EDIT YOUR PROFILE",  edit_identity_path, class: "btn btn-block btn-danger" %>
+     <% end %>
       </class>
     </div>
   </div>

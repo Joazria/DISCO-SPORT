@@ -5,8 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' },{ name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts 'Creating Package Identities...'
 
-# test_user = User.create({company: 'Test',email: 'test1@test.com',password: '123456',country: 'Liberdade',activity: 'Marketing',website: 'www.birds.art.br',gender: 'Mr',first_name: "pat",last_name: "super",phone: "2199999899",whatsapp:"2199999899",linkedin: "https://www.linkedin.com/in/joa-azria/",release: "hello ",status: nil,member: nil,job: nil,category: "pb"})
+Identity.create!(user_id: 9,
+  company:'Star Wars',
+  country: 'Brasil',
+  activity: 'DELIVERY SOLUTION',
+  website:'www.starwars.com',
+  gender:'Frontline Visibility',
+  phone: '21996995765',
+  whatsapp: '+5521996995765',
+  linkedin: 'https://www.linkedin.com/in/joa-azria/',
+  release: 'Hello how you doint, I m so happy to meet you efqfveqjhgewBGEfbbgeBJOEGwbewg ueqbobhGFOEQobhgep ...',
+  member: 'BUS DEVLOPMENT',
+  job: 'Marketing Director')
+
 
 puts 'Cleaning database...'
 Order.destroy_all if Rails.env.development?
