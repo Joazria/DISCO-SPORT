@@ -9,7 +9,7 @@
       <% end %>
       <!-- <img class="card-img-top rounded-circle p-3" src="https://res.cloudinary.com/numama/image/upload/v1617038321/DISCOSPORT/avatar_mushiki_discop_qiuv2c.png" alt="Card image cap"> -->
       <div class="card-body">
-        <h5 class="card-title text-primary"><%= @identity.gender %> <%= @user.first_name %>  <span class="text-uppercase"><%= @user.last_name %></span></h5>
+        <h5 class="card-title text-primary text-capitalize"><%= @identity.gender %> <%= @user.first_name %>  <span class="text-primary text-capitalize"><%= @user.last_name %></span></h5>
         <h5 class="card-text"><%= @identity.job %></h5>
         <h6 class="card-text">Attending as : <%= @identity.member %></h6>
         <div class="d-flex flex-column mt-3 pl-2">
@@ -19,8 +19,12 @@
         <!-- <button > </button> -->
         <!-- <i class="fab fa-linkedin"></i> -->
         <%= link_to "Linkedin ", @identity.linkedin , :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
-        <%= link_to "Talk to Us", chatroom_path(@user), :class => "btn btn-block text-uppercase btn-outline-primary", :target => '_blank' %>
-<!--         <img class="card-img-bottom p-3" src="https://res.cloudinary.com/numama/image/upload/v1617099999/DISCOSPORT/image-asset_fwqjkm.png" alt="Card image cap">
+        <a class="btn btn-block btn-outline-success"
+                                  href="mailto:contact@discosport.tv?subject=Hello">
+                                  CONTACT US
+                                </a>
+<!--         <%= link_to "Talk to Us", chatroom_path(@user), :class => "btn btn-block text-uppercase btn-outline-primary", :target => '_blank' %>
+ --><!--         <img class="card-img-bottom p-3" src="https://res.cloudinary.com/numama/image/upload/v1617099999/DISCOSPORT/image-asset_fwqjkm.png" alt="Card image cap">
  -->      </div>
       <class class="card-footer">
         <!-- <button class="btn btn-block btn-danger">hello</button> -->

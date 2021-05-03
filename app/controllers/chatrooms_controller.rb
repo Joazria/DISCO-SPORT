@@ -14,13 +14,13 @@ class ChatroomsController < ApplicationController
   end
 
   def show
-    if current_user.email == 'dwftung@gmail.com'
+    if current_user.email == 'joa.azria@gmail.com'
       @chatroom = Chatroom.where(user_id: params[:id]).find_by invited: current_user.email
       if @chatroom.nil?
         @chatroom = Chatroom.find(params[:id])
       end
     else
-      @chatroom = Chatroom.where(user_id: params[:id]).find_by invited: 'dwftung@gmail.com'
+      @chatroom = Chatroom.where(user_id: params[:id]).find_by invited: 'joa.azria@gmail.com'
       if @chatroom.nil?
         @chatroom = Chatroom.find(params[:id])
       end
