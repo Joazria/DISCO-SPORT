@@ -5,7 +5,7 @@
     <div class="row g-0">
       <div class="col-md-2">
         <% if user.avatar.attached? %>
-            <%= image_tag user.avatar, :style => "height: 100%; width: 200px;", :gravity => "face", :class => "rounded-circle p-2" %>
+            <%= image_tag user.avatar, :style => "height: 200px; width: 200px;", :gravity => "face", :class => "rounded-circle p-2" %>
           <%# elsif %>
             <%#= image_tag current_user.linkedin_picture_url, class: "rounded-circle p-2", style: "height: 100%; width: 200px;" %>
           <% else %>
