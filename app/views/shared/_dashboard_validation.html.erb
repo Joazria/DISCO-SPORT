@@ -5,11 +5,11 @@
     <div class="row g-0">
       <div class="col-md-2">
         <% if user.avatar.attached? %>
-            <%= image_tag user.avatar, :style => "height: 200px; width: 200px;", :gravity => "face", :class => "rounded-circle p-2" %>
+            <%= image_tag current_user.linkedin_picture_url || user.avatar, :style => "height: 200px; width: 200px;", :gravity => "face", :class => "rounded-circle p-2" %>
           <%# elsif %>
             <%#= image_tag current_user.linkedin_picture_url, class: "rounded-circle p-2", style: "height: 100%; width: 200px;" %>
           <% else %>
-            <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;" %>
+            <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;" , :gravity => "face", :class => "rounded-circle p-2" %>
         <% end %>
       </div>
       <div class="col-md-6">
@@ -57,12 +57,12 @@
             <%# elsif %>
               <%#= image_tag current_user.linkedin_picture_url, class: "rounded-circle p-2", style: "height: 100%; width: 200px;" %>
             <% else %>
-              <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;"%>
+              <%= image_tag current_user.linkedin_picture_url || "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 200px; width: 200px;" , :gravity => "face", :class => "rounded-circle p-2" %>
         <% end %>
       </div>
       <div class="col-md-7">
         <div class="card-body">
-          <!-- <h5 class="card-title text-uppercase"><%= user.first_name %> <%= user.last_name %></h5> -->
+          <h5 class="card-title text-uppercase"><%= user.first_name %> <%= user.last_name %></h5>
           <h5 class="card-title text-uppercase"><%= link_to "#{user.full_name}", chatroom_path(user) %></h5>
           <h6 class="card-text"> <span class="font-weight-bold"><%= user.company %></span>  from <span class="font-weight-bold"><%= user.country %></span>  and attending as <span class="font-weight-bold"><%= user.member %></span></h6>
           <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.whatsapp %></span> </p>
@@ -105,12 +105,12 @@
           <%# elsif %>
             <%#= image_tag current_user.linkedin_picture_url, class: "rounded-circle p-2", style: "height: 100%; width: 200px;" %>
           <% else %>
-          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;" %>
+          <%= image_tag current_user.linkedin_picture_url || "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;" %>
         <% end %>
       </div>
       <div class="col-md-7">
         <div class="card-body">
-          <!-- <h5 class="card-title text-uppercase"><%= user.first_name %> <%= user.last_name %></h5> -->
+          <h5 class="card-title text-uppercase"><%= user.first_name %> <%= user.last_name %></h5>
           <h5 class="card-title text-uppercase"><%= link_to "#{user.full_name}", chatroom_path(user) %></h5>
           <h6 class="card-text"> <span class="font-weight-bold"><%= user.company %></span>  from <span class="font-weight-bold"><%= user.country %></span>  and attending as <span class="font-weight-bold"><%= user.member %></span></h6>
           <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.whatsapp %></span> </p>
