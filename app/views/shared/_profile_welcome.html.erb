@@ -6,7 +6,7 @@
           <%= image_tag current_user.linkedin_picture_url || 'https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png', class: "card-img-top rounded-circle p-3", alt: "Card image cap" %>
       <% end %>
       <div class="card-body">
-        <h5 class="card-title text-primary text-capitalize"><%= @user.first_name %>  <span class="text-capitalize"><%= @user.last_name %></span></h5>
+        <h5 class="card-title text-center text-primary font-weight-bold text-uppercase"><%= @user.first_name %>  <%= @user.last_name %></h5>
 <!--         <h5 class="card-text"><%= @user.job %></h5>
  -->          <div class="d-flex flex-column mt-3 pl-2">
           <!-- <h6 class="text-left"><i class="fas fa-at"></i> : <%= @user.email %></h6> -->
@@ -33,7 +33,7 @@
   <div class="col-md-8 mt-5 text-justify">
           <hr>
           <h5 class="text-primary">
-          Hello There,</h5>
+          Hello <span class="text-capitalize"><%= @user.first_name %></span> ,</h5>
           <h5 class="text-primary">
             Thanks for signing up. We're excited to welcome you to the
               <span class= font-weight-bold  >DISCOSPORT AFRICA community</span>.

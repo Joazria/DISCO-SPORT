@@ -3,7 +3,7 @@
 
 
 <div class="row">
-  <% if current_user.identity.release.nil? %>
+  <% if @identity.nil? %>
   <%= render 'shared/profile_welcome' %>
   <% else %>
   <%= render 'shared/profile_working' %>
