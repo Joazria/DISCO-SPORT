@@ -6,8 +6,8 @@
       <div class="col-md-2">
         <% if user.avatar.attached? %>
             <%= image_tag user.avatar, :style => "height: 100%; width: 200px;", :gravity => "face", :class => "rounded-circle p-2" %>
-          <% elsif %>
-            <%= image_tag current_user.linkedin_picture_url, class: "rounded-circle p-2", style: "height: 100%; width: 200px;" %>
+          <%# elsif %>
+            <%#= image_tag current_user.linkedin_picture_url, class: "rounded-circle p-2", style: "height: 100%; width: 200px;" %>
           <% else %>
             <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;" %>
         <% end %>
@@ -54,8 +54,8 @@
       <div class="col-md-2">
         <% if user.avatar.attached? %>
           <%= image_tag user.avatar, :style => "height: 100%; width: 200px;", :gravity => "face", :class => "rounded-circle p-2" %>
-            <% elsif %>
-              <%= image_tag current_user.linkedin_picture_url, class: "rounded-circle p-2", style: "height: 100%; width: 200px;" %>
+            <%# elsif %>
+              <%#= image_tag current_user.linkedin_picture_url, class: "rounded-circle p-2", style: "height: 100%; width: 200px;" %>
             <% else %>
               <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;"%>
         <% end %>
