@@ -2,10 +2,8 @@
     <div class="card mb-3">
       <% if @user.avatar.attached? %>
           <%= image_tag @user.avatar ,  :gravity => "faces",  class: "card-img-top rounded-circle p-3", alt: "Card image cap" %>
-        <% elsif %>
-          <%= image_tag current_user.linkedin_picture_url || 'https://res.cloudinary.com/nico1711/image/upload/v1598849656/github_s6akfx.png', class: "card-img-top rounded-circle p-3", alt: "Card image cap" %>
         <% else %>
-          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;", class: "card-img-top rounded-circle p-3", alt: "Card image cap"  %>
+          <%= image_tag current_user.linkedin_picture_url || 'https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png', class: "card-img-top rounded-circle p-3", alt: "Card image cap" %>
       <% end %>
       <div class="card-body">
         <h5 class="card-title text-primary text-capitalize"><%= @user.first_name %>  <span class="text-capitalize"><%= @user.last_name %></span></h5>
@@ -13,7 +11,7 @@
  -->          <div class="d-flex flex-column mt-3 pl-2">
           <!-- <h6 class="text-left"><i class="fas fa-at"></i> : <%= @user.email %></h6> -->
       </div>
-                                <a class="btn btn-lg btn-outline-success"
+                                <a class="btn btn-lg btn-block btn-outline-success"
                                   href="mailto:contact@discosport.tv?subject=Hello">
                                   CONTACT US
                                 </a>

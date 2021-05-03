@@ -2,13 +2,13 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   validates :email, presence: true
-  validates :avatar, presence: true
+  #validates :avatar, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
 
   # validates :company, presence: true
-  has_one :pitchings
-  has_one :identities
+  has_one :pitching
+  has_one :identity
 
   has_one_attached :avatar
   has_many :orders, dependent: :destroy
@@ -45,6 +45,7 @@ class User < ApplicationRecord
 
   def send_admin_mail
     User.find(self.id).update(full_name: "#{first_name} #{last_name}")
+    Identity.create(user_id: self.id)
     Chatroom.create(name: "#{self.first_name} #{self.last_name}", user_id: self.id, invited: 'contact@discosport.tv')
     AdminMailer.with(user: self).new_user_waiting_for_approval.deliver_now
     AdminMailer.with(user: self).new_user_welcome.deliver_now
