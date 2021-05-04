@@ -3,8 +3,8 @@
       <% if @user.avatar.attached? %>
           <%= image_tag @user.avatar ,  :gravity => "faces",  class: "card-img-top rounded-circle p-3", alt: "Card image cap" %>
         <% else %>
-          <%= image_tag current_user.linkedin_picture_url || 'https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png', class: "card-img-top rounded-circle p-3", alt: "Card image cap" %>
-      <% end %>
+          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" ,  class: "card-img-top rounded-circle p-3", alt: "Card image cap"  %>
+              <%= link_to "Add Your Avatar", edit_user_registration_path , :class => "btn btn-block btn-danger" %>      <% end %>
       <div class="card-body">
         <h5 class="card-title text-center text-primary font-weight-bold text-uppercase"><%= @user.first_name %>  <%= @user.last_name %></h5>
 <!--         <h5 class="card-text"><%= @user.job %></h5>
