@@ -2,10 +2,10 @@
     <div class="card mb-3">
       <% if @user.avatar.attached? %>
           <%= image_tag @user.avatar ,  :gravity => "faces",  class: "card-img-top rounded-circle p-3", alt: "Card image cap" %>
-        <% elsif %>
-          <%= image_tag current_user.linkedin_picture_url || 'https://res.cloudinary.com/nico1711/image/upload/v1598849656/github_s6akfx.png', class: "card-img-top rounded-circle p-3", alt: "Card image cap" %>
+
         <% else %>
-          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;", class: "card-img-top rounded-circle p-3", alt: "Card image cap"  %>
+          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" ,  class: "card-img-top rounded-circle p-3", alt: "Card image cap"  %>
+              <%= link_to "Add Your Avatar", edit_user_registration_path , :class => "btn btn-block btn-danger" %>
       <% end %>
       <!-- <img class="card-img-top rounded-circle p-3" src="https://res.cloudinary.com/numama/image/upload/v1617038321/DISCOSPORT/avatar_mushiki_discop_qiuv2c.png" alt="Card image cap"> -->
       <div class="card-body">
