@@ -8,7 +8,7 @@
 puts 'Creating Package Identities...'
 
 Identity.create!(user_id: 6,
-  company:'Capital Media',
+  company:'',
   country: 'Mauritius',
   activity: 'PRODUCTION COMPANY',
   website:'www.capitalmedia.mu',
