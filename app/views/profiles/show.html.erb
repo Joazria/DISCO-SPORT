@@ -5,9 +5,15 @@
 <div class="row">
   <% if @identity.nil? %>
   <%= render 'shared/profile_welcome' %>
+
   <% else %>
-  <%= render 'shared/profile_working' %>
+    <% if @identity.release.nil? %>
+      <%= render 'shared/profile_welcome' %>
+    <% else %>
+      <%= render 'shared/profile_working' %>
+    <% end %>
   <% end %>
+
   <hr>
 
   <div class="mt-5">
