@@ -23,6 +23,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def update
   #   super
   # end
+protected
 
   def after_update_path_for
     # user_path(resource)
@@ -56,9 +57,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+ #  def after_sign_up_path_for
+ #  #   super(resource)
+ #    identity = Identity.where(user_id: current_user.id)
+ #    edit_identity_path(identity.id)
+
+ # end
+  def after_sign_up_path_for(resource)
+    new_identity_path
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
