@@ -1,6 +1,13 @@
 .footer {
   color: #F4F4F4;
 
+    &-logo{
+      height: min-content;
+      gap: 1ch;
+      img{
+        object-fit: contain;
+      }
+    }
       p {
       font-size: 1em;
 
@@ -28,5 +35,8 @@
         h6 p {
         font-size:0.8em;
       }
+  .copyrights {
+    text-align: center;
+  }
   }
 
