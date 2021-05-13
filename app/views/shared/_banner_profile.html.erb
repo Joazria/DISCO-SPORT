@@ -5,24 +5,29 @@
         <h2 class="text-white">Welcome to your <span class="text-danger">Profile</span> </h2>
       </div>
       <div class="col-6">
+
       </div>
       <hr>
       <div class="d-flex align-items-end flex-column" style="height: 200px;">
         <div class="mt-auto ">
-          <h6 class="text-white text-right"> DISCOSPORT | 100% VIRTUAL   LIVE FROM LOS ANGELES & KIGALI </h6>
+          <h4 class="text-danger text-right font-weight-bold text-uppercase"> 24 - 26 April 2022 <span class="text-white font-weight-bold"> | Kigali Convention Center |  Rwanda </span> </h4> 
+ <hr>
+          <h6 class="text-white text-right text-uppercase"> 25 OCT. - 19 NOV. 2021 | Virtual Event Preview Forum </h6>
+          <h6 class="text-white text-right text-uppercase"> LIVE FROM LOS ANGELES & KIGALI </h6>
+
           <% if @identity.nil? %>
-              <p  class="text-right ">  25 OCT. - 19 NOV. 2021
+              <p  class="text-right ">  
                 <span class="text-danger text-uppercase font-weight-bold">
                 complete your profile</span>
               </p>
           <% else %>
             <% if current_user.status == 'approved' %>
-              <p  class="text-right ">  25 OCT. - 19 NOV. 2021
+              <p  class="text-right "> 
                 <span class="text-success font-weight-bold">
                 YOU ARE INVITED</span>
               </p>
             <% else %>
-              <p  class="text-right ">  25 OCT. - 19 NOV. 2021
+              <p  class="text-right "> 
                 <span class="text-danger font-weight-bold">
                 YOUR PROFILE WILL BE SOON APPROVED</span>
               </p>

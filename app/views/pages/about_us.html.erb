@@ -1,23 +1,38 @@
+
  <div id="image" class="banner" style="background-image: linear-gradient(rgba(0,53,135,0.4),rgba(0,53,135,0.4)), url(https://res.cloudinary.com/numama/image/upload/v1617461550/DISCOSPORT/banner4_saxr3p.png);">
           <div class="container p-3">
-            <div class="container">
-              <h4 class="text-white">The New Frontiers of Sports Business </h4>
-              <h6 class="text-danger">THE FAST-GROWING MARKETPLACE OF SUBSAHARAN AFRICA</h6>
-              <h6 class="text-white"> LIVE FROM LOS ANGELES & KIGALI </h6>
+            <div class="container text-uppercase">
+                      <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616778797/DISCOSPORT/LOGO1_DISCOSPORT_MASTER_wtwyli.png" ,  class: "img-fluid", style: "max-width: 80%; min-width: 60%;" %>
 
+              <h2 class="text-white">The New Frontiers of Sports Business </h2>
+              <%# <h5 class="text-white"> THE FAST-GROWING MARKETPLACE OF SUBSAHARAN AFRICA </h5> %>
+              <h4 class="text-danger"> 24 - 26 April 2022 <span class="text-white font-weight-bold"> Kigali Convention Center |  Rwanda </span> </h4> 
 
-           <% if user_signed_in? %>
-                  <p  class="">  25 OCT. - 19 NOV. 2021  <span class="text-success font-weight-bold"> YOU ARE INVITED  </span></p>
-
-                    <a class="btn btn-lg btn-outline-success" href="mailto:contact@discosport.tv?subject=Hello">CONTACT US</a>
+              <% if user_signed_in? %>
+                        <% if current_user.status == 'approved' %>
+                            <p  class="text-right "> FORUM LIVE FROM LOS ANGELES & KIGALI | 25 OCT. - 19 NOV. 2021 </p>
+                            <p  class="text-right text-success font-weight-bold ">  YOU ARE INVITED</p>
+                                <a class="btn btn-lg btn-outline-success"
+                                  href="mailto:contact@discosport.tv?subject=Hello">
+                                  CONTACT US
+                                </a>
+                            <% else %>
+                            <p  class="text-right "> <span class="text-danger font-weight-bold"> YOUR PROFILE WILL BE SOON APPROVED</span></p>
+                                  <a class="btn btn-lg btn-outline-success"
+                                  href="mailto:contact@discosport.tv?subject=Hello">
+                                  CONTACT US
+                                </a>
+                            <% end %>
                       <% else %>
-                        <p  class="">  25 OCT. - 19 NOV. 2021  <span class="text-danger font-weight-bold"> BY INVITATION ONLY</span></p>
+                        <%# <p  class="">FORUM LIVE FROM LOS ANGELES & 25 OCT. - 19 NOV. 2021 | <span class="text-danger font-weight-bold"> BY INVITATION ONLY  </span></p> %>
                         <%= link_to "SIGN UP NOW", new_user_registration_path, class: " btn btn-lg btn-outline-danger" %>
 
               <% end %>
+
             </div>
           </div>
     </div>
+
 
   <hr>
 <div class="container">

@@ -1,11 +1,13 @@
- <div id="image" class="banner" style="background-image: url(https://res.cloudinary.com/numama/image/upload/v1616778400/DISCOSPORT/BANNER_DISCOSPORT_wbyk1v.png);">
+
+ <div id="image" class="banner" style="background-image: linear-gradient(rgba(0,53,135,0.4),rgba(0,53,135,0.4)), url(https://res.cloudinary.com/numama/image/upload/v1617461550/DISCOSPORT/banner4_saxr3p.png);">
           <div class="container p-3">
             <div class="container text-uppercase">
                       <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616778797/DISCOSPORT/LOGO1_DISCOSPORT_MASTER_wtwyli.png" ,  class: "img-fluid", style: "max-width: 80%; min-width: 60%;" %>
 
               <h2 class="text-white">The New Frontiers of Sports Business </h2>
-              <%# <h5 class="text-white"> THE FAST-GROWING MARKETPLACE OF SUBSAHARAN AFRICA </h5> %>
-              <h4 class="text-danger"> 24 - 26 April 2022 <span class="text-white font-weight-bold"> Kigali Convention Center |  Rwanda </span> </h4> 
+              <h2 class="text-danger"> Welcome  <span class="text-white font-weight-bold"> Back </span> </h2> 
+              <h4 class="text-danger text-right"> 24 - 26 April 2022 <span class="text-white font-weight-bold"> Kigali Convention Center |  Rwanda </span> </h4> 
+                            <p  class="text-right "> 25 OCT. - 19 NOV. 2021 | FORUM LIVE FROM LOS ANGELES & KIGALI </p>
 
               <% if user_signed_in? %>
                         <% if current_user.status == 'approved' %>
@@ -24,10 +26,9 @@
                             <% end %>
                       <% else %>
                         <%# <p  class="">FORUM LIVE FROM LOS ANGELES & 25 OCT. - 19 NOV. 2021 | <span class="text-danger font-weight-bold"> BY INVITATION ONLY  </span></p> %>
-                        <%= link_to "SIGN UP NOW", new_user_registration_path, class: " btn btn-lg btn-outline-danger" %>
+                        <%#= link_to "SIGN UP NOW", new_user_registration_path, class: " btn btn-lg btn-outline-danger" %>
 
               <% end %>
-
             </div>
           </div>
     </div>

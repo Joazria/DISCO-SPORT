@@ -13,12 +13,11 @@ Our network of local reporters will let you stay on top of sports television and
 <% if user_signed_in? == 'approved' %>
     <h5 class="text-right" > <span class="text-primary">To be launched on </span> <span class="text-danger">Tuesday 18 May</span></h5>
     <p class="mt-3 text-uppercase font-weight-bold">For any editorial suggestion contact our journalist team  :  <a class="text-uppercase" href="mailto:sales@discosport.tv?subject=DISCOSPORT|ADD-ON">news@discosport.tv</a></p>
+    <%= link_to "Sign up for further information", new_pitching_path, class: " mt-2 btn btn-lg btn-outline-primary text-uppercase btn-block" %>
 
 <% else %>
-     <h5 class="text-right" > <span class="text-primary">To be launched on </span> <span class="text-danger">Tuesday 18 May</span></h5>
+    <h5 class="text-right" > <span class="text-primary">To be launched on </span> <span class="text-danger">Tuesday 18 May</span></h5>
     <p class="mt-3 text-uppercase font-weight-bold">For any editorial suggestion contact our journalist team  :  <a class="text-uppercase" href="mailto:sales@discosport.tv?subject=DISCOSPORT|ADD-ON">news@discosport.tv</a></p>
-
-    <%= link_to "Sign up for further information", new_pitching_path, class: " mt-2 btn btn-lg btn-outline-primary text-uppercase btn-block" %>
 
 <% end %>
 
