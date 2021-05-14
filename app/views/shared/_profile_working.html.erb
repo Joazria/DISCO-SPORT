@@ -30,8 +30,8 @@
         <!-- <button class="btn btn-block btn-danger">hello</button> -->
         <% if current_user.email == "patrickzuchowicki@basiclead.com" || "joa@birds.art.br"%>
           <%= link_to "EDIT YOUR PROFILE",  edit_identity_path, class: "btn btn-block m-1 btn-outline-danger" %>
-          <%= link_to "DASHBOARD", dashboard_path, class: "btn btn-block m-1 btn-danger" %>
-        <% else %>
+<!--           <%= link_to "DASHBOARD", dashboard_path, class: "btn btn-block m-1 btn-danger" %>
+ -->        <% else %>
           <%= link_to "EDIT YOUR PROFILE",  edit_identity_path, class: "btn btn-block btn-danger" %>
         <% end %>
       </class>
