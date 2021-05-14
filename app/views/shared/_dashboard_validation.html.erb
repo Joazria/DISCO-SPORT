@@ -15,15 +15,24 @@
       <div class="col-md-6">
         <div class="card-body">
           <h5 class="card-title text-uppercase"><%= user.first_name %> <%= user.last_name %></h5>
-<!--           <h5 class="card-title text-uppercase"><%= link_to "#{user.full_name}", chatroom_path(user) %></h5>
- -->          <h6 class="card-text"> <span class="font-weight-bold"><%= user.company %></span>  from <span class="font-weight-bold"><%= user.country %></span>  and attending as <span class="font-weight-bold"><%= user.member %></span></h6>
-          <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.whatsapp %></span> </p>
+             <% if user.identity.nil? %>
+            <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span> </p>
+            <%= link_to "Delegate Profile", profile_path(user), class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
+            <p class="text-danger"> <span class="font-weight-bold"><i class="far fa-id-card"> </i> DiscoSport Id Incomplete </span> </p>
+
+          <% else %>
+          <h5 class="card-title text-uppercase"><%#= link_to "#{user.full_name}", chatroom_path(user) %></h5>
+          <h6 class="card-text"> <span class="font-weight-bold"><%= user.identity.company %></span>  from <span class="font-weight-bold"><%= user.identity.country %></span>  and attending as <span class="font-weight-bold"><%= user.identity.member %></span></h6>
+          <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.identity.whatsapp %></span> | <span class="font-weight-bold text-success"><i class="far fa-id-card"> </i> ID_OK </span> </p>
           <div class="d-flex">
-            <%= link_to "linkedin", user.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
+            <%= link_to "linkedin", user.identity.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
             <%= link_to "WEBSITE", "http://#{user.website}" , :class => "btn btn-sm btn-outline-primary text-uppercase m-2", :target => '_blank' %>
             <%= link_to "Delegate Profile", profile_path(user), class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
           </div>
           <p class="card-text"><small class="text-muted"><%= user.created_at %></small></p>
+        <% end %> 
+
+  
         </div>
       </div>
       <div class="col-md-4 align-self-center ">
@@ -58,20 +67,30 @@
               <%#= image_tag current_user.linkedin_picture_url, class: "rounded-circle p-2", style: "height: 100%; width: 200px;" %>
             <% else %>
               <%= image_tag user.linkedin_picture_url || "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 200px; width: 200px;" , :gravity => "face", :class => "rounded-circle p-2" %>
+       
         <% end %>
       </div>
       <div class="col-md-7">
         <div class="card-body">
           <h5 class="card-title text-uppercase"><%= user.first_name %> <%= user.last_name %></h5>
-<!--           <h5 class="card-title text-uppercase"><%= link_to "#{user.full_name}", chatroom_path(user) %></h5>
- -->          <h6 class="card-text"> <span class="font-weight-bold"><%= user.company %></span>  from <span class="font-weight-bold"><%= user.country %></span>  and attending as <span class="font-weight-bold"><%= user.member %></span></h6>
-          <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.whatsapp %></span> </p>
+                       <% if user.identity.nil? %>
+                                   <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span> </p>
+            <%= link_to "Delegate Profile", profile_path(user), class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
+            <p class="text-danger"> <span class="font-weight-bold"><i class="far fa-id-card"> </i> DiscoSport Id Incomplete </span> </p>
+
+          <% else %>
+                    <h5 class="card-title text-uppercase"><%= link_to "#{user.full_name}", chatroom_path(user) %></h5>
+     <h6 class="card-text"> <span class="font-weight-bold"><%= user.identity.company %></span>  from <span class="font-weight-bold"><%= user.identity.country %></span>  and attending as <span class="font-weight-bold"><%= user.identity.member %></span></h6>
+          <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.identity.whatsapp %></span>| <span class="font-weight-bold text-success"><i class="far fa-id-card"> </i> ID_OK </span> </p>
           <div class="d-flex">
-            <%= link_to "linkedin", user.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
-            <%= link_to "WEBSITE", "http://#{user.website}" , :class => "btn btn-sm btn-outline-primary text-uppercase m-2", :target => '_blank' %>
+            <%= link_to "linkedin", user.identity.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
+            <%= link_to "WEBSITE", "http://#{user.identity.website}" , :class => "btn btn-sm btn-outline-primary text-uppercase m-2", :target => '_blank' %>
             <%= link_to "Delegate Profile", profile_path(user), class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
           </div>
           <p class="card-text"><small class="text-muted"><%#= user.created_at %></small></p>
+        <% end %>
+
+ 
         </div>
       </div>
       <div class="col-md-3 align-self-center ">
@@ -112,14 +131,22 @@
         <div class="card-body">
           <h5 class="card-title text-uppercase"><%= user.first_name %> <%= user.last_name %></h5>
 <!--           <h5 class="card-title text-uppercase"><%= link_to "#{user.full_name}", chatroom_path(user) %></h5>
- -->          <h6 class="card-text"> <span class="font-weight-bold"><%= user.company %></span>  from <span class="font-weight-bold"><%= user.country %></span>  and attending as <span class="font-weight-bold"><%= user.member %></span></h6>
-          <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.whatsapp %></span> </p>
+ -->                                 <% if user.identity.nil? %>
+                                   <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span> </p>
+            <%= link_to "Delegate Profile", profile_path(user), class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
+            <p class="text-danger"> <span class="font-weight-bold"><i class="far fa-id-card"> </i> DiscoSport Id Incomplete </span> </p>
+
+          <% else %>
+                    <h5 class="card-title text-uppercase"><%= link_to "#{user.full_name}", chatroom_path(user) %></h5>
+     <h6 class="card-text"> <span class="font-weight-bold"><%= user.identity.company %></span>  from <span class="font-weight-bold"><%= user.identity.country %></span>  and attending as <span class="font-weight-bold"><%= user.identity.member %></span></h6>
+          <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.identity.whatsapp %></span> | <span class="font-weight-bold text-success"><i class="far fa-id-card"> </i> ID_OK </span></p>
           <div class="d-flex">
-            <%= link_to "linkedin", user.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
-            <%= link_to "WEBSITE", "http://#{user.website}" , :class => "btn btn-sm btn-outline-primary text-uppercase m-2", :target => '_blank' %>
-            <%= link_to "Delegate Profile", root_path, class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
+            <%= link_to "linkedin", user.identity.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
+            <%= link_to "WEBSITE", "http://#{user.identity.website}" , :class => "btn btn-sm btn-outline-primary text-uppercase m-2", :target => '_blank' %>
+            <%= link_to "Delegate Profile", profile_path(user), class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
           </div>
-          <p class="card-text"><small class="text-muted"><%= user.created_at %></small></p>
+          <p class="card-text"><small class="text-muted"><%#= user.created_at %></small></p>
+        <% end %>
         </div>
       </div>
       <div class="col-md-3 align-self-center ">
