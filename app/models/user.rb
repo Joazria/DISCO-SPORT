@@ -9,6 +9,7 @@ class User < ApplicationRecord
   # validates :company, presence: true
   has_one :pitching, dependent: :destroy
   has_one :identity, dependent: :destroy
+  has_many :newsletters, dependent: :destroy
 
   has_one_attached :avatar
   has_many :orders, dependent: :destroy
