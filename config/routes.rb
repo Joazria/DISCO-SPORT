@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'newsletters/index'
+  get 'newsletters/new'
+  get 'newsletters/create'
+  get 'newsletters/show'
+  get 'newsletters/edit'
+  get 'newsletters/update'
+  get 'newsletters/destroy'
   # get 'identities/show'
   # get 'identities/edit'
   # get 'identities/update'
