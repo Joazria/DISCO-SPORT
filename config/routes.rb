@@ -1,15 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'newsletters/index'
-  get 'newsletters/new'
-  get 'newsletters/create'
-  get 'newsletters/show'
-  get 'newsletters/edit'
-  get 'newsletters/update'
-  get 'newsletters/destroy'
-  # get 'identities/show'
-  # get 'identities/edit'
-  # get 'identities/update'
+
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
@@ -26,6 +17,7 @@ Rails.application.routes.draw do
   resources :profiles, only: [:show, :edit, :update]
 
   resources :identities, only: [:show, :edit, :update, :create, :new]
+  resources :newsletters, only: [:show, :edit, :index, :update, :create, :new]
 
   resources :packages, only: [:index, :show]
   resources :orders, only: [:show, :create] do

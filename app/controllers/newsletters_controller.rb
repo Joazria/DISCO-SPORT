@@ -20,7 +20,7 @@ class NewslettersController < ApplicationController
     @newsletter = Newsletter.new(newsletter_params)
     @newsletter.user = current_user
     if @newsletter.save
-      redirect_to profile_path(current_user), notice: "Your Newsletter was successfully created."
+      redirect_to newsletters, notice: "Your Newsletter was successfully created."
     else
       render :new
     end
@@ -41,21 +41,17 @@ class NewslettersController < ApplicationController
 
   private
 
-  def set_identity
+  def set_newsletter
     @newsletter = Newsletter.find(params[:id])
   end
 
   def newsletter_params
-  params.require(:newsletter).permit(:company,
-      :country,
-      :activity,
+  params.require(:newsletter).permit(:title,
+      :punshline,
+      :article,
       :website,
-      :gender,
-      :phone,
-      :whatsapp,
-      :linkedin,
-      :release,
-      :member,
-      :job)
+      :publish,
+      :en_fr,
+      :photo)
   end
 end
