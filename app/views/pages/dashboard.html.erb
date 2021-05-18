@@ -25,8 +25,6 @@
         <div class="col-md-2">
           <% if result.avatar.attached? %>
             <%= image_tag result.avatar, :style => "height: 100%; width: 200px;", :gravity => "face" %>
-          <% elsif %>
-            <%= image_tag current_user.linkedin_picture_url, class: "rounded-circle dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: '50px'  %>
 
           <% else %>
             <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;" %>
@@ -36,8 +34,8 @@
           <div class="card-body">
             <!-- <h5 class="card-title text-uppercase"><%= result.first_name %> <%= result.last_name %></h5> -->
             <h5 class="card-title text-uppercase"><%= link_to "#{result.full_name}", chatroom_path(result) %></h5>
-            <h6 class="card-text"> <span class="font-weight-bold"><%= result.company %></span>  from <span class="font-weight-bold"><%= result.country %></span>  and attending as <span class="font-weight-bold"><%= result.member %></span></h6>
-            <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= result.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= result.whatsapp %></span> </p>
+            <h6 class="card-text"> <span class="font-weight-bold"><%= result.identity.company %></span>  from <span class="font-weight-bold"><%= result.identity.country %></span>  and attending as <span class="font-weight-bold"><%= result.member %></span></h6>
+            <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= result.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= result.identity.whatsapp %></span> </p>
             <div class="d-flex">
               <%= link_to "linkedin", result.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
               <%= link_to "#{result.company} WEBSITE", result.company, class: "btn btn-sm btn-outline-primary text-uppercase m-2" %>
@@ -46,6 +44,7 @@
             <p class="card-text"><small class="text-muted"><%= result.created_at %></small></p>
           </div>
         </div>
+
         <div class="col-md-4 align-self-center ">
           <% if result.status == 'pending' %>
             <div class="d-flex justify-content-center">

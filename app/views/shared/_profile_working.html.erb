@@ -1,7 +1,7 @@
   <div class="col-md-4">
     <div class="card mb-3">
       <% if @user.avatar.attached? %>
-          <%= image_tag @user.avatar , :gravity => "face", :crop=>"crop", :width=>200, class: "card-img-top rounded-circle p-3", alt: "Card image cap" %>
+          <%= image_tag @user.avatar , :gravity => "face", :crop=>"crop", :width=>200,  :heigth=>200,  class: "card-img-top rounded-circle p-3", alt: "Card image cap" %>
 
         <% else %>
           <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" ,  class: "card-img-top rounded-circle p-3", alt: "Card image cap"  %>

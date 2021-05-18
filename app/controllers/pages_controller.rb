@@ -7,8 +7,7 @@ class PagesController < ApplicationController
       # redirect_to dashboard_path, alert: 'Empty field!'
     else
       @parameter = params[:search].downcase
-      # @results = User.all.where("lower(first_name) LIKE :search OR lower(last_name) LIKE :search", search: "%#{@parameter}%")
-      @results = User.all.where("lower(full_name) LIKE :search OR lower(company) LIKE :search OR lower(activity) LIKE :search OR lower(status) LIKE :search OR lower(member) LIKE :search",
+      @results = User.all.where("lower(full_name) ILIKE :search OR lower(company) ILIKE :search OR lower(activity) ILIKE :search OR lower(status) ILIKE :search OR lower(member) ILIKE :search",
                                 search: "%#{@parameter}%")
     end
     @users = User.all
