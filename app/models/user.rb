@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :avatar, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :member, presence: true
 
   # validates :company, presence: true
   has_one :pitching, dependent: :destroy
