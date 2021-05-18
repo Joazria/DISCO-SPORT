@@ -1,56 +1,79 @@
-<!-- <div class="container"> -->
-    <!-- <p class="text-justify">The 4-week program is offered <span class="text-primary font-weight-bold">free of charge</span> to qualified delegates. Privileges include access to the Virtual Ceremony, the Bootcamp Week, the Networking Weeks and the Pitching Competition. Participants will be able to interact with each other through a mobile/web-based app. They will also receive an electronic copy of the DISCOSPORT | Sub-Saharan Africa Almanac out by Monday 25 October. To facilitate the planning of meetings participants are regrouped into the following categories:</p> -->
-  <div class="card-deck">
-  <!--       <div class="row justify-content-around">
-   -->
-    <!-- <div class="card"> -->
-        <a href="<%= new_user_registration_path %>" class="card text-decoration-none">
+
+<a href="<%= new_user_registration_path %>" class=" text-decoration-none">
+<div class="row row-cols-1 row-cols-md-4 g-4">
+
+  <div class="col">
+    <div class="card">
           <img class="card-img-top card-register" src="https://res.cloudinary.com/numama/image/upload/v1617632606/DISCOSPORT/squareboxeuse_srjrmn.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title text-uppercase">Vendor</h5>
-              <p class="card-text">Monetization, delivery, dubbing solutions; sports marketing agencies;  tv rights distributors; talent agencies; equipment distributors; research consultancies.</p>
-          </div>
-          </a>
-          <a href="<%= new_user_registration_path %>" class="card text-decoration-none">
-          <img class="card-img-top card-register" src="https://res.cloudinary.com/numama/image/upload/v1617144076/DISCOSPORT/square_woman_discop_over_n5kiah.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title text-uppercase">Creator</h5>
-              <p class="card-text">Writers, journalists, producers, directors.</p>
-          </div>
-          </a>
-        <!-- </div> -->
-
-      <a href="<%= new_user_registration_path %>" class="card text-decoration-none">
-          <img class="card-img-top card-register" src="https://res.cloudinary.com/numama/image/upload/v1617144076/DISCOSPORT/square_networking_over_discop_kch3my.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title text-uppercase">Platform</h5>
-              <p class="card-text">Public and commercial broadcasters, premium channels, pay-tv operators, mobile networks and streaming platforms.</p>
-          </div>
-      </a>
-  <a href="<%= new_user_registration_path %>" class="card text-decoration-none">
-      <img class="card-img-top card-register" src="https://res.cloudinary.com/numama/image/upload/v1617144076/DISCOSPORT/square_jump_discop_lzfgvv.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title text-uppercase">Advertiser</h5>
-          <p class="card-text"> Brands, advertising agencies, merchandisers, marketers.</p>
+      <div class="card-body">
+        <h5 class="card-title">VENDOR</h5>
+        <p class="card-text">Companies offering primarily media and merchandising rights; fan engagement, creative, research and marketing expertise; content production and post-production equipment; athletes representation services; sports venues management systems; outsource manufacturing and package solutions; e-commerce and remote payment support.</p>
       </div>
-    </a>
-
-  <a href="<%= new_user_registration_path %>" class="card text-decoration-none">
-      <img class="card-img-top card-register" src="https://res.cloudinary.com/numama/image/upload/v1617144076/DISCOSPORT/square_running_discop_omsquf.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title text-uppercase"> SPORT FEDERATION</h5>
-          <p class="card-text">Sports governing bodies in Sub-Saharan Africa.</p>
-      </div>
-    </a>
-      <div class="container mt-5">
-      <% if user_signed_in? %>
-
-        <% else %>
-          <a href="<%= new_user_registration_path %>" class="btn btn-danger text-uppercase btn-lg btn-block ">Free - Sign Up</a>
-
-        <% end %>
-      </div>
-
     </div>
-<!-- </div> -->
+  </div>
+  <div class="col">
+    <div class="card">
+          <img class="card-img-top card-register" src="https://res.cloudinary.com/numama/image/upload/v1617144076/DISCOSPORT/square_woman_discop_over_n5kiah.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">CONTENT CREATOR</h5>
+        <p class="card-text">Story tellers, writers, film,tv, digital and commercial content producers, animators, video game developers, talent agencies, book publishers, stand-up comedians, etc.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+          <img class="card-img-top card-register" src="https://res.cloudinary.com/numama/image/upload/v1617144076/DISCOSPORT/square_networking_over_discop_kch3my.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">PLATFORM</h5>
+        <p class="card-text">Public and commercial broadcasters, premium channels, pay-tv networks, mobile operators, streamers and in-flight and closed-circuit entertainment providers.</p>
+      </div>
+    </div>
+  </div>
+   <div class="col">
+    <div class="card mt-2">
+      <img class="card-img-top card-register" src="https://res.cloudinary.com/numama/image/upload/v1621329292/DISCOSPORT/square_stade_discop_i4uef9.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">SPORTS VENUE</h5>
+        <p class="card-text">Stadium, indoors sports arenas, concert halls, schools, cities and other public administrations in charge of recreational developments.</p>
+      </div>
+    </div>
+  </div>
+     <div class="col">
+    <div class="card mt-2">
+      <img class="card-img-top card-register" src="https://res.cloudinary.com/numama/image/upload/v1617144076/DISCOSPORT/square_jump_discop_lzfgvv.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">ADVERTISER</h5>
+        <p class="card-text">Brands, digital-first companies and marketers, and creative, media buying, product placement, cross-marketing and research services.</p>
+      </div>
+    </div>
+  </div>
+       <div class="col">
+    <div class="card mt-2">
+      <img class="card-img-top card-register" src="https://res.cloudinary.com/numama/image/upload/v1617144076/DISCOSPORT/square_running_discop_omsquf.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">SPORTING CLUB</h5>
+        <p class="card-text">Small organizations whose members play together occasionally to large commercial organisations with teams of professional players regularly competing against other clubs.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mt-2">
+      <img class="card-img-top card-register" src="https://res.cloudinary.com/numama/image/upload/v1617144076/DISCOSPORT/square_running_discop_omsquf.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">SPORT FEDERATION</h5>
+        <p class="card-text">Non-governmental organizations administrating one or more sports disciplines at national level and supervising the development of athletes practising these sports at every level.</p>
+      </div>
+    </div>
+  </div>
+    <div class="col">
+    <div class="card mt-2">
+      <img class="card-img-top card-register" src="https://res.cloudinary.com/numama/image/upload/v1621329291/DISCOSPORT/square_expert_discop_mg8bs2.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">EXPERT</h5>
+        <p class="card-text">Key sports industry executives and strategists invited to share their vision and recommendations in the context of conferences, workshops, screenings, case-study presentations, and project pitching sessions.</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </a>
 
