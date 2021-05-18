@@ -27,6 +27,10 @@
                       placeholder: 'Zuchowicki' %>
       </div>
             </div>
+                    <%= f.input :member,
+                    label: 'Attending to *',
+                    collection: [ 'VENDOR', 'SPORTS FEDERATION', 'SPORTING CLUB','PLATFORM',
+                     'SPORTS VENUE', 'ADVERTISER', 'CONTENT CREATOR','PRESS', 'EXPERT']%>
 
       <div class="row">
     <h5 class="text-danger mt-5">

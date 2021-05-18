@@ -24,6 +24,10 @@ class PagesController < ApplicationController
     @users = User.all
   end
 
+  def home
+    @newsletters = Newsletter.all
+  end
+
   # private
 
   # def user_params

@@ -23,7 +23,7 @@
       <%#= render 'shared/what' %>
       <!-- <hr class="mt-5"> -->
 
-<!--     <h1 class="text-primary text-center">CONFIRMED SPEAKERS</h1>
+<!--     <h1 class="text-primary text-center">CONFIRMED <span class="text-danger">SPEAKERS</span> </h1>
       <%#= render 'shared/speaker' %>
 
    <hr class="mt-5"> -->
@@ -43,7 +43,14 @@
 
 
 <% if user_signed_in? %>
+<!--   <section class="container pt-2 mb-3">
+    <h1 class="text-primary text-right m-3"> <span class="text-danger">PREMIUM</span>  MARKET <span class="text-danger">NEWS</span>  </h1>
+            <div class="container d-flex justify-content-end">
+                            <a href="<%= newsletters_path %>" class="btn btn-primary text-uppercase btn-lg "> ACCESS TO ALL NEWS </a>
 
+        </div>
+          <%#= render 'shared/newsletters_display_home' %>
+   </section> -->
 <% else %>
     <!-- <hr> -->
 

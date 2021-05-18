@@ -1,0 +1,52 @@
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @newsletters.each do |newsletter| %>
+
+    <div class="col">
+      <div class="card h-100">
+        <%= image_tag newsletter.photo, :crop=>"crop", :width=>200, :height=>200, :class=>'card-img-top'%>
+        <div class="card-body">
+          <h5 class="card-title"> <%= newsletter.title %></h5>
+          <p class="card-text"><%= newsletter.punshline %></p>
+        </div>
+        <div class="card-footer">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newsletter<%= newsletter.id %>">
+                Read the article
+                </button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  <% end %>
+</div>
+
+<!-- Modal -->
+
+  <% @newsletters.each do |newsletter| %>
+
+ <div class="modal fade" id="newsletter<%= newsletter.id %>" >
+      <div class="modal-dialog modal-dialogue-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title font-weight-bold text-uppercase"> <%= newsletter.title %></h5>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body text-justify">
+           <%= image_tag newsletter.photo,  class: "card-img-top ", alt: "Card image cap" %>
+           <hr>
+           <h5 class="text-primary mb-3"><%= newsletter.punshline %> </h5>
+
+           <p> <%= newsletter.article %>  </p>
+         </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         </div>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
