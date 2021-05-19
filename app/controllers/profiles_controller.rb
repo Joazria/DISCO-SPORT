@@ -14,10 +14,12 @@ class ProfilesController < ApplicationController
   end
 
   def update
+
     @user = User.find(params[:id])
     unless current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br' || current_user.email == 'patrickzuchowicki@basiclead.com' || current_user.email == 'joa.azria@gmail.com'
       redirect_to root_path, notice: 'Unauthorized Area'
     end
+
     if @user.update(user_params)
       redirect_to dashboard_path, notice: 'User Updated'
     else
