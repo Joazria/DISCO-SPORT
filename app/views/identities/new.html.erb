@@ -1,4 +1,4 @@
-<%= render 'devise/shared/banner_log_in' %>
+<%#= render 'devise/shared/banner_log_in' %>
 
 
 
@@ -33,12 +33,12 @@
                         label: 'Company',
                         placeholder: 'Basic Lead' %>
         </div>
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
           <%= f.input :member,
                     label: 'Attending as *',
                     collection: [ 'SELL SERVICES / SOLUTIONS / TECH', 'BUY SERVICES / SOLUTIONS / TECH', 'SELL MEDIA / MERCHANDISING RIGHTS','BUY MEDIA / MERCHANDISING RIGHTS',
                      'PRODUCE / CO-PRODUCE CONTENT', 'RAISE FUNDING', 'PROVIDE FUNDING','MONETIZE VISIBILITY', 'ACQUIRE VISIBILITY', 'INVESTIGATE OPPORTUNITIES','REPORT ON NEW INDUSTRY TRENDS']%>
-        </div>
+        </div> -->
       </div>
 
     </span>
@@ -62,9 +62,55 @@
     <div class="row">
       <div class="col-md-6">
         <%= f.input :activity,
-                    collection: ['ADVERTISING AGENCY', 'BROADCASTER | Private', 'BROADCASTER | Public', 'CONSUMER BRAND', 'DELIVERY SOLUTION', 'DIGITAL MARKETING', 'AGENCY', 'DUBBING SOLUTION', 'ECOMMERCE PLATFORM', 'EQUIPMENT / NEW TECH DISTRIBUTION', 'FUNDING / BANK', 'INDEPENDENT ANIMATOR', 'INDEPENDENT DIRECTOR', 'INDEPENDENT JOURNALIST', 'INDEPENDENT WRITER',
-                                'LAW FIRM','MANUFACTURER','MARKETER','MERCHANDISER','MOBILE OPERATOR','MONETIZATION SOLUTION','MUSIC PRODUCTION','PAY-TV OPERATOR','PAYMENT PROCESSING SOLUTION','POST PRODUCTION SERVICE','PREMIUM CABLE CHANNEL','PRESS','PRODUCTION COMPANY','PUBLIC ORGANISATION','RADIO STATION','RESEARCH CONSULTANCY','SOCIAL MEDIA','SPORTING CLUB','SPORTS ARENA','SPORTS FEDERATION','SPORTS MARKETING','STREAMING PLATFORM','SUBSCRIBERS MANAGEMENT SOLUTION','TALENT AGENCY','TV RIGHTS DISTRIBUTOR','VIDEO GAME DEVELOPER',
-                                'VIDEO GAMING PLATFORM', 'OTHER']%>
+                    collection: ['ADVERTISING AGENCY',
+                      'ADVISORY SERVICES',
+                      'ARCHITECTURAL / DESIGN FIRM',
+                      'ATHLETES REPRESENTATION AGENCY',
+                      'BROADCASTER | Private',
+                      'BROADCASTER | Public',
+                       'CONSUMER BRAND',
+                       'DELIVERY SOLUTION',
+                       'DIGITAL MARKETING AGENCY',
+                       'DIGITAL FIRST COMPANY',
+                       'DUBBING SOLUTION',
+                       'ECOMMERCE PLATFORM',
+                       'EQUIPMENT / NEW TECH DISTRIBUTION',
+                       'FUNDING / BANK',
+                       'FULFILLMENT / SHIPPING SOLUTION',
+                        'INDEPENDENT ANIMATOR',
+                        'INDEPENDENT DIRECTOR',
+                        'INDEPENDENT JOURNALIST',
+                        'INDEPENDENT WRITER',
+                        'MANUFACTURING',
+                        'MARKETER',
+                        'MARKETING AGENCY',
+                        'MEDIA BUYING AGENCY',
+                        'MEDIA RIGHTS DISTRIBUTOR',
+                        'MERCHANDISING RIGHTS DISTRIBUTOR',
+                        'MOBILE OPERATOR',
+                        'MONETIZATION SOLUTION',
+                        'MUSIC PRODUCTION',
+                        'PAY-TV OPERATOR',
+                        'PAYMENT PROCESSING SOLUTION',
+                        'POST PRODUCTION SERVICE',
+                        'PREMIUM CABLE CHANNEL',
+                        'PRESS',
+                        'PRODUCTION COMPANY',
+                        'PUBLIC ORGANISATION',
+                        'RADIO STATION',
+                        'RESEARCH CONSULTANCY',
+                        'SOCIAL MEDIA',
+                        'SPORTING CLUB',
+                        'SPORTS ARENA',
+                        'SPORTS FEDERATION',
+                        'SPORTS MARKETING',
+                        'SPORTS TOURISM',
+                        'STREAMING PLATFORM',
+                        'SUBSCRIBERS MANAGEMENT SOLUTION',
+                        'TALENT AGENCY',
+                        'TRADE ASSOCIATION',
+                        'VIDEO GAME DEVELOPER',
+                        'VIDEO GAMING PLATFORM']%>
       </div>
       <div class="col-md-6">
         <%= f.input :country,
