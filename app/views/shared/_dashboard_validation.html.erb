@@ -1,5 +1,7 @@
-<div class="mt-3">
+<div class="mt-3 text-uppercase text-center text-danger">
+<h2>PENDING VALIDATION</h2>
 </div>
+
 <% @users_pending.each do |user| %>
   <div class="card mb-3" >
     <div class="row g-0">
@@ -30,9 +32,9 @@
             <%= link_to "Delegate Profile", profile_path(user), class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
           </div>
           <p class="card-text"><small class="text-muted"><%= user.created_at %></small></p>
-        <% end %> 
+        <% end %>
 
-  
+
         </div>
       </div>
       <div class="col-md-4 align-self-center ">
@@ -55,6 +57,9 @@
   </div>
 <% end %>
 
+<div class="mt-3 text-uppercase text-center  text-primary">
+<h2>DELEGATE APPROVED</h2>
+</div>
 
 
 <% @users_approved.each do |user| %>
@@ -67,7 +72,7 @@
               <%#= image_tag current_user.linkedin_picture_url, class: "rounded-circle p-2", style: "height: 100%; width: 200px;" %>
             <% else %>
               <%= image_tag user.linkedin_picture_url || "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 200px; width: 200px;" , :gravity => "face", :class => "rounded-circle p-2" %>
-       
+
         <% end %>
       </div>
       <div class="col-md-7">
@@ -79,7 +84,7 @@
             <p class="text-danger"> <span class="font-weight-bold"><i class="far fa-id-card"> </i> DiscoSport Id Incomplete </span> </p>
 
           <% else %>
-                    <h5 class="card-title text-uppercase"><%= link_to "#{user.full_name}", chatroom_path(user) %></h5>
+                    <!-- <h5 class="card-title text-uppercase"><%= link_to "#{user.full_name}", chatroom_path(user) %></h5> -->
      <h6 class="card-text"> <span class="font-weight-bold"><%= user.identity.company %></span>  from <span class="font-weight-bold"><%= user.identity.country %></span>  and attending as <span class="font-weight-bold"><%= user.identity.member %></span></h6>
           <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= user.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= user.identity.whatsapp %></span>| <span class="font-weight-bold text-success"><i class="far fa-id-card"> </i> ID_OK </span> </p>
           <div class="d-flex">
@@ -90,7 +95,7 @@
           <p class="card-text"><small class="text-muted"><%#= user.created_at %></small></p>
         <% end %>
 
- 
+
         </div>
       </div>
       <div class="col-md-3 align-self-center ">
@@ -113,6 +118,9 @@
 <% end %>
 
 
+<div class="mt-3 text-uppercase text-center  text-danger">
+<h2>DELEGATE NOT APPROVE</h2>
+</div>
 
 
 <% @users_not_approved.each do |user| %>

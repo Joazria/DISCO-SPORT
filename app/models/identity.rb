@@ -10,6 +10,5 @@ class Identity < ApplicationRecord
   validates :whatsapp, presence: true
   validates :linkedin, presence: true
   validates :release, presence: true
-  validates :member, presence: true
 
 end
