@@ -1,0 +1,13 @@
+.separator {
+  --width: 60px;
+
+  flex-basis: 100%;
+  height: 1px;
+  max-width: var(--width);
+  width: 100%;
+
+  margin: 1ch 0;
+
+  border: none;
+  background-color: $text-1;
+}
