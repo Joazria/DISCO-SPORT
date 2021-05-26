@@ -1,21 +1,66 @@
-.navbar-discosport {
+.navigation {
+  background: $main-bg;
+  color: $text-1;
+
+  display: flex;
+  align-items: center;
   justify-content: space-between;
+  position: relative;
 
-  background: #003587;
-  position: sticky;
-  color: white !important;
+  padding: 1rem;
+  &__logo {
+    &-img {
+      width: 180px;
+      object-fit: contain;
+    }
+  }
+  &__dropdown {
+    display: flex;
+    align-items: center;
+  }
+  &__btn {
+    display: block;
+    align-self: flex-end;
+
+    position: relative;
+    z-index: 1;
+    @media screen and (min-width: 996px) {
+      display: none !important;
+    }
+  }
+  &__menu {
+    display: flex;
+    gap: 5ch;
+
+    margin: 0;
+
+    transform-origin: right;
+    transition: transform 0.4s ease-in;
+    @media screen and (max-width: 995px) {
+      background: $menu-bg;
+      color: $text-2;
+
+      flex-direction: column;
+      justify-content: flex-start;
+      row-gap: 6ch;
+      height: 100vh;
+      width: clamp(300px, 100%, 450px);
+      padding: 5rem;
+
+      transform: translateX(0) scaleX(0);
+      position: absolute;
+      right: 0;
+      top: 0;
+      &.is-active {
+        transform: translateX(0) scale(1);
+      }
+    }
+    &-item {
+      list-style: none;
+      a {
+        color: inherit;
+        white-space: nowrap;
+      }
+    }
+  }
 }
-
-
-.navbar-discosport .navbar-collapse {
-  flex-grow: 0;
-}
-
-
-.navbar-discosport .navbar-brand img {
-  width: 180px;
-}
-
-// .navbar-collapse .navbar-nav .nav-item .nav-link a:hover {
-//   color: white ;
-// }
