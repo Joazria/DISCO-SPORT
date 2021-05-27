@@ -12,7 +12,7 @@ class PagesController < ApplicationController
     end
     @users = User.all
     @users_pending = User.where(status: 'pending').sort_by { |event| [event.created_at] }
-    @users_approved = User.where(status: 'approved').sort_by { |event| [event.created_at] }
+    @users_approved = User.where(status: 'approved').sort_by { |event| [event.created_at] }.reverse
     @users_not_approved = User.where(status: 'not approved').sort_by { |event| [event.created_at] }
     unless current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br' || current_user.email == 'joa.azria@gmail.com'|| current_user.email == 'patrickzuchowicki@basiclead.com'
       redirect_to root_path, notice: 'Unauthorized Area'
