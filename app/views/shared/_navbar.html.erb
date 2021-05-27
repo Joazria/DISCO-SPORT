@@ -48,6 +48,11 @@
     <% # Usuário não logado --------------------- %>
     <% else %>
       <ul class="navigation__menu">
+        <li class="navigation__menu-logo">
+          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616778797/DISCOSPORT/LOGO1_DISCOSPORT_MASTER_wtwyli.png",
+                        class: "navigation__menu-img",
+                        alt: "Discosport header logo, welcome!" %>
+        </li>
         <li class="navigation__menu-item">
           <%= link_to "Login ", new_user_session_path, class: "navigation__menu-link" %>
         </li>
