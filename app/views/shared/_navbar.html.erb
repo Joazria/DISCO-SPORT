@@ -6,7 +6,7 @@
   <% end %>
   <div class="navigation__dropdown">
     <button class="hamburger hamburger--vortex navigation__btn" aria-expanded="false" type="button">
-       <p class="sr-only" id="menu-label">Menu</p>
+      <p class="sr-only" id="menu-label">Menu</p>
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
       </span>
@@ -14,40 +14,34 @@
     <% # Usuário logado --------------------- %>
     <% if user_signed_in? %>
       <ul class="navigation__menu">
-        
-        <li class="navigation__menu-item">
-          Hello, <%= current_user.first_name %>
+        <li class="navigation__menu-logo">
+          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616778797/DISCOSPORT/LOGO1_DISCOSPORT_MASTER_wtwyli.png",
+                        class: "navigation__menu-img",
+                        alt: "Discosport header logo, welcome!" %>
         </li>
-        <% # Possuí avatar --------------------- %>
-        <li class="navigation__menu-item">
-          <% if current_user.avatar.attached? %>
-            <%= image_tag current_user.avatar, :width => 40, :height => 40, :gravity => "faces", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% elsif current_user.linkedin_picture_url? %>
-            <%= image_tag current_user.linkedin_picture_url, class: "rounded-circle dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: "50px" %>
-          <% else %>
-            <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1617458735/DISCOSPORT/ICON_DISCOSPORT_bwjmfq.png", :width => 40, :height => 40, :gravity => "faces", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% end %>
+        <li class="navigation__greeting">
+          Hello, <%= current_user.first_name %>
         </li>
         <% # Nav items --------------------- %>
         <li class="navigation__menu-item">
-          <%= link_to "About Discop", about_us_path, class: "dropdown-item" %>
+          <%= link_to "About Us", about_us_path, class: "navigation__menu-link" %>
         </li>
         <li class="navigation__menu-item">
-          <%= link_to "Virtual Forum", "/bootcamp", class: "dropdown-item" %>
+          <%= link_to "Virtual Forum", "/bootcamp", class: "navigation__menu-link" %>
         </li>
         <li class="navigation__menu-item">
-          <a class="dropdown-item" href="mailto:contact@discosport.tv?subject=Hello">Contact Us</a>
+          <a class="navigation__menu-link" href="mailto:contact@discosport.tv?subject=Hello">Contact Us</a>
         </li>
         <li class="navigation__menu-item">
-          <%= link_to "Profile", profile_path(current_user), class: "dropdown-item" %>
+          <%= link_to "Profile", profile_path(current_user), class: "navigation__menu-link" %>
         </li>
         <li class="navigation__menu-item">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navigation__menu-link" %>
         </li>
         <% # Acesso ao Dashboard --------------------- %>
         <li class="navigation__menu-item">
           <% if current_user.email == "patrickzuchowicki@basiclead.com" || current_user.email == "joa@birds.art.br" || current_user.email == "joa.azria@gmail.com" %>
-            <%= link_to "DASHBOARD", dashboard_path, class: "dropdown-item text-danger" %>
+            <%= link_to "Dashboard", dashboard_path, class: "navigation__menu-link" %>
           <% end %>
         </li>
       </ul>

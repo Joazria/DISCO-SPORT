@@ -1,68 +1,31 @@
-        <%= render 'shared/banner' %>
-      <hr>
+<%= render "shared/banner" %>
 
-    <h1 class="text-primary text-right">MARK YOUR <span class="text-danger">AGENDA</span>   </h1>
-        <%= render 'shared/intro' %>
-        <hr class="mt-2">
+<section class="container">
+  <hr>
 
-    <!-- <h1 class="text-primary text-right">SUBSAHARAN AFRICAN  <span class="text-danger">OVERVIEW</span> </h1> -->
-<!--         <%#= render 'shared/africa' %>
-        <hr class="mt-5"> -->
-        <%= render 'shared/africa_facts' %>
-        <hr class="mt-5">
+  <h1 class="text-primary text-right">
+    MARK YOUR <span class="text-danger">AGENDA</span>
+  </h1>
+  <%= render "shared/intro" %>
+  <hr class="mt-2">
+  <%= render "shared/africa_facts" %>
+  <hr class="mt-5">
 
-    <h1 class="text-primary">AN <span class="text-danger">"ALL IN"</span>  EVENT DESIGNED TO DELIVER RESULTS </h1>
-        <%= render 'shared/reasons' %>
-        <hr class="mt-5"  >
+  <h1 class="text-primary">AN <span class="text-danger">"ALL IN"</span>  EVENT DESIGNED TO DELIVER RESULTS </h1>
+  <%= render "shared/reasons" %>
+  <hr class="mt-5"  >
 
-    <h1 class="text-primary">SUBMIT YOUR REGISTRATION NOW </h1>
-      <h5 class="text-danger">QUALIFIED PARTICIPANTS ONLY</h5>
-      <%= render 'shared/register' %>
-      <!-- <hr class="mt-5"> -->
+  <h1 class="text-primary">SUBMIT YOUR REGISTRATION NOW </h1>
+  <h5 class="text-danger">QUALIFIED PARTICIPANTS ONLY</h5>
+  <%= render "shared/register" %>
 
-      <%#= render 'shared/what' %>
-      <!-- <hr class="mt-5"> -->
-
-   <!--  <h1 class="text-primary text-center">CONFIRMED <span class="text-danger">SPEAKERS</span> </h1>
-      <%#= render 'shared/speaker' %>
-
-   <hr class="mt-5"> -->
-
-
-  <!-- <section class="pt-2">
-<h1 class="text-primary m-3"> <span class="text-danger">BOOTCAMP</span>  : 30 HIGH-LEVEL WEBCASTS</h1>
-      <#%= render 'shared/webcast' %>
- </section>
- -->
-    <!-- <hr class="mt-5"> -->
-
-<!-- <section class="pt-2 mb-3">
-<h1 class="text-primary m-3"> <span class="text-danger">PITCHING</span>  COMPETITION</h1>
-      <%#= render 'shared/pitching' %>
- </section> -->
-<!-- <div class="container">
-            <%#= render 'shared/newsletters_display_home' %>
-
-</div> -->
-
-<% if user_signed_in? %>
-<!--   <section class="container pt-2 mb-3">
-    <h1 class="text-primary text-right m-3"> <span class="text-danger">PREMIUM</span>  MARKET <span class="text-danger">NEWS</span>  </h1>
-            <div class="container d-flex justify-content-end">
-                            <a href="<%= newsletters_path %>" class="btn btn-primary text-uppercase btn-lg "> ACCESS TO ALL NEWS </a>
-
-</div>
-          <%#= render 'shared/newsletters_display_home' %>
-   </section> -->
-<% else %>
- <hr>
+  <hr>
 
   <section class="pt-2 mb-3">
+    <h1 class="text-primary text-right m-3">
+      <span class="text-danger">DISOSPORT</span> | NEWS
+    </h1>
+  <%= render "shared/newsletter_prez" %>
+  </section>
 
-    <h1 class="text-primary text-right m-3"> <span class="text-danger">DISOSPORT</span> | NEWS</h1>
-          <%= render 'shared/newsletter_prez' %>
-   </section>
-<% end %>
-
-
-
+</section>
