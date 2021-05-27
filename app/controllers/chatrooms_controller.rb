@@ -3,6 +3,9 @@ class ChatroomsController < ApplicationController
 
   def show
     @chatroom = Chatroom.find(params[:id])
+    unless @chatroom.user_id == current_user || @chatroom.invited_id == current_user
+      redirect_to delegates_path, notice: 'You were not invited ☹️'
+    end
     @message = Message.new
   end
 
