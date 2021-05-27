@@ -3,16 +3,14 @@ class ChatroomsController < ApplicationController
 
   def show
     @chatroom = Chatroom.find(params[:id])
-    unless @chatroom.user_id == current_user || @chatroom.invited_id == current_user
+    unless @chatroom.user_id == current_user.id || @chatroom.invited_id == current_user.id
       redirect_to delegates_path, notice: 'You were not invited ☹️'
     end
     @message = Message.new
   end
 
   def create
-    if Chatroom.where(user_id: current_user.id,
-      invited_id: params[:invited_id].to_i).empty? && Chatroom.where(user_id: params[:invited_id].to_i,
-                                                                     invited_id: current_user.id).empty?
+    if Chatroom.where(user_id: current_user.id, invited_id: params[:invited_id].to_i).empty? && Chatroom.where(user_id: params[:invited_id].to_i, invited_id: current_user.id).empty?
       @chatroom = Chatroom.create(user_id: current_user.id,
                                   invited_id: params[:invited_id].to_i)
       redirect_to chatroom_path(@chatroom) if @chatroom.save
