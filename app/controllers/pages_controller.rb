@@ -20,7 +20,7 @@ class PagesController < ApplicationController
   end
 
   def delegates
-    @users = User.all
+    @users = User.all.excluding(current_user).sort_by { |event| [event.full_name.downcase] }
   end
 
   def home
