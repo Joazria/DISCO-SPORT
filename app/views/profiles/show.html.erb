@@ -1,16 +1,14 @@
-
 <%= render 'shared/banner_profile' %>
-
-
-<div class="row">
-  <% if @identity.nil? %>
-  <%= render 'shared/profile_welcome' %>
-
-  <% else %>
-    <% if @identity.release.nil? %>
+<div class="container">
+  <div class="row">
+    <% if @identity.nil? %>
       <%= render 'shared/profile_welcome' %>
     <% else %>
-      <%= render 'shared/profile_working' %>
+      <% if @identity.release.nil? %>
+        <%= render 'shared/profile_welcome' %>
+      <% else %>
+        <%= render 'shared/profile_working' %>
+      <% end %>
     <% end %>
   <% end %>
 
@@ -31,14 +29,7 @@
    <%= render 'shared/newsletter_prez' %>
 
   </div>
-  </div>
-  <hr class="mb-5">
-  <div class="container">
-    <%# <%= render 'shared/pitching_participate' %>
-  </div>
 
-  <% else %>
-
-  <% end %>
+  </div>
 </div>
 
