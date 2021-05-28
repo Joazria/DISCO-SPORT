@@ -5,7 +5,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
 
   padding: 1rem;
   &__logo {
@@ -18,48 +20,102 @@
     display: flex;
     align-items: center;
   }
+  &__greeting {
+    display: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+    list-style: none;
+  }
   &__btn {
     display: block;
-    align-self: flex-end;
+    justify-self: end;
 
     position: relative;
-    z-index: 1;
+    z-index: 2;
     @media screen and (min-width: 996px) {
       display: none !important;
     }
   }
   &__menu {
     display: flex;
-    gap: 5ch;
+    column-gap: 5ch;
 
     margin: 0;
+    position: relative;
+    z-index: 1;
 
     transform-origin: right;
     transition: transform 0.4s ease-in;
     @media screen and (max-width: 995px) {
-      background: $menu-bg;
-      color: $text-2;
+      background: $main-bg;
+      color: $text-1;
 
-      flex-direction: column;
-      justify-content: flex-start;
-      row-gap: 6ch;
+      display: grid;
+      grid-auto-rows: minmax(60px, auto);
+      place-content: start center;
       height: 100vh;
       width: clamp(300px, 100%, 450px);
       padding: 5rem;
 
-      transform: translateX(0) scaleX(0);
+      transform: translateX(100%);
       position: absolute;
       right: 0;
       top: 0;
-      &.is-active {
-        transform: translateX(0) scale(1);
+      &-img {
+        display: block !important;
+        width: 160px;
+        object-fit: contain;
+        transform: translateX(-20px);
+        place-items: start !important;
       }
+      &-item {
+        font-size: 1.5rem;
+      }
+      &.is-active {
+        transform: translateX(0);
+        .navigation__greeting {
+          display: block;
+        }
+      }
+    }
+    &-logo {
+      list-style: none;
+    }
+    &-img {
+      display: none;
+      list-style: none;
     }
     &-item {
       list-style: none;
-      a {
-        color: inherit;
-        white-space: nowrap;
+      display: grid;
+      place-items: end start;
+    }
+    &-link {
+      color: inherit;
+      white-space: nowrap;
+
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+
+        height: 2px;
+        width: 100%;
+
+        transition: transform 0.3s ease-in;
+        transform: scaleX(0);
+        transform-origin: left;
+
+        background: $text-1;
+      }
+      &:hover {
+        color: $text-1;
+        text-decoration: none;
+        &::before {
+          transform: scaleX(1);
+        }
       }
     }
   }

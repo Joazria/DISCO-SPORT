@@ -1,12 +1,10 @@
-// Specific CSS for your home-page
-.partners-logos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  place-items: center;
-  gap: 1ch;
+
+.main-container {
+  overflow-x: hidden;
+}
+.partnerslogos {
   img {
     max-width: 100px;
-    object-fit: contain;
     height: auto;
   }
 }
