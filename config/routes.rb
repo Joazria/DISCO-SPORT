@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/speaker', to: 'pages#speaker'
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
   get '/delegates', to: 'pages#delegates', as: 'delegates'
-  resources :profiles, only: [:show, :edit, :update]
+  resources :profiles, only: [:show, :edit, :update, :index]
 
   resources :identities, only: [:show, :edit, :update, :create, :new]
   resources :newsletters, only: [:show, :edit, :index, :update, :create, :new]

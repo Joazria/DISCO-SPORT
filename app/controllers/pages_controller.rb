@@ -21,6 +21,7 @@ class PagesController < ApplicationController
 
   def delegates
     @users = User.all
+    @users_approved = User.where(status: 'approved').sort_by { |event| [event.created_at] }.reverse
   end
 
   def home
