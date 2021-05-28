@@ -1,0 +1,15 @@
+.dashboard {
+  margin-top: 7rem;
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 1ch;
+    &-title {
+      flex: 1 1 100%;
+    }
+  }
+  &__avatar {
+    width: 150px !important;
+    height: 150px !important;
+  }
+}

@@ -17,7 +17,7 @@
                                 </a>
 <!--        <%= link_to "Talk to Us!", chatroom_path(@user), :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
  -->      </div>
-      <class class="card-footer">
+      <div class="card-footer">
 
         <% if current_user.email == "patrickzuchowicki@basiclead.com" || "joa@birds.art.br" || "joa.azria@gmail.com"%>
           <%= link_to "EDIT YOUR PROFILE",  edit_identity_path, class: "btn btn-block btn-danger" %>
@@ -26,7 +26,7 @@
  -->       <% else %>
           <%= link_to "EDIT YOUR PROFILE",  edit_identity_path, class: "btn btn-block btn-danger" %>
      <% end %>
-      </class>
+      </div>
     </div>
   </div>
 
