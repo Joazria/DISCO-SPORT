@@ -1,0 +1,9 @@
+.countries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 3ch;
+  &__container {
+    max-width: 270px;
+  }
+}
