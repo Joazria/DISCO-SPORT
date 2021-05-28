@@ -1,44 +1,31 @@
-
 <%= render 'shared/banner_profile' %>
-
-
-<div class="row">
-  <% if @identity.nil? %>
-  <%= render 'shared/profile_welcome' %>
-
-  <% else %>
-    <% if @identity.release.nil? %>
+<div class="container">
+  <div class="row">
+    <% if @identity.nil? %>
       <%= render 'shared/profile_welcome' %>
     <% else %>
-      <%= render 'shared/profile_working' %>
+      <% if @identity.release.nil? %>
+        <%= render 'shared/profile_welcome' %>
+      <% else %>
+        <%= render 'shared/profile_working' %>
+      <% end %>
     <% end %>
-  <% end %>
-
-  <hr>
-     <%= render 'shared/partnership' %>
-
-  <div class="mt-5">
-    <% if current_user.status == 'approved' %>
-    <h1 class="text-primary text-right m-3">
-      <span class="text-danger">PREMIUM</span>
-      NEWSLETTER</h1>
-
-    <h5 class="text-primary m-3 text-right font-weight-bold">
-      <span class="text-success text-uppercase">
-      you are subscribed to our newsletter </span>
-    </h5>
-  <div class="container">
-   <%= render 'shared/newsletter_prez' %>
-
+    <hr>
+    <%= render 'shared/partnership' %>
+      <div class="mt-5">
+        <% if current_user.status == 'approved' %>
+          <h1 class="text-primary text-right m-3">
+            <span class="text-danger">PREMIUM</span>NEWSLETTER
+          </h1>
+          <h5 class="text-primary m-3 text-right font-weight-bold">
+            <span class="text-success text-uppercase">you are subscribed to our newsletter</span>
+          </h5>
+          <div class="container">
+            <%= render 'shared/newsletter_prez' %>
+          </div>
+        <% end %>
+      </div>
+    <hr class="mb-5">
   </div>
-  </div>
-  <hr class="mb-5">
-  <div class="container">
-    <%# <%= render 'shared/pitching_participate' %>
-  </div>
-
-  <% else %>
-
-  <% end %>
 </div>
 

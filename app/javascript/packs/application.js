@@ -25,9 +25,7 @@ import { initChatroomCable } from '../channels/chatroom_channel';
 
 document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
-});
 
-window.addEventListener("load", () => {
   const menu = document.querySelector('.hamburger');
   let aria = false
   menu.addEventListener("click", ( { path } ) => {
@@ -36,8 +34,7 @@ window.addEventListener("load", () => {
     source.setAttribute('aria-expanded', !aria);
     aria = !aria
     source.nextElementSibling.classList.toggle('is-active');
-    console.log(source);
   });
+});
 
-})
 
