@@ -1,10 +1,10 @@
   <div class="col-md-4">
-    <div class="card mb-3">
+    <div class="card mb-3 profile">
       <% if @user.avatar.attached? %>
-          <%= image_tag @user.avatar , :gravity => "face", :crop=>"crop", :width=>200,  :heigth=>200,  class: "card-img-top rounded-circle p-3", alt: "Card image cap" %>
+          <%= image_tag @user.avatar , :gravity => "face", :crop=>"crop", :width=>200,  :heigth=>200,  class: "card-img-top rounded-circle p-3 profile__avatar", alt: "Card image cap" %>
 
         <% else %>
-          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" ,  class: "card-img-top rounded-circle p-3", alt: "Card image cap"  %>
+          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" ,  class: "card-img-top rounded-circle p-3 profile__avatar", alt: "Card image cap" %>
               <%= link_to "Add Your Avatar", edit_user_registration_path , :class => "btn btn-block btn-danger" %>
       <% end %>
       <!-- <img class="card-img-top rounded-circle p-3" src="https://res.cloudinary.com/numama/image/upload/v1617038321/DISCOSPORT/avatar_mushiki_discop_qiuv2c.png" alt="Card image cap"> -->
@@ -26,7 +26,7 @@
 <!--         <%= link_to "Talk to Us", chatroom_path(@user), :class => "btn btn-block text-uppercase btn-outline-primary", :target => '_blank' %>
  --><!--         <img class="card-img-bottom p-3" src="https://res.cloudinary.com/numama/image/upload/v1617099999/DISCOSPORT/image-asset_fwqjkm.png" alt="Card image cap">
  -->      </div>
-      <class class="card-footer">
+      <div class="card-footer">
         <!-- <button class="btn btn-block btn-danger">hello</button> -->
         <% if current_user.email == "patrickzuchowicki@basiclead.com" || "joa@birds.art.br"%>
           <%= link_to "EDIT YOUR PROFILE",  edit_identity_path, class: "btn btn-block m-1 btn-outline-danger" %>
@@ -34,7 +34,7 @@
  -->        <% else %>
           <%= link_to "EDIT YOUR PROFILE",  edit_identity_path, class: "btn btn-block btn-danger" %>
         <% end %>
-      </class>
+      </div>
     </div>
   </div>
 

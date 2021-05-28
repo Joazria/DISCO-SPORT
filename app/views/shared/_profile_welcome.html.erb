@@ -1,9 +1,9 @@
   <div class="col-md-4">
-    <div class="card mb-3">
+    <div class="card mb-3 profile">
       <% if @user.avatar.attached? %>
-          <%= image_tag @user.avatar , :gravity => "face", :crop=>"crop",:width=>200, :height=>200, class: "card-img-top rounded-circle p-3", alt: "Card image cap" %>
+          <%= image_tag @user.avatar , :gravity => "face", :crop=>"crop",:width=>200, :height=>200, class: "card-img-top rounded-circle p-3 profile__avatar", alt: "Card image cap" %>
         <% else %>
-          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" ,  class: "card-img-top rounded-circle p-3", alt: "Card image cap"  %>
+          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" ,  class: "card-img-top rounded-circle p-3 profile__avatar", alt: "Card image cap"  %>
               <%= link_to "Add Your Avatar", edit_user_registration_path , :class => "btn btn-block btn-danger" %>      <% end %>
       <div class="card-body">
         <h5 class="card-title text-center text-primary font-weight-bold text-uppercase"><%= @user.first_name %>  <%= @user.last_name %></h5>
