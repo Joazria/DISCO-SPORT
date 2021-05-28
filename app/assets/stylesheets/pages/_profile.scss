@@ -1,0 +1,8 @@
+.profile {
+  display: grid;
+  place-items: center;
+  &__avatar {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
