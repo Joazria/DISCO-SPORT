@@ -10,7 +10,6 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    raise
     if Chatroom.where(user_id: current_user.id, invited_id: params[:invited_id].to_i).empty? && Chatroom.where(user_id: params[:invited_id].to_i, invited_id: current_user.id).empty?
       @chatroom = Chatroom.create(user_id: current_user.id,
                                   invited_id: params[:invited_id].to_i)
