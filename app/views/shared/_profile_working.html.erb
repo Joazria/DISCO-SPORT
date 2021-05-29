@@ -7,33 +7,23 @@
           <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" ,  class: "card-img-top rounded-circle p-3 profile__avatar", alt: "Card image cap" %>
               <%= link_to "Add Your Avatar", edit_user_registration_path , :class => "btn btn-block btn-danger" %>
       <% end %>
-      <!-- <img class="card-img-top rounded-circle p-3" src="https://res.cloudinary.com/numama/image/upload/v1617038321/DISCOSPORT/avatar_mushiki_discop_qiuv2c.png" alt="Card image cap"> -->
       <div class="card-body">
         <h5 class="card-title text-primary text-capitalize"><%= @identity.gender %> <%= @user.first_name %>  <span class="text-primary text-capitalize"><%= @user.last_name %></span></h5>
         <h5 class="card-text"><%= @identity.job %></h5>
-        <h6 class="card-text">Attending as : <%= @identity.member %></h6>
+        <h6 class="card-text">Attending as : <%= @user.member %></h6>
         <div class="d-flex flex-column mt-3 pl-2">
           <h6 class="text-left"><i class="fas fa-at"></i> : <%= @user.email %></h6>
           <h6 class="text-left"><i class="fab fa-whatsapp"> : </i><%= @identity.whatsapp %></h6>
         </div>
-        <!-- <button > </button> -->
-        <!-- <i class="fab fa-linkedin"></i> -->
         <%= link_to "Linkedin ", @identity.linkedin , :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
         <a class="btn btn-block btn-outline-success"
-                                  href="mailto:contact@discosport.tv?subject=Hello">
-                                  CONTACT US
-                                </a>
-<!--         <%= link_to "Talk to Us", chatroom_path(@user), :class => "btn btn-block text-uppercase btn-outline-primary", :target => '_blank' %>
- --><!--         <img class="card-img-bottom p-3" src="https://res.cloudinary.com/numama/image/upload/v1617099999/DISCOSPORT/image-asset_fwqjkm.png" alt="Card image cap">
- -->      </div>
+          href="mailto:contact@discosport.tv?subject=Hello">
+          CONTACT US
+        </a>
+<!--    <%= link_to "Talk to Us", chatroom_path(@user), :class => "btn btn-block text-uppercase btn-outline-primary", :target => '_blank' %> -->
+      </div>
       <div class="card-footer">
-        <!-- <button class="btn btn-block btn-danger">hello</button> -->
-        <% if current_user.email == "patrickzuchowicki@basiclead.com" || "joa@birds.art.br"%>
-          <%= link_to "EDIT YOUR PROFILE",  edit_identity_path, class: "btn btn-block m-1 btn-outline-danger" %>
-<!--           <%= link_to "DASHBOARD", dashboard_path, class: "btn btn-block m-1 btn-danger" %>
- -->        <% else %>
           <%= link_to "EDIT YOUR PROFILE",  edit_identity_path, class: "btn btn-block btn-danger" %>
-        <% end %>
       </div>
     </div>
   </div>
@@ -54,7 +44,6 @@
       </div>
     </div>
     <div class="row m-2 text-right">
-      <%#= link_to "VISITE #{ @user.company} WEBSITE", @user.website, class: "btn btn-block btn-sm btn-outline-primary text-uppercase" %>
       <%= link_to "VISITE #{@identity.company} WEBSITE", "http://#{@identity.website}" , :class => "btn btn-block btn-outline-primary text-uppercase", :target => '_blank' %>
     </div>
     <hr>

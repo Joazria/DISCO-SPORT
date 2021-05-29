@@ -1,5 +1,6 @@
 <%= render 'devise/shared/banner_log_in' %>
-<h3 class="m-5 text-center"> <span class="text-danger">SIGN UP</span> <span class="text-primary">NOW</span></h3>
+<div class="container">
+  <h3 class="m-5 text-center"> <span class="text-danger">SIGN UP</span> <span class="text-primary">NOW</span></h3>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
   <div class="form-inputs">
@@ -25,17 +26,7 @@
                       placeholder: 'Zuchowicki' %>
       </div>
     </div>
- <!--    <p class="text-danger">Following informations are required to register.</p>
-    <span class="text-danger">
-      <div class="row">
-        <div class="col-md-6">
-          <%= f.input :company,
-                        as: :string,
-                        label: 'Company',
-                        placeholder: 'Basic Lead' %>
-        </div>
 
-      </div> -->
           <%= f.input :member,
                     label: 'Attending as *',
                     collection: [ 'VENDOR', 'SPORTS FEDERATION', 'SPORTING CLUB','PLATFORM',
@@ -128,7 +119,7 @@
   </div> -->
   <div class="form-actions  row">
     <div class="col-6">
-      <%= f.button :submit, "Sign up", class: "btn btn-success m-3" %>
+      <%= f.button :submit, "Sign up", class: "btn btn-success btn-lg m-3" %>
       <%#= render "devise/shared/links" %>
         <%= link_to "Log in", new_session_path(resource_name), class: "btn btn-outline-primary m-3" %><br />
   <%# resource_class.omniauth_providers.each do |provider| %>
@@ -141,3 +132,5 @@
     </div>
   </div>
 <% end %>
+</div>
+

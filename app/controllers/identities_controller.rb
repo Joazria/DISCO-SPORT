@@ -1,5 +1,5 @@
 class IdentitiesController < ApplicationController
-     before_action :set_identity, only: [:show, :edit, :update, :destroy]
+     before_action :set_identity, only: [:show, :update, :destroy]
 
   def index
       @identities = Identity.all
@@ -14,7 +14,9 @@ class IdentitiesController < ApplicationController
   end
 
   def edit
+    @identity = Identity.find_by(user_id: params[:id])
   end
+
 
   def create
     @identity = Identity.new(identity_params)
@@ -28,7 +30,7 @@ class IdentitiesController < ApplicationController
 
   def update
     if @identity.update(identity_params)
-      redirect_to @identity, notice: "Your Discosport Identity was successfully updated."
+      redirect_to profile_path(current_user), notice: "Your Discosport Identity was successfully updated."
     else
       render :edit
     end

@@ -15,9 +15,11 @@
     <% if user_signed_in? %>
       <ul class="navigation__menu">
         <li class="navigation__menu-logo">
-          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616778797/DISCOSPORT/LOGO1_DISCOSPORT_MASTER_wtwyli.png",
+          <%= link_to "/", class: "navigation__logo" do %>
+            <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616778797/DISCOSPORT/LOGO1_DISCOSPORT_MASTER_wtwyli.png",
                         class: "navigation__menu-img",
                         alt: "Discosport header logo, welcome!" %>
+          <% end %>
         </li>
         <li class="navigation__greeting">
           Hello, <%= current_user.first_name %>

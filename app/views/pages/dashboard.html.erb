@@ -1,54 +1,33 @@
 
-<div class="bg-white m-5">
-<h5 class="text-uppercase text-primary">Newsletters </h5>
-                          <%= link_to "ADD AN ARTICLE", new_newsletter_path, class: " btn btn-lg btn-success" %>
-                          <%= link_to "READ ALL ARTICLES", newsletters_path, class: " btn btn-lg btn-outline-primary" %>
-
-</div>
+<%= render 'shared/newsletter_dashboard' %>
 
 <div class=" bg-white p-3 m-3">
-  <div class="row ">
-    <div class="col-1">
-      <img src="https://res.cloudinary.com/numama/image/upload/v1617118315/DISCOSPORT/icon_people_discop_hjcv0s.png" alt="Responsive image" class="img-fluid avatar">
-    </div>
-    <div class="col-11 text-primary">
-      <div class="d-flex justify-content-between">
-        <h5 class="font-weight-bold"><%= "DELEGATES: #{@users.count}" %></h5>
-        <h5 class="font-weight-bold"><%= @users_approved.count %>  APPROVED</h5>
-        <h5 class="font-weight-bold"> <span class="text-danger"><%= @users_pending.count %></span>   PENDING</h5>
-        <h6><%= @users_not_approved.count %>  NOT APPROVED</h6>
-      </div>
-    </div>
-  </div>
+  <%= render 'shared/dashboard_delegates_counter' %>
   <%= render 'shared/search_bar' %>
 </div>
 <% if @results.nil?  %>
   <%= render 'shared/dashboard_validation' %>
-<% else %>
-  <div class="mt-3">
-  </div>
+  <% else %>
   <% @results.each do |result| %>
     <div class="card mb-3" >
       <div class="row g-0">
         <div class="col-md-2">
           <% if result.avatar.attached? %>
             <%= image_tag result.avatar, :style => "height: 100%; width: 200px;", :gravity => "face" %>
-
           <% else %>
             <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" , :style => "height: 100%; width: 200px;" %>
           <% end %>
         </div>
         <div class="col-md-6">
           <div class="card-body">
-            <!-- <h5 class="card-title text-uppercase"><%= result.first_name %> <%= result.last_name %></h5> -->
             <h5 class="card-title text-uppercase"><%= link_to "#{result.full_name}", chatroom_path(result) %></h5>
             <h6 class="card-text"> <span class="font-weight-bold"><%= result.identity.company %></span>  from <span class="font-weight-bold"><%= result.identity.country %></span>  and attending as <span class="font-weight-bold"><%= result.member %></span></h6>
             <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= result.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= result.identity.whatsapp %></span> </p>
-            <div class="d-flex">
-              <%= link_to "linkedin", result.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
-              <%= link_to "#{result.company} WEBSITE", result.company, class: "btn btn-sm btn-outline-primary text-uppercase m-2" %>
-              <%= link_to "Delegate Profile", root_path, class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
-            </div>
+              <div class="d-flex">
+                <%= link_to "linkedin", result.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
+                <%= link_to "#{result.company} WEBSITE", result.company, class: "btn btn-sm btn-outline-primary text-uppercase m-2" %>
+                <%= link_to "Delegate Profile", root_path, class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
+              </div>
             <p class="card-text"><small class="text-muted"><%= result.created_at %></small></p>
           </div>
         </div>

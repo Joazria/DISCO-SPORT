@@ -10,10 +10,9 @@
         <%= render 'shared/profile_working' %>
       <% end %>
     <% end %>
-  <% end %>
 
   <hr>
-  <%= render 'shared/partnership' %>
+
 
   <div class="mt-5">
     <% if current_user.status == 'approved' %>
@@ -27,8 +26,10 @@
     </h5>
   <div class="container">
    <%= render 'shared/newsletter_prez' %>
-
+   <hr>
+  <%= render 'shared/partnership' %>
   </div>
+  <% end %>
 
   </div>
 </div>
