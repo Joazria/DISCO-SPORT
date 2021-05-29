@@ -1,0 +1,10 @@
+<p>
+  <% @chatrooms_created.each do |chatroom| %>
+    <%= link_to chatroom.invited_id, chatroom_path(chatroom) %>
+  <% end %>
+</p>
+<p>
+  <% @chatrooms_invited.each do |chatroom| %>
+    <%= link_to chatroom.id, chatroom_path(chatroom) %>
+  <% end %>
+</p>

@@ -4,6 +4,8 @@ class ProfilesController < ApplicationController
     @identity = Identity.find_by(user_id: @user.id)
     # @users_approved = User.where(status: 'approved').sort_by { |event| [event.created_at] }
     @packages = Package.all
+    @chatrooms_created = Chatroom.where(user_id: current_user.id)
+    @chatrooms_invited = Chatroom.where(invited_id: current_user.id)
   end
 
   def edit

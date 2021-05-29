@@ -18,12 +18,12 @@
       <!-- <button > </button> -->
       <!-- <i class="fab fa-linkedin"></i> -->
       <%= link_to "Linkedin ", @identity.linkedin , :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
+      <!-- create a chatroom: current_user x profile's user -->
       <%= link_to 'Chat', chatrooms_path(:invited_id => @user), method: :post, class: "btn btn-block btn-outline-primary" %>
       <a class="btn btn-block btn-outline-success"
                                   href="mailto:contact@discosport.tv?subject=Hello">
         CONTACT US
       </a>
-      <!-- create a chatroom: current_user x profile's user -->
       <!--         <img class="card-img-bottom p-3" src="https://res.cloudinary.com/numama/image/upload/v1617099999/DISCOSPORT/image-asset_fwqjkm.png" alt="Card image cap">
       </div>
     <class class="card-footer">
@@ -53,7 +53,7 @@
   </div>
   <div class="row m-2 text-right">
     <%#= link_to "VISITE #{ @user.company} WEBSITE", @user.website, class: "btn btn-block btn-sm btn-outline-primary text-uppercase" %>
-    <%= link_to "VISITE #{@identity.company} WEBSITE", "http://#{@identity.website}" , :class => "btn btn-block btn-outline-primary text-uppercase", :target => '_blank' %>
+    <%= link_to "VISIT #{@identity.company} WEBSITE", "http://#{@identity.website}" , :class => "btn btn-block btn-outline-primary text-uppercase", :target => '_blank' %>
   </div>
   <hr>
   <p class="text-justify"><span class="text-danger">PRESENTATION: </span> <%= @identity.release %></p>
