@@ -1,10 +1,20 @@
-<p>
+<div class="container">
   <% @chatrooms_created.each do |chatroom| %>
-    <%= link_to chatroom.invited_id, chatroom_path(chatroom) %>
+    <!-- talking to user: -->
+    <p><%= link_to User.find(chatroom.invited_id).full_name, chatroom_path(chatroom) %></p>
+    <!-- created at of the chatroom's last message  -->
+    <p><%= chatroom.messages.last.created_at.day.ordinalize %> <%= chatroom.messages.last.created_at.strftime("%B") %></p>
+    <!-- content of the chatroom's last message  -->
+    <p><%= chatroom.messages.last.content %></p>
   <% end %>
-</p>
-<p>
+</div>
+<div class="container">
   <% @chatrooms_invited.each do |chatroom| %>
-    <%= link_to chatroom.id, chatroom_path(chatroom) %>
+    <!-- talking to user: -->
+    <p><%= link_to chatroom.user.full_name, chatroom_path(chatroom) %></p>
+    <!-- created at of the chatroom's last message  -->
+    <p><%= chatroom.messages.last.created_at.day.ordinalize %> <%= chatroom.messages.last.created_at.strftime("%B") %></p>
+    <!-- content of the chatroom's last message  -->
+    <p><%= chatroom.messages.last.content %></p>
   <% end %>
-</p>
+</div>

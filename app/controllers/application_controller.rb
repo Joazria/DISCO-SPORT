@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+
   protected
 
 
@@ -28,6 +29,6 @@ class ApplicationController < ActionController::Base
   end
 
 end
-  # def after_sign_up_path_for(resource)
-  #   "http://www.google.com" # <- Path you want to redirect the user to.
-  # end
+# def after_sign_up_path_for(resource)
+#   "http://www.google.com" # <- Path you want to redirect the user to.
+# end
