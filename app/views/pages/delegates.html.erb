@@ -26,6 +26,7 @@
               <%= link_to "linkedin", user.identity.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
               <%= link_to "WEBSITE", "http://#{user.website}" , :class => "btn btn-sm btn-outline-primary text-uppercase m-2", :target => '_blank' %>
               <%= link_to "Delegate Profile", profile_path(user), class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
+              <!-- link to chatroom -->
               <%= link_to 'Chat', chatrooms_path(:invited_id => user), method: :post, class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
             </div>
             <p class="card-text"><small class="text-muted"><%= user.created_at %></small></p>
@@ -51,3 +52,22 @@
     </div>
   </div>
 <% end %>
+<!-- modal to chatroom -->
+<div class="modal fade" id="chatModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Chatroom</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- INPUTS -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-block">Send</button>
+      </div>
+    </div>
+  </div>
+</div>

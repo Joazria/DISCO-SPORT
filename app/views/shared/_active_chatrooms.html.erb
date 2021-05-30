@@ -2,7 +2,7 @@
 <div class="container">
   <% @chatrooms_created.each do |chatroom| %>
     <!-- talking to user: -->
-    <p><%= link_to User.find(chatroom.invited_id).full_name, chatroom_path(chatroom) %></p>
+    <p><%= link_to User.find(chatroom.invited_id).full_name, chatroom_path(chatroom), remote: true %></p>
     <!-- only shows last message if it doesn't belongs to current_user -->
     <% if chatroom.messages.last.user_id != current_user.id %>
       <!-- created at of the chatroom's last message  -->
@@ -15,7 +15,7 @@
 <div class="container">
   <% @chatrooms_invited.each do |chatroom| %>
     <!-- talking to user: -->
-    <p><%= link_to chatroom.user.full_name, chatroom_path(chatroom) %></p>
+    <p><%= link_to chatroom.user.full_name, chatroom_path(chatroom), remote: true %></p>
     <!-- only shows last message if it doesn't belongs to current_user -->
     <% if chatroom.messages.last.user_id != current_user.id %>
       <!-- created at of the chatroom's last message  -->
@@ -24,4 +24,11 @@
       <p><%= chatroom.messages.last.content %></p>
     <% end %>
   <% end %>
+</div>
+<!-- modal to chatroom -->
+<div class="modal fade" id="chatModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    </div>
+  </div>
 </div>
