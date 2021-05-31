@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
         render_to_string(partial: "message", locals: { message: @message })
         # render is to html and here we want to render it quoted
       )
-      redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
+      # redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
     else
       render "chatrooms/show"
     end

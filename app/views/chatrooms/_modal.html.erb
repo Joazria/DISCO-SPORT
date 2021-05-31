@@ -17,11 +17,10 @@
     <% end %>
   </div>
 </div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-primary btn-block">Send</button>
-</div>
 <!-- needs to work on this simple form inside modal -->
-<%#= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%#= f.input :content, label: false, placeholder: "Message" %>
-  <%#= f.submit %>
-  <%# end %>
+<%= simple_form_for [ chatroom, message ], remote: true do |f| %>
+  <%= f.input :content, label: false, placeholder: "Message" %>
+  <div class="modal-footer">
+    <%= f.submit %>
+  </div>
+<% end %>
