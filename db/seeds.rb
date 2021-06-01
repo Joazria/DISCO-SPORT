@@ -8,6 +8,186 @@
 # require "open-uri"
 # file = URI.open('https://res.cloudinary.com/numama/image/upload/v1621345505/2yne0tl04sm7mqo5ttj88p6a00r4.jpg')
 # User.find(20).avatar.attach(:file)
+User.find(44).update(
+  gender:'Mr',
+  job: 'Creative Director',
+  whatsapp: '+524777064355',
+  linkedin: 'https://www.linkedin.com/in/criswinter/',
+  company:'FWMX',
+  activity: 'PRODUCTION COMPANY',
+  country: 'mexico',
+  phone: '+13109806872',
+  website:'+524777064355')
+User.find(42).update(
+  gender:'Mr',
+  job: 'Director / Consultant',
+  whatsapp: '+5521986640688',
+  linkedin: 'https://www.linkedin.com/in/patrick-zuchowicki-1b70379/',
+  company:'RADIO EDISON',
+  activity: 'ADVERTISING AGENCY',
+  country: 'Brazil',
+  phone: '+5521986640688',
+  website:'www.radioedison.com.br')
+User.find(41).update(
+  gender:'Mr',
+  job: 'President',
+  whatsapp: '+2250102656574',
+  linkedin: 'https://www.linkedin.com/in/patrick-zuchowicki-1b70379/',
+  company:'FIFAM - FEDERATION IVOIRIENNE DE FOOTBALL AMÉRICAIN',
+  activity: 'SPORTS FEDERATION',
+  country: 'Côte d’Ivoire',
+  phone: '+2250102656574',
+  website:'www.goldeneaglescorporate.com')
+User.find(40).update(
+  gender:'Mr',
+  job: 'Vice President',
+  whatsapp: '+2250101076793',
+  linkedin: 'https://www.linkedin.com/in/patrick-zuchowicki-1b70379/',
+  company:'AMERICAN FOOTBALL CLUB - RIVIERA GOLF GOLDEN EAGLES',
+  activity: 'SPORTING CLUB',
+  country: 'Côte d’Ivoire',
+  phone: '+2250101076793',
+  website:'www.goldeneaglescorporate.com')
+User.find(39).update(
+  gender:'Mr',
+  job: 'Founder',
+  whatsapp: '+18187265973',
+  linkedin: 'https://www.linkedin.com/in/timwahl/',
+  company:'PRESS',
+  activity: 'Founder',
+  country: 'USA',
+  phone: '8187265973',
+  website:'www.mrfootballogy.com')
+User.find(37).update(
+  gender:'Mr',
+  job: 'HOD',
+  whatsapp: '+18187265973',
+  linkedin: 'https://www.linkedin.com/in/khanyomjamba/',
+  company:'GABA MEDIA',
+  activity: 'TV RIGHTS DISTRIBUTOR',
+  country: 'South Africa',
+  phone: '+27824006870',
+  website:'https://gabamedia.co.za/sales-and-distribution/')
+User.find(36).update(
+  gender:'Mr',
+  job: 'Owner',
+  whatsapp: '+16152829629',
+  linkedin: 'https://www.linkedin.com/in/timwahl/',
+  company:' DRIES PRINSLOO',
+  activity: 'STREAMING PLATFORM',
+  country: 'USA',
+  phone: '+16152829629',
+  website:'www.nmbctv.com')
+User.find(35).update(
+  gender:'Mr',
+  member: 'VENDOR',
+  job: 'Business Development Manager',
+  whatsapp: '+250782394170',
+  linkedin: 'https://www.linkedin.com/in/james-njugi-31082238/',
+  company:' DRIES PRINSLOO',
+  activity: 'EQUIPMENT / NEW TECH DISTRIBUTION',
+  country: 'Rwanda',
+  phone: '+250782394170',
+  website:'www.hekimanetworks.com')
+User.find(34).update(
+  gender:'Mrs',
+  member: 'VENDOR',
+  job: 'Business Development Manager',
+  whatsapp: '+6598580309',
+  linkedin: 'https://www.linkedin.com/in/gleyce-soares-freire-07608316/',
+  company:'BOMANBRIDGE MEDIAO',
+  activity: 'TV RIGHTS DISTRIBUTOR',
+  country: 'Singapore',
+  phone: '98580309',
+  website:'https://bomanbridge.tv/')
+User.find(31).update(
+  gender:'Mr',
+  member: 'STAFF',
+  job: 'Administrative Manager',
+  whatsapp: '+2250759690637',
+  linkedin: 'https://www.linkedin.com/events/6780296446915829760/',
+  company:'BASIC LEAD | DISCOSPORT',
+  activity: 'Organizer',
+  country: 'Côte d’Ivoire',
+  phone: '+2250759690637',
+  website:'https://discosport.tv/')
+User.find(29).update(
+  gender:'Mrs',
+  member: 'SPORTS FEDERATION',
+  job: 'Strategic Advisor',
+  whatsapp: '',
+  linkedin: 'https://www.linkedin.com/events/6780296446915829760/',
+  company:'AFRICA ESPORTS CHAMPIONSHIP',
+  activity: 'SPORTS FEDERATION',
+  country: 'Kenya',
+  phone: '',
+  website:'https://aec.africa/')
+User.find(28).update(
+  gender:'Mr',
+  member: 'STAFF',
+  job: 'Content Director',
+  whatsapp: '+14349898379',
+  linkedin: 'https://www.linkedin.com/events/6780296446915829760/',
+  company:'BASIC LEAD | DISCOSPORT',
+  activity: 'Organizer',
+  country: 'USA',
+  phone: '+14349898379',
+  website:'https://discosport.tv/')
+User.find(25).update(
+  gender:'Mr',
+  member: 'ADVERTISER',
+  job: 'HEAD OF MARKETING',
+  whatsapp: ' ',
+  linkedin: 'https://www.linkedin.com/in/damien-legeai-ab08b010/',
+  company:'CANAL+ ADVERTISING',
+  activity: 'BROADCASTER | Private',
+  country: 'France',
+  phone: ' ',
+  website:'https://www.canalplusadvertising.com/')
+User.find(23).update(
+  gender:'Mr',
+  member: 'STAFF',
+  job: 'DEV BACK-END',
+  whatsapp: '+5511992925023',
+  linkedin: 'https://www.linkedin.com/in/danniel-tung-827178114/',
+  company:'BIRDS COMMUNICATIONS',
+  activity: 'DIGITAL MARKETING AGENCY',
+  country: 'France',
+  phone: 'https://www.canalplusadvertising.com/',
+  website:' ')
+User.find(22).update(
+  gender:'Mrs',
+  member: 'VENDOR',
+  job: 'Vice President of sales',
+  whatsapp: '',
+  linkedin: 'https://www.linkedin.com/in/julie-paquit-97408699/',
+  company:'VMI Worldwide',
+  activity: 'MEDIA RIGHTS DISTRIBUTOR',
+  country: 'France',
+  phone: '',
+  website:'http://vmiworldwide.com/')
+User.find(22).update(
+  gender:'Mrs',
+  member: 'PLATFORM',
+  job: 'Director of Sport & TV Business Development',
+  whatsapp: '',
+  linkedin: 'https://www.linkedin.com/in/ariane-seta-debaisieux-4aa4902/',
+  company:'ORANGE',
+  activity: 'MOBILE OPERATOR',
+  country: 'France',
+  phone: '',
+  website:'/www.orange.fr')
+User.find(22).update(
+  gender:'Mr',
+  member: 'PLATFORM',
+  job: 'Chef de projet Business Development Sport ',
+  whatsapp: '',
+  linkedin: 'https://www.linkedin.com/in/jean-nicolas-lussiana-5862102b/',
+  company:'ORANGE',
+  activity: 'MOBILE OPERATOR',
+  country: 'France',
+  phone: '',
+  website:'/www.orange.fr')
 
 # Identity.create!(user_id: 3,
 #   company:'Basic Lead',
