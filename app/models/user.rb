@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :member, presence: true
   validates :email, presence: true
-  # validates :avatar, presence: true
+  validates :avatar, presence: true
   validates :job, presence: true
   validates :whatsapp, presence: true
   validates :linkedin, presence: true
@@ -20,7 +20,7 @@ class User < ApplicationRecord
 
   has_one :pitching, dependent: :destroy
   has_one :identity, dependent: :destroy
-  has_many :newsletters, dependent: :destroy
+  has_many :newsletters
 
   has_one_attached :avatar
   has_many :orders, dependent: :destroy

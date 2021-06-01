@@ -21,36 +21,36 @@
 
 ########### to do avatar#######
 # 12 / 26 / 10 /9 / 7
-User.find(24).update(
-  gender:'Mr',
-  member:'PLATFORM',
-  job: 'Senior Manager | Media Rights',
-  whatsapp: 'N/A',
-  linkedin: 'https://www.linkedin.com/in/richardsarris/',
-  company:'BLAST',
-  activity: 'VIDEO GAMING PLATFORM',
-  country: 'UK',
-  phone: 'N/A',
-  website:'https://blastpremier.com/')
+# User.find(24).update(
+#   gender:'Mr',
+#   member:'PLATFORM',
+#   job: 'Senior Manager | Media Rights',
+#   whatsapp: 'N/A',
+#   linkedin: 'https://www.linkedin.com/in/richardsarris/',
+#   company:'BLAST',
+#   activity: 'VIDEO GAMING PLATFORM',
+#   country: 'UK',
+#   phone: 'N/A',
+#   website:'https://blastpremier.com/')
 
-User.find(22).update(
-  gender:'Mr',
-  job: 'Attaché Culturel',
-  whatsapp: 'N/A',
-  linkedin: 'https://www.linkedin.com/in/matthieu-thibaudault/',
-  company:'Ministère des Affaires étrangères',
-  activity: 'PUBLIC ORGANISATION',
-  country: 'France',
-  phone: 'N/A',
-  website:'N/A')
+# User.find(22).update(
+#   gender:'Mr',
+#   job: 'Attaché Culturel',
+#   whatsapp: 'N/A',
+#   linkedin: 'https://www.linkedin.com/in/matthieu-thibaudault/',
+#   company:'Ministère des Affaires étrangères',
+#   activity: 'PUBLIC ORGANISATION',
+#   country: 'France',
+#   phone: 'N/A',
+#   website:'N/A')
 
-User.find(7).update(
-  gender:'Mr',
-  linkedin: 'https://www.linkedin.com/in/yuveshen-darmalingum-a7a71416b/')
+# User.find(7).update(
+#   gender:'Mr',
+#   linkedin: 'https://www.linkedin.com/in/yuveshen-darmalingum-a7a71416b/')
 
-User.find(9).update(
-  gender:'Mr',
-  member: 'VENDOR')
+# User.find(9).update(
+#   gender:'Mr',
+#   member: 'VENDOR')
 
 # User.find(19).update(
 #   gender:'Mrs',
