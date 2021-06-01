@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :member, presence: true
   validates :email, presence: true
-  validates :avatar, presence: true
+  # validates :avatar, presence: true
   validates :job, presence: true
   validates :whatsapp, presence: true
   validates :linkedin, presence: true
