@@ -177,17 +177,17 @@
 #   country: 'France',
 #   phone: 'N/A',
 #   website:'/www.orange.fr')
-User.find(17).update(
-  gender:'Mr',
-  member: 'PLATFORM',
-  job: 'Chef de projet Business Development Sport ',
-  whatsapp: 'N/A',
-  linkedin: 'https://www.linkedin.com/in/jean-nicolas-lussiana-5862102b/',
-  company:'ORANGE',
-  activity: 'MOBILE OPERATOR',
-  country: 'France',
-  phone: 'N/A',
-  website:'/www.orange.fr')
+# User.find(17).update(
+#   gender:'Mr',
+#   member: 'PLATFORM',
+#   job: 'Chef de projet Business Development Sport ',
+#   whatsapp: 'N/A',
+#   linkedin: 'https://www.linkedin.com/in/jean-nicolas-lussiana-5862102b/',
+#   company:'ORANGE',
+#   activity: 'MOBILE OPERATOR',
+#   country: 'France',
+#   phone: 'N/A',
+#   website:'/www.orange.fr')
 
 # Identity.create!(user_id: 3,
 #   company:'Basic Lead',

@@ -1,6 +1,13 @@
-<div class="mt-3 text-uppercase text-center text-danger">
-<h2>PENDING VALIDATION</h2>
-</div>
+
+<% if @users_pending.nil? %>
+  <div class="mt-3 text-uppercase text-center text-primary">
+    <h2>NO PENDING VALIDATION (<%= @users_pending.count %>)</h2>
+  </div>
+<% else %>
+  <div class="mt-3 text-uppercase text-center text-danger">
+  <h2> PENDING VALIDATION (<%= @users_pending.count %>)</h2>
+  </div>
+<% end %>
 
 <div class="card-columns">
 
@@ -9,7 +16,7 @@
 </div>
 
 <div class="mt-3 text-uppercase text-center  text-primary">
-<h2>DELEGATE APPROVED</h2>
+<h2>DELEGATE APPROVED (<%= @users_approved.count %>)</h2>
 </div>
 
 <div class="card-columns">

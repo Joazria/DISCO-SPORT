@@ -1,5 +1,15 @@
-<div class="bg-white m-5">
-  <h5 class="text-uppercase text-primary">Newsletters </h5>
-    <%= link_to "ADD AN ARTICLE", new_newsletter_path, class: " btn btn-lg btn-success" %>
-    <%= link_to "READ ALL ARTICLES", newsletters_path, class: " btn btn-lg btn-outline-primary" %>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top"
+    src="https://res.cloudinary.com/numama/image/upload/v1617031310/DISCOSPORT/bootcamp_discop_nsgvby.png"
+    alt="Card image cap">
+  <div class="card-body">
+    <h4 class="card-title font-weight-bold text-center">DiscoSport <span class="text-danger">| NEWS</span></h4>
+    <div class="d-flex justify-content-around">
+      <%= link_to "ADD AN ARTICLE", new_newsletter_path,
+        class: " btn btn-success p-2 m-1" %>
+      <%= link_to "READ ALL ARTICLES", newsletters_path,
+        class: " btn btn-outline-primary p-2 m-1" %>
+    </div>
+
+  </div>
 </div>

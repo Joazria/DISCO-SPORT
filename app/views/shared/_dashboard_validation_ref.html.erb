@@ -1,7 +1,12 @@
-<div class="mt-3 text-uppercase text-center text-danger">
-<h2>PENDING VALIDATION</h2>
-</div>
-
+<% if @users_pending.nil? %>
+  <div class="mt-3 text-uppercase text-center text-primary">
+    <h2>NO PENDING VALIDATION</h2>
+  </div>
+<% else %>
+  <div class="mt-3 text-uppercase text-center text-danger">
+  <h2>SIM PENDING VALIDATION</h2>
+  </div>
+<% end %>
 <% @users_pending.each do |user| %>
   <div class="card mb-3" >
     <div class="row g-0">
