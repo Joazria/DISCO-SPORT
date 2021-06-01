@@ -6,8 +6,122 @@
 # User.find(20).avatar.purge
 
 # require "open-uri"
-# file = URI.open('https://res.cloudinary.com/numama/image/upload/v1621345505/2yne0tl04sm7mqo5ttj88p6a00r4.jpg')
-# User.find(20).avatar.attach(:file)
+# file = URI.open('https://media-exp1.licdn.com/dms/image/C4E03AQE4xTqwRA3_6Q/profile-displayphoto-shrink_200_200/0/1618242624718?e=1628121600&v=beta&t=PVtJWiBB_lGd1BdlyWxGtqV5vGCCDgFnMhQEDuPVBzU')
+# user = User.find(20)
+# user.avatar.attach(io: File.open('../app/assets/images'), filename: 'sk.jpeg')
+# require "open-uri"
+
+# require "open-uri"
+
+# file = URI.open('https://media-exp1.licdn.com/dms/image/C4E03AQE4xTqwRA3_6Q/profile-displayphoto-shrink_200_200/0/1618242624718?e=1628121600&v=beta&t=PVtJWiBB_lGd1BdlyWxGtqV5vGCCDgFnMhQEDuPVBzU')
+# user = User.find(20)
+# user.avatar.attach(avatar: file)
+
+
+
+########### to do avatar#######
+# 12 / 26 / 10 /9 / 7
+
+User.find(26).update(
+  gender:'Mrs',
+  job: 'International Marketing Manager',
+  whatsapp: 'N/A',
+  linkedin: 'https://www.linkedin.com/in/niamurrell/',
+  company:'NBCUniversal, Inc',
+  activity: 'PRODUCTION COMPANY',
+  country: 'USA',
+  phone: 'N/A',
+  website:'https://www.nbcuniversal.com/')
+
+
+User.find(38).update(
+  gender:'Mr',
+  job: 'Owner Producer/Director',
+  whatsapp: 'N/A',
+  linkedin: 'https://www.linkedin.com/in/mark-van-hoff-2aaa5b51/',
+  company:'MOVE MEDIA NETWORKS',
+  activity: 'PRODUCTION COMPANY',
+  country: 'South Africa',
+  phone: 'N/A',
+  website:'https://www.nbcuniversal.com/')
+
+User.find(22).update(
+  gender:'Mr',
+  job: 'Attaché Culturel ',
+  whatsapp: 'N/A',
+  linkedin: 'https://www.linkedin.com/in/matthieu-thibaudault/',
+  company:'Ministère de l Europe et des Affaires étrangères',
+  activity: 'PUBLIC ORGANISATION',
+  country: 'France',
+  phone: 'N/A',
+  website:' ')
+
+User.find(7).update(
+  gender:'Mr',
+  linkedin: 'https://www.linkedin.com/in/yuveshen-darmalingum-a7a71416b/')
+
+User.find(9).update(
+  gender:'Mr',
+  member: 'VENDOR')
+
+User.find(19).update(
+  gender:'Mrs',
+  last_name:'NWAOBASI',
+  member: 'VENDOR'
+  job: 'Business Development Manager for Francophone Africa',
+  whatsapp: 'N/A',
+  linkedin: 'https://www.linkedin.com/in/wwwlinkedindonly1annemarienw/',
+  company:'BBC World Service',
+  activity: 'BROADCASTER | Private',
+  country: 'Senegal',
+  phone: 'N/A',
+  website:'https://www.bbc.com/')
+
+User.find(33).update(
+  gender:'Mr',
+  member: 'PLATFORM'
+  job: 'Manager',
+  whatsapp: 'N/A',
+  linkedin: 'https://www.linkedin.com/in/campbellwarren/',
+  company:'gravitEsports',
+  activity: 'VIDEO GAMING PLATFORM',
+  country: 'Canada',
+  phone: 'N/A',
+  website:'https://www.gravitesports.com/')
+
+User.find(30).update(
+  gender:'Mr',
+  member: 'STAFF'
+  job: 'Buyer Relation Manager',
+  whatsapp: '+22520225866',
+  linkedin: 'https://www.linkedin.com/in/karl-boluwa-15ab71205/',
+  company:'BASIC LEAD | DISCOSPORT',
+  activity: 'Organizer',
+  country: 'Côte d’Ivoire',
+  phone: '+22589602958',
+  website:'www.discosport.tv')
+# User.find(19).update(
+#   gender:'Mrs',
+#   job: 'Attaché Culturel ',
+#   whatsapp: 'N/A',
+#   linkedin: 'https://www.linkedin.com/in/matthieu-thibaudault/',
+#   company:'Ministère de l Europe et des Affaires étrangères',
+#   activity: 'PUBLIC ORGANISATION',
+#   country: 'France',
+#   phone: 'N/A',
+#   website:' ')
+# User.find(7).update(
+#   gender:'Mr',
+#   linkedin: 'https://www.linkedin.com/in/yuveshen-darmalingum-a7a71416b/')
+# User.find(9).update(
+#   gender:'Mr',
+#   member: 'VENDOR')
+
+
+# END OF.
+
+
+
 # User.find(44).update(
 #   gender:'Mr',
 #   job: 'Creative Director',
