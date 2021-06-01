@@ -1,0 +1,44 @@
+<% @users_approved.each do |user| %>
+  <!-- inicio do card -->
+    <div class="card" style="width: 18rem;">
+    <!-- avatar card -->
+      <% if user.avatar.attached? %>
+        <%= image_tag user.avatar, :gravity => "face", :crop=>"crop",
+          :width=>200, :height=>200, :gravity => "face",
+          :class => "rounded-circle p-2" %>
+        <% else %>
+          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png",
+          :style => "height: 100%; width: 200px;" , :gravity => "face",
+          :class => "rounded-circle p-2" %>
+      <% end %>
+      <!-- TITLE card : Nome Sobrenome | Company | website-->
+      <div class="card-body">
+      <!-- TITLE card : Nome Sobrenome | Company | website-->
+        <h5 class="card-title  text-uppercase"><%= user.first_name %> <%= user.last_name %></h5>
+        <h5 class="card-title text-uppercase text-primary"><%= user.company %></h5>
+        <p class="card-title text-uppercase"><%= user.website %></p>
+        <h6><span class="font-weight-bold text-primary"><%= user.member %></span> | <%= user.country %></h6>
+
+      <!-- Confirmação Profile Completo  -->
+        <%= link_to "Delegate Profile", profile_path(user), class: " btn btn-sm btn-primary btn-block text-uppercase m-2" %>
+
+<!--           <%= link_to "linkedin", user.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
+          <%= link_to "WEBSITE", "http://#{user.website}" , :class => "btn btn-sm btn-outline-primary text-uppercase m-2", :target => '_blank' %> -->
+      </div>
+
+
+      <div class="card-footer">
+                <% if user.identity.nil? %>
+          <p class="text-danger"> <span class="font-weight-bold"><i class="far fa-address-card"></i>
+            profile incomplete</span>
+          </p>
+        <% else %>
+          <p class="cart-text">  <span class="font-weight-bold text-success">
+            <i class="far fa-id-card"> </i> Profile Completed </span> </p>
+        <% end %>
+      </div>
+
+    </div>
+  <!-- fim do card -->
+<% end %>
+
