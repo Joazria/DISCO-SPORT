@@ -10,9 +10,9 @@
     </h5>
 
         <div class="row">
-<!--       <div class="col-md-2">
+      <div class="col-md-2">
         <%= f.input :gender, collection: ['Mr', 'Mrs']%>
-      </div> -->
+      </div>
       <div class="col-md-5">
         <%= f.input :first_name,
                         as: :string,
@@ -27,44 +27,37 @@
       </div>
     </div>
 
-          <%= f.input :member,
-                    label: 'Attending as *',
-                    collection: [ 'VENDOR', 'SPORTS FEDERATION', 'SPORTING CLUB','PLATFORM',
-                     'SPORTS VENUE', 'ADVERTISER', 'CONTENT CREATOR','PRESS', 'EXPERT']%>
+       <%= f.input :member,
+                    label: 'Attending as ',
+                    collection: [ 'VENDOR',
+                     'SPORTS FEDERATION',
+                     'SPORTING CLUB',
+                     'PLATFORM',
+                     'SPORTS VENUE',
+                     'ADVERTISER',
+                     'CONTENT CREATOR',
+                     'PRESS',
+                     'EXPERT']%>
       <%= f.input :email,
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "email",
                         placeholder: 'joa@birds.art.br' }%>
-      <div class="row">
-        <div class="col-md-6">
-          <%= f.input :password,
-                            required: true,
-                            hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                            input_html: { autocomplete: "new-password",
-                            placeholder: '******'  } %>
-        </div>
-        <div class="col-md-6">
-          <%= f.input :password_confirmation,
-                            required: true,
-                            input_html: { autocomplete: "new-password",
-                            placeholder: '******'  } %>
-        </div>
-      </div>
+
       <%= f.input :avatar,
                             label: 'Upload your photo',
                             as: :file %>
     </span>
-<!--     <h5 class="text-primary mt-5">
+    <h5 class="text-primary mt-5">
       PROFILE INFORMATION
     </h5>
     <p class="text-primary">Following  informations are optionals but are usefull to create your profile </p>
- -->
-    <%#= f.input :job,
+
+        <%= f.input :job,
                     as: :string,
                     label: 'Job Function',
                     placeholder: 'CEO' %>
-    <!-- <div class="row">
+   <div class="row">
       <div class="col-md-6">
         <%= f.input :whatsapp,
                         as: :string,
@@ -77,16 +70,67 @@
                         label: 'linkedin',
                         placeholder: 'https://www.linkedin.com/in/joa-azria/' %>
       </div>
-    </div> -->
-    <!-- <h5 class="text-primary mt-5">
+    </div>
+  <h5 class="text-primary mt-5">
       COMPANY INFORMATION
     </h5>
+            <%= f.input :company,
+
+                        as: :string,
+                        label: 'Company',
+                        placeholder: 'Basic Lead' %>
     <div class="row">
       <div class="col-md-6">
         <%= f.input :activity,
-                    collection: ['ADVERTISING AGENCY', 'BROADCASTER | Private', 'BROADCASTER | Public', 'CONSUMER BRAND', 'DELIVERY SOLUTION', 'DIGITAL MARKETING', 'AGENCY', 'DUBBING SOLUTION', 'ECOMMERCE PLATFORM', 'EQUIPMENT / NEW TECH DISTRIBUTION', 'FUNDING / BANK', 'INDEPENDENT ANIMATOR', 'INDEPENDENT DIRECTOR', 'INDEPENDENT JOURNALIST', 'INDEPENDENT WRITER',
-                                'LAW FIRM','MANUFACTURER','MARKETER','MERCHANDISER','MOBILE OPERATOR','MONETIZATION SOLUTION','MUSIC PRODUCTION','PAY-TV OPERATOR','PAYMENT PROCESSING SOLUTION','POST PRODUCTION SERVICE','PREMIUM CABLE CHANNEL','PRESS','PRODUCTION COMPANY','PUBLIC ORGANISATION','RADIO STATION','RESEARCH CONSULTANCY','SOCIAL MEDIA','SPORTING CLUB','SPORTS ARENA','SPORTS FEDERATION','SPORTS MARKETING','STREAMING PLATFORM','SUBSCRIBERS MANAGEMENT SOLUTION','TALENT AGENCY','TV RIGHTS DISTRIBUTOR','VIDEO GAME DEVELOPER',
-                                'VIDEO GAMING PLATFORM', 'OTHER']%>
+                    collection: ['ADVERTISING AGENCY',
+                        'ADVISORY SERVICES',
+                        'ARCHITECTURAL / DESIGN FIRM',
+                        'ATHLETES REPRESENTATION AGENCY',
+                        'BROADCASTER | Private',
+                        'BROADCASTER | Public',
+                         'CONSUMER BRAND',
+                         'DELIVERY SOLUTION',
+                         'DIGITAL MARKETING AGENCY',
+                         'DIGITAL FIRST COMPANY',
+                         'DUBBING SOLUTION',
+                         'ECOMMERCE PLATFORM',
+                         'EQUIPMENT / NEW TECH DISTRIBUTION',
+                         'FUNDING / BANK',
+                         'FULFILLMENT / SHIPPING SOLUTION',
+                          'INDEPENDENT ANIMATOR',
+                          'INDEPENDENT DIRECTOR',
+                          'INDEPENDENT JOURNALIST',
+                          'INDEPENDENT WRITER',
+                          'MANUFACTURING',
+                          'MARKETER',
+                          'MARKETING AGENCY',
+                          'MEDIA BUYING AGENCY',
+                          'MEDIA RIGHTS DISTRIBUTOR',
+                          'MERCHANDISING RIGHTS DISTRIBUTOR',
+                          'MOBILE OPERATOR',
+                          'MONETIZATION SOLUTION',
+                          'MUSIC PRODUCTION',
+                          'PAY-TV OPERATOR',
+                          'PAYMENT PROCESSING SOLUTION',
+                          'POST PRODUCTION SERVICE',
+                          'PREMIUM CABLE CHANNEL',
+                          'PRESS',
+                          'PRODUCTION COMPANY',
+                          'PUBLIC ORGANISATION',
+                          'RADIO STATION',
+                          'RESEARCH CONSULTANCY',
+                          'SOCIAL MEDIA',
+                          'SPORTING CLUB',
+                          'SPORTS ARENA',
+                          'SPORTS FEDERATION',
+                          'SPORTS MARKETING',
+                          'SPORTS TOURISM',
+                          'STREAMING PLATFORM',
+                          'SUBSCRIBERS MANAGEMENT SOLUTION',
+                          'TALENT AGENCY',
+                          'TRADE ASSOCIATION',
+                          'VIDEO GAME DEVELOPER',
+                          'VIDEO GAMING PLATFORM']%>
       </div>
       <div class="col-md-6">
         <%= f.input :country,
@@ -109,7 +153,7 @@
                         label: 'Website',
                         placeholder: 'www.discosport.tv' %>
       </div>
-    </div> -->
+    </div>
    <!--  <h5 class="text-primary text-uppercase mt-5">Present Yourself, why are you participating to DISCOP</h5>
     <p class="text-danger">To help us plan well-prepared and well-researched meetings, tell us about your reasons for attending DISCOSPORT 100% Virtual | Sub-Saharan Africa.</p>
     <%= f.input :release,
@@ -117,6 +161,21 @@
                     label: 'Presentation',
                     placeholder: 'To help us plan well-prepared and well-researched meetings, tell us about your reasons for attending DISCOSPORT 100% Virtual | Sub-Saharan Africa.' %>
   </div> -->
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.input :password,
+                            required: true,
+                            hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                            input_html: { autocomplete: "new-password",
+                            placeholder: '******'  } %>
+        </div>
+        <div class="col-md-6">
+          <%= f.input :password_confirmation,
+                            required: true,
+                            input_html: { autocomplete: "new-password",
+                            placeholder: '******'  } %>
+        </div>
+    </div>
   <div class="form-actions  row">
     <div class="col-6">
       <%= f.button :submit, "Sign up", class: "btn btn-success btn-lg m-3" %>

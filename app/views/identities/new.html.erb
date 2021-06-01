@@ -5,7 +5,7 @@
 <div class="container mt-5">
   <%= simple_form_for @identity do |f| %>
     <div class="form-inputs">
-        <h5 class="text-primary mt-5">
+        <!-- <h5 class="text-primary mt-5">
         PROFILE INFORMATION
       </h5>
       <div class="row">
@@ -125,15 +125,15 @@
                           label: 'Website',
                           placeholder: 'www.discosport.tv' %>
         </div>
-      </div>
+      </div> -->
       <h5 class="text-primary text-uppercase mt-5">Present Yourself, why are you participating to DISCOP</h5>
-      <p class="text-danger">To help us plan well-prepared and well-researched meetings, tell us about your reasons for attending DISCOSPORT 100% Virtual | Sub-Saharan Africa.</p>
+      <p class="text-danger">To help us plan well-prepared and well-researched meetings, tell us about your reasons for attending DISCOSPORT.</p>
       <%= f.input :release,
                       as: :text,
                       label: 'Presentation',
                       placeholder: 'To help us plan well-prepared and well-researched meetings, tell us about your reasons for attending DISCOSPORT 100% Virtual | Sub-Saharan Africa.' %>
     </div>
-    <p><%= f.submit "Create your DiscoSport Identity", class: "btn btn-success btn-block text-uppercase" %></p>
+    <p><%= f.submit "SEND", class: "btn btn-success btn-block text-uppercase" %></p>
   <% end %>
 </div>
 
