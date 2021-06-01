@@ -21,40 +21,28 @@
 
 ########### to do avatar#######
 # 12 / 26 / 10 /9 / 7
-
-User.find(26).update(
-  gender:'Mrs',
-  job: 'International Marketing Manager',
-  whatsapp: 'N/A',
-  linkedin: 'https://www.linkedin.com/in/niamurrell/',
-  company:'NBCUniversal, Inc',
-  activity: 'PRODUCTION COMPANY',
-  country: 'USA',
-  phone: 'N/A',
-  website:'https://www.nbcuniversal.com/')
-
-
-User.find(38).update(
+User.find(24).update(
   gender:'Mr',
-  job: 'Owner Producer/Director',
+  member:'PLATFORM',
+  job: 'Senior Manager | Media Rights',
   whatsapp: 'N/A',
-  linkedin: 'https://www.linkedin.com/in/mark-van-hoff-2aaa5b51/',
-  company:'MOVE MEDIA NETWORKS',
-  activity: 'PRODUCTION COMPANY',
-  country: 'South Africa',
+  linkedin: 'https://www.linkedin.com/in/richardsarris/',
+  company:'BLAST',
+  activity: 'VIDEO GAMING PLATFORM',
+  country: 'UK',
   phone: 'N/A',
-  website:'https://www.nbcuniversal.com/')
+  website:'https://blastpremier.com/')
 
 User.find(22).update(
   gender:'Mr',
-  job: 'Attaché Culturel ',
+  job: 'Attaché Culturel',
   whatsapp: 'N/A',
   linkedin: 'https://www.linkedin.com/in/matthieu-thibaudault/',
-  company:'Ministère de l Europe et des Affaires étrangères',
+  company:'Ministère des Affaires étrangères',
   activity: 'PUBLIC ORGANISATION',
   country: 'France',
   phone: 'N/A',
-  website:' ')
+  website:'N/A')
 
 User.find(7).update(
   gender:'Mr',
@@ -64,42 +52,6 @@ User.find(9).update(
   gender:'Mr',
   member: 'VENDOR')
 
-User.find(19).update(
-  gender:'Mrs',
-  last_name:'NWAOBASI',
-  member: 'VENDOR',
-  job: 'Business Development Manager for Francophone Africa',
-  whatsapp: 'N/A',
-  linkedin: 'https://www.linkedin.com/in/wwwlinkedindonly1annemarienw/',
-  company:'BBC World Service',
-  activity: 'BROADCASTER | Private',
-  country: 'Senegal',
-  phone: 'N/A',
-  website:'https://www.bbc.com/')
-
-User.find(33).update(
-  gender:'Mr',
-  member: 'PLATFORM',
-  job: 'Manager',
-  whatsapp: 'N/A',
-  linkedin: 'https://www.linkedin.com/in/campbellwarren/',
-  company:'gravitEsports',
-  activity: 'VIDEO GAMING PLATFORM',
-  country: 'Canada',
-  phone: 'N/A',
-  website:'https://www.gravitesports.com/')
-
-User.find(30).update(
-  gender:'Mr',
-  member: 'STAFF',
-  job: 'Buyer Relation Manager',
-  whatsapp: '+22520225866',
-  linkedin: 'https://www.linkedin.com/in/karl-boluwa-15ab71205/',
-  company:'BASIC LEAD | DISCOSPORT',
-  activity: 'Organizer',
-  country: 'Côte d’Ivoire',
-  phone: '+22589602958',
-  website:'www.discosport.tv')
 # User.find(19).update(
 #   gender:'Mrs',
 #   job: 'Attaché Culturel ',
