@@ -67,7 +67,7 @@ User.find(9).update(
 User.find(19).update(
   gender:'Mrs',
   last_name:'NWAOBASI',
-  member: 'VENDOR'
+  member: 'VENDOR',
   job: 'Business Development Manager for Francophone Africa',
   whatsapp: 'N/A',
   linkedin: 'https://www.linkedin.com/in/wwwlinkedindonly1annemarienw/',
@@ -79,7 +79,7 @@ User.find(19).update(
 
 User.find(33).update(
   gender:'Mr',
-  member: 'PLATFORM'
+  member: 'PLATFORM',
   job: 'Manager',
   whatsapp: 'N/A',
   linkedin: 'https://www.linkedin.com/in/campbellwarren/',
@@ -91,7 +91,7 @@ User.find(33).update(
 
 User.find(30).update(
   gender:'Mr',
-  member: 'STAFF'
+  member: 'STAFF',
   job: 'Buyer Relation Manager',
   whatsapp: '+22520225866',
   linkedin: 'https://www.linkedin.com/in/karl-boluwa-15ab71205/',
