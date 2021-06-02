@@ -33,7 +33,7 @@ file = URI.open('https://media-exp1.licdn.com/dms/image/C4D03AQEbc-P9KmF53g/prof
 user = User.find(9)
 user.avatar.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-file = URI.open('https://media-exp1.licdn.com/dms/image/C4D03AQEbc-P9KmF53g/profile-displayphoto-shrink_800_800/0/1581281655959?e=1628121600&v=beta&t=2dgSTaXVSDeVwwMj-OuUAlSr0DYRitUG_cLRmV-P_nc')
+file = URI.open('https://media-exp1.licdn.com/dms/image/C4D03AQEwgJmzM-9MIg/profile-displayphoto-shrink_200_200/0/1611207764751?e=1628121600&v=beta&t=lHOp-Foed2iJzCrTNVPEASTk5hUfHcPk2RtDwgthqco')
 user = User.find(7)
 user.avatar.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
