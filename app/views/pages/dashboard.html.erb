@@ -20,8 +20,8 @@
             <div class="col-md-6">
               <div class="card-body">
                 <h5 class="card-title text-uppercase"><%= link_to "#{result.full_name}", chatroom_path(result) %></h5>
-                <h6 class="card-text"> <span class="font-weight-bold"><%= result.identity.company %></span>  from <span class="font-weight-bold"><%= result.identity.country %></span>  and attending as <span class="font-weight-bold"><%= result.member %></span></h6>
-                <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= result.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= result.identity.whatsapp %></span> </p>
+                <h6 class="card-text"> <span class="font-weight-bold"><%= result.company %></span>  from <span class="font-weight-bold"><%= result.country %></span>  and attending as <span class="font-weight-bold"><%= result.member %></span></h6>
+                <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= result.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= result.whatsapp %></span> </p>
                   <div class="d-flex">
                     <%= link_to "linkedin", result.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
                     <%= link_to "#{result.company} WEBSITE", result.company, class: "btn btn-sm btn-outline-primary text-uppercase m-2" %>

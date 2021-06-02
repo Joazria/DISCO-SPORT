@@ -6,9 +6,11 @@ class PagesController < ApplicationController
     if params[:search].blank?
       # redirect_to dashboard_path, alert: 'Empty field!'
     else
-      @parameter = params[:search].downcase
-      @results = User.all.where("lower(full_name) ILIKE :search OR lower(company) ILIKE :search OR lower(activity) ILIKE :search OR lower(status) ILIKE :search OR lower(member) ILIKE :search",
-                                search: "%#{@parameter}%")
+      # @parameter = params[:search].downcase
+      # @results = User.all.where("lower(full_name) ILIKE :search OR lower(company) ILIKE :search OR lower(activity) ILIKE :search OR lower(status) ILIKE :search OR lower(member) ILIKE :search",
+      #                           search: "%#{@parameter}%")
+      @results = User.where("last_name ILIKE :search OR first_name ILIKE :search OR company ILIKE :search OR activity ILIKE :search OR status ILIKE :search OR member ILIKE :search OR email ILIKE :search",
+                                search: "%#{params[:search]}%")
     end
     @users = User.all
     @users_pending = User.where(status: 'pending').sort_by { |event| [event.created_at] }

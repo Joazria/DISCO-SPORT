@@ -27,13 +27,19 @@
       <div class="card-body">
       <!-- TITLE card : Nome Sobrenome | Company | website-->
         <h5 class="card-title  text-uppercase"><%= user.first_name %> <%= user.last_name %></h5>
-        <h5 class="card-title text-uppercase text-primary"><%= user.company %></h5>
-        <p class="card-title text-uppercase"><%= user.website %></p>
+        <h5 class="card-text  text-uppercase">
+          <a href="<%= user.website %>">
+            <%= user.company %>
+          </a>
+        </h5>
+        <h5 class="card-title text-uppercase text-primary"> </h5>
         <h6><span class="font-weight-bold text-primary"><%= user.member %></span></h6>
         <p class="card-title text-uppercase text-primary"><%= user.country %></p>
         <hr>
         <p class="card-text"><i class="fab fa-whatsapp"></i> | <%= user.whatsapp %> </p>
-        <p class="card-text"><i class="far fa-envelope"></i> | <%= user.email %> </p>
+        <a class="card-text" href="mailto:<%= user.email %>">
+                                  <i class="far fa-envelope"></i> | <%= user.email %>
+                                </a>
         <hr>
       <!-- Confirmação Profile Completo  -->
         <% if user.identity.nil? %>

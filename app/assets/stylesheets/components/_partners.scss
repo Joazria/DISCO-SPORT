@@ -1,0 +1,11 @@
+.partners {
+  justify-content: space-between;
+  background: $primary;
+    & img {
+    object-fit: contain;
+    width: 160px;
+  }
+    & h6 {
+      font-size: 0.8rem;
+    }
+}
