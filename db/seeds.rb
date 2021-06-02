@@ -11,10 +11,34 @@
 # user.avatar.attach(io: File.open('../app/assets/images'), filename: 'sk.jpeg')
 # require "open-uri"
 
-# require "open-uri"
+require "open-uri"
+
+file = URI.open('https://media-exp1.licdn.com/dms/image/C5603AQFf7xo_0YruOQ/profile-displayphoto-shrink_800_800/0/1517353721907?e=1628121600&v=beta&t=lT2Ck8EQLVKxs00jyXq0AwkLp-NUbnw3c0IGpiPkyQ4')
+user = User.find(12)
+user.avatar.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+file = URI.open('https://media-exp1.licdn.com/dms/image/C4E03AQHHBDcG2Dlo1g/profile-displayphoto-shrink_200_200/0/1547073784698?e=1628121600&v=beta&t=grtPkDHqU7LzhtwaXF8Uad1oUcKXXgE4EZxGhp2x8D8')
+user = User.find(26)
+user.avatar.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+file = URI.open('https://media-exp1.licdn.com/dms/image/C4D03AQGBuQYcbiSgew/profile-displayphoto-shrink_200_200/0/1516615501520?e=1628121600&v=beta&t=yphzLRbYrMwtfmuKW1l298iUHPH57iATFVLdz9D5_Ac')
+user = User.find(10)
+user.avatar.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+file = URI.open('https://media-exp1.licdn.com/dms/image/C4D03AQHVEljJCVih2Q/profile-displayphoto-shrink_800_800/0/1604430480579?e=1628121600&v=beta&t=HJaqck0Zg7ZAfxHG0IIh31uwBi4xh4UE-74u_TCLzzc')
+user = User.find(24)
+user.avatar.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+file = URI.open('https://media-exp1.licdn.com/dms/image/C4D03AQEbc-P9KmF53g/profile-displayphoto-shrink_800_800/0/1581281655959?e=1628121600&v=beta&t=2dgSTaXVSDeVwwMj-OuUAlSr0DYRitUG_cLRmV-P_nc')
+user = User.find(9)
+user.avatar.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+file = URI.open('https://media-exp1.licdn.com/dms/image/C4D03AQEbc-P9KmF53g/profile-displayphoto-shrink_800_800/0/1581281655959?e=1628121600&v=beta&t=2dgSTaXVSDeVwwMj-OuUAlSr0DYRitUG_cLRmV-P_nc')
+user = User.find(7)
+user.avatar.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 # file = URI.open('https://media-exp1.licdn.com/dms/image/C4E03AQE4xTqwRA3_6Q/profile-displayphoto-shrink_200_200/0/1618242624718?e=1628121600&v=beta&t=PVtJWiBB_lGd1BdlyWxGtqV5vGCCDgFnMhQEDuPVBzU')
-# user = User.find(20)
+# user = User.find(18)
 # user.avatar.attach(avatar: file)
 
 
