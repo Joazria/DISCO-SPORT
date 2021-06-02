@@ -13,6 +13,9 @@
 
   <hr>
 
+  <div class="container">
+     <%= render 'shared/partnership' %>
+  </div>
 
   <div class="mt-5">
     <% if current_user.status == 'approved' %>
@@ -25,9 +28,10 @@
       you are subscribed to our newsletter </span>
     </h5>
   <div class="container">
+
+    <hr>
    <%= render 'shared/newsletter_prez' %>
-   <hr>
-  <%= render 'shared/partnership' %>
+
   </div>
   <% end %>
 
