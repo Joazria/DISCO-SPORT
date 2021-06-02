@@ -8,14 +8,14 @@
               <%= link_to "Add Your Avatar", edit_user_registration_path , :class => "btn btn-block btn-danger" %>
       <% end %>
       <div class="card-body">
-        <h5 class="card-title text-primary text-capitalize"><%= @identity.gender %> <%= @user.first_name %>  <span class="text-primary text-capitalize"><%= @user.last_name %></span></h5>
-        <h5 class="card-text"><%= @identity.job %></h5>
+        <h5 class="card-title text-primary text-capitalize"><%= @user.gender %> <%= @user.first_name %>  <span class="text-primary text-capitalize"><%= @user.last_name %></span></h5>
+        <h5 class="card-text"><%= @user.job %></h5>
         <h6 class="card-text">Attending as : <%= @user.member %></h6>
         <div class="d-flex flex-column mt-3 pl-2">
           <h6 class="text-left"><i class="fas fa-at"></i> : <%= @user.email %></h6>
-          <h6 class="text-left"><i class="fab fa-whatsapp"> : </i><%= @identity.whatsapp %></h6>
+          <h6 class="text-left"><i class="fab fa-whatsapp"> : </i><%= @user.whatsapp %></h6>
         </div>
-        <%= link_to "Linkedin ", @identity.linkedin , :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
+        <%= link_to "Linkedin ", @user.linkedin , :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
         <a class="btn btn-block btn-outline-success"
           href="mailto:contact@discosport.tv?subject=Hello">
           CONTACT US
@@ -23,28 +23,28 @@
 <!--    <%= link_to "Talk to Us", chatroom_path(@user), :class => "btn btn-block text-uppercase btn-outline-primary", :target => '_blank' %> -->
       </div>
       <div class="card-footer">
-          <%= link_to "EDIT YOUR PROFILE",  edit_identity_path, class: "btn btn-block btn-danger" %>
+          <%= link_to "EDIT YOUR PROFILE",   edit_user_registration_path, class: "btn btn-block btn-danger" %>
       </div>
     </div>
   </div>
 
 
   <div class="col-md-8 mt-5">
-    <h3 class="text-secondary text-uppercase"><%= @identity.company %></h3>
-    <h5 class="text-secondary">Main activity : <%= @identity.activity %>. </h5>
+    <h3 class="text-secondary text-uppercase"><%= @user.company %></h3>
+    <h5 class="text-secondary">Main activity : <%= @user.activity %>. </h5>
     <div class="row">
       <div class="col-4">
-        Country : <%= @identity.country %>
+        Country : <%= @user.country %>
       </div>
       <div class="col-4">
-        <%= @identity.website %>
+        <%= @user.website %>
       </div>
       <div class="col-4">
-        <%= @identity.phone %>
+        <%= @user.phone %>
       </div>
     </div>
     <div class="row m-2 text-right">
-      <%= link_to "VISITE #{@identity.company} WEBSITE", "http://#{@identity.website}" , :class => "btn btn-block btn-outline-primary text-uppercase", :target => '_blank' %>
+      <%= link_to "VISITE #{@user.company} WEBSITE", "#{@user.website}" , :class => "btn btn-block btn-outline-primary text-uppercase", :target => '_blank' %>
     </div>
     <hr>
     <p class="text-justify"><span class="text-danger">PRESENTATION: </span> <%= @identity.release %></p>
