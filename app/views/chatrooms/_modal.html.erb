@@ -1,0 +1,26 @@
+<div class="modal-header">
+  <h5 class="modal-title">Chatroom</h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+    <% chatroom.messages.each do |message| %>
+      <div class="message-container" id="message-<%= message.id %>">
+        <i class="author">
+          <span><%= message.user.full_name %></span>
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </i>
+        <p><%= message.content %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+<!-- needs to work on this simple form inside modal -->
+<%= simple_form_for [ chatroom, message ], remote: true do |f| %>
+  <%= f.input :content, label: false, placeholder: "Message" %>
+  <div class="modal-footer">
+    <%= f.submit %>
+  </div>
+<% end %>

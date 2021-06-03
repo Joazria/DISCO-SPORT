@@ -10,5 +10,4 @@ class Identity < ApplicationRecord
   # validates :whatsapp, presence: true
   # validates :linkedin, presence: true
   validates :release, presence: true
-
 end

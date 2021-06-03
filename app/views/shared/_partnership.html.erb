@@ -19,20 +19,16 @@
 
 <!--
 <div class="card-deck">
-
           <div class="card m-3">
             <img class="card-img-top" src="https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_basket_yf0h9k.png" alt="Card image cap">
                 <div class="">
               <div class="card-body pt-5">
-
                   <div class="d-flex align-items-center">
                     <img  src="https://res.cloudinary.com/numama/image/upload/c_scale,w_160/v1616861878/DISCOSPORT/1_tvqkzr.png">
                 <%#= cl_image_tag(package.image, width: 150, height: 150, crop: :thumb)%>
-
                     <h5 class="card-title ml-2"> <span class="font-weight-bold text-primary">ADD-ON#1</span> | FRONTLINE VISIBILITY</h5>
                   </div>
                                     <h5 class="card-text text-right"><span class="text-muted">$1,500</span></h5>
-
                    <hr>
                       <h5 class="card-text text-primary ">A true incubador Program to growth your project, including :</h5>
                       <div class="d-flex flex-column">
@@ -45,28 +41,23 @@
                         <h5 class="card-text"> <span class="font-weight-bold">+ Access to reports</span>  on Sub-Saharan Africa’s sports television industry. </h5>
                       </div>
                       <a href="#" class="mt-3 btn btn-outline-primary btn-lg btn-block">Up Grade Your MemberShip</a> -->
-<!--                       <%= link_to "MORE DETAILS ", package_path(1), class: "btn mt-4 btn-primary btn-lg btn-block" %>
-
+<!--                       <%#= link_to "MORE DETAILS ", package_path(1), class: "btn mt-4 btn-primary btn-lg btn-block" %>
                 </div>
-
               </div>
           </div>
-
       <div class="mt-3 mb-5 col-md-6 d-flex flex-column justify-content-around">
-      <% @packages[1..8].each do |package| %>
-
+      <%# @packages[1..8].each do |package| %>
           <div class="card-addon mt-1">
-              <%= cl_image_tag(package.image, width: 150, height: 150, crop: :thumb)%>
+              <%#= cl_image_tag(package.image, width: 150, height: 150, crop: :thumb)%>
                   <div class="card-addon-infos ">
               <div class="d-flex justify-content-between  mt-3">
-                <h2 class="text-uppercase text-primary"><%= package.sku %> | <%= package.name %></h2>
-                <h6 class="mt-1 d-flex justify-content-end text-muted"><small class="text-muted"><%= humanized_money_with_symbol(package.price) %></small></h6>
+                <h2 class="text-uppercase text-primary"><%#= package.sku %> | <%#= package.name %></h2>
+                <h6 class="mt-1 d-flex justify-content-end text-muted"><small class="text-muted"><%#= humanized_money_with_symbol(package.price) %></small></h6>
               </div>
-              <p><%= package.description %></p>
-            <%= link_to "MORE DETAILS ", package_path(package), class: "btn mt-2 btn-outline-primary btn-sm btn-block" %>
+              <p><%#= package.description %></p>
+            <%#= link_to "MORE DETAILS ", package_path(package), class: "btn mt-2 btn-outline-primary btn-sm btn-block" %>
             </div>
           </div>
-
-      <% end %>
+      <%# end %>
       </div>
   </div> -->
