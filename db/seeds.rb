@@ -4,13 +4,6 @@
 # Examples:
 #
 # User.find(20).avatar.purge
-
-# require "open-uri"
-# file = URI.open('https://media-exp1.licdn.com/dms/image/C4E03AQE4xTqwRA3_6Q/profile-displayphoto-shrink_200_200/0/1618242624718?e=1628121600&v=beta&t=PVtJWiBB_lGd1BdlyWxGtqV5vGCCDgFnMhQEDuPVBzU')
-# user = User.find(20)
-# user.avatar.attach(io: File.open('../app/assets/images'), filename: 'sk.jpeg')
-# require "open-uri"
-
 # require "open-uri"
 
 # file = URI.open('https://media-exp1.licdn.com/dms/image/C5603AQFf7xo_0YruOQ/profile-displayphoto-shrink_800_800/0/1517353721907?e=1628121600&v=beta&t=lT2Ck8EQLVKxs00jyXq0AwkLp-NUbnw3c0IGpiPkyQ4')
