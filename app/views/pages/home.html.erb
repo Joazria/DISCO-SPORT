@@ -1,30 +1,35 @@
 <%= render "shared/banner" %>
 <section class="container">
   <hr>
-
   <h1 class="text-primary text-right">
     MARK YOUR <span class="text-danger">AGENDA</span>
   </h1>
-  <%= render "shared/intro" %>
+    <%= render "shared/intro" %>
   <hr class="mt-2">
-  <%= render "shared/africa_facts" %>
-  <hr class="mt-5">
+    <%= render "shared/africa_facts" %>
 
-  <h1 class="text-primary">AN <span class="text-danger">"ALL IN"</span>  EVENT DESIGNED TO DELIVER RESULTS </h1>
-  <%= render "shared/reasons" %>
+    <div class="container">
+      <% if user_signed_in? %>
+      <% else %>
+        <hr class="mt-5">
+        <a href="<%= new_user_registration_path %>"
+          class="btn btn-danger text-uppercase btn-lg btn-block ">
+        CLICK HERE TO REGISTER</a>
+      <% end %>
+    </div>
+  <hr class="mt-3">
+    <h1 class="text-primary">AN <span class="text-danger">"ALL IN"</span>  EVENT DESIGNED TO DELIVER RESULTS </h1>
+      <%= render "shared/reasons" %>
   <hr class="mt-5"  >
-
-  <h1 class="text-primary">SUBMIT YOUR REGISTRATION NOW </h1>
-  <h5 class="text-danger">QUALIFIED PARTICIPANTS ONLY</h5>
-  <%= render "shared/register" %>
-
+    <h1 class="text-primary">SUBMIT YOUR REGISTRATION NOW </h1>
+    <h5 class="text-danger">QUALIFIED PARTICIPANTS ONLY</h5>
+    <%= render "shared/register" %>
   <hr>
-
-  <section class="pt-2 mb-3">
-    <h1 class="text-primary text-right m-3">
-      <span class="text-danger">DISOSPORT</span> | NEWS
-    </h1>
-  <%= render "shared/newsletter_prez" %>
-  </section>
+    <section class="pt-2 mb-3">
+      <h1 class="text-primary text-right m-3">
+        <span class="text-danger">DISOSPORT</span> | NEWS
+      </h1>
+    <%= render "shared/newsletter_prez" %>
+    </section>
 
 </section>
