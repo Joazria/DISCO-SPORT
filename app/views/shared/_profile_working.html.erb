@@ -20,9 +20,9 @@
           href="mailto:contact@discosport.tv?subject=Hello">
           CONTACT US
         </a>
-       <% unless @user == current_user %>
-        <%= link_to 'Chat', chatrooms_path(:invited_id => @user), method: :post, class: "btn btn-block btn-outline-primary" %>
-       <% end %>
+       <%# unless @user == current_user %>
+        <%#= link_to 'Chat', chatrooms_path(:invited_id => @user), method: :post, class: "btn btn-block btn-outline-primary" %>
+       <%# end %>
       </div>
       <div class="card-footer">
           <%= link_to "EDIT YOUR PROFILE",   edit_user_registration_path, class: "btn btn-block btn-danger" %>
