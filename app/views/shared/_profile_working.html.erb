@@ -16,13 +16,9 @@
           <h6 class="text-left"><i class="fab fa-whatsapp"> : </i><%= @user.whatsapp %></h6>
         </div>
         <%= link_to "Linkedin ", @user.linkedin , :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
-        <a class="btn btn-block btn-outline-success"
-          href="mailto:contact@discosport.tv?subject=Hello">
-          CONTACT US
-        </a>
-       <%# unless @user == current_user %>
-        <%#= link_to 'Chat', chatrooms_path(:invited_id => @user), method: :post, class: "btn btn-block btn-outline-primary" %>
-       <%# end %>
+       <% unless @user == current_user %>
+        <%= link_to 'Chat', chatrooms_path(:invited_id => @user), method: :post, class: "btn btn-block btn-outline-primary" %>
+       <% end %>
       </div>
       <div class="card-footer">
           <%= link_to "EDIT YOUR PROFILE",   edit_user_registration_path, class: "btn btn-block btn-danger" %>
@@ -48,14 +44,14 @@
     <div class="row m-2 text-right">
       <%= link_to "VISITE #{@user.company} WEBSITE", "#{@user.website}" , :class => "btn btn-block btn-outline-primary text-uppercase", :target => '_blank' %>
     </div>
-    <div class="col-4">
-      <%= @user.phone %>
-    </div>
+
+    <%= render 'shared/active_chatrooms' %>
+
   </div>
-  <div class="row m-2 text-right">
+  <!-- <div class="row m-2 text-right">
     <%#= link_to "VISITE #{ @user.company} WEBSITE", @user.website, class: "btn btn-block btn-sm btn-outline-primary text-uppercase" %>
-    <%= link_to "VISIT #{@user.company} WEBSITE", "http://#{@identity.website}" , :class => "btn btn-block btn-outline-primary text-uppercase", :target => '_blank' %>
+    <#%= link_to "VISIT #{@user.company} WEBSITE", "http://#{@identity.website}" , :class => "btn btn-block btn-outline-primary text-uppercase", :target => '_blank' %>
   </div>
   <hr>
   <p class="text-justify"><span class="text-danger">PRESENTATION: </span> <%= @identity.release %></p>
-</div>
+</div> -->
