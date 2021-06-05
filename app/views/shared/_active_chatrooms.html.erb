@@ -1,29 +1,49 @@
 <% if @user == current_user %>
-  <h5>Active Conversations</h5>
-  <div class="container">
+  <div class="container mt-5">
     <% @chatrooms_created.each do |chatroom| %>
-      <!-- talking to user: -->
-      <p><%= link_to User.find(chatroom.invited_id).full_name, chatroom_path(chatroom), remote: true %></p>
-      <!-- only shows last message if it doesn't belongs to current_user -->
-      <% if chatroom.messages.last&.user_id != current_user.id %>
-        <!-- created at of the chatroom's last message  -->
-        <p><%= chatroom.messages.last&.created_at&.day&.ordinalize %> <%= chatroom.messages.last&.created_at&.strftime("%B") %></p>
-        <!-- content of the chatroom's last message  -->
-        <p><%= chatroom.messages.last&.content %></p>
-      <% end %>
+        <div class="notification">
+          <%= image_tag User.find(chatroom.invited_id).avatar, :gravity => "face", :crop=>"crop",
+            class: "avatar-large" %>
+
+          <div class="notification-content">
+            <p class="text-primary"><%= User.find(chatroom.invited_id).full_name %></p>
+              <% if chatroom.messages.last&.user_id != current_user.id %>
+                <p class="text-secondary font-weight-bold"><%= chatroom.messages.last&.content %></p>
+                <p class="text-muted"><small><%= chatroom.messages.last&.created_at&.day&.ordinalize %> <%= chatroom.messages.last&.created_at&.strftime("%B") %></small></p>
+              <% else %>
+                <p><%= chatroom.messages.last&.content %></p>
+                <p class="text-muted"><small><%= chatroom.messages.last&.created_at&.day&.ordinalize %> <%= chatroom.messages.last&.created_at&.strftime("%B") %></small></p>
+              <% end %>        </div>
+
+          <div class="notification-actions">
+            <%= link_to 'Send a message', chatroom_path(chatroom), :class => "btn btn-muted", remote: true %>
+            <!-- <a href="#">Delete <i class="far fa-trash-alt"></i></a> -->
+          </div>
+        </div>
     <% end %>
   </div>
   <div class="container">
     <% @chatrooms_invited.each do |chatroom| %>
-      <!-- talking to user: -->
-      <p><%= link_to chatroom.user.full_name, chatroom_path(chatroom), remote: true %></p>
-      <!-- only shows last message if it doesn't belongs to current_user -->
-      <% if chatroom.messages.last&.user_id != current_user.id %>
-        <!-- created at of the chatroom's last message  -->
-        <p><%= chatroom.messages.last&.created_at&.day&.ordinalize %> <%= chatroom.messages.last&.created_at&.strftime("%B") %></p>
-        <!-- content of the chatroom's last message  -->
-        <p><%= chatroom.messages.last&.content %></p>
-      <% end %>
+        <div class="notification">
+          <%= image_tag chatroom.user.avatar, :gravity => "face", :crop=>"crop",
+            class: "avatar-large" %>
+
+          <div class="notification-content">
+            <p class="text-secondary font-weight-bold"><%= chatroom.user.full_name %></p>
+              <% if chatroom.messages.last&.user_id != current_user.id %>
+                <p class="text-secondary"><%= chatroom.messages.last&.content %></p>
+                <p class="text-muted"><small><%= chatroom.messages.last&.created_at&.day&.ordinalize %> <%= chatroom.messages.last&.created_at&.strftime("%B") %></small></p>
+              <% else %>
+                <p><%= chatroom.messages.last&.content %></p>
+                <p class="text-muted"><small><%= chatroom.messages.last&.created_at&.day&.ordinalize %> <%= chatroom.messages.last&.created_at&.strftime("%B") %></small></p>
+              <% end %>
+          </div>
+
+          <div class="notification-actions">
+            <%= link_to 'Send a message', chatroom_path(chatroom), :class => "btn btn-muted", remote: true %>
+            <!-- <a href="#">Delete <i class="far fa-trash-alt"></i></a> -->
+          </div>
+        </div>
     <% end %>
   </div>
   <!-- modal to chatroom -->
