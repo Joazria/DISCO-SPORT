@@ -1,5 +1,11 @@
 .main-container {
   overflow-x: hidden;
+  & > :nth-child(2) {
+    margin-top: 60px;
+    @media screen and (max-width: 880px) {
+      margin-top: 90px;
+    }
+  }
 }
 
 .partners-logos {
