@@ -1,32 +1,101 @@
-.card-delegate {
+.delegate-card {
+  min-height: 360px;
+  width: 275px;
+  display: grid;
+  grid-template-rows: minmax(360px, 1fr) 35px;
+
+  border-radius: 4px;
   overflow: hidden;
-  height: 200px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-}
+  &__main {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
 
-.card-delegate img {
-  height: 100%;
-  width: 200px;
-  object-fit: cover;
-}
+    width: 100%;
+    height: max-content;
 
-// .card-delegate h2 {
-//   font-size: 16px;
-//   font-weight: bold;
-//   margin: 0;
-// }
+    background: $main-bg;
+    position: relative;
+  }
+  &__img {
+    width: 98%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 0 0 130px 0;
+  }
+  &__country {
+    --url: "";
+    width: 50px;
+    height: 50px;
 
-// .card-delegate p {
-//   font-size: 12px;
-//   line-height: 1.4;
-//   opacity: .7;
-//   margin-bottom: 0;
-//   margin-top: 8px;
-// }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50px, -90px);
+    background: var(--url) center / cover no-repeat;
 
-.card-delegate .card-delegate-infos {
-  padding: 16px;
+    border-radius: 50%;
+  }
+  &__info {
+    margin: 0;
+    padding: 1ch;
+    display: grid;
+    row-gap: 0.8ch;
+    width: 100%;
+
+    & > * {
+      color: $text-1;
+      list-style: none;
+    }
+    &-name {
+      font-size: 1.8rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    &-website {
+      a {
+        color: $text-1;
+      }
+    }
+    &-btn {
+      justify-self: center;
+    }
+  }
+  &__btn {
+    align-self: center;
+    display: inline-block;
+    padding: 0.6rem 1.8rem;
+
+    background: $menu-bg;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    color: $text-2;
+    font-size: 1.2rem;
+    text-decoration: none !important;
+    transition: color 0.3s ease-in, background 0.3s ease-in-out;
+    &:hover {
+      background: mix($menu-bg, $gray, 90%);
+    }
+  }
+  &__status {
+    color: $text-1;
+    &-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1ch;
+
+      width: 100%;
+      margin: 0;
+      padding: 0.5ch 0;
+      &--success {
+        background-color: $green;
+      }
+      &--danger {
+        background-color: $red;
+      }
+    }
+  }
 }

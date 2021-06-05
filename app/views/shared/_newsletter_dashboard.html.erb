@@ -1,15 +1,11 @@
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top"
-    src="https://res.cloudinary.com/numama/image/upload/v1617031310/DISCOSPORT/bootcamp_discop_nsgvby.png"
-    alt="Card image cap">
-  <div class="card-body">
-    <h4 class="card-title font-weight-bold text-center">DiscoSport <span class="text-danger">| NEWS</span></h4>
-    <div class="d-flex justify-content-around">
-      <%= link_to "ADD AN ARTICLE", new_newsletter_path,
-        class: " btn btn-success p-2 m-1" %>
-      <%= link_to "READ ALL ARTICLES", newsletters_path,
-        class: " btn btn-outline-primary p-2 m-1" %>
-    </div>
-
+<div class="delegates-status">
+  <h2 class="delegates-status__title">DiscoSport <span class="text-danger">| NEWS</span></h2>
+   <div
+    class="separator"
+    style="--color: #828282; --thickness: 1.5px; --width: 80px">
+  </div>
+  <div class="delegates-status__container">
+    <%= link_to "ADD AN ARTICLE", new_newsletter_path, class: "btn btn-success p-2 " %>
+    <%= link_to "READ ALL ARTICLES", newsletters_path, class: "btn btn-primary p-2" %>
   </div>
 </div>
