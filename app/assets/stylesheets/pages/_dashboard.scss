@@ -63,6 +63,9 @@
     color: var(--color);
     font-size: 2rem;
     text-align: left;
+    @media screen and (max-width: 420px) {
+      font-size: 1.5rem;
+    }
     .separator {
       @media screen and (max-width: 880px) {
         max-width: 100% !important;
