@@ -1,15 +1,21 @@
-
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top"
-    src="https://res.cloudinary.com/numama/image/upload/v1617118315/DISCOSPORT/icon_people_discop_hjcv0s.png"
-    alt="Card image cap">
-  <div class="card-body">
-    <h4 class="card-title font-weight-bold text-center"><%= @users_approved.count %> <span class="text-primary">| DELEGATES</span></h4>
-    <div class="">
-      <h5 class="font-weight-bold">  </h5>
-      <h5 class="text-danger"> <span class="font-weight-bold"><%= @users_pending.count %></span>  | PENDING</h5>
-      <h6><%= @users_not_approved.count %> | NOT APPROVED</h6>
-    </div>
-
+<div class="delegates-status">
+  <h2 class="delegates-status__title">Approval Status</h2>
+  <div
+    class="separator"
+    style="--color: #828282; --thickness: 1.5px; --width: 80px">
   </div>
+  <ul class="delegates-status__container">
+    <li class="delegates-status__status" style="--color: #003585">
+      <h2 class="delegates-status__number"><%= @users_approved.count %></h2>
+      <h2 class="delegates-status__description">Approved</h2>
+    </li>
+    <li class="delegates-status__status" style="--color: #fd1015">
+      <h2 class="delegates-status__number"><%= @users_pending.count %></h2>
+      <h2 class="delegates-status__description">Pending</h2>
+    </li>
+    <li class="delegates-status__status" style="--color: #1a1a1a">
+      <h2 class="delegates-status__number"><%= @users_not_approved.count %></h2>
+      <h2 class="delegates-status__description">Unapproved</h2>
+    </li>
+  </ul>
 </div>
