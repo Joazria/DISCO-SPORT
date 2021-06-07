@@ -116,6 +116,8 @@ GEM
     faraday-net_http (1.0.1)
     faraday-net_http_persistent (1.1.0)
     ffi (1.15.0)
+    flag-icons-rails (3.4.6.1)
+      sass-rails
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
     globalid (0.4.2)
@@ -331,6 +333,7 @@ DEPENDENCIES
   cloudinary (~> 1.16.0)
   devise
   dotenv-rails
+  flag-icons-rails
   font-awesome-sass
   jbuilder (~> 2.7)
   letter_opener

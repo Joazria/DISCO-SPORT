@@ -19,6 +19,11 @@
        <% unless @user == current_user %>
         <%= link_to 'Chat', chatrooms_path(:invited_id => @user), method: :post, class: "btn btn-block btn-outline-primary" %>
        <% end %>
+  ########TESTING FLAG#########
+       <span class="flag-icon flag-icon-br"></span>
+       <span class="flag-icon flag-icon-it flag-icon-squared"></span>
+       <%= flag_icon(:it, id: 'my-flag', class: 'strong') %>
+
       </div>
       <div class="card-footer">
           <%= link_to "EDIT YOUR PROFILE",   edit_user_registration_path, class: "btn btn-block btn-danger" %>
