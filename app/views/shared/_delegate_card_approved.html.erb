@@ -14,19 +14,19 @@
         <li class="delegate-card__info-name">
           <strong><%= user.first_name %> <%= user.last_name %></strong>
         </li>
+        <li class="delegate-card__info-member">
+          <a href="<%= user.linkedin %>" class="text-white font-weight-bold">
+           <strong><i class="fab fa-linkedin"></i> </strong>
+         </a>
+           | <%= user.job %>
+        </li>
         <li class="delegate-card__info-website">
-          <a href="<%= user.website %>" class="">
+          <a href="<%= user.website %>" class=" text-uppercase font-weight-bold">
             <%= user.company %>
           </a>
         </li>
         <li class="delegate-card__info-member">
-          <strong><%= user.member %></strong> | <%= user.country %>
-        </li>
-        <li class="delegate-card__info-member">
-          <strong><%= user.linkedin %> </strong> | <%= user.job %>
-        </li>
-        <li class="delegate-card__info-member">
-          identity release <%# não coloquei pq tava dando erro em achar o @identity %>
+          <%= user.member %> | <%= user.country %>
         </li>
         <li class="delegate-card__info-btn">
           <%= link_to "Delegate Profile", profile_path(user), class: "delegate-card__btn" %>

@@ -1,68 +1,76 @@
 <% @users_pending.each do |user| %>
-
-  <!-- inicio do card -->
-    <div class="card" style="width: 18rem;">
-    <!-- avatar card -->
+  <div class="delegate-card">
+    <div class="delegate-card__main">
       <% if user.avatar.attached? %>
-        <%= image_tag user.avatar, :gravity => "face", :crop=>"crop",
-          :width=>200, :height=>200, :gravity => "face",
-          :class => "rounded-circle p-2" %>
-        <% else %>
-          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png",
-          :style => "height: 100%; width: 200px;" , :gravity => "face",
-          :class => "rounded-circle p-2" %>
+        <%= image_tag user.avatar, :gravity => "face", :crop => "crop", :class => "delegate-card__img" %>
+      <% else %>
+        <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png", :gravity => "face", :crop => "crop", :class => "delegate-card__img" %>
       <% end %>
-          <!-- VALIDAÇÃO  Approve | Desaprove -->
-          <div class="d-flex justify-content-center">
-            <%= simple_form_for user, url: profile_path(user), method: :patch do |f| %>
-              <%= f.hidden_field :status, value: 'approved' %>
-              <%= f.submit 'Approve', class: 'btn btn-success m-1' %>
-            <% end %>
-            <%= simple_form_for user, url: profile_path(user), method: :patch do |f| %>
-              <%= f.hidden_field :status, value: 'not approved' %>
-              <%= f.submit 'Disapprove', class: 'btn btn-danger m-1' %>
-            <% end %>
-          </div>
-      <!-- TITLE card : Nome Sobrenome | Company | website-->
-      <div class="card-body">
-      <!-- TITLE card : Nome Sobrenome | Company | website-->
-        <h5 class="card-title  text-uppercase"><%= user.first_name %> <%= user.last_name %></h5>
-        <h5 class="card-text  text-uppercase">
-          <a href="<%= user.website %>">
+      <% if user.identity.nil? %>
+          <span class="delegate-card__country" style="--url: url('https://imagepng.org/wp-content/uploads/2017/04/bandeira-do-brasil.png');"></span>
+        <% else %>
+          <span class="delegate-card__country_pending" style="--url: url('https://imagepng.org/wp-content/uploads/2017/04/bandeira-do-brasil.png');"></span>
+        <% end -%>
+      <div class="d-flex">
+        <%= simple_form_for user, url: profile_path(user), method: :patch do |f| %>
+          <%= f.hidden_field :status, value: 'approved' %>
+          <%= f.submit 'Approve', class: 'btn btn-sm btn-success m-1' %>
+        <% end %>
+        <%= simple_form_for user, url: profile_path(user), method: :patch do |f| %>
+          <%= f.hidden_field :status, value: 'not approved' %>
+          <%= f.submit 'Disapprove', class: 'btn btn-sm btn-danger m-1' %>
+        <% end %>
+      </div>
+      <ul class="delegate-card__info">
+        <li class="delegate-card__info-name">
+          <strong><%= user.first_name %> <%= user.last_name %></strong>
+        </li>
+        <li class="delegate-card__info-member">
+          <a href="<%= user.linkedin %>" class="text-white font-weight-bold">
+           <strong><i class="fab fa-linkedin"></i> </strong>
+         </a>
+           | <%= user.job %>
+        </li>
+        <li class="delegate-card__info-member">
+          <a href="mailto:<%= user.email %>" class="text-white font-weight-bold">
+           <strong><i class="far fa-envelope"></i> </strong>
+         </a>
+           | <i class="fab fa-whatsapp text-white"></i> : <%= user.whatsapp %>
+        </li>
+        <li class="delegate-card__info-website">
+          <a href="<%= user.website %>" class=" text-uppercase font-weight-bold">
             <%= user.company %>
           </a>
-        </h5>
-        <h5 class="card-title text-uppercase text-primary"> </h5>
-        <h6><span class="font-weight-bold text-primary"><%= user.member %></span></h6>
-        <p class="card-title text-uppercase text-primary"><%= user.country %></p>
-        <hr>
-        <p class="card-text"><i class="fab fa-whatsapp"></i> | <%= user.whatsapp %> </p>
-        <a class="card-text" href="mailto:<%= user.email %>">
-                                  <i class="far fa-envelope"></i> | <%= user.email %>
-                                </a>
-        <hr>
-      <!-- Confirmação Profile Completo  -->
+        </li>
+        <li class="delegate-card__info-member">
+          <%= user.member %> | <%= user.country %>
+        </li>
         <% if user.identity.nil? %>
-          <p class="text-danger"> <span class="font-weight-bold"><i class="far fa-address-card"></i>
-            profile incomplete</span>
-          </p>
         <% else %>
-    <!-- Release : Porque eu vou no discosport -->
-          <p class="card-text"> <%= user.identity.release %> </p>
+        <li class="delegate-card__info-member">
           <hr>
-          <p class="cart-text">  <span class="font-weight-bold text-success">
-            <i class="far fa-id-card"> </i> Profile Completed </span> </p>
+          <%= user.identity.release %>
+        </li>
         <% end %>
-                <%= link_to "linkedin", user.linkedin, :target => '_blank', :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
-        <%= link_to "WEBSITE", "http://#{user.website}" , :class => "btn btn-sm btn-outline-primary text-uppercase m-2", :target => '_blank' %>
-      </div>
+        <li class="delegate-card__info-btn">
+          <%= link_to "Delegate Profile", profile_path(user), class: "delegate-card__btn" %>
+        </li>
 
-
-      <div class="card-footer">
-        <%= link_to "Delegate Profile", profile_path(user), class: " btn btn-sm btn-primary btn-block text-uppercase m-2" %>
-        <p class="card-text text-right"><small class="text-muted"><%= user.created_at %></small></p>
-      </div>
-
+      </ul>
+    </ul>
     </div>
-  <!-- fim do card -->
+    <div class="delegate-card__status">
+      <% if user.identity.nil? %>
+        <p class="delegate-card__status-text delegate-card__status-text--danger">
+          <i class="far fa-address-card"></i>
+          Profile Incomplete
+        </p>
+      <% else %>
+        <p class="delegate-card__status-text  delegate-card__status-text--success">
+          <i class="far fa-id-card"></i>
+          Profile Completed
+        </p>
+      <% end %>
+    </div>
+  </div>
 <% end %>

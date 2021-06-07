@@ -7,7 +7,9 @@
         PENDING VALIDATION (<%= @users_pending.count %>)
         <hr class="separator" style="--width: 80%; --color: #ccc; margin: 0;" />
       </summary>
+    <div class="dashboard__validation-container">
       <%= render 'shared/delegate_card_pending' %>
+    </div>
     </details>
   <% end %>
   

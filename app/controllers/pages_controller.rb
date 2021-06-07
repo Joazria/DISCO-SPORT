@@ -25,6 +25,7 @@ class PagesController < ApplicationController
 
   def home
     @newsletters = Newsletter.all
+    @users_approved = User.where(status: 'approved').excluding(current_user).sort_by { |event| [event.created_at] }.reverse
   end
 
   # private
