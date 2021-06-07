@@ -23,18 +23,18 @@
         for sporting events, sports agents, sports venues, event producers,
         consumer brands and advertising and media-buying agencies.</span>
       </p>
-    <hr>
-      <p class="text-justify">
-        <span class="text-primary font-weight-bold">DISCOSPORT</span>,
-        will deliver results in the form of high-level connections before
-        and during the 3-day market.<span class="text-primary font-weight-bold"> To break the ice</span>, set the tone, and boost engagement
-        between pre-registered delegates, we will hold periodical virtual sessions
-        <span class="text-primary font-weight-bold">from Monday 25 October 2021</span>, until the opening of DISCOSPORT, seven months later.
-      </p>
+      <hr>
 
-      <div class="container d-flex justify-content-end">
-          <a href="<%= bootcamp_path %>" class="btn btn-primary text-uppercase btn-lg "> VIRTUAL | PROGRAM </a>
-      </div>
+      <% if user_signed_in? %>
+
+      <% else %>
+        <div class="container">
+          <a href="<%= new_user_registration_path %>"
+            class="btn btn-danger text-uppercase btn-lg btn-block ">
+          CLICK HERE TO REGISTER</a>
+        </div>
+        <hr>
+      <% end %>
 
 <!--     <p class="text-justify">The 4-week program will include a
       <span class="text-primary font-weight-bold">Virtual Opening Ceremony</span>
@@ -49,6 +49,17 @@
 
     </div>
     <div class="container">
+          <p class="text-justify">
+        <span class="text-primary font-weight-bold">DISCOSPORT</span>,
+        will deliver results in the form of high-level connections before
+        and during the 3-day market.<span class="text-primary font-weight-bold"> To break the ice</span>, set the tone, and boost engagement
+        between pre-registered delegates, we will hold periodical virtual sessions
+        <span class="text-primary font-weight-bold">from Monday 25 October 2021</span>, until the opening of DISCOSPORT, seven months later.
+      </p>
+
+      <div class="container d-flex justify-content-end">
+          <a href="<%= bootcamp_path %>" class="btn btn-primary text-uppercase btn-lg "> VIRTUAL | PROGRAM </a>
+      </div>
       <hr>
     <p class=" text-justify mt-0">
       <span class="text-primary font-weight-bold">DISCOSPORT | News</span>, a weekly newsletter will help pre-registered delegates familiarize themselves with
@@ -65,15 +76,14 @@
 
         <% else %>
             <hr>
-          <div class="container d-flex d-flex-inline">
-        <a class="btn btn-danger"
-          href="https://discosport.tv/users/sign_up">
-          <i class="fas fa-user-plus"></i> EARLY BIRD REGISTRATION  | SIGN UP NOW</a>
-        <h5 class="text-justify mt-0 ml-5">
-         <span class="text-primary text-uppercase font-weight-bold">
+        <div class="container d-flex d-flex-inline">
+          <a class="btn btn-danger"
+            href="https://discosport.tv/users/sign_up">
+            <i class="fas fa-user-plus"></i> EARLY BIRD REGISTRATION  | SIGN UP NOW</a>
+          <h5 class="text-justify mt-0 ml-5">
+           <span class="text-primary text-uppercase font-weight-bold">
           Free 'Early Bird' registration is available to qualified executives until Friday 22 October.</span></h5>
-
-</div>
+        </div>
         <% end %>
 
 
@@ -93,7 +103,7 @@
   -->        </h5>
           <a class="btn btn-danger text-uppercase text-white ml-5"
               href="mailto:contact@discosport.tv?subject=DiscoSport | Floor Plab">
-              DISCOSPORT | floor plan request SALES@DISCOSPORT.TV
+             floor plan request SALES@DISCOSPORT.TV
             </a>
         </div>
 

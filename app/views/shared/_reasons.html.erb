@@ -58,5 +58,16 @@
         </div>
 
       </div>
+
+      <% if user_signed_in? %>
+
+      <% else %>
+        <div class="container mt-5">
+          <a href="<%= new_user_registration_path %>"
+            class="btn btn-danger text-uppercase btn-lg btn-block ">
+          CLICK HERE TO REGISTER</a>
+        </div>
+        <hr>
+      <% end %>
     </div>
 

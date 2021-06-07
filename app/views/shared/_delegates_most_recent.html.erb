@@ -1,0 +1,38 @@
+<div class="dashboard__validation-container">
+  <% @users_approved.last(8).each do |user| %>
+    <div class="delegate-card">
+      <div class="delegate-card__main">
+        <% if user.avatar.attached? %>
+          <%= image_tag user.avatar, :gravity => "face", :crop => "crop", :class => "delegate-card__img" %>
+        <% else %>
+          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png", :gravity => "face", :crop => "crop", :class => "delegate-card__img" %>
+        <% end %>
+        <span class="delegate-card__country" style="--url: url('https://imagepng.org/wp-content/uploads/2017/04/bandeira-do-brasil.png');"></span>
+
+        <ul class="delegate-card__info">
+          <li class="delegate-card__info-name">
+            <strong><%= user.first_name %> <%= user.last_name %></strong>
+          </li>
+         <li class="delegate-card__info-member">
+<!--             <a href="<%= user.linkedin %> %>" class="text-white">
+              <strong> <i class="fab fa-linkedin"></i> </strong>
+            </a> |  -->
+            <%= user.job %>
+          </li>
+          <li class="delegate-card__info-website text-uppercase font-weight-bold">
+            <a href="<%= user.website %>" class="">
+              <%= user.company %>
+            </a>
+          </li>
+          <li class="delegate-card__info-member">
+            <%= user.member %> | <%= user.country %>
+          </li>
+          <li class="delegate-card__info-btn">
+            <%= link_to "Delegate Profile", profile_path(user), class: "delegate-card__btn" %>
+          </li>
+        </ul>
+      </ul>
+      </div>
+    </div>
+  <% end %>
+</div>
