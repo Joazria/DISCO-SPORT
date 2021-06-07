@@ -1,0 +1,6 @@
+@mixin avatar-rounded {
+  width: 98%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 0 0 130px 0;
+}

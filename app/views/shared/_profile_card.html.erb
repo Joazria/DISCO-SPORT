@@ -1,0 +1,53 @@
+<div class="profile-card">
+  <% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar , :gravity => "face", :crop=>"crop",:width=>200, :height=>200, class: "profile-card__avatar", alt: "Your profile picture" %>
+  <% else %>
+    <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" ,  class: "profile-card__avatar", alt: "Your profile picture"  %>
+
+    <%= link_to "Add Your Avatar", edit_user_registration_path , :class => "profile-card__btn" %>
+  <% end %>
+
+  <% if @identity.nil? %>
+    <ul class="profile-card__info">
+      <li class="profile-card__info-item">
+        <%= @user.first_name %>  <%= @user.last_name %>
+      </li>
+      <li class="profile-card__info-item">
+        <a class="profile-card__info-link" href="mailto:contact@discosport.tv?subject=Hello">
+          CONTACT US
+        </a>
+      </li>
+      <li class="profile-card__info-item">
+        <%= link_to "EDIT YOUR PROFILE",  edit_user_registration_path, class: "profile-card__btn profile-card__btn--edit" %>
+      </li>
+    </ul>
+
+  <% else %>
+    <ul class="profile-card__info">
+      <li class="profile-card__info-item">
+        <%= @user.gender %> <%= @user.first_name %> <%= @user.last_name %>
+      </li>
+      <li class="profile-card__info-item">
+        <%= @user.job %>
+      </li>
+      <li class="profile-card__info-item">
+        <small>Attending as</small>
+         <p><%= @user.member %></p>
+      </li>
+      <li class="profile-card__info-item">
+        <small>Contact info</small>
+        <p><i class="fas   fa-at"></i> <%= @user.email %></p>
+        <p><i class="fab fa-whatsapp"> </i> <%= @user.whatsapp || "959989898" %></p>
+      </li>
+      <li class="profile-card__info-item">
+        <%= link_to "Linkedin ", @user.linkedin , :class => "profile-card__btn profile-card__btn--linkedin", :target => '_blank' %>
+        <% unless @user == current_user %>
+          <%= link_to 'Chat', chatrooms_path(:invited_id => @user), method: :post, class: "profile-card__btn profile-card__btn--chatroom" %>
+        <% end %>
+      </li>
+      <li class="profile-card__info-item">
+        <%= link_to "EDIT YOUR PROFILE", edit_user_registration_path, class: "profile-card__btn profile-card__btn--edit" %>
+      </li>
+    </ul>
+  <% end %>
+</div>

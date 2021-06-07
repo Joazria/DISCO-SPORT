@@ -1,6 +1,7 @@
 <%= render 'shared/banner_profile' %>
 
 <div class="container">
+
   <div class="row">
     <% if @identity.nil? %>
       <%= render 'shared/profile_welcome' %>
@@ -8,33 +9,23 @@
       <%= render 'shared/profile_working' %>
     <% end %>
 
-
-  <hr>
-
-  <div class="container">
-     <%= render 'shared/partnership' %>
-  </div>
-
-  <div class="mt-5">
+    <hr>
+    <div class="container">
+      <%= render 'shared/partnership' %>
+    </div>
+    <div class="mt-5">
     <% if current_user.status == 'approved' %>
       <h1 class="text-primary text-right m-3">
-        <span class="text-danger">PREMIUM</span>
-        NEWSLETTER</h1>
-
+        <span class="text-danger">PREMIUM</span>NEWSLETTER
+      </h1>
       <h5 class="text-primary m-3 text-right font-weight-bold">
-        <span class="text-success text-uppercase">
-        you are subscribed to our newsletter </span>
+        <span class="text-success text-uppercase">you are subscribed to our newsletter</span>
       </h5>
       <div class="container">
-
         <hr>
-       <%= render 'shared/newsletter_prez' %>
-
+        <%= render 'shared/newsletter_prez' %>
       </div>
-  <% end %>
-
+    <% end %>
   </div>
 </div>
-
-  <hr>
-  <!-- rendering active chatrooms -->
+<hr>

@@ -1,0 +1,32 @@
+.profile-working {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2ch 4ch;
+
+  width: 100%;
+  margin-top: 3ch;
+  @media screen and (max-width: 420px) {
+    justify-content: center;
+  }
+  &__bio {
+    display: grid;
+    gap: 1.2ch;
+    
+    width: clamp(300px, 100%, 600px);
+    padding: 1ch;
+    margin: 0;
+    &-item {
+      display: grid;
+      place-content: center start;
+      font-size: 1.2rem;
+      &:nth-child(1) {
+        color: $text-2;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      small {
+        color: $gray;
+      }
+    }
+  }
+}

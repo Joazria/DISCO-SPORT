@@ -19,10 +19,7 @@
     position: relative;
   }
   &__img {
-    width: 98%;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 0 0 130px 0;
+    @include avatar-rounded();
   }
   &__country {
     --url: "";

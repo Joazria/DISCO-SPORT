@@ -1,31 +1,9 @@
-  <div class="col-md-4">
-    <div class="card mb-3 profile">
-      <% if @user.avatar.attached? %>
-          <%= image_tag @user.avatar , :gravity => "face", :crop=>"crop",:width=>200, :height=>200, class: "card-img-top rounded-circle p-3 profile__avatar", alt: "Card image cap" %>
-        <% else %>
-          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" ,  class: "card-img-top rounded-circle p-3 profile__avatar", alt: "Card image cap"  %>
-          <%= link_to "Add Your Avatar", edit_user_registration_path , :class => "btn btn-block btn-danger" %>
-        <% end %>
-      <div class="card-body">
-        <h5 class="card-title text-center text-primary font-weight-bold text-uppercase">
-          <%= @user.first_name %>  <%= @user.last_name %>
-        </h5>
-        <a class="btn btn-lg btn-block btn-outline-success"
-          href="mailto:contact@discosport.tv?subject=Hello">
-          CONTACT US
-        </a>
-<!--        <%= link_to "Talk to Us!", chatroom_path(@user), :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
- -->  </div>
-      <div class="card-footer">
-          <%= link_to "EDIT YOUR PROFILE",  edit_user_registration_path, class: "btn btn-block btn-danger" %>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-8 mt-5 text-justify">
-    <hr>
+<div class="col-md-8 mt-5 text-justify">
+    welcome
+    <%= render 'shared/profile_card' %>
     <h5 class="text-primary">
-      Hello <span class="text-capitalize"><%= @user.first_name %></span> ,</h5>
+      Hello <span class="text-capitalize"><%= @user.first_name %></span> ,
+    </h5>
     <h5 class="text-primary">
       Thanks for signing up. We're excited to welcome you to the
       <span class= font-weight-bold  >DISCOSPORT AFRICA community</span>.
@@ -34,9 +12,8 @@
       information you need to network with other participants,
       start by completing your personal and company profiles.</h5>
     <h5 class="text-primary text-justify">Thanks</h5>
-     <h6 class="text-primary text-justify">Patrick.</h6>
-
-     <hr>
+    <h6 class="text-primary text-justify">Patrick.</h6>
+    <hr>
     <%= link_to "CREATE YOUR DISCOSPORT IDENTITY", new_identity_path, class: "btn btn-block btn-lg btn-danger" %>
-     <br>
-  </div>
+</div>
+

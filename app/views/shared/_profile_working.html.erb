@@ -1,57 +1,34 @@
-  <div class="col-md-4">
-    <div class="card mb-3 profile">
-      <% if @user.avatar.attached? %>
-          <%= image_tag @user.avatar , :gravity => "face", :crop=>"crop", :width=>200,  :heigth=>200,  class: "card-img-top rounded-circle p-3 profile__avatar", alt: "Card image cap" %>
-
-        <% else %>
-          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png" ,  class: "card-img-top rounded-circle p-3 profile__avatar", alt: "Card image cap" %>
-              <%= link_to "Add Your Avatar", edit_user_registration_path , :class => "btn btn-block btn-danger" %>
-      <% end %>
-      <div class="card-body">
-        <h5 class="card-title text-primary text-capitalize"><%= @user.gender %> <%= @user.first_name %>  <span class="text-primary text-capitalize"><%= @user.last_name %></span></h5>
-        <h5 class="card-text"><%= @user.job %></h5>
-        <h6 class="card-text">Attending as : <%= @user.member %></h6>
-        <div class="d-flex flex-column mt-3 pl-2">
-          <h6 class="text-left"><i class="fas fa-at"></i> : <%= @user.email %></h6>
-          <h6 class="text-left"><i class="fab fa-whatsapp"> : </i><%= @user.whatsapp %></h6>
-        </div>
-        <%= link_to "Linkedin ", @user.linkedin , :class => "btn btn-block btn-outline-primary", :target => '_blank' %>
-       <% unless @user == current_user %>
-        <%= link_to 'Chat', chatrooms_path(:invited_id => @user), method: :post, class: "btn btn-block btn-outline-primary" %>
-       <% end %>
-      </div>
-      <div class="card-footer">
-          <%= link_to "EDIT YOUR PROFILE",   edit_user_registration_path, class: "btn btn-block btn-danger" %>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="col-md-8 mt-5">
-    <h3 class="text-secondary text-uppercase"><%= @user.company %></h3>
-    <h5 class="text-secondary">Main activity : <%= @user.activity %>. </h5>
-    <div class="row">
-      <div class="col-4">
-        Country : <%= @user.country %>
-      </div>
-      <div class="col-4">
-        <%= @user.website %>
-      </div>
-      <div class="col-4">
-        <%= @user.phone %>
-      </div>
-    </div>
-    <div class="row m-2 text-right">
-      <%= link_to "VISITE #{@user.company} WEBSITE", "#{@user.website}" , :class => "btn btn-block btn-outline-primary text-uppercase", :target => '_blank' %>
-    </div>
-
-    <%#= render 'shared/active_chatrooms' %>
-
-  </div>
-  <!-- <div class="row m-2 text-right">
-    <%#= link_to "VISITE #{ @user.company} WEBSITE", @user.website, class: "btn btn-block btn-sm btn-outline-primary text-uppercase" %>
-    <#%= link_to "VISIT #{@user.company} WEBSITE", "http://#{@identity.website}" , :class => "btn btn-block btn-outline-primary text-uppercase", :target => '_blank' %>
-  </div>
-  <hr>
-  <p class="text-justify"><span class="text-danger">PRESENTATION: </span> <%= @identity.release %></p>
-</div> -->
+<section class="profile-working">
+  <%= render 'shared/profile_card' %>
+  <ul class="profile-working__bio">
+    <li class="profile-working__bio-item">Bio</li>
+    <li class="profile-working__bio-item">
+      <small>Company</small>
+      <p class="<%= @user.phone ? '' : 'text-danger' %>"><%= @user.company || "Not registered"%></p>
+    </li>
+    <li class="profile-working__bio-item">
+     <small>Main activity</small>
+      <p class="<%= @user.activity ? '' : 'text-danger' %>"><%= @user.activity || "Not registered"%></p>
+    </li>
+    <li class="profile-working__bio-item">
+     <small>Country</small>
+      <p class="<%= @user.country ? '' : 'text-danger' %>"><%= @user.country || "Not registered"%></p>
+    </li>
+    <li class="profile-working__bio-item">
+     <small>Country</small>
+      <p class="<%= @user.website ? '' : 'text-danger' %>"><%= @user.website || "Not registered"%></p>
+    </li>
+    <li class="profile-working__bio-item">
+     <small>Phone</small>
+      <p class="<%= @user.phone ? '' : 'text-danger' %>"><%= @user.phone || "Not registered"%></p>
+    </li>
+    <li class="profile-working__bio-item">
+      <%= link_to "VISIT #{@user.company} WEBSITE",
+        "#{@user.website}", 
+        :class => "profile-card__btn profile-card__btn--linkedin",
+        :target => '_blank' ,
+        :disabled => !!@user.company
+      %>
+    </li>
+  </ul>
+</section>
