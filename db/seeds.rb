@@ -12,6 +12,111 @@
 
 ########### UPDATE USER#######
 
+User.find(1).update!(
+  country: 'BR')
+User.find(3).update!(
+  country: 'US')
+User.find(4).update!(
+  country: 'IN')
+User.find(5).update!(
+  country: 'US')
+User.find(6).update!(
+  country: 'MU')
+User.find(7).update!(
+  country: 'MU')
+User.find(8).update!(
+  country: 'BW')
+User.find(9).update!(
+  country: 'NG')
+User.find(10).update!(
+  country: 'GB')
+User.find(11).update!(
+  country: 'US')
+User.find(12).update!(
+  country: 'FR')
+User.find(13).update!(
+  country: 'CI')
+User.find(14).update!(
+  country: 'CM')
+User.find(15).update!(
+  country: 'SN')
+User.find(16).update!(
+  country: 'CI')
+User.find(17).update!(
+  country: 'FR')
+User.find(18).update!(
+  country: 'FR')
+User.find(19).update!(
+  country: 'SN')
+User.find(21).update!(
+  country: 'US')
+User.find(22).update!(
+  country: 'FR')
+User.find(23).update!(
+  country: 'BR')
+User.find(24).update!(
+  country: 'GB')
+User.find(25).update!(
+  country: 'FR')
+User.find(26).update(
+  gender:'Mrs',
+  member:'PLATFORM',
+  job: 'Marketing Manager',
+  whatsapp: 'N/A',
+  linkedin: 'https://www.linkedin.com/in/niamurrell/',
+  company:'NBCUniversal Media',
+  activity: 'BROADCASTER | Private',
+  country: 'GB',
+  phone: 'N/A',
+  website:'https://www.nbcuniversal.com/')
+User.find(28).update!(
+  country: 'US')
+User.find(29).update!(
+  country: 'KE')
+User.find(30).update!(
+  country: 'CI')
+User.find(31).update!(
+  country: 'CI')
+User.find(32).update(
+  gender:'Mrs',
+  member:'CONTENT CREATOR',
+  job: 'Partner Manager',
+  whatsapp: 'N/A',
+  linkedin: 'hhttps://www.linkedin.com/in/folukemi-ikhalea/',
+  company:'BRANDCHICKS',
+  activity: 'DIGITAL MARKETING AGENCY',
+  country: 'NG',
+  phone: 'N/A',
+  website:'N/A')
+User.find(33).update!(
+  country: 'CA')
+User.find(34).update!(
+  country: 'SG')
+User.find(35).update!(
+  company:'HEKIMA NETWORKS',
+  country: 'RW')
+User.find(36).update!(
+  country: 'US')
+User.find(37).update!(
+  country: 'ZA')
+User.find(38).update!(
+  country: 'ZA')
+User.find(39).update!(
+  country: 'US')
+User.find(40).update!(
+  country: 'CI')
+User.find(41).update!(
+  country: 'CI')
+User.find(42).update!(
+  country: 'BR')
+User.find(44).update!(
+  country: 'MX')
+User.find(48).update!(
+  country: 'US')
+User.find(49).update!(
+  country: 'DE')
+User.find(50).update!(
+  country: 'US')
 # User.find(18).update(
 #   gender:'Mr',
 #   member:'PLATFORM',

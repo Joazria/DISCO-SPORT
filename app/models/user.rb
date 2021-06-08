@@ -2,20 +2,20 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
-  validates :gender, presence: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :member, presence: true
-  validates :email, presence: true
-  validates :avatar, presence: true
-  validates :job, presence: true
-  validates :whatsapp, presence: true
-  validates :linkedin, presence: true
-  validates :company, presence: true
-  validates :activity, presence: true
-  validates :country, presence: true
-  validates :website, presence: true
-  validates :phone, presence: true
+  # validates :gender, presence: true
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
+  # validates :member, presence: true
+  # validates :email, presence: true
+  # validates :avatar, presence: true
+  # validates :job, presence: true
+  # validates :whatsapp, presence: true
+  # validates :linkedin, presence: true
+  # validates :company, presence: true
+  # validates :activity, presence: true
+  # validates :country, presence: true
+  # validates :website, presence: true
+  # validates :phone, presence: true
 
 
   has_one :pitching, dependent: :destroy
