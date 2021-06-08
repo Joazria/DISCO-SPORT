@@ -1,4 +1,4 @@
-<div class="dashboard__validation-container">
+<div class="dashboard__validation-container mt-3">
   <% @users_approved.last(8).each do |user| %>
     <div class="delegate-card">
       <div class="delegate-card__main">
@@ -14,9 +14,6 @@
             <strong><%= user.first_name %> <%= user.last_name %></strong>
           </li>
          <li class="delegate-card__info-member">
-<!--             <a href="<%= user.linkedin %> %>" class="text-white">
-              <strong> <i class="fab fa-linkedin"></i> </strong>
-            </a> |  -->
             <%= user.job %>
           </li>
           <li class="delegate-card__info-website text-uppercase font-weight-bold">
