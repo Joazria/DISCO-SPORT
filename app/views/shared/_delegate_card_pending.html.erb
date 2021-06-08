@@ -7,9 +7,19 @@
         <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png", :gravity => "face", :crop => "crop", :class => "delegate-card__img" %>
       <% end %>
       <% if user.identity.nil? %>
-          <span class="delegate-card__country" style="--url: url('https://imagepng.org/wp-content/uploads/2017/04/bandeira-do-brasil.png');"></span>
+          <% if user.country.nil? %>
+          <% else %>
+            <div class="delegate-card__country">
+              <span class="flag-icon flag-icon-<%= user.country.downcase %> flag-icon-squared "></span>
+            </div>
+          <% end %>
         <% else %>
-          <span class="delegate-card__country_pending" style="--url: url('https://imagepng.org/wp-content/uploads/2017/04/bandeira-do-brasil.png');"></span>
+          <% if user.country.nil? %>
+          <% else %>
+            <div class="delegate-card__country_pending">
+              <span class="flag-icon flag-icon-<%= user.country.downcase %> flag-icon-squared "></span>
+            </div>
+          <% end %>
         <% end -%>
       <div class="d-flex">
         <%= simple_form_for user, url: profile_path(user), method: :patch do |f| %>

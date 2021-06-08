@@ -12,17 +12,17 @@
 
 ########### UPDATE USER#######
 
-User.find(18).update(
-  gender:'Mr',
-  member:'PLATFORM',
-  job: 'Media Rights',
-  whatsapp: '+5521996995765',
-  linkedin: 'https://www.linkedin.com/in/richardsarris/',
-  company:'BLAST',
-  activity: 'VIDEO GAMING PLATFORM',
-  country: 'UK',
-  phone: '+5521996995765',
-  website:'https://blastpremier.com/')
+# User.find(18).update(
+#   gender:'Mr',
+#   member:'PLATFORM',
+#   job: 'Media Rights',
+#   whatsapp: '+5521996995765',
+#   linkedin: 'https://www.linkedin.com/in/richardsarris/',
+#   company:'BLAST',
+#   activity: 'VIDEO GAMING PLATFORM',
+#   country: 'BR',
+#   phone: '+5521996995765',
+#   website:'https://blastpremier.com/')
 
 
 
@@ -40,18 +40,18 @@ User.find(18).update(
 
 ########### CREATE ID #######
 
-Identity.create!(user_id: 18,
-  company:'CS COMMUNICATIONS',
-  country: 'Côte d Ivoire',
-  activity: 'BROADCASTER | Public',
-  website:'',
-  gender:'Mr',
-  phone: '+237694131598',
-  whatsapp: '+237694131598',
-  linkedin: 'https://www.linkedin.com/in/latyf-kader-koné-96147b14a',
-  release: 'We are a audiovisual production and digital marketing company. We wanted to create new opportunities to sell our contents.',
-  member: 'PRODUCE / CO-PRODUCE CONTENT',
-  job: 'CEO')
+# Identity.create!(user_id: 18,
+#   company:'CS COMMUNICATIONS',
+#   country: 'Côte d Ivoire',
+#   activity: 'BROADCASTER | Public',
+#   website:'',
+#   gender:'Mr',
+#   phone: '+237694131598',
+#   whatsapp: '+237694131598',
+#   linkedin: 'https://www.linkedin.com/in/latyf-kader-koné-96147b14a',
+#   release: 'We are a audiovisual production and digital marketing company. We wanted to create new opportunities to sell our contents.',
+#   member: 'PRODUCE / CO-PRODUCE CONTENT',
+#   job: 'CEO')
 
 ########### UPDATE ID #######
 

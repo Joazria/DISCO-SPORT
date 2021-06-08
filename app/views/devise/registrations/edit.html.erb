@@ -13,7 +13,9 @@
     <% end %>
 
             <div class="row">
-
+      <div class="col-md-2">
+        <%= f.input :gender, collection: ['Mr', 'Mrs']%>
+      </div>
       <div class="col-md-5">
         <%= f.input :first_name,
                         as: :string,
@@ -27,27 +29,126 @@
                       placeholder: 'Zuchowicki' %>
       </div>
             </div>
-                    <%= f.input :member,
-                    label: 'Attending to *',
-                    collection: [ 'VENDOR', 'SPORTS FEDERATION', 'SPORTING CLUB','PLATFORM',
-                     'SPORTS VENUE', 'ADVERTISER', 'CONTENT CREATOR','PRESS', 'EXPERT']%>
+
+       <%= f.input :member,
+                    label: 'Attending as ',
+                    collection: [ 'VENDOR',
+                     'SPORTS FEDERATION',
+                     'SPORTING CLUB',
+                     'PLATFORM',
+                     'SPORTS VENUE',
+                     'ADVERTISER',
+                     'CONTENT CREATOR',
+                     'PRESS',
+                     'EXPERT']%>
 
       <div class="row">
     <h5 class="text-danger mt-5">
       ADD YOUR AVATAR / PHOTO
     </h5>
         </div>
-<div class="row">
+    <div class="row">
       <span class="text-danger">
       <%= f.input :avatar,
                             label: 'Upload your photo',
                             as: :file %>
 
       </span>
-</div>
+    </div>
 
 
     </div>
+
+  <h5 class="text-primary mt-5">
+      COMPANY INFORMATION
+    </h5>
+            <%= f.input :company,
+
+                        as: :string,
+                        label: 'Company',
+                        placeholder: 'Basic Lead' %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :activity,
+                    collection: ['ADVERTISING AGENCY',
+                        'ADVISORY SERVICES',
+                        'ARCHITECTURAL / DESIGN FIRM',
+                        'ATHLETES REPRESENTATION AGENCY',
+                        'BROADCASTER | Private',
+                        'BROADCASTER | Public',
+                         'CONSUMER BRAND',
+                         'DELIVERY SOLUTION',
+                         'DIGITAL MARKETING AGENCY',
+                         'DIGITAL FIRST COMPANY',
+                         'DUBBING SOLUTION',
+                         'ECOMMERCE PLATFORM',
+                         'EQUIPMENT / NEW TECH DISTRIBUTION',
+                         'FUNDING / BANK',
+                         'FULFILLMENT / SHIPPING SOLUTION',
+                          'INDEPENDENT ANIMATOR',
+                          'INDEPENDENT DIRECTOR',
+                          'INDEPENDENT JOURNALIST',
+                          'INDEPENDENT WRITER',
+                          'MANUFACTURING',
+                          'MARKETER',
+                          'MARKETING AGENCY',
+                          'MEDIA BUYING AGENCY',
+                          'MEDIA RIGHTS DISTRIBUTOR',
+                          'MERCHANDISING RIGHTS DISTRIBUTOR',
+                          'MOBILE OPERATOR',
+                          'MONETIZATION SOLUTION',
+                          'MUSIC PRODUCTION',
+                          'PAY-TV OPERATOR',
+                          'PAYMENT PROCESSING SOLUTION',
+                          'POST PRODUCTION SERVICE',
+                          'PREMIUM CABLE CHANNEL',
+                          'PRESS',
+                          'PRODUCTION COMPANY',
+                          'PUBLIC ORGANISATION',
+                          'RADIO STATION',
+                          'RESEARCH CONSULTANCY',
+                          'SOCIAL MEDIA',
+                          'SPORTING CLUB',
+                          'SPORTS ARENA',
+                          'SPORTS FEDERATION',
+                          'SPORTS MARKETING',
+                          'SPORTS TOURISM',
+                          'STREAMING PLATFORM',
+                          'SUBSCRIBERS MANAGEMENT SOLUTION',
+                          'TALENT AGENCY',
+                          'TRADE ASSOCIATION',
+                          'VIDEO GAME DEVELOPER',
+                          'VIDEO GAMING PLATFORM']%>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :country,
+
+                        as: :country,
+                        label: 'Country',
+                        placeholder: 'Rwanda' %>
+     </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :phone,
+                        as: :string,
+                        label: 'phone',
+                        placeholder: '+5521996995765' %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :website,
+                        as: :string,
+                        label: 'Website',
+                        placeholder: 'www.discosport.tv' %>
+      </div>
+    </div>
+   <!--  <h5 class="text-primary text-uppercase mt-5">Present Yourself, why are you participating to DISCOP</h5>
+    <p class="text-danger">To help us plan well-prepared and well-researched meetings, tell us about your reasons for attending DISCOSPORT 100% Virtual | Sub-Saharan Africa.</p>
+    <%= f.input :release,
+                    as: :text,
+                    label: 'Presentation',
+                    placeholder: 'To help us plan well-prepared and well-researched meetings, tell us about your reasons for attending DISCOSPORT 100% Virtual | Sub-Saharan Africa.' %>
+  </div> -->
 
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
@@ -66,8 +167,8 @@
 
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update", class: "btn btn-success m-3" %>
+  <div class="container form-actions">
+    <%= f.button :submit, "Update", class: "btn btn-lg btn-success m-3" %>
   </div>
 <% end %>
 </div>

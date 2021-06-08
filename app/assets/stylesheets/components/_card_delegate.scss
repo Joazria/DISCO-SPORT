@@ -25,30 +25,31 @@
     border-radius: 0 0 130px 0;
   }
   &__country {
-    --url: "";
-    width: 50px;
-    height: 50px;
-
+      .flag-icon {
+    width: 3em;
+    line-height: 2em;
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
-    transform: translate(50px, -90px);
-    background: var(--url) center / cover no-repeat;
-
+    transform: translate(50px, -20px);
+    padding: 8px;
     border-radius: 50%;
+    }
+
   }
     &__country_pending {
-    --url: "";
-    width: 50px;
-    height: 50px;
+      .flag-icon {
+    width: 3em;
+    line-height: 2em;
 
     position: absolute;
-    top: 35%;
+    top: 30%;
     left: 50%;
     transform: translate(50px, -90px);
-    background: var(--url) center / cover no-repeat;
+    padding: 8px;
 
     border-radius: 50%;
+    }
   }
   &__info {
     margin: 0;
