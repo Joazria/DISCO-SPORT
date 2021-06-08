@@ -20,7 +20,7 @@ class NewslettersController < ApplicationController
     @newsletter = Newsletter.new(newsletter_params)
     @newsletter.user = current_user
     if @newsletter.save
-      redirect_to newsletters, notice: "Your Newsletter was successfully created."
+      redirect_to root_path, notice: "Your Newsletter was successfully created."
     else
       render :new
     end
@@ -28,7 +28,7 @@ class NewslettersController < ApplicationController
 
   def updaterails
     if @newsletter.update(newsletter_params)
-      redirect_to @newsletter, notice: "Your Newsletter was successfully updated."
+      redirect_to root_path, notice: "Your Newsletter was successfully updated."
     else
       render :edit
     end
@@ -51,6 +51,7 @@ class NewslettersController < ApplicationController
       :article,
       :website,
       :publish,
+      :url,
       :en_fr,
       :photo)
   end

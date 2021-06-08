@@ -9,7 +9,11 @@
         <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png", :gravity => "face", :crop => "crop", :class => "delegate-card__img" %>
       <% end %>
       <div class="delegate-card__country">
-      <span class="flag-icon flag-icon-ao flag-icon-squared"></span></div>
+        <% if user.country.nil? %>
+        <% else %>
+        <span class="flag-icon flag-icon-<%= user.country.downcase %> flag-icon-squared "></span>
+        <% end %>
+      </div>
 
       <ul class="delegate-card__info">
         <li class="delegate-card__info-name">
