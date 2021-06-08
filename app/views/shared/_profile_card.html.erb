@@ -36,8 +36,8 @@
       </li>
       <li class="profile-card__info-item">
         <small>Contact info</small>
-        <p><i class="fas   fa-at"></i> <%= @user.email %></p>
-        <p><i class="fab fa-whatsapp"> </i> <%= @user.whatsapp || "959989898" %></p>
+        <p><i class="fa fa-at"></i> <%= @user.email %></p>
+        <a href="https://api.whatsapp.com/send?phone=<%= @user.whatsapp %>&text=Hello <%= @user.first_name %>!" target="_blank"><i class="fab fa-whatsapp"> </i> <%= @user.whatsapp %></a>
       </li>
       <li class="profile-card__info-item">
         <%= link_to "Linkedin ", @user.linkedin , :class => "profile-card__btn profile-card__btn--linkedin", :target => '_blank' %>
