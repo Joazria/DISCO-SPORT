@@ -13,19 +13,30 @@
           <li class="delegate-card__info-name">
             <strong><%= user.first_name %> <%= user.last_name %></strong>
           </li>
-         <li class="delegate-card__info-member">
+         <li class="delegate-card__info-member font-weight-bold">
             <%= user.job %>
           </li>
+          <li class="delegate-card__info-member text-uppercase">
+             <small>attending as : </small> <%= user.member %>  <%#= user.country %>
+          </li>
+          <br>
           <li class="delegate-card__info-website text-uppercase font-weight-bold">
             <a href="<%= user.website %>" class="">
               <%= user.company %>
             </a>
           </li>
-          <li class="delegate-card__info-member">
-            <%= user.member %> | <%= user.country %>
+          <li class="delegate-card__info-website text-uppercase">
+            <small>activity :</small>  <%= user.activity %>
           </li>
-          <li class="delegate-card__info-btn">
-            <%= link_to "Delegate Profile", profile_path(user), class: "delegate-card__btn" %>
+
+<!--           <li class="delegate-card__info-btn">
+            <#%= link_to "Delegate Profile", profile_path(user), class: "delegate-card__btn" %>
+          </li> -->
+          <br>
+          <li class="delegate-card__info-website text-uppercase">
+            <a href="https://<%= user.website %>" class="btn btn-block btn-outline-danger"  target='_blank'>
+              <%= user.website %>
+            </a>
           </li>
         </ul>
       </ul>

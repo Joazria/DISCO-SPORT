@@ -22,6 +22,7 @@ class ChatroomsController < ApplicationController
   private
 
   def chatroom_location
+    #raise
     if (Chatroom.where(user_id: current_user.id).find_by invited_id: params[:invited_id].to_i).nil?
       @chatroom = Chatroom.where(user_id: params[:invited_id].to_i).find_by invited_id: current_user.id
     else

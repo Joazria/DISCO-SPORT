@@ -1,7 +1,7 @@
 <section class="profile-working">
   <%= render 'shared/profile_card' %>
   <ul class="profile-working__bio">
-    <li class="profile-working__bio-item">Bio</li>
+    <li class="profile-working__bio-item"></li>
     <li class="profile-working__bio-item">
       <small>Company</small>
       <p class="<%= @user.phone ? '' : 'text-danger' %>"><%= @user.company || "Not registered"%></p>
@@ -16,19 +16,30 @@
     </li>
     <li class="profile-working__bio-item">
      <small>Website</small>
-      <p class="<%= @user.website ? '' : 'text-danger' %>"><%= @user.website || "Not registered"%></p>
+     <%= link_to "#{@user.website}",
+        "https://#{@user.website}",
+        :target => '_blank' ,
+        :disabled => !!@user.company
+      %>
     </li>
     <li class="profile-working__bio-item">
      <small>Phone</small>
       <p class="<%= @user.phone ? '' : 'text-danger' %>"><%= @user.phone || "Not registered"%></p>
     </li>
     <li class="profile-working__bio-item">
-      <%= link_to "VISIT #{@user.company} WEBSITE",
-        "#{@user.website}", 
-        :class => "profile-card__btn profile-card__btn--linkedin",
+      <%#= link_to "VISIT #{@user.company} WEBSITE",
+        "https://#{@user.website}",
+        :class => "profile-card__btn profile-card__btn--linkedin text-uppercase",
         :target => '_blank' ,
         :disabled => !!@user.company
       %>
+      <div class="container text-justify">
+        <hr>
+        <%=@user.identity.release %>
+      </div>
+
     </li>
   </ul>
 </section>
+
+

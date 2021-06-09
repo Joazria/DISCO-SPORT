@@ -31,23 +31,41 @@
         <%= @user.job %>
       </li>
       <li class="profile-card__info-item">
-        <small>Attending as</small>
-         <p><%= @user.member %></p>
+        <small>Attending as : <%= @user.member %></small>
       </li>
+      <% if current_user == @user %>
+        <li class="profile-card__info-item">
+          <small>Contact info</small>
+          <p><i class="fa fa-at"></i> <%= @user.email %></p>
+          <a href="https://api.whatsapp.com/send?phone=<%= @user.whatsapp %>&text=Hello <%= @user.first_name %>!" target="_blank"><i class="fab fa-whatsapp"> </i> <%= @user.whatsapp %></a>
+        </li>
+      <% end %>
+
       <li class="profile-card__info-item">
-        <small>Contact info</small>
-        <p><i class="fa fa-at"></i> <%= @user.email %></p>
-        <a href="https://api.whatsapp.com/send?phone=<%= @user.whatsapp %>&text=Hello <%= @user.first_name %>!" target="_blank"><i class="fab fa-whatsapp"> </i> <%= @user.whatsapp %></a>
-      </li>
-      <li class="profile-card__info-item">
-        <%= link_to "Linkedin ", @user.linkedin , :class => "profile-card__btn profile-card__btn--linkedin", :target => '_blank' %>
-        <% unless @user == current_user %>
-          <%= link_to 'Chat', chatrooms_path(:invited_id => @user), method: :post, class: "profile-card__btn profile-card__btn--chatroom" %>
+
+        <% if @user == current_user  %>
+          <%= link_to "EDIT YOUR PROFILE", edit_user_registration_path, class: "profile-card__btn profile-card__btn--edit" %>
+        <% else %>
+          <%#= link_to "SEND A MESSAGE TO #{@user.first_name}",
+              chatrooms_path(:invited_id => @user),
+              # chatrooms_path(@user),
+                remote: true,
+                # :data => {:toggle => "modal", :target => "#chatModal"},
+              method: :post,
+              class: "profile-card__btn profile-card__btn--chatroom text-uppercase" %>
         <% end %>
-      </li>
-      <li class="profile-card__info-item">
-        <%= link_to "EDIT YOUR PROFILE", edit_user_registration_path, class: "profile-card__btn profile-card__btn--edit" %>
+        <%= link_to "Linkedin ", @user.linkedin , :class => "profile-card__btn profile-card__btn--linkedin", :target => '_blank' %>
       </li>
     </ul>
   <% end %>
 </div>
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="chatModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+
+    </div>
+  </div>
+</div> -->
