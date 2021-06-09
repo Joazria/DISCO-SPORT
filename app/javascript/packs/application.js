@@ -20,21 +20,19 @@ require("channels")
 import "bootstrap"
 window.$ = $;
 
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
 import { initChatroomCable } from '../channels/chatroom_channel';
 
 document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
 
-  const menu = document.querySelector('.hamburger');
+  const toggleBtn = document.querySelector('.hamburger');
+  const menu = document.querySelector('.navigation__menu');
   let aria = false
-  menu.addEventListener("click", ( { path } ) => {
-    const source = path.filter(item => item.type === 'button')[0];
-    source.classList.toggle('is-active');
-    source.setAttribute('aria-expanded', !aria);
+  toggleBtn.addEventListener("click", ( ) => {
+    toggleBtn.classList.toggle('is-active');
+    toggleBtn.setAttribute('aria-expanded', !aria);
     aria = !aria
-    source.nextElementSibling.classList.toggle('is-active');
+    menu.classList.toggle('is-active');
   });
 });
 
