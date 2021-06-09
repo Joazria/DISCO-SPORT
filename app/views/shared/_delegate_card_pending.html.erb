@@ -2,14 +2,15 @@
   <div class="delegate-card">
     <div class="delegate-card__main">
       <% if user.avatar.attached? %>
-        <%= image_tag user.avatar
+        <%= image_tag user.avatar,
             :gravity => "face",
             :crop => "crop",
             :class => "delegate-card__img",
             :width => "270", 
             :height => "270"%>
       <% else %>
-        <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png",:gravity => "face",
+        <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png",
+            :gravity => "face",
             :crop => "crop",
             :class => "delegate-card__img",
             :width => "270", 
