@@ -1,5 +1,5 @@
 <div class="dashboard__validation-container mt-3">
-  <% @users_approved.last(8).each do |user| %>
+  <% @users_approved.first(8).each do |user| %>
     <div class="delegate-card">
       <div class="delegate-card__main">
         <% if user.avatar.attached? %>
@@ -7,8 +7,12 @@
         <% else %>
           <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png", :gravity => "face", :crop => "crop", :class => "delegate-card__img" %>
         <% end %>
-        <span class="delegate-card__country" style="--url: url('https://imagepng.org/wp-content/uploads/2017/04/bandeira-do-brasil.png');"></span>
-
+        <div class="delegate-card__country_recent">
+          <% if user.country.nil? %>
+          <% else %>
+          <span class="flag-icon flag-icon-<%= user.country.downcase %> flag-icon-squared "></span>
+          <% end %>
+        </div>
         <ul class="delegate-card__info">
           <li class="delegate-card__info-name">
             <strong><%= user.first_name %> <%= user.last_name %></strong>

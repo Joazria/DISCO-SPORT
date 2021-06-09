@@ -48,6 +48,21 @@
     border-radius: 50%;
     }
   }
+    &__country_recent {
+      .flag-icon {
+    width: 3em;
+    line-height: 2em;
+
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(50px, -45px);
+    padding: 8px;
+
+    border-radius: 50%;
+    }
+  }
+
   &__info {
     margin: 0;
     padding: 1ch;
