@@ -1,66 +1,33 @@
 .delegate-card {
-  min-height: 360px;
+  height: 500px;
   width: 275px;
   display: grid;
   grid-template-rows: minmax(360px, 1fr) 35px;
-
+  overflow-y: auto;
   border-radius: 4px;
-  overflow: hidden;
+
   &__main {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
-
     width: 100%;
     min-height: 100%;
     height: max-content;
-
     background: $main-bg;
     position: relative;
   }
   &__img {
+    margin-top: 1ch;
+
     @include avatar-rounded();
   }
   &__country {
       .flag-icon {
-    width: 3em;
-    line-height: 2em;
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(50px, -90px);
-    padding: 8px;
-    border-radius: 50%;
+    @include icon-flag{transform: translate(85px, -90px);}
+
+
     }
 
-  }
-    &__country_pending {
-      .flag-icon {
-    width: 3em;
-    line-height: 2em;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(50px, -90px);
-    padding: 8px;
-
-    border-radius: 50%;
-    }
-  }
-    &__country_recent {
-      .flag-icon {
-    width: 3em;
-    line-height: 2em;
-
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(50px, -90px);
-    padding: 8px;
-
-    border-radius: 50%;
-    }
   }
 
   &__info {
