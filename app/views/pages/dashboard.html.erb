@@ -1,74 +1,77 @@
-<div class="dashboard">
-  <div class="dashboard__actions">
-    <%= render "shared/newsletter_dashboard" %>
-    <%= render "shared/dashboard_delegates_counter" %>
-  </div>
-  
-  <% if @results.nil? %>
-    <%= render "shared/dashboard_validation" %>
-    <% else %>
-      <% @results.each do |result| %>
-          <div class="card mb-3" >
-            <div class="row g-0">
-              <div class="col-md-2">
-                <% if result.avatar.attached? %>
-                  <%= image_tag result.avatar, :style => "height: 100%; width: 200px;", :gravity => "face" %>
-                <% else %>
-                  <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png", :style => "height: 100%; width: 200px;" %>
-                <% end %>
-              </div>
-              <div class="col-md-6">
-                <div class="card-body">
-                  <h5 class="card-title text-uppercase"><%= link_to "#{result.full_name}", chatroom_path(result) %></h5>
-                  <h6 class="card-text"> <span class="font-weight-bold"><%= result.company %></span>  from <span class="font-weight-bold"><%= result.country %></span>  and attending as <span class="font-weight-bold"><%= result.member %></span></h6>
-                  <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= result.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= result.whatsapp %></span> </p>
-                    <div class="d-flex">
-                      <%= link_to "linkedin", result.linkedin, :target => "_blank", :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
-                      <%= link_to "#{result.company} WEBSITE", result.company, class: "btn btn-sm btn-outline-primary text-uppercase m-2" %>
-                      <%= link_to "Delegate Profile", root_path, class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
+<div class="contenaire">
+  <div class="dashboard">
+    <div class="dashboard__actions">
+      <%= render "shared/newsletter_dashboard" %>
+      <%= render "shared/dashboard_delegates_counter" %>
+    </div>
+
+    <% if @results.nil? %>
+      <%= render "shared/dashboard_validation" %>
+      <% else %>
+        <% @results.each do |result| %>
+            <div class="card mb-3" >
+              <div class="row g-0">
+                <div class="col-md-2">
+                  <% if result.avatar.attached? %>
+                    <%= image_tag result.avatar, :style => "height: 100%; width: 200px;", :gravity => "face" %>
+                  <% else %>
+                    <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png", :style => "height: 100%; width: 200px;" %>
+                  <% end %>
+                </div>
+                <div class="col-md-6">
+                  <div class="card-body">
+                    <h5 class="card-title text-uppercase"><%= link_to "#{result.full_name}", chatroom_path(result) %></h5>
+                    <h6 class="card-text"> <span class="font-weight-bold"><%= result.company %></span>  from <span class="font-weight-bold"><%= result.country %></span>  and attending as <span class="font-weight-bold"><%= result.member %></span></h6>
+                    <p class="card-text"> <span class="font-weight-bold"><i class="far fa-envelope"> </i> <%= result.email %></span>  | <i class="fab fa-whatsapp"></i>  <span class="font-weight-bold"><%= result.whatsapp %></span> </p>
+                      <div class="d-flex">
+                        <%= link_to "linkedin", result.linkedin, :target => "_blank", :class => "btn btn-sm btn-outline-primary text-uppercase m-2" %>
+                        <%= link_to "#{result.company} WEBSITE", result.company, class: "btn btn-sm btn-outline-primary text-uppercase m-2" %>
+                        <%= link_to "Delegate Profile", root_path, class: " btn btn-sm btn-outline-primary text-uppercase m-2" %>
+                      </div>
+                    <p class="card-text"><small class="text-muted"><%= result.created_at %></small></p>
+                  </div>
+                </div>
+                <div class="col-md-4 align-self-center ">
+                  <% if result.status == "pending" %>
+                    <div class="d-flex justify-content-center">
+                      <h5 class="card-title text-uppercase text-danger ">Status : <%= result.status %></h5>
                     </div>
-                  <p class="card-text"><small class="text-muted"><%= result.created_at %></small></p>
+                    <div class="d-flex justify-content-center">
+                      <%= simple_form_for result, url: profile_path(result), method: :patch do |f| %>
+                        <%= f.hidden_field :status, value: "approved" %>
+                        <%= f.submit "Approve", class: "btn btn-success m-1" %>
+                      <% end %>
+                      <%= simple_form_for result, url: profile_path(result), method: :patch do |f| %>
+                        <%= f.hidden_field :status, value: "not approved" %>
+                        <%= f.submit "Disapprove", class: "btn btn-danger m-1" %>
+                      <% end %>
+                    </div>
+                  <% elsif result.status == "approved" %>
+                    <div class="d-flex justify-content-center">
+                      <h5 class="card-title text-uppercase text-primary ">Status : <%= result.status %></h5>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                      <%= simple_form_for result, url: profile_path(result), method: :patch do |f| %>
+                        <%= f.hidden_field :status, value: "not approved" %>
+                        <%= f.submit "disapprove", class: "btn btn-outline-danger text-uppercase" %>
+                      <% end %>
+                    </div>
+                  <% else %>
+                    <div class="d-flex justify-content-center">
+                      <h5 class="card-title text-uppercase text-primary ">Status : <%= result.status %></h5>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                      <%= simple_form_for result, url: profile_path(result), method: :patch do |f| %>
+                        <%= f.hidden_field :status, value: "approved" %>
+                        <%= f.submit "approve", class: "btn btn-outline-success text-uppercase" %>
+                      <% end %>
+                    </div>
+                  <% end %>
                 </div>
               </div>
-              <div class="col-md-4 align-self-center ">
-                <% if result.status == "pending" %>
-                  <div class="d-flex justify-content-center">
-                    <h5 class="card-title text-uppercase text-danger ">Status : <%= result.status %></h5>
-                  </div>
-                  <div class="d-flex justify-content-center">
-                    <%= simple_form_for result, url: profile_path(result), method: :patch do |f| %>
-                      <%= f.hidden_field :status, value: "approved" %>
-                      <%= f.submit "Approve", class: "btn btn-success m-1" %>
-                    <% end %>
-                    <%= simple_form_for result, url: profile_path(result), method: :patch do |f| %>
-                      <%= f.hidden_field :status, value: "not approved" %>
-                      <%= f.submit "Disapprove", class: "btn btn-danger m-1" %>
-                    <% end %>
-                  </div>
-                <% elsif result.status == "approved" %>
-                  <div class="d-flex justify-content-center">
-                    <h5 class="card-title text-uppercase text-primary ">Status : <%= result.status %></h5>
-                  </div>
-                  <div class="d-flex justify-content-center">
-                    <%= simple_form_for result, url: profile_path(result), method: :patch do |f| %>
-                      <%= f.hidden_field :status, value: "not approved" %>
-                      <%= f.submit "disapprove", class: "btn btn-outline-danger text-uppercase" %>
-                    <% end %>
-                  </div>
-                <% else %>
-                  <div class="d-flex justify-content-center">
-                    <h5 class="card-title text-uppercase text-primary ">Status : <%= result.status %></h5>
-                  </div>
-                  <div class="d-flex justify-content-center">
-                    <%= simple_form_for result, url: profile_path(result), method: :patch do |f| %>
-                      <%= f.hidden_field :status, value: "approved" %>
-                      <%= f.submit "approve", class: "btn btn-outline-success text-uppercase" %>
-                    <% end %>
-                  </div>
-                <% end %>
-              </div>
             </div>
-          </div>
-      <% end %>
-  <% end %>
+        <% end %>
+    <% end %>
+  </div>
+
 </div>
