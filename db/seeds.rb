@@ -11,7 +11,7 @@
 
 
 ########### UPDATE USER#######
-
+# User.find(41).update!(company: 'FEDERATION IVOIRIENNE DE FOOTBALL AMÉRICAIN')
 # User.find(1).update!(
 #   country: 'BR')
 # User.find(3).update!(
