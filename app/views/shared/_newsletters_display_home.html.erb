@@ -17,8 +17,12 @@
         </div>
       </div>
     </div>
-  <div class="modal fade" id="newsModal<%= newsletter.id %>" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-xl" role="document">
+  <% end %>
+</div>
+  <% @newsletters.last(6).each do |newsletter| %>
+
+ <div class="modal fade" id="newsModal<%= newsletter.id %>" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title texte-uppercase"> <%= newsletter.title %></h5>
@@ -33,13 +37,11 @@
             <p class=""><%= newsletter.article %></p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <%= link_to "Source", newsletter.url, :class => "btn btn-outline-primary", :target => '_blank' %>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
         </div>
       </div>
     </div>
   </div>
-
   <% end %>
-
-</div>
