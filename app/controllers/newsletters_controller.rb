@@ -26,7 +26,7 @@ class NewslettersController < ApplicationController
     end
   end
 
-  def updaterails
+  def update
     if @newsletter.update(newsletter_params)
       redirect_to root_path, notice: "Your Newsletter was successfully updated."
     else
