@@ -1,2 +1,45 @@
-<h1>Newsletters#edit</h1>
-<p>Find me in app/views/newsletters/edit.html.erb</p>
+
+<div class="container">
+  <h1>CREATE YOUR ARTICLE</h1>
+
+  <%= simple_form_for @newsletter do |f| %>
+    <div class="row">
+      <div class="col-6">
+        <%= f.input :title,
+                    label: 'Title',
+                    placeholder: 'An amazing Article Title' %>
+      </div>
+      <div class="col-6">
+        <%= f.input :punshline,
+                    label: 'Your punchline',
+                    placeholder: 'Resume your article in one sentence' %>
+      </div>
+    </div>
+
+    <%= f.input :article,
+                label: 'Please write your article',
+                placeholder: 'Your Amazing article' %>
+
+    <%= f.input :url,
+                label: 'Please copy and past the source of your article',
+                placeholder: 'https://guardian.ng/news/nbc-orders-all-nigerian-radio-television-stations-to-stop-tweeting/' %>
+    <div class="row">
+      <div class="col-6">
+            <%= f.input :en_fr,
+                label: 'Your article is in french or in english',
+                                    collection: [ 'fr', 'en'] %>
+      </div>
+      <div class="col-6">
+          <%= f.input :photo,
+                            label: 'Upload your article photo',
+                            as: :file %>
+      </div>
+    </div>
+
+
+
+
+    <p><%= f.submit "Edit your Article", class: "btn btn-success btn-block" %></p>
+  <% end %>
+</div>
+
