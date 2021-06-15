@@ -2,20 +2,20 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
-  validates :gender, presence: true
+  # validates :gender, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :member, presence: true
+  # validates :member, presence: true
   validates :email, presence: true
-  validates :avatar, presence: true
-  validates :job, presence: true
-  validates :whatsapp, presence: true
-  validates :linkedin, presence: true
-  validates :company, presence: true
-  validates :activity, presence: true
-  validates :country, presence: true
-  validates :website, presence: true
-  validates :phone, presence: true
+  # validates :avatar, presence: true
+  # validates :job, presence: true
+  # validates :whatsapp, presence: true
+  validates :linkedin, presence: true, format: { with: /(linkedin.com\/)(in\/)?(company\/)?/, message: "https://www.linkedin.com/in/YOUR-USERNAME-HERE/" }
+  # validates :company, presence: true
+  # validates :activity, presence: true
+  # validates :country, presence: true
+  # validates :website, presence: true
+  # validates :phone, presence: true
 
 
   has_one :pitching, dependent: :destroy
@@ -35,6 +35,31 @@ class User < ApplicationRecord
 
   after_create :send_admin_mail
 
+  before_create :regex_linkedin
+
+
+  private
+
+  def regex_linkedin
+    # if linkedin.match?(/com(\/in)?\/(.+)\/?$/)
+    #   matchdata = linkedin.match(/com(\/in)?\/(?<username>.+)\/?$/)
+    #   self.linkedin = "https://www.linkedin.com/in/#{matchdata[:username]}"
+    if linkedin.include?('.com/company')
+      matchdata = linkedin.match(/com(\/in)?\/(?<username>.+)\/?$/)
+      self.linkedin = "https://www.linkedin.com/#{matchdata[:username]}"
+    else
+      self.linkedin = "https://www.linkedin.com/in/#{linkedin}"
+    end
+  end
+
+  def send_admin_mail
+    self.update(full_name: "#{first_name} #{last_name}")
+    # Identity.create(user_id: self.id)
+    AdminMailer.with(user: self).new_user_waiting_for_approval.deliver_now
+    AdminMailer.with(user: self).new_user_welcome.deliver_now
+    # AdminMailer.new_user_waiting_for_approval(email).deliver_now
+  end
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.linkedin_data"] && session["devise.linkedin_data"]["extra"]["raw_info"]
@@ -51,15 +76,5 @@ class User < ApplicationRecord
       user.linkedin_picture_url = auth.info.picture_url
       user.password = Devise.friendly_token[0, 20]
     end
-  end
-
-  private
-
-  def send_admin_mail
-    self.update(full_name: "#{first_name} #{last_name}")
-    # Identity.create(user_id: self.id)
-    AdminMailer.with(user: self).new_user_waiting_for_approval.deliver_now
-    AdminMailer.with(user: self).new_user_welcome.deliver_now
-    # AdminMailer.new_user_waiting_for_approval(email).deliver_now
   end
 end
