@@ -36,10 +36,15 @@ en:
     attributes:
       user:
         linkedin: ""
+        email: ""
+        website: ""
     errors:
       models:
         user:
           attributes:
             linkedin:
-              blank: "can't be blank 🤪"
-
+              blank: "Linkedin can't be blank"
+            email:
+              blank: "Email can't be blank."
+            website:
+              blank: "Website can't be blank"

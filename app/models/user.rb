@@ -1,22 +1,20 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-
   # validates :gender, presence: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  validates :first_name, presence: true, length: {minimum: 2, maximum: 15}, format: { with: /\A(\w|\s)+\z/, message: "Invalid Characters." }
+  validates :last_name, presence: true, length: {minimum: 2, maximum: 15}, format: { with: /\A(\w|\s)+\z/, message: "Invalid Characters." }
   # validates :member, presence: true
-  validates :email, presence: true
+  validates :email, presence: true, format: { with: /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/, message: "Not a valid email." }
   # validates :avatar, presence: true
   # validates :job, presence: true
   # validates :whatsapp, presence: true
-  validates :linkedin, presence: true, format: { with: /(linkedin.com\/)(in\/)?(company\/)?/, message: "https://www.linkedin.com/in/YOUR-USERNAME-HERE/" }
+  validates :linkedin, presence: true, format: { with: /(linkedin.com\/)(in\/)?(company\/)?\w+/, message: "https://www.linkedin.com/in/YOUR-USERNAME-HERE/" }
   # validates :company, presence: true
   # validates :activity, presence: true
   # validates :country, presence: true
-  # validates :website, presence: true
+  validates :website, presence: true, format: { with: /((w{3}\.)|(https?:\/\/))?[a-zA-Z]+\.[a-zA-Z]*\.?[a-zA-Z]*\/?(.?)*/, message: "Must be a valid format." }
   # validates :phone, presence: true
-
 
   has_one :pitching, dependent: :destroy
   has_one :identity, dependent: :destroy
@@ -35,20 +33,25 @@ class User < ApplicationRecord
 
   after_create :send_admin_mail
 
-  before_create :regex_linkedin
-
+  before_create :regex_linkedin, :regex_website
 
   private
 
   def regex_linkedin
-    # if linkedin.match?(/com(\/in)?\/(.+)\/?$/)
-    #   matchdata = linkedin.match(/com(\/in)?\/(?<username>.+)\/?$/)
-    #   self.linkedin = "https://www.linkedin.com/in/#{matchdata[:username]}"
+    matchdata = linkedin.match(/com(\/in)?\/(?<username>.+)\/?$/)
     if linkedin.include?('.com/company')
-      matchdata = linkedin.match(/com(\/in)?\/(?<username>.+)\/?$/)
-      self.linkedin = "https://www.linkedin.com/#{matchdata[:username]}"
+      self.linkedin = "https://www.linkedin.com/#{matchdata[:username].downcase.gsub(/\\|!|;|@|<|>/, '')}"
     else
-      self.linkedin = "https://www.linkedin.com/in/#{linkedin}"
+      self.linkedin = "https://www.linkedin.com/in/#{matchdata[:username].downcase.gsub(/\\|!|;|@|<|>/, '')}"
+    end
+  end
+
+  def regex_website
+    matchdata = website.match(/(?<website>\w+\.\w+\.?.*)/)
+    if website.include?('www.')
+      self.website = "http://#{matchdata[:website].downcase.gsub(/\\|!|;|@|<|>/, '')}"
+    else
+      self.website = "http://www.#{matchdata[:website].downcase.gsub(/\\|!|;|@|<|>/, '')}"
     end
   end
 
