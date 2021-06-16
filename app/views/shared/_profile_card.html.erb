@@ -10,7 +10,7 @@
   <% if @identity.nil? %>
     <ul class="profile-card__info">
       <li class="profile-card__info-item">
-        <%= @user.first_name %>  <%= @user.last_name %>
+      <%= @user.gender %>  <%= @user.first_name %>  <%= @user.last_name %>
       </li>
       <li class="profile-card__info-item">
         <a class="profile-card__info-link" href="mailto:contact@discosport.tv?subject=Hello">
@@ -58,6 +58,7 @@
       </li>
     </ul>
   <% end %>
+ <% end %>
 </div>
 
 <!-- Modal -->
