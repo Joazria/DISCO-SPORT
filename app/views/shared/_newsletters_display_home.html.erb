@@ -6,7 +6,7 @@
         <%= image_tag newsletter.photo, :crop=>"crop", :width=>200, :height=>200, :class=>'card-img-top'%>
         <div class="card-body">
           <h5 class="card-title"> <%= newsletter.title %></h5>
-          <p class="card-text font-weight-bold"><%= newsletter.punshline %></p>
+          <p class="card-text font-weight-bold text-justify"><%= newsletter.punshline %></p>
           <!-- <p class="card-text"><%#= newsletter.article %></p> -->
         </div>
         <div class="card-footer">
@@ -32,9 +32,9 @@
         </div>
         <div class="modal-body">
           <%= image_tag newsletter.photo, :crop=>"crop", :width=>200, :height=>200, :class=>'card-img-top'%>
-            <p class="font-weight-bold"><%= newsletter.punshline %></p>
+            <p class="font-weight-bold text-justify"><%= newsletter.punshline %></p>
             <br>
-            <p class=""><%= newsletter.article %></p>
+            <p class="text-justify"><%= newsletter.article %></p>
         </div>
         <div class="modal-footer">
             <%= link_to "Source", newsletter.url, :class => "btn btn-outline-primary", :target => '_blank' %>
