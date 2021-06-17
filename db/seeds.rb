@@ -9,6 +9,8 @@
 # user = User.find(12)
 # user.avatar.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
+User.find(53).update(
+  member:'STAFF')
 
 ########### UPDATE USER#######
 # User.find(41).update!(company: 'FEDERATION IVOIRIENNE DE FOOTBALL AMÉRICAIN')
