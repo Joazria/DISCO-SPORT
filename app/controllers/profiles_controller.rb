@@ -1,21 +1,20 @@
 class ProfilesController < ApplicationController
   def show
+    @user = User.find(params[:id])
+    @chatrooms = []
+    @packages = Package.all
     if params[:search].blank?
-      @user = User.find(params[:id])
       # @identity = Identity.find_by(user_id: @user.id)
       # @users_approved = User.where(status: 'approved').sort_by { |event| [event.created_at] }
-      @packages = Package.all
-      @chatrooms_created = Chatroom.where(user_id: current_user.id)
-      @chatrooms_invited = Chatroom.where(invited_id: current_user.id)
     else
-      @user = User.find(params[:id])
-      @packages = Package.all
-      @chatrooms_created = Chatroom.where(user_id: current_user.id)
-      @chatrooms_invited = Chatroom.where(invited_id: current_user.id)
+      # @user = User.find(params[:id])
+      # @packages = Package.all
       data_base = User.where.not(id: current_user.id)
       @parameter = params[:search].downcase
       @users = data_base.where("last_name ILIKE :search OR first_name ILIKE :search OR company ILIKE :search OR activity ILIKE :search OR status ILIKE :search OR member ILIKE :search OR email ILIKE :search", search: "%#{@parameter}%")
     end
+    @chatrooms << Chatroom.where(user_id: current_user.id) if Chatroom.where(user_id: current_user.id).count != 0
+    @chatrooms << Chatroom.where(invited_id: current_user.id) if Chatroom.where(invited_id: current_user.id).count != 0
   end
 
   def edit
