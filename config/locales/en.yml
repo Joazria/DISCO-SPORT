@@ -38,13 +38,16 @@ en:
         linkedin: ""
         email: ""
         website: ""
+        whatsapp: ""
     errors:
       models:
         user:
           attributes:
+            whatsapp:
+              blank: "Can't be blank"
             linkedin:
-              blank: "Linkedin can't be blank"
+              blank: "Can't be blank"
             email:
-              blank: "Email can't be blank."
+              blank: "Can't be blank"
             website:
-              blank: "Website can't be blank"
+              blank: "Can't be blank"

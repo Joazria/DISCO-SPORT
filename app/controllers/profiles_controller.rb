@@ -1,11 +1,21 @@
 class ProfilesController < ApplicationController
   def show
-    @user = User.find(params[:id])
-    @identity = Identity.find_by(user_id: @user.id)
-    # @users_approved = User.where(status: 'approved').sort_by { |event| [event.created_at] }
-    @packages = Package.all
-    @chatrooms_created = Chatroom.where(user_id: current_user.id)
-    @chatrooms_invited = Chatroom.where(invited_id: current_user.id)
+    if params[:search].blank?
+      @user = User.find(params[:id])
+      # @identity = Identity.find_by(user_id: @user.id)
+      # @users_approved = User.where(status: 'approved').sort_by { |event| [event.created_at] }
+      @packages = Package.all
+      @chatrooms_created = Chatroom.where(user_id: current_user.id)
+      @chatrooms_invited = Chatroom.where(invited_id: current_user.id)
+    else
+      @user = User.find(params[:id])
+      @packages = Package.all
+      @chatrooms_created = Chatroom.where(user_id: current_user.id)
+      @chatrooms_invited = Chatroom.where(invited_id: current_user.id)
+      data_base = User.where.not(id: current_user.id)
+      @parameter = params[:search].downcase
+      @users = data_base.where("last_name ILIKE :search OR first_name ILIKE :search OR company ILIKE :search OR activity ILIKE :search OR status ILIKE :search OR member ILIKE :search OR email ILIKE :search", search: "%#{@parameter}%")
+    end
   end
 
   def edit
@@ -16,7 +26,6 @@ class ProfilesController < ApplicationController
   end
 
   def update
-
     @user = User.find(params[:id])
     unless current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br' || current_user.email == 'patrickzuchowicki@basiclead.com' || current_user.email == 'joa.azria@gmail.com'
       redirect_to root_path, notice: 'Unauthorized Area'
