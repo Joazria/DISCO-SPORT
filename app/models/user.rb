@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :email, presence: true, format: { with: /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/, message: "Not a valid email." }
   validates :avatar, presence: true
   validates :job, presence: true
-  validates :whatsapp, presence: true, format: { with: /^[0-9]*$/, message: 'Please, only numbers.' }
+  validates :whatsapp, presence: true, format: { with: /\A[0-9]*\z/, message: 'Please, only numbers.' }
   validates :linkedin, presence: true, format: { with: /(linkedin.com\/)(in\/)?(company\/)?\w+/, message: "https://www.linkedin.com/in/YOUR-USERNAME-HERE/" }
   validates :company, presence: true
   validates :activity, presence: true
