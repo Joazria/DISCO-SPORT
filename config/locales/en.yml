@@ -30,4 +30,21 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      user:
+    attributes:
+      user:
+        linkedin: ""
+        email: ""
+        website: ""
+    errors:
+      models:
+        user:
+          attributes:
+            linkedin:
+              blank: "Linkedin can't be blank"
+            email:
+              blank: "Email can't be blank."
+            website:
+              blank: "Website can't be blank"
