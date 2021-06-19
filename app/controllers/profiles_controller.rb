@@ -3,12 +3,7 @@ class ProfilesController < ApplicationController
     @user = User.find(params[:id])
     @chatrooms = []
     @packages = Package.all
-    if params[:search].blank?
-      # @identity = Identity.find_by(user_id: @user.id)
-      # @users_approved = User.where(status: 'approved').sort_by { |event| [event.created_at] }
-    else
-      # @user = User.find(params[:id])
-      # @packages = Package.all
+    unless params[:search].blank?
       data_base = User.where.not(id: current_user.id)
       @parameter = params[:search].downcase
       @users = data_base.where("last_name ILIKE :search OR first_name ILIKE :search OR company ILIKE :search OR activity ILIKE :search OR status ILIKE :search OR member ILIKE :search OR email ILIKE :search", search: "%#{@parameter}%")
