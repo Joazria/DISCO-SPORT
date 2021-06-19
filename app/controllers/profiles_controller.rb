@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+
   def show
     @user = User.find(params[:id])
     @chatrooms = []
@@ -33,17 +34,6 @@ class ProfilesController < ApplicationController
     end
     @user.status == "approved" ? send_status_mail : status_not_approved_email
   end
-
-  # def search
-  #   if params[:search].blank?
-  #     # redirect_to dashboard_path, alert: 'Empty field!'
-  #     redirect_to dashboard_path
-  #   else
-  #     @parameter = params[:search].downcase
-  #     # @results = User.all.where("lower(first_name) LIKE :search OR lower(last_name) LIKE :search", search: "%#{@parameter}%")
-  #     @results = User.all.where("lower(full_name) LIKE :search", search: "%#{@parameter}%")
-  #   end
-  # end
 
   private
 
