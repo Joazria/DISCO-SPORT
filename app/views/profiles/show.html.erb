@@ -11,6 +11,7 @@
       <%= render 'shared/partnership' %>
     </div>
     <% unless current_user != @user.id %>
+      <!-- renderiza apenas se o user for o dono do profile acessado -->
       <div class="mt-5">
         <% if @user.status == 'approved' %>
           <h1 class="text-primary text-right m-3">

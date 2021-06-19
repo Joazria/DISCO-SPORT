@@ -1,14 +1,18 @@
 <section class="profile-working">
   <%= render 'shared/profile_card' %>
   <ul class="profile-working__bio">
-    <%= render 'search_bar' %>
-    <!-- renderizando o search bar. necessita de ajuste! -->
+    <!-- renderizando o search bar apenas se o user for o dono do profile -->
+    <% if current_user == @user %>
+      <%= render 'search_bar' %>
+    <% end %>
+    <!-- renderiza apenas se tiver resultado do search  -->
     <% unless @users.nil? %>
       <h5><%= "Found: #{@users.count} delegate(s)" %></h5>
       <% @users.each do |user| %>
         <%= link_to user.first_name, chatrooms_path(:invited_id => user), method: :post %>
       <% end %>
     <% end %>
+    <!-- renderiza apenas se o user for o dono do profile acessado -->
     <% if current_user == @user %>
       <p>Active Conversations</p>
       <% @chatrooms.each do |chatroom| %>
