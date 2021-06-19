@@ -1,0 +1,18 @@
+<div class="div-to-align">
+  <%= form_tag(profile_path(@user), :method => "get", class: 'navbar-form navbar-left') do %>
+    <div class="input-group">
+      <% if @parameter.nil? %>
+        <%= search_field_tag :search, params[:search], placeholder: "Search for delegates....", class: "form-control" %>
+      <% else %>
+        <%= search_field_tag :search, params[:search], value: "#{@parameter}", class: "form-control" %>
+      <% end %>
+      <%= hidden_field_tag :id, @user.id %>
+      <div class="input-group-btn">
+        <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i> Pesquisar
+        </button>
+        <%= link_to "Erase", profile_path(@user) %>
+      </div>
+    </div>
+  <% end %>
+</div>

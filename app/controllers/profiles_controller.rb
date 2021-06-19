@@ -1,11 +1,17 @@
 class ProfilesController < ApplicationController
+
   def show
     @user = User.find(params[:id])
-    @identity = Identity.find_by(user_id: @user.id)
-    # @users_approved = User.where(status: 'approved').sort_by { |event| [event.created_at] }
+    @chatrooms = []
     @packages = Package.all
-    @chatrooms_created = Chatroom.where(user_id: current_user.id)
-    @chatrooms_invited = Chatroom.where(invited_id: current_user.id)
+    unless params[:search].blank?
+      data_base = User.where.not(id: current_user.id)
+      @parameter = params[:search].downcase
+      @users = data_base.where("last_name ILIKE :search OR first_name ILIKE :search OR company ILIKE :search OR activity ILIKE :search OR member ILIKE :search OR email ILIKE :search", search: "%#{@parameter}%")
+      # pesquisando pelo first_name, last_name, company, activity, member e email
+    end
+    @chatrooms << Chatroom.where(user_id: current_user.id) if Chatroom.where(user_id: current_user.id).count != 0
+    @chatrooms << Chatroom.where(invited_id: current_user.id) if Chatroom.where(invited_id: current_user.id).count != 0
   end
 
   def edit
@@ -16,7 +22,6 @@ class ProfilesController < ApplicationController
   end
 
   def update
-
     @user = User.find(params[:id])
     unless current_user.email == 'dwftung@gmail.com' || current_user.email == 'joa@birds.art.br' || current_user.email == 'patrickzuchowicki@basiclead.com' || current_user.email == 'joa.azria@gmail.com'
       redirect_to root_path, notice: 'Unauthorized Area'
@@ -29,17 +34,6 @@ class ProfilesController < ApplicationController
     end
     @user.status == "approved" ? send_status_mail : status_not_approved_email
   end
-
-  # def search
-  #   if params[:search].blank?
-  #     # redirect_to dashboard_path, alert: 'Empty field!'
-  #     redirect_to dashboard_path
-  #   else
-  #     @parameter = params[:search].downcase
-  #     # @results = User.all.where("lower(first_name) LIKE :search OR lower(last_name) LIKE :search", search: "%#{@parameter}%")
-  #     @results = User.all.where("lower(full_name) LIKE :search", search: "%#{@parameter}%")
-  #   end
-  # end
 
   private
 

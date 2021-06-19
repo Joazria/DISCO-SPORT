@@ -1,29 +1,50 @@
 <section class="profile-working">
   <%= render 'shared/profile_card' %>
   <ul class="profile-working__bio">
-    <li class="profile-working__bio-item"></li>
+    <!-- renderizando o search bar apenas se o user for o dono do profile -->
+    <% if current_user == @user %>
+      <%= render 'search_bar' %>
+    <% end %>
+    <!-- renderiza apenas se tiver resultado do search  -->
+    <% unless @users.nil? %>
+      <h5><%= "Found: #{@users.count} delegate(s)" %></h5>
+      <% @users.each do |user| %>
+        <%= link_to user.first_name, chatrooms_path(:invited_id => user), method: :post %>
+      <% end %>
+    <% end %>
+    <!-- renderiza apenas se o user for o dono do profile acessado -->
+    <% if current_user == @user %>
+      <p>Active Conversations</p>
+      <% @chatrooms.each do |chatroom| %>
+        <% if chatroom.to_a[0].user.id != current_user.id %>
+          <%= link_to chatroom.to_a[0].user.first_name, chatroom_path(chatroom.to_a[0].id) %>
+        <% else %>
+          <%= link_to User.find(chatroom.to_a[0].invited_id).first_name, chatroom_path(chatroom.to_a[0].id) %>
+        <% end %>
+      <% end %>
+    <% end %>
     <li class="profile-working__bio-item">
       <small>Company</small>
       <p class="<%= @user.phone ? '' : 'text-danger' %>"><%= @user.company || "Not registered"%></p>
     </li>
     <li class="profile-working__bio-item">
-     <small>Main activity</small>
+      <small>Main activity</small>
       <p class="<%= @user.activity ? '' : 'text-danger' %>"><%= @user.activity || "Not registered"%></p>
     </li>
     <li class="profile-working__bio-item">
-     <small>Country</small>
+      <small>Country</small>
       <p class="<%= @user.country ? '' : 'text-danger' %>"><%= @user.country || "Not registered"%></p>
     </li>
     <li class="profile-working__bio-item">
-     <small>Website</small>
-     <%= link_to "#{@user.website}",
-        "https://#{@user.website}",
+      <small>Website</small>
+      <%= link_to "#{@user.website}",
+        "#{@user.website}",
         :target => '_blank' ,
         :disabled => !!@user.company
       %>
     </li>
     <li class="profile-working__bio-item">
-     <small>Phone</small>
+      <small>Phone</small>
       <p class="<%= @user.phone ? '' : 'text-danger' %>"><%= @user.phone || "Not registered"%></p>
     </li>
     <li class="profile-working__bio-item">
@@ -37,9 +58,6 @@
         <hr>
         <%=@user.identity.release %>
       </div>
-
     </li>
   </ul>
 </section>
-
-

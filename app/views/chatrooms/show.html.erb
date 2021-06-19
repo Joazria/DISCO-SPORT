@@ -11,11 +11,9 @@
       </div>
     <% end %>
   </div>
-  <!-- <form action="/chatrooms/1/messages" method="post"></form> -->
   <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
     <%= f.input :content, label: false, placeholder: "Message" %>
-    <%= f.submit %>
   <% end %>
+  <%= link_to 'Close', :back, class: "btn btn-danger btn-sm" %>
   <br>
 </div>
-
