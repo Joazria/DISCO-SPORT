@@ -1,15 +1,16 @@
 
-<div class="dashboard-card dashboard-card--horizontal">
-  <div class="dashboard-card__body">
-    <h4 class="dashboard-card__title font-weight-bold text-center">FIND A  <span class="text-primary"> DELEGATE</span></h4>
-    <%= form_tag(dashboard_path, :method => "get", class: 'dashboard-card__form') do %>
-      <div class="input-group">
+<div class="search-bar">
+    <h4 class="search-bar__title ">Find a <span class="text-primary"> delegate</span></h4>
+    <div class="separator" style="--color: #828282; --thickness: 1.5px; --width: 80px">
+    </div>
+    <%= form_tag(dashboard_path, :method => "get", class: 'search-bar__form') do %>
+      <div class="search-bar__group">
         <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
         <button name="button" type="submit" class="btn btn-flat">
           <i class="fas fa-search"></i>
+          Search
         </button>
       </div>
     <% end %>
-  </div>
 </div>
 

@@ -1,22 +1,24 @@
-.search-form-control {
-  position: relative;
-}
-
-.search-form-control .btn {
-  position: absolute;
-  top: 8px;
-  bottom: 8px;
-  right: 8px;
-}
-
-.search-form-control .form-control {
-  height: 3.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border: 1px solid #E7E7E7;
-}
-
-.search-form-control .form-control:focus {
-  border: 1px solid #003587;
-  outline: none !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+.search-bar {
+  display: grid;
+  place-items: center start;
+  
+  width: 100%;
+  padding: 20px 15px;
+  background: $menu-bg;
+  &__title {
+    color: hsl(0deg, 0%, 10%);
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  &__form {
+    display: flex;
+    align-items: center;
+    width: clamp(190px, 100%, 560px);
+    margin-top: 1ch;
+  }
+  &__group {
+    align-items: center;
+    display: flex;
+    width: 100%;
+  }
 }
