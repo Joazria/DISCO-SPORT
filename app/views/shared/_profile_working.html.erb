@@ -9,6 +9,7 @@
     <% unless @users.nil? %>
       <h5><%= "Found: #{@users.count} delegate(s)" %></h5>
       <% @users.each do |user| %>
+      
         <%= link_to user.first_name, chatrooms_path(:invited_id => user), method: :post %>
       <% end %>
     <% end %>
