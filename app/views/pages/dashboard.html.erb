@@ -1,8 +1,9 @@
-<div class="contenaire">
+
   <div class="dashboard">
     <div class="dashboard__actions">
       <%= render "shared/newsletter_dashboard" %>
       <%= render "shared/dashboard_delegates_counter" %>
+      <%= render "shared/search_bar" %>
     </div>
 
     <% if @results.nil? %>
@@ -73,5 +74,3 @@
         <% end %>
     <% end %>
   </div>
-
-</div>

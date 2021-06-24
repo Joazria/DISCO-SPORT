@@ -17,18 +17,12 @@
   <body>
     <main class="main-container">
       <%= render "shared/navbar" %>
-      <%= render "shared/flashes" %>
       <%= yield %>
         <div class="container">
           <%= render "shared/footer_countries" %>
         </div>
-
-
     </main>
+    <%= render "shared/footer" %>
+    <%= render "shared/flashes" %>
   </body>
-  <footer>
-      <%= render "shared/banner_partners" %>
-      <%= render "shared/footer" %>
-
-  </footer>
 </html>
