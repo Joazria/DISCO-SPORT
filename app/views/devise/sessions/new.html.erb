@@ -1,27 +1,45 @@
 <%= render 'devise/shared/banner_sign_up' %>
-<div class="container">
-<div class=" row justify-content-center">
-    <div class="col-6">
-        <h2 class="text-center text-primary mt-5">Log in</h2>
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="form-inputs text-center">
-                <%= f.input :email,
+<div class="container d-flex d-flex-inline justify-content-around">
+    <div class=" row justify-content-center">
+      <div class="col border border-primary mt-3">
+          <h2 class="text-center text-primary mt-5">Log in</h2>
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="form-inputs text-center">
+                  <%= f.input :email,
+                                required: false,
+                                autofocus: true,
+                                input_html: { autocomplete: "email" } %>
+                  <%= f.input :password,
                               required: false,
-                              autofocus: true,
-                              input_html: { autocomplete: "email" } %>
-                <%= f.input :password,
-                            required: false,
-                            input_html: { autocomplete: "current-password" } %>
-                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-            </div>
+                              input_html: { autocomplete: "current-password" } %>
+                  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+              </div>
 
-            <div class="form-actions">
-                <%= f.button :submit, "Log in" , class: "btn btn-block btn-primary"%>
-            </div>
-       </div>
+              <div class="form-actions">
+                  <%= f.button :submit, "Log in" , class: "btn btn-block btn-primary"%>
+              </div>
+              <div class="d-flex d-flex-inline">
+                   <%= render "devise/shared/links" %>
+
+              </div>
+
+         </div>
       <% end %>
+
     </div>
-  <div class="row justify-content-center">
-    <%= render "devise/shared/links" %>
+      <div class="d-flex  flex-column">
+        <img class="img-fluid align-self-center mt-5" alt="Responsive image" width="50%" src="https://res.cloudinary.com/numama/image/upload/v1617048160/DISCOSPORT/runner_big_sokae0.png" />
+        <a class="btn btn-lg btn-danger"
+            href="https://discosport.tv/users/sign_up">
+            <i class="fas fa-user-plus"></i> FREE | SIGN UP | EARLY BIRD REGISTRATION  </a>
+      </div>
+<!--       <div class="col-md-5 mt-5">
+        <img class="img-fluid" alt="Responsive image" src="https://res.cloudinary.com/numama/image/upload/v1617048160/DISCOSPORT/runner_big_sokae0.png" />
+      </div> -->
+
+    </div>
   </div>
-</div>
+
+  <div class="row justify-content-center">
+  </div>
+

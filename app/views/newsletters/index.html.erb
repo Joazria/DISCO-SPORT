@@ -3,18 +3,15 @@
       <div class="container text-uppercase">
         <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616778797/DISCOSPORT/LOGO1_DISCOSPORT_MASTER_wtwyli.png" ,  class: "img-fluid", style: "max-width: 50%; min-width: 30%;" %>
         <hr>
-        <h2 class="text-white">PREMIUM <span class="text-danger"> NEWSLETTER </span> </h2>
+        <h2 class="text-white">SHORT <span class="text-danger"> NEWS</span> </h2>
               <%# <h5 class="text-white"> THE FAST-GROWING MARKETPLACE OF SUBSAHARAN AFRICA </h5> %>
                                         <p class="mt-3 text-uppercase font-weight-bold">For any editorial suggestion contact our journalist team  :  news@discosport.tv</p>
                           <a class="text-uppercase btn btn-success btn-sm" href="mailto:news@discosport.tv?subject=DISCOSPORT|ADD-ON"> contact our journalist team</a>
                           <hr>
-                          <h4 class="text-danger text-right"> 24 - 26 April 2022 <span class="text-white font-weight-bold"> Kigali Convention Center |  Rwanda </span> </h4>
+                          <h4 class="text-danger text-right"> 24 - 26 MAY 2022 <span class="text-white font-weight-bold text-uppercase"> Kigali Convention Center |  Rwanda </span> </h4>
 
               <% if user_signed_in? %>
                         <% if current_user.status == 'approved' %>
-                            <p  class="text-right "> FORUM LIVE FROM LOS ANGELES & KIGALI | 25 OCT. - 19 NOV. 2021 </p>
-                            <p  class="text-right text-success font-weight-bold ">  YOU ARE INVITED</p>
-
                             <% else %>
                             <p  class="text-right "> <span class="text-danger font-weight-bold"> YOUR PROFILE WILL BE SOON APPROVED</span></p>
 
@@ -25,60 +22,156 @@
 
               <% end %>
 
+        </div>
+      </div>
+    </div>
+
+<% if user_signed_in? %>
+  <div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <% @newsletters.each do |newsletter| %>
+        <div class="col">
+          <div class="card h-100">
+            <%= image_tag newsletter.photo, :crop=>"crop", :width=>200, :height=>200, :class=>'card-img-top'%>
+            <div class="card-body">
+              <h5 class="card-title"> <%= newsletter.title %></h5>
+              <p class="card-text font-weight-bold text-justify"><%= newsletter.punshline %></p>
+              <!-- <p class="card-text"><%#= newsletter.article %></p> -->
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-sm btn-block btn-primary" data-toggle="modal" data-target="#newsModal<%= newsletter.id %> ">
+                Read the Article
+              </button>
             </div>
           </div>
-    </div>
-
-<div class=" mt-3">
-  <% @newsletters.each do |newsletter| %>
-  <div class="card mb-3" >
-    <div class="row g-0">
-      <div class="col-md-2">
-
-          <%= image_tag newsletter.photo, :crop=>"crop", :width=>200, :height=>200 %>
-
-      </div>
-      <div class="col-md-9">
-        <div class="card-body ml-2">
-          <h5 class="card-title text-uppercase"><%= newsletter.title %></h5>
-
-                                   <p class="card-text"> <span class="font-weight-bold"> <%= newsletter.punshline %></span> </p>
-        <div class="d-flex justify-content-end">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newsletter<%= newsletter.id %>">
-              Read the article
-              </button>
         </div>
-
+      <% end %>
     </div>
+    <% @newsletters.each do |newsletter| %>
+
+     <div class="modal fade" id="newsModal<%= newsletter.id %>" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"> <span class="texte-uppercase"><%= newsletter.title %></span> </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= image_tag newsletter.photo, :crop=>"crop", :width=>200, :height=>200, :class=>'card-img-top'%>
+                <p class="font-weight-bold text-justify"><%= newsletter.punshline %></p>
+                <br>
+                <p class="text-justify"><%= newsletter.article %></p>
+            </div>
+            <div class="modal-footer">
+                <%= link_to "Source", newsletter.url, :class => "btn btn-outline-primary", :target => '_blank' %>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+<div class="row">
+  <div class="col-md-6 mb-0">
+    <img class="img-fluid" alt="Responsive image" src="https://res.cloudinary.com/numama/image/upload/v1617048160/DISCOSPORT/runner_big_sokae0.png" />
+  </div>
+  <div class="col-md-6 mb-0">
+    <h4 class="mt-4 text-danger text-uppercase">
+      By 2100, almost 50% of the world’s sports loving youth will come from Africa.
+    </h4>
+    <hr>
+    <p class="mt-4 text-justify">
+      Now that sport is part of the development strategies of all African countries, welcome to
+      <span class="text-primary font-weight-bold">DISCOSPORT</span>, a new B2B trade-show dedicated to sports entertainment, sports marketing and sports merchandising in Africa.
+    </p>
+    <hr>
+    <p class="text-justify">The first edition will take place from
+      <span class="text-primary font-weight-bold">Tuesday 24 to Thursday 26 May 2022</span>
+      at the Kigali Convention Center in Rwanda. 100% bilingual (English/French), the 3-day event is scaled to
+      <span class="text-primary font-weight-bold">welcome 100+ international exhibitors and 1,000+ walk-in delegates</span>  representing
+      influential sectors driving sports business in Africa: <span class="text-danger"> sports federations,
+      sporting clubs, content distribution and e-commerce platforms, host destinations
+      for sporting events, sports agents, sports venues, event producers,
+      consumer brands and advertising and media-buying agencies.</span>
+    </p>
+    <hr>
+    <% if user_signed_in? %>
+
+    <% else %>
+      <div class="container">
+        <a href="<%= new_user_registration_path %>"
+          class="btn btn-danger text-uppercase btn-lg btn-block ">
+        CLICK HERE TO REGISTER</a>
+      </div>
+      <hr>
+    <% end %>
+
+<!--     <p class="text-justify">The 4-week program will include a
+    <span class="text-primary font-weight-bold">Virtual Opening Ceremony</span>
+    bringing to light gender equality initiatives to grow female participation
+    in sports journalism, the <span class="text-primary font-weight-bold">Bootcamp Week</span>
+    featuring 20 live webcasts exploring ways to transform and monetize the sport
+    television experience, the <span class="text-primary font-weight-bold">Networking Weeks</span>,
+    three full weeks dedicated to pre-organized virtual meetings between participants,
+    and a <span class="text-primary font-weight-bold">Pitching Competition</span>
+    giving writers and producers the chance to video pitch projects reflecting
+    the growing importance of Africa in sports-themed entertainment.</p> -->
 
   </div>
+  <div class="container">
+    <p class="text-justify">
+      <span class="text-primary font-weight-bold">DISCOSPORT</span>,
+      will deliver results in the form of high-level connections before
+      and during the 3-day market.<span class="text-primary font-weight-bold"> To break the ice</span>, set the tone, and boost engagement
+      between pre-registered delegates, we will hold periodical virtual sessions
+      <span class="text-primary font-weight-bold">from Monday 25 October 2021</span>, until the opening of DISCOSPORT, seven months later.
+    </p>
+    <div class="container d-flex justify-content-end">
+        <a href="<%= bootcamp_path %>" class="btn btn-primary text-uppercase btn-lg "> VIRTUAL | PROGRAM </a>
     </div>
-      </div>
-      <!-- Button trigger modal -->
+    <hr>
+    <p class=" text-justify mt-0">
+      <span class="text-primary font-weight-bold">DISCOSPORT | News</span>, a weekly newsletter will help pre-registered delegates familiarize themselves with
+      companies exhibiting at the event. Three months prior to DISCOSPORT,<span class="text-primary font-weight-bold"> on Monday 28 February</span>,
+      the electronic version of the <span class="text-primary font-weight-bold"> DISCOSPORT | Almanac </span> will be mailed to all delegates while services,
+      content, solutions, equipment offered at the market will be promoted through an online showroom.
+      <span class="text-primary font-weight-bold">Personalized organization assistance</span> will also be provided from then on.
+    </p>
+  </div>
 
+  <% if user_signed_in? %>
 
-<!-- Modal -->
-<div class="modal fade" id="newsletter<%= newsletter.id %>" >
-  <div class="modal-dialog modal-dialogue-centered modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title font-weight-bold text-uppercase"> <%= newsletter.title %></h5>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body text-justify">
-       <%= image_tag newsletter.photo,  class: "card-img-top ", alt: "Card image cap" %>
-       <hr>
-       <h5 class="text-primary mb-3"><%= newsletter.punshline %> </h5>
-
-       <p> <%= newsletter.article %>  </p>
-     </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-<!--         <button type="button" class="btn btn-primary">Understood</button>
- -->      </div>
+  <% else %>
+    <hr>
+    <div class="container d-flex flex-wrap" style="gap: 1ch;">
+      <br>
+      <h5 class="text-justify mt-3 ">
+        <span class="text-primary text-center text-uppercase font-weight-bold">
+        Free 'Early Bird' registration is available to qualified executives until Friday 22 October.
+        </span>
+      </h5>
+      <a class="btn btn-primary"
+        href="https://discosport.tv/users/sign_up">
+        <i class="fas fa-user-plus"></i> EARLY BIRD REGISTRATION  | SIGN UP NOW
+      </a>
     </div>
+  <% end %>
+  <div class="container d-flex flex-wrap mt-4" style="gap: 1ch;">
+    <h5 class=" text-justify mt-0 text-danger text-uppercase">
+      Please send an email to <%= mail_to "sales@discosport.tv", 'sales@discosport.tv' %> to receive the current floorplan, our exhibit booking form and the sponsorships presentation kit.
+    </h5>
+    <a class="btn btn-danger text-uppercase text-white align-self-start py-2 px-3"
+      href="mailto:contact@discosport.tv?subject=DiscoSport | Floor Plab">
+      floor plan request SALES@DISCOSPORT.TV
+    </a>
   </div>
 </div>
+
+
+
 <% end %>
 
-</div>
