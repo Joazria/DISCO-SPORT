@@ -1,6 +1,6 @@
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
-  <% @newsletters.last(6).each do |newsletter| %>
+  <% @newsletters.last(3).each do |newsletter| %>
     <div class="col">
       <div class="card h-100">
         <%= image_tag newsletter.photo, :crop=>"crop", :width=>200, :height=>200, :class=>'card-img-top'%>
@@ -19,7 +19,7 @@
     </div>
   <% end %>
 </div>
-  <% @newsletters.last(6).each do |newsletter| %>
+  <% @newsletters.last(3).each do |newsletter| %>
 
  <div class="modal fade" id="newsModal<%= newsletter.id %>" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">

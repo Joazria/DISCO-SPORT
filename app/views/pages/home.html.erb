@@ -13,11 +13,16 @@
         </h1>
         <%= render "shared/newsletters_display_home" %>
 
+         <%= link_to "ACCESS TO ALL NEWS", newsletters_path, class: " btn btn-lg btn-outline-primary text-right m-3" %>
+
     <hr class="mt-2">
     <h1 class="text-primary">
       MOST RECENT<span class="text-danger"> DELEGATES</span>
     </h1>
+          <%= link_to "ACCESS TO ALL DELEGATES LIST", delegates_path, class: " btn btn-lg btn-outline-primary text-right m-3" %>
+
       <%= render "shared/delegates_most_recent" %>
+
 
     <% else %>
 
@@ -35,7 +40,12 @@
         <h1 class="text-primary text-right m-3">
           <span class="text-danger">DISOSPORT</span> | SHORT NEWS
         </h1>
+         <%= link_to "ACCESS TO ALL NEWS", newsletters_path, class: " btn btn-lg btn-outline-primary" %>
+
         <%= render "shared/newsletters_display_home" %>
+
+
+
       <hr class="mt-2">
 
         <%= render "shared/africa_facts" %>
@@ -55,7 +65,7 @@
       <section class="pt-2 mb-3">
         <hr>
         <h1 class="text-primary text-right m-3">
-          <span class="text-danger">DISOSPORT</span> | NEWSLETTER
+          <span class="text-danger">DISCOSPORT</span> | NEWSLETTER
         </h1>
       <%= render "shared/newsletter_prez" %>
       </section>

@@ -19,7 +19,37 @@
       <% @chatrooms.each do |chatroom| %>
         <% if chatroom.to_a[0].user.id != current_user.id %>
           <%= link_to chatroom.to_a[0].user.first_name, chatroom_path(chatroom.to_a[0].id) %>
+          <div class="notification">
+             <%= cl_image_tag chatroom.to_a[0].user.avatar %>
+
+              <div class="notification-content">
+                <p>From: <small><%= chatroom.to_a[0].user.first_name %></small></p>
+
+                <p> <strong> <i class="far fa-comment"></i> </strong> <%= chatroom.to_a[0].messages.last.content %> </p>
+              </div>
+
+              <div class="notification-actions">
+                <%= link_to 'Send a Message <i class="fas fa-pencil-alt"></i>', chatroom_path(chatroom.to_a[0].id) %>
+
+                <a href="#">Send a Message <i class="fas fa-pencil-alt"></i></a>
+<!--                 <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+ -->              </div>
+          </div>
         <% else %>
+          <div class="notification">
+             <%= cl_image_tag chatroom.to_a[0].user.avatar %>
+
+              <div class="notification-content">
+                <p><small>To: <%= chatroom.to_a[0].user.first_name %></small></p>
+
+                <p> <strong> <i class="far fa-comment"></i> </strong> <%= chatroom.to_a[0].messages.last.content %> </p>
+              </div>
+
+              <div class="notification-actions">
+                <a href="#">Send a Message <i class="fas fa-pencil-alt"></i></a>
+<!--                 <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+ -->              </div>
+          </div>
           <%= link_to User.find(chatroom.to_a[0].invited_id).first_name, chatroom_path(chatroom.to_a[0].id) %>
         <% end %>
       <% end %>
