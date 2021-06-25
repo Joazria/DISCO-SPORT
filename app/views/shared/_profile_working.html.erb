@@ -9,7 +9,6 @@
     <% unless @users.nil? %>
       <h5><%= "Found: #{@users.count} delegate(s)" %></h5>
       <% @users.each do |user| %>
-      
         <%= link_to user.first_name, chatrooms_path(:invited_id => user), method: :post %>
       <% end %>
     <% end %>
@@ -20,37 +19,29 @@
         <% if chatroom.to_a[0].user.id != current_user.id %>
           <%= link_to chatroom.to_a[0].user.first_name, chatroom_path(chatroom.to_a[0].id) %>
           <div class="notification">
-             <%= cl_image_tag chatroom.to_a[0].user.avatar %>
-
-              <div class="notification-content">
-                <p>From: <small><%= chatroom.to_a[0].user.first_name %></small></p>
-
-                <p> <strong> <i class="far fa-comment"></i> </strong> <%= chatroom.to_a[0].messages.last.content %> </p>
-              </div>
-
-              <div class="notification-actions">
-                <%= link_to 'Send a Message <i class="fas fa-pencil-alt"></i>', chatroom_path(chatroom.to_a[0].id) %>
-
-                <a href="#">Send a Message <i class="fas fa-pencil-alt"></i></a>
-<!--                 <a href="#">Delete <i class="far fa-trash-alt"></i></a>
- -->              </div>
+            <!-- renderizando a foto do user que enviou a ultima mensagem. necessita de formatação da turma do front -->
+            <%= image_tag chatroom.to_a[0].messages.last&.user.avatar %>
+            <div class="notification-content">
+              <p>From: <small><%= chatroom.to_a[0].messages.last&.user.first_name %></small></p>
+              <p> <strong> <i class="far fa-comment"></i> </strong> <%= chatroom.to_a[0].messages.last&.content %> </p>
+            </div>
+            <div class="notification-actions">
+              <%= link_to 'Send a Message', chatroom_path(chatroom.to_a[0].id) %>
+            </div>
           </div>
         <% else %>
-          <div class="notification">
-             <%= cl_image_tag chatroom.to_a[0].user.avatar %>
-
-              <div class="notification-content">
-                <p><small>To: <%= chatroom.to_a[0].user.first_name %></small></p>
-
-                <p> <strong> <i class="far fa-comment"></i> </strong> <%= chatroom.to_a[0].messages.last.content %> </p>
-              </div>
-
-              <div class="notification-actions">
-                <a href="#">Send a Message <i class="fas fa-pencil-alt"></i></a>
-<!--                 <a href="#">Delete <i class="far fa-trash-alt"></i></a>
- -->              </div>
-          </div>
           <%= link_to User.find(chatroom.to_a[0].invited_id).first_name, chatroom_path(chatroom.to_a[0].id) %>
+          <div class="notification">
+            <!-- renderizando a foto do user que enviou a ultima mensagem. necessita de formatação da turma do front-->
+            <%= image_tag chatroom.to_a[0].messages.last&.user.avatar %>
+            <div class="notification-content">
+              <p><small>From: <%= chatroom.to_a[0].messages.last&.user.first_name %></small></p>
+              <p> <strong> <i class="far fa-comment"></i> </strong> <%= chatroom.to_a[0].messages.last&.content %> </p>
+            </div>
+            <div class="notification-actions">
+              <%= link_to 'Send a Message', chatroom_path(chatroom.to_a[0].id) %>
+            </div>
+          </div>
         <% end %>
       <% end %>
     <% end %>
