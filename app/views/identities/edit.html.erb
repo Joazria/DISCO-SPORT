@@ -5,17 +5,17 @@
 <div class="container mt-2">
 
   <%= simple_form_for @identity do |f| %>
-     <div class="form-inputs">
+<!--      <div class="form-inputs">
     <span class="text-danger">
       <div class="row">
         <div class="col-md-6">
-          <%= f.input :company,
+          <%#= f.input :company,
                         as: :string,
                         label: 'Company',
                         placeholder: 'Basic Lead' %>
         </div>
         <div class="col-md-6">
-          <%= f.input :member,
+          <%#= f.input :member,
                     label: 'Attending to *',
                     collection: [ 'SELL SERVICES / SOLUTIONS / TECH', 'BUY SERVICES / SOLUTIONS / TECH', 'SELL MEDIA / MERCHANDISING RIGHTS','BUY MEDIA / MERCHANDISING RIGHTS',
                      'PRODUCE / CO-PRODUCE CONTENT', 'RAISE FUNDING', 'PROVIDE FUNDING','MONETIZE VISIBILITY', 'ACQUIRE VISIBILITY', 'INVESTIGATE OPPORTUNITIES','REPORT ON NEW INDUSTRY TRENDS']%>
@@ -26,25 +26,25 @@
     <h5 class="text-primary mt-5">
       PROFILE INFORMATION
     </h5>
-    <!-- <p class="text-primary">Following  informations are optionals but are usefull to create your profile </p> -->
+    <p class="text-primary">Following  informations are optionals but are usefull to create your profile </p>
     <div class="row">
       <div class="col-md-2">
-        <%= f.input :gender, collection: ['Mr', 'Mrs']%>
+        <%#= f.input :gender, collection: ['Mr', 'Mrs']%>
       </div>
     </div>
-    <%= f.input :job,
+    <%#= f.input :job,
                     as: :string,
                     label: 'Job Function',
                     placeholder: 'CEO' %>
     <div class="row">
       <div class="col-md-6">
-        <%= f.input :whatsapp,
+        <%#= f.input :whatsapp,
                         as: :string,
                         label: 'whatsapp',
                         placeholder: '+5521996995765' %>
       </div>
       <div class="col-md-6">
-        <%= f.input :linkedin,
+        <%#= f.input :linkedin,
                         as: :string,
                         label: 'linkedin',
                         placeholder: 'https://www.linkedin.com/in/joa-azria/' %>
@@ -52,36 +52,36 @@
     </div>
     <h5 class="text-primary mt-5">
       COMPANY INFORMATION
-    </h5>
-    <div class="row">
+    </h5> -->
+<!--     <div class="row">
       <div class="col-md-6">
-        <%= f.input :activity,
+        <%#= f.input :activity,
                     collection: ['ADVERTISING AGENCY', 'BROADCASTER | Private', 'BROADCASTER | Public', 'CONSUMER BRAND', 'DELIVERY SOLUTION', 'DIGITAL MARKETING', 'AGENCY', 'DUBBING SOLUTION', 'ECOMMERCE PLATFORM', 'EQUIPMENT / NEW TECH DISTRIBUTION', 'FUNDING / BANK', 'INDEPENDENT ANIMATOR', 'INDEPENDENT DIRECTOR', 'INDEPENDENT JOURNALIST', 'INDEPENDENT WRITER',
                                 'LAW FIRM','MANUFACTURER','MARKETER','MERCHANDISER','MOBILE OPERATOR','MONETIZATION SOLUTION','MUSIC PRODUCTION','PAY-TV OPERATOR','PAYMENT PROCESSING SOLUTION','POST PRODUCTION SERVICE','PREMIUM CABLE CHANNEL','PRESS','PRODUCTION COMPANY','PUBLIC ORGANISATION','RADIO STATION','RESEARCH CONSULTANCY','SOCIAL MEDIA','SPORTING CLUB','SPORTS ARENA','SPORTS FEDERATION','SPORTS MARKETING','STREAMING PLATFORM','SUBSCRIBERS MANAGEMENT SOLUTION','TALENT AGENCY','TV RIGHTS DISTRIBUTOR','VIDEO GAME DEVELOPER',
                                 'VIDEO GAMING PLATFORM', 'OTHER']%>
       </div>
       <div class="col-md-6">
-        <%= f.input :country,
+        <%#= f.input :country,
 
                         as: :string,
                         label: 'Country',
                         placeholder: 'Rwanda' %>
       </div>
-    </div>
-    <div class="row">
+    </div> -->
+<!--     <div class="row">
       <div class="col-md-6">
-        <%= f.input :phone,
+        <%#= f.input :phone,
                         as: :string,
                         label: 'phone',
                         placeholder: '+5521996995765' %>
       </div>
       <div class="col-md-6">
-        <%= f.input :website,
+        <%#= f.input :website,
                         as: :string,
                         label: 'Website',
                         placeholder: 'www.discosport.tv' %>
       </div>
-    </div>
+    </div> -->
     <h5 class="text-primary text-uppercase mt-5">Present Yourself, why are you participating to DISCOP</h5>
     <p class="text-danger">To help us plan well-prepared and well-researched meetings, tell us about your reasons for attending DISCOSPORT 100% Virtual | Sub-Saharan Africa.</p>
     <%= f.input :release,
@@ -89,7 +89,8 @@
                     label: 'Presentation',
                     placeholder: 'To help us plan well-prepared and well-researched meetings, tell us about your reasons for attending DISCOSPORT 100% Virtual | Sub-Saharan Africa.' %>
   </div>
-    <p><%= f.submit "Update your profile", class: "btn btn-success btn-block" %></p>
+  <div class="container">
+        <p><%= f.submit "Update your profile", class: "btn btn-success btn-block" %></p>
+  </div>
   <% end %>
-</div>
 

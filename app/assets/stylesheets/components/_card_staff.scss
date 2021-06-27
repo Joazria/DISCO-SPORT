@@ -1,0 +1,96 @@
+.staff-card {
+  height: 520px;
+  width: 275px;
+  display: grid;
+  grid-template-rows: minmax(360px, 1fr) 35px;
+  overflow-y: auto;
+  border-radius: 4px;
+
+  &__main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    height: max-content;
+    // background: $main-bg;
+    position: relative;
+  }
+  &__img {
+    margin-top: 1ch;
+
+    @include avatar-rounded();
+  }
+  &__country {
+      .flag-icon {
+    @include icon-flag{transform: translate(85px, -90px);}
+    border: 1px solid #E6E6E6;
+
+
+    }
+
+  }
+
+  &__info {
+    margin: 0;
+    padding: 1ch;
+    display: grid;
+    row-gap: 0.8ch;
+    width: 100%;
+
+    & > * {
+      color: $text-2;
+      list-style: none;
+    }
+    &-name {
+      font-size: 1.8rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    &-website {
+      a {
+        color: $text-2;
+      }
+    }
+    &-btn {
+      justify-self: center;
+    }
+  }
+  &__btn {
+    align-self: center;
+    display: inline-block;
+    padding: 0.6rem 1.8rem;
+
+    background: $menu-bg;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    color: $text-2;
+    font-size: 1.2rem;
+    text-decoration: none !important;
+    transition: color 0.3s ease-in, background 0.3s ease-in-out;
+    &:hover {
+      background: mix($menu-bg, $gray, 90%);
+    }
+  }
+  &__status {
+    color: $text-2;
+    &-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1ch;
+
+      width: 100%;
+      margin: 0;
+      padding: 0.5ch 0;
+      &--success {
+        background-color: $green;
+      }
+      &--danger {
+        background-color: $red;
+      }
+    }
+  }
+}
