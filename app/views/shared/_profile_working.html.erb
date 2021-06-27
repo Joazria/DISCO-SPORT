@@ -23,8 +23,8 @@
           <%= User.find(chatroom.to_a[0].invited_id).first_name %>
         <% end %>
         <div class="notification">
-          <!-- renderizando a foto do user que enviou a ultima mensagem. necessita de formatação da turma do front -->
-          <%= image_tag chatroom.to_a[0].messages.last&.user.avatar %>
+          <!-- renderizando a foto do user que enviou a ultima mensagem-->
+          <%= image_tag chatroom.to_a[0].messages.last&.user.avatar, :gravity=>'face' %>
           <div class="notification-content">
             <p>From: <small><%= chatroom.to_a[0].messages.last&.user.first_name %></small></p>
             <p> <strong> <i class="far fa-comment"></i> </strong> <%= chatroom.to_a[0].messages.last&.content %> </p>
@@ -69,6 +69,10 @@
       <div class="container text-justify">
         <hr>
         <%=@user.identity.release %>
+        <% if current_user == @user %>
+
+          <%= link_to "edit", edit_identity_path, class: 'btn btn-outline-primary btn-sm'  %>
+        <% end %>
       </div>
     </li>
   </ul>

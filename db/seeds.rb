@@ -9,8 +9,25 @@
 # user = User.find(12)
 # user.avatar.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-User.find(53).update(
+User.find(40).update(
   member:'STAFF')
+User.find(39).update(
+  member:'STAFF')
+User.find(37).update(
+  member:'STAFF')
+# User.find(3).update(
+#   member:'STAFF')
+# User.find(34).update(
+#   gender:'Mrs',
+#   member:'STAFF',
+#   job: 'Marketing Manager',
+#   whatsapp: 'N/A',
+#   linkedin: 'https://www.linkedin.com/in/niamurrell/',
+#   company:'NBCUniversal Media',
+#   activity: 'BROADCASTER | Private',
+#   country: 'GB',
+#   phone: 'N/A',
+#   website:'https://www.nbcuniversal.com/')
 
 ########### UPDATE USER#######
 # User.find(41).update!(company: 'FEDERATION IVOIRIENNE DE FOOTBALL AMÉRICAIN')
