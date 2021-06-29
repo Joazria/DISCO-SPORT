@@ -10,6 +10,12 @@
     <div class="container">
       <%= render 'shared/partnership' %>
     </div>
+
+    <% if current_user == @users_staff && current_user == @user %>
+      <div class="container">
+      <%= render 'shared/ambassador_package' %>
+    </div>
+    <% end %>
     <% unless current_user != @user.id %>
       <!-- renderiza apenas se o user for o dono do profile acessado -->
       <div class="mt-5">
