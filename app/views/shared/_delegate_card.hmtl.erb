@@ -1,0 +1,54 @@
+  <div class="delegate-card">
+
+    <div class="delegate-card__main">
+
+      <% if user.avatar.attached? %>
+        <%= image_tag user.avatar,
+            :gravity => "face",
+            :crop => "crop",
+            :class => "delegate-card__img",
+            :width => "270",
+            :height => "270"
+          %>
+      <% else %>
+        <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png",
+            :gravity => "face",
+            :crop => "crop",
+            :class => "delegate-card__img",
+            :width => "270",
+            :height => "270"
+          %>
+      <% end %>
+      <div class="delegate-card__country">
+        <% if user.country.nil? %>
+        <% else %>
+        <span class="flag-icon flag-icon-<%= user.country.downcase %> flag-icon-squared "></span>
+        <% end %>
+      </div>
+
+      <ul class="delegate-card__info">
+        <li class="delegate-card__info-name">
+          <strong><%= user.first_name %> <%= user.last_name %></strong>
+        </li>
+        <li class="delegate-card__info-member">
+          <a href="<%= user.linkedin %>" class="text-white font-weight-bold">
+           <strong><i class="fab fa-linkedin"></i> </strong>
+         </a>
+           | <%= user.job %>
+        </li>
+        <li class="delegate-card__info-website">
+          <a href="<%= user.website %>" class=" text-uppercase font-weight-bold">
+            <%= user.company %>
+          </a>
+        </li>
+        <li class="delegate-card__info-member">
+          <%= user.member %> | <%= user.country %>
+        </li>
+        <li class="delegate-card__info-btn">
+          <%= link_to "Delegate Profile", profile_path(user), class: "delegate-card__btn" %>
+        </li>
+
+      </ul>
+    </ul>
+    </div>
+  </div>

@@ -6,12 +6,75 @@
       <%= render 'search_bar' %>
     <% end %>
     <!-- renderiza apenas se tiver resultado do search  -->
+
+
     <% unless @users.nil? %>
       <h5><%= "Found: #{@users.count} delegate(s)" %></h5>
+ <div class="dashboard__validation-container ">
       <% @users.each do |user| %>
-        <%= link_to user.first_name, chatrooms_path(:invited_id => user), method: :post %>
+     <!-- renderizar delegate card -->
+
+    <div class="delegate-card">
+
+    <div class="delegate-card__main">
+
+      <% if user.avatar.attached? %>
+        <%= image_tag user.avatar,
+            :gravity => "face",
+            :crop => "crop",
+            :class => "delegate-card__img",
+            :width => "270",
+            :height => "270"
+          %>
+      <% else %>
+        <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png",
+            :gravity => "face",
+            :crop => "crop",
+            :class => "delegate-card__img",
+            :width => "270",
+            :height => "270"
+          %>
       <% end %>
-    <% end %>
+      <div class="delegate-card__country">
+        <% if user.country.nil? %>
+        <% else %>
+        <span class="flag-icon flag-icon-<%= user.country.downcase %> flag-icon-squared "></span>
+        <% end %>
+      </div>
+
+      <ul class="delegate-card__info">
+        <li class="delegate-card__info-name">
+          <strong><%= user.first_name %> <%= user.last_name %></strong>
+        </li>
+        <li class="delegate-card__info-member">
+          <a href="<%= user.linkedin %>" class="text-white font-weight-bold">
+           <strong><i class="fab fa-linkedin"></i> </strong>
+         </a>
+           | <%= user.job %>
+        </li>
+        <li class="delegate-card__info-website">
+          <a href="<%= user.website %>" class=" text-uppercase font-weight-bold">
+            <%= user.company %>
+          </a>
+        </li>
+        <li class="delegate-card__info-member">
+          <%= user.member %> | <%= user.country %>
+        </li>
+        <li class="delegate-card__info-btn">
+          <%= link_to "Delegate Profile", profile_path(user), class: "delegate-card__btn" %>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+
+        <%#= link_to user.first_name, chatrooms_path(:invited_id => user), method: :post %>
+      <% end %>
+    </div>
+  <% end %>
+
+
     <!-- renderiza apenas se o user for o dono do profile acessado -->
     <% if current_user == @user %>
       <p>Active Conversations</p>
@@ -22,7 +85,7 @@
             <!-- renderizando a foto do user que enviou a ultima mensagem-->
             <%= image_tag chatroom.to_a[0].user.avatar, :gravity=>'face' %>
             <div class="notification-content">
-              <% if chatroom.to_a[0].messages.last&.user.id == current_user.id %>
+              <% if chatroom.to_a[0]&.messages.last&.user.id == current_user.id %>
                 <p>To: <small><%= chatroom.to_a[0].user.first_name %></small></p>
                 <p> <strong> <i class="far fa-comment"></i> </strong> <%= chatroom.to_a[0].messages.last&.content %> </p>
               <% else %>

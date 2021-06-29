@@ -13,11 +13,11 @@
           <%= render 'shared/partnership' %>
         </div>
       <% else %>
-        <% unless @user.member == 'STAFF' %>
+        <%# unless @user.member == 'STAFF' %>
               <h1 class="text-primary text-right m-3">
                 <span class="text-danger">OTHERS </span>DELEGATES </h1>
             <%= render 'shared/delegates_others' %>
-        <% end %>
+        <%# end %>
     <% end %>
 
 
