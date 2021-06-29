@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @users_approved = User.where(status: 'approved')
     @users_staff = User.where(member: 'STAFF')
     @chatrooms = []
     @packages = Package.all

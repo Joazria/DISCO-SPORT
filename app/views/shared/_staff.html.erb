@@ -39,10 +39,11 @@
              <small>attending as : </small> <%#= user.member %>  <%#= user.country %>
           </li> -->
           <br>
-          <li class="staff-card__info-website text-uppercase font-weight-bold">
-            <a href="<%= user.email %>" class="btn btn-primary btn-small text-white">
-              Contact your ambassador
-            </a>
+          <li class="delegate-card__info-btn text-uppercase font-weight-bold">
+       <!--      <a href="<%#= user.email %>" class="btn btn-primary btn-small text-white">
+
+            </a> -->
+             <%= link_to "Contact your ambassador", profile_path(user), class: "btn btn-block btn-outline-danger" %>
           </li>
 <!--           <li class="staff-card__info-website text-uppercase">
             <small>activity :</small>  <%#= user.activity %>

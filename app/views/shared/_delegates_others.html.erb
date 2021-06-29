@@ -1,0 +1,64 @@
+<div class="dashboard__validation-container mt-3">
+  <% @users_approved.sample(4).each do |user| %>
+    <div class="delegate-card">
+      <div class="delegate-card__main">
+        <% if user.avatar.attached? %>
+          <%= image_tag user.avatar,
+            :gravity => "face",
+            :crop => "crop",
+            :class => "delegate-card__img",
+            :width => "270",
+            :height => "270"
+          %>
+        <% else %>
+          <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616795855/DISCOSPORT/discop_visual_boxing1_lwsyrs.png",
+            :gravity => "face",
+            :crop => "crop",
+            :class => "delegate-card__img",
+            :width => "270",
+            :height => "270"
+          %>
+        <% end %>
+        <div class="delegate-card__country">
+          <% if user.country.nil? %>
+          <% else %>
+          <span class="flag-icon flag-icon-<%= user.country.downcase %> flag-icon-squared "></span>
+          <% end %>
+        </div>
+        <ul class="delegate-card__info">
+          <li class="delegate-card__info-name">
+            <strong><%= user.first_name %> <%= user.last_name %></strong>
+          </li>
+         <li class="delegate-card__info-member font-weight-bold">
+            <%= user.job %>
+          </li>
+          <li class="delegate-card__info-member text-uppercase">
+             <small>attending as : </small> <%= user.member %>  <%#= user.country %>
+          </li>
+          <br>
+          <li class="delegate-card__info-website text-uppercase font-weight-bold">
+            <a href="<%= user.website %>" class="">
+              <%= user.company %>
+            </a>
+          </li>
+          <li class="delegate-card__info-website text-uppercase">
+            <small>activity :</small>  <%= user.activity %>
+          </li>
+
+        <li class="delegate-card__info-btn">
+            <%= link_to "Delegate Profile", profile_path(user), class: "delegate-card__btn" %>
+          </li>
+          <br>
+       <!--    <li class="delegate-card__info-website text-uppercase">
+            <a href="https://<#%= user.website %>" class="btn btn-block btn-outline-danger"  target='_blank'>
+              <#%= user.website %>
+            </a> -->
+          </li>
+        </ul>
+      </ul>
+      </div>
+    </div>
+  <% end %>
+</div>
+   <%= link_to "ACCESS TO ALL DELEGATES LIST", delegates_path, class: " btn btn-lg btn-outline-primary text-right m-3" %>
+
