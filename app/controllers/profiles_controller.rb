@@ -12,8 +12,8 @@ class ProfilesController < ApplicationController
       @users = data_base.where("last_name ILIKE :search OR first_name ILIKE :search OR company ILIKE :search OR activity ILIKE :search OR member ILIKE :search OR email ILIKE :search", search: "%#{@parameter}%")
       # pesquisando pelo first_name, last_name, company, activity, member e email
     end
-    @chatrooms << Chatroom.where(user_id: current_user.id) if Chatroom.where(user_id: current_user.id).count != 0
-    @chatrooms << Chatroom.where(invited_id: current_user.id) if Chatroom.where(invited_id: current_user.id).count != 0
+    Chatroom.where(user_id: current_user.id).each { |chatroom| @chatrooms << chatroom }
+    Chatroom.where(invited_id: current_user.id).each { |chatroom| @chatrooms << chatroom }
   end
 
   def edit
