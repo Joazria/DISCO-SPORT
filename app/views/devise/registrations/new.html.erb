@@ -172,6 +172,9 @@
                             placeholder: '******'  } %>
       </div>
     </div>
+    <%= f.check_box :terms%>  <strong> I accept the <%= link_to "terms and conditions", terms_path %> <strong>
+
+
     <div class="form-actions  row">
       <div class="col-6">
         <%= f.button :submit, "Sign up", class: "btn btn-success btn-lg m-3" %>

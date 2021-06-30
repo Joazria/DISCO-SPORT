@@ -15,6 +15,7 @@ class User < ApplicationRecord
   validates :country, presence: true
   validates :website, presence: true, format: { with: /((w{3}\.)|(https?:\/\/))?[a-zA-Z]+\.[a-zA-Z]*\.?[a-zA-Z]*\/?(.?)*/, message: "Must be a valid website" }
   validates :phone, presence: true, format: { with: /\A[0-9]*\z/, message: 'Please, only numbers' }
+  validates_acceptance_of :terms
 
   has_one :pitching, dependent: :destroy
   has_one :identity, dependent: :destroy
