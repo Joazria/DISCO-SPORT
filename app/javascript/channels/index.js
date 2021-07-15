@@ -5,6 +5,3 @@ const channels = require.context('.', true, /_channel\.js$/)
 channels.keys().forEach(channels)
 
 
-import { initMarkdown } from './plugins/init_markdown';
-
-initMarkdown();
