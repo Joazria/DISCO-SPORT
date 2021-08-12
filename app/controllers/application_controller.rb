@@ -29,6 +29,6 @@ class ApplicationController < ActionController::Base
   end
 
 end
-def after_sign_up_path_for(resource)
-  profile_path(current_user)# <- Path you want to redirect the user to.
-end
+# def after_sign_up_path_for(resource)
+#   profile_path(current_user)# <- Path you want to redirect the user to.
+# end
