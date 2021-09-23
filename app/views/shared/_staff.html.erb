@@ -1,5 +1,6 @@
 <div class="dashboard__validation-container mt-3">
   <% @users_staff.sample(4).each do |user| %>
+
     <div class="staff-card">
       <div class="staff-card__main">
         <% if user.avatar.attached? %>
@@ -19,12 +20,12 @@
             :height => "270"
           %>
         <% end %>
-        <div class="staff-card__country">
-          <% if user.country.nil? %>
-          <% else %>
+<!--         <div class="staff-card__country">
+          <%# if user.country.nil? %>
+          <%# else %>
           <span class="flag-icon flag-icon-<%= user.country.downcase %> flag-icon-squared "></span>
-          <% end %>
-        </div>
+          <%# end %>
+        </div> -->
         <ul class="staff-card__info">
           <li class="staff-card__info-name">
             <%= user.gender %> <strong> <%= user.first_name %></strong>
@@ -39,12 +40,12 @@
              <small>attending as : </small> <%#= user.member %>  <%#= user.country %>
           </li> -->
           <br>
-          <li class="delegate-card__info-btn text-uppercase font-weight-bold">
-       <!--      <a href="<%#= user.email %>" class="btn btn-primary btn-small text-white">
 
-            </a> -->
-             <%= link_to "Contact your ambassador", profile_path(user), class: "btn btn-block btn-outline-danger" %>
-          </li>
+            <a href="<%#= user.email %>" class="btn btn-primary btn-small text-white">
+
+            </a>
+
+
 <!--           <li class="staff-card__info-website text-uppercase">
             <small>activity :</small>  <%#= user.activity %>
           </li> -->

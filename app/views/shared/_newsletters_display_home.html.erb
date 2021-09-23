@@ -11,16 +11,15 @@
         </div>
         <div class="card-footer">
 
-<button type="button" class="btn btn-sm btn-block btn-primary" data-toggle="modal" data-target="#newsModal<%= newsletter.id %> ">
-  Read the Article
-</button>
+      <button type="button" class="btn btn-sm btn-block btn-primary" data-toggle="modal" data-target="#newsModal<%= newsletter.id %> ">
+        Read the Article
+      </button>
         </div>
       </div>
     </div>
   <% end %>
 </div>
-  <% @newsletters.last(3).each do |newsletter| %>
-
+<% @newsletters.last(3).each do |newsletter| %>
  <div class="modal fade" id="newsModal<%= newsletter.id %>" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -44,4 +43,4 @@
       </div>
     </div>
   </div>
-  <% end %>
+<% end %>

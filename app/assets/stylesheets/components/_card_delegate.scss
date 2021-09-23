@@ -1,5 +1,5 @@
 .delegate-card {
-  height: 520px;
+  height: 550px;
   width: 275px;
   display: grid;
   grid-template-rows: minmax(360px, 1fr) 35px;
@@ -52,7 +52,10 @@
       }
     }
     &-btn {
-      justify-self: center;
+      position: absolute;
+      top: 85%;
+      left: 10%;
+      // justify-self: center;
     }
   }
   &__btn {

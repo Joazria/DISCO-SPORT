@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :about_us, :newsletters, :bootcamp, :terms]
+  skip_before_action :authenticate_user!, only: [:home, :about_us, :newsletters, :bootcamp, :terms, :kigali]
   # before_action :set_user, only: [:profile, :show, :edit, :update, :destroy]
 
   def dashboard
@@ -29,6 +29,13 @@ class PagesController < ApplicationController
     @users_approved = User.where(status: 'approved').excluding(current_user).sort_by { |event| [event.created_at] }.reverse
   end
 
+  def kigali
+    @newsletters = Newsletter.all
+    @users_staff = User.where(member: 'STAFF')
+
+
+    @users_approved = User.where(status: 'approved').excluding(current_user).sort_by { |event| [event.created_at] }.reverse
+  end
   # private
 
   # def user_params
