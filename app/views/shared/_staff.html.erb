@@ -1,5 +1,5 @@
 <div class="dashboard__validation-container mt-3">
-  <% @users_staff.each do |user| %>
+  <% @users_staff.sample(4).each do |user| %>
     <div class="staff-card">
       <div class="staff-card__main">
         <% if user.avatar.attached? %>
