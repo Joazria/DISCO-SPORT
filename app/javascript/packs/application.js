@@ -20,6 +20,9 @@ require("channels")
 import "bootstrap"
 window.$ = $;
 
+import { previewImageOnFileSelect } from '../components/photo_preview';
+import { validEmail } from '../components/validation';
+
 import { initChatroomCable } from '../channels/chatroom_channel';
 
 document.addEventListener('turbolinks:load', () => {

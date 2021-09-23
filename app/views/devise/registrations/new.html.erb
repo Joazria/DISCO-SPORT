@@ -41,9 +41,16 @@
                         autofocus: true,
                         input_html: { autocomplete: "email",
                         placeholder: 'joa@birds.art.br' }%>
-      <%= f.input :avatar,
-                            label: 'Upload your photo',
-                            as: :file %>
+
+
+<%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+
+<%= f.input :avatar,
+            input_html: { class: 'hidden', id: 'photo-input'},
+            label_html: { class: 'upload-photo'},
+            label: '📷 Upload a photo' %>
+            <%#= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+
     </span>
     <h5 class="text-primary mt-5">
       PROFILE INFORMATION
@@ -141,7 +148,7 @@
         <%= f.input :phone,
                         as: :string,
                         label: 'phone',
-                        placeholder: '+5521996995765' %>
+                        placeholder: '5521996995765' %>
       </div>
       <div class="col-md-6">
         <%= f.input :website,
