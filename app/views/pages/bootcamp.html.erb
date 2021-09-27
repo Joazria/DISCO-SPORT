@@ -1,10 +1,13 @@
  <div id="image" class="banner" style="background-image: url(https://res.cloudinary.com/numama/image/upload/v1616778400/DISCOSPORT/BANNER_DISCOSPORT_wbyk1v.png);">
           <div class="container p-3">
             <div class="container">
-              <h2 class="text-white text-uppercase">Discosport's |  <span class="text-danger">Sidebar Program</span> </h2>
+             <h2 class="text-white text-uppercase">Discosport's <span class="text-danger">Early Kick Off </span> </h2>
+
+              <h4 class="text-white text-uppercase">To set the tone and boost engagement, DISCOSPORT will kick off early, on Monday 21 March, with a series of online sessions and podcasts featuring key industry experts and visionary minds. </h4>
+             <!--  <h2 class="text-white text-uppercase">Discosport's <span class="text-danger">Early Kick Off | Program</span> </h2>
               <h4 class="text-white text-uppercase">from Monday 21 to Friday 25 March 2021. </h4>
               <h5 class="text-white text-uppercase"> Through a series of virtual keynotes, workshops, discussions, case-studies and company presentations, <span class="text-danger">the educational and networking program will address key opportunities and trends impacting the future of sports business in Africa.</span> </h5>
-
+ -->
               <% if user_signed_in? %>
                         <% if current_user.status == 'approved' %>
                             <p  class="text-right ">   <span class="text-success font-weight-bold"> YOU ARE INVITED</span></p>
@@ -14,7 +17,7 @@
 
                     <a class="btn btn-lg btn-outline-success" href="mailto:contact@discosport.tv?subject=Hello">CONTACT US</a>
                       <% else %>
-                        <p> <span class="text-danger font-weight-bold"> BY INVITATION ONLY  </span></p>
+                        <p> <span class="text-danger font-weight-bold mt-2"> BY INVITATION ONLY  </span></p>
                         <%= link_to "SIGN UP NOW", new_user_registration_path, class: " btn btn-lg btn-outline-success" %>
 
               <% end %>
@@ -26,14 +29,14 @@
 
 
 <div class="container bg-white pt-3">
-  To break the ice, set the tone and boost engagement, a virtual event will be held from Monday
+<!--   To break the ice, set the tone and boost engagement, a virtual event will be held from Monday
 21 to Friday 25 March 2021, two months prior to the event, that will deliver marketplace
 information, advance online visibility, and preliminary connections.
 <hr>
 Intertwined into these sessions, a series of fast-track company presentations will promote
 services, products and expertise offered at the event.
 Sessions and presentations will be available for replay purposes for a period of six weeks after
-the event, alongside meetings follow-up assistance offered to delegates
+the event, alongside meetings follow-up assistance offered to delegates -->
   <div class="card-deck ">
 
         <div class="card mb-3">
@@ -67,8 +70,10 @@ the event, alongside meetings follow-up assistance offered to delegates
             <img class="card-img-top"
                   src="https://res.cloudinary.com/numama/image/upload/v1617131914/DISCOSPORT/new_prod_rkqfrr.png" alt="Card image cap">
               <div class="card-body">
-                <h4 class="card-title text-primary mb-0">NEW <span class="text-uppercase text-danger">PRODUCTION</span> </h4>
-                <h6 class="card-title text-primary mt-0">AND TRANSACTIONAL MODELS</h6>
+                <h4 class="card-title text-primary mb-0">NEW</h4>
+                <h4 class="card-title text-primary mb-0"><span class="text-uppercase text-danger">Business Models</span> </h4>
+
+                <!-- <h6 class="card-title text-primary mt-0">AND TRANSACTIONAL MODELS</h6> -->
                 <!-- <h6 class="card-text">Secretary General of Organisation Internationale de la Francophonie</h6> -->
               </div>
         </div>
@@ -78,7 +83,7 @@ the event, alongside meetings follow-up assistance offered to delegates
   <div class="bg-white container p-3">
     <hr>
   <div class="">
-    <h1 class="text-danger text-uppercase text-center mt-4">VIRTUAL | PROGRAM</h1>
+    <h1 class="text-danger text-uppercase text-center mt-4">LIVE | PROGRAM</h1>
         <div class="row mt-5">
           <div class="col-3 text-center">
            <img src="https://res.cloudinary.com/numama/image/upload/v1617196770/DISCOSPORT/icon_keynote_discop_c4gpts.png"  width="120" height="120" />

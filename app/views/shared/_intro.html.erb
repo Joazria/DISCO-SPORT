@@ -14,58 +14,47 @@
     <hr>
     <p class="text-justify">The live, compact, 100% bilingual (English/French), B2B event will take place from Tuesday
 <span class="font-weight-bold">24 to Thursday 26 May 2022</span>  , in Kigali, Rwanda, and deliver high-level, well-prepared and
-well-researched meetings between 400+ qualified delegates categorized as:
+well-researched meetings between 250+ qualified delegates categorized as:
     </p>
-    <p class="text-justify"> ● <span class="font-weight-bold"> 275+ BUYERS</span> representing sports federations, teams, sports arenas, broadcasters,
-    content distribution platforms, digital first companies, consumer brands, advertising
+    <p class="text-justify"> ● <span class="font-weight-bold"> BUYERS</span> representing sports federations, teams, sports arenas, broadcasters, content distribution platforms, digital first companies, consumer brands, advertising agencies and tourism offices.
     agencies and tourism offices.</p>
-   <p class="text-justify"> ● <span class="font-weight-bold"> 75+ VENDORS</span> of equipment, new-tech and production, post-production, creative,
-    marketing, branding, monetization, delivery, light manufacturing, data management,
-    research, media buying, ecommerce and business services.</p>
-   <p class="text-justify"> ● <span class="font-weight-bold"> 50+ EXPERTS</span> ready to share their knowledge, vision of the future and understanding
-    of the African marketplace.</p>
+   <p class="text-justify"> ● <span class="font-weight-bold"> VENDORS</span> of equipment, new-tech and production, post-production, creative, marketing, branding, monetization, delivery, light manufacturing, data management, research, media buying, ecommerce and business services.</p>
+   <p class="text-justify"> ● <span class="font-weight-bold"> EXPERTS</span> eady to share their knowledge, vision of the future and understanding of the African marketplace. </p>
     <hr>
-    <% if user_signed_in? %>
 
-    <% else %>
-      <div class="container">
-        <a href="<%= new_user_registration_path %>"
-          class="btn btn-danger text-uppercase btn-lg btn-block ">
-        CLICK HERE TO REGISTER</a>
-      </div>
-    <% end %>
-
-
-  </div>
-
-      <div class="container d-flex flex-wrap" style="gap: 1ch;">
-      <br>
       <h5 class="text-justify mt-3 ">
         <span class="text-primary text-center text-uppercase font-weight-bold">
         Free 'Early Bird' registration is available to qualified executives until Friday 22 October.
         </span>
       </h5>
-      <a class="btn btn-primary"
+    <% if user_signed_in? %>
+
+    <% else %>
+      <div class="container">
+        <a class="btn btn-danger btn-block btn-lg"
         href="https://discosport.tv/users/sign_up">
         <i class="fas fa-user-plus"></i> EARLY BIRD REGISTRATION  | SIGN UP NOW
       </a>
-    </div>
+    <% end %>
+
+
+  </div>
+
+</div>
   <div class="container">
 <hr>
-        <p class="text-justify"> <span class="font-weight-bold">To break the ice</span>, set the tone and boost engagement, a virtual event will be held from <span class="font-weight-bold"> Monday
+      <!--   <p class="text-justify"> <span class="font-weight-bold">To break the ice</span>, set the tone and boost engagement, a virtual event will be held from <span class="font-weight-bold"> Monday
 21 to Friday 25 March 2021</span>, two months prior to the event, that will deliver marketplace
-information, advance online visibility, and preliminary connections.</p>
+information, advance online visibility, and preliminary connections.</p> -->
 
     <p class="text-justify">
 
-Running parallel to the pre-organized meeting sessions, a sidebar program of conferences,
-case-studies, fast-track presentations and workshops will provide important insights on new
-trends, challenges and opportunities.
+Running parallel to the pre-organized meetings sessions, a live program of conferences, case-studies, presentations and workshops will spotlight trends and issues critical to the development of sports business in Africa.
     </p>
 
 
     <div class="container d-flex justify-content-end">
-        <a href="<%= bootcamp_path %>" class="btn btn-primary text-uppercase btn-lg "> sidebar | PROGRAM </a>
+        <a href="<%= bootcamp_path %>" class="btn btn-primary text-uppercase btn-lg "> EARLY KICK OFF | PROGRAM </a>
     </div>
 
     <hr>
