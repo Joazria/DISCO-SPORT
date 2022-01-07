@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
 
   root to: 'pages#home'
+   get '/privacy', to: 'pages#privacy'
+   get '/fulfillment', to: 'pages#fulfillment'
   get '/about_us', to: 'pages#about_us'
   get '/bootcamp', to: 'pages#bootcamp'
   get '/terms', to: 'pages#terms'
