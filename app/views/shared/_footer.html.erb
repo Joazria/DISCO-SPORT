@@ -1,5 +1,5 @@
 <footer class="footer" >
- <%= render "shared/banner_partners" %>
+
   <div class="footer__head">
     <div class="footer__container">
       <%= image_tag "https://res.cloudinary.com/numama/image/upload/v1616778797/DISCOSPORT/LOGO1_DISCOSPORT_MASTER_wtwyli.png",
@@ -15,17 +15,23 @@
     </div>
     <ul class="footer__nav">
       <li class="footer__nav-item">
-        <%= link_to "About Us", "/about_us" %>
+        <%= link_to "Privacy Policy", privacy_path %>
+      </li>
+            <li class="footer__nav-item">
+        <%= link_to "Terms & Conditions", terms_path %>
+      </li>
+        <li class="footer__nav-item">
+        <%= link_to "Fulfillment Terms", fulfillment_path %>
       </li>
       <li class="footer__nav-item">
         <a href="mailto:contact@discosport.tv?subject=Hello">Contact Us</a>
       </li>
-      <li class="footer__nav-item">
-        <%= link_to "Sign Up", new_user_registration_path %>
+<!--       <li class="footer__nav-item">
+        <%#= link_to "Sign Up", new_user_registration_path %>
       </li>
       <li class="footer__nav-item">
-        <%= link_to "Sidebar Program", "/bootcamp" %>
-      </li>
+        <%#= link_to "Sidebar Program", "/bootcamp" %>
+      </li> -->
     </ul>
   </div>
   <hr class="separator" style="--width: 130px"/>
